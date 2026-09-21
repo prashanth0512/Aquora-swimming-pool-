@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+  <title>AQUORA | The Pool Experience &amp; Architectural Waterscapes</title>
+  <link rel="icon" type="image/png" href="assets/aquora-logo.png">
+  <link rel="apple-touch-icon" href="assets/aquora-logo.png">
+  <meta name="description"
+    content="Experience Home 2 of AQUORA. Explore bespoke pool paradigms, interactive material finishes, signature estate stories, and private project management.">
+  <meta name="keywords"
+    content="luxury swimming pools, infinity edge, pool finish studio, custom waterscape, estate pool construction">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="home2.css">
+</head>
+
+<body>
+  
+  <div class="water-caustics-ambient" aria-hidden="true"></div>
+
+  
+  <header id="main-header" class="site-header" role="banner">
+    <div class="header-container">
+
+      
+      <a href="home2.html" class="brand-logo" aria-label="AQUORA Home">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </a>
+
+      
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle active" id="home-dropdown-trigger" aria-expanded="false"
+              aria-haspopup="true" aria-current="page">
+              <span>Home</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="home-dropdown-menu" role="menu" aria-labelledby="home-dropdown-trigger">
+              <a href="index.html" class="dropdown-link" role="menuitem">Home 1</a>
+              <div class="dropdown-divider"></div>
+              <a href="home2.html" class="dropdown-link active" role="menuitem">Home 2</a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="journal.html" class="nav-link">Journal</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      
+      <div class="header-controls">
+        
+        <button id="theme-toggle-btn" class="control-btn theme-toggle" aria-label="Toggle Light and Dark Mode"
+          title="Toggle Theme">
+          <svg class="theme-icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        
+        <button id="rtl-toggle-btn" class="control-btn rtl-toggle" aria-label="Toggle Right-to-Left Layout"
+          title="Toggle RTL">
+          <span class="rtl-text">RTL</span>
+        </button>
+
+        
+        <a href="login.html" id="header-login-btn" class="btn btn-primary desktop-only" aria-label="Login">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        
+        <button id="mobile-hamburger-btn" class="mobile-hamburger" aria-label="Open Navigation Menu"
+          aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name" style="font-size: 1.15rem;">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </div>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close Navigation Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-content">
+      <div class="drawer-home-switcher">
+        <span class="drawer-section-label">SELECT EDITION</span>
+        <div class="drawer-home-buttons">
+          <a href="index.html" class="drawer-home-btn" id="drawer-home-1">
+            <span>Home 1</span>
+            <small>Resort Luxury</small>
+          </a>
+          <a href="home2.html" class="drawer-home-btn active" id="drawer-home-2">
+            <span>Home 2</span>
+            <small>The Experience</small>
+          </a>
+        </div>
+      </div>
+
+      <nav class="drawer-nav">
+        <ul class="drawer-menu">
+          <li><a href="home2.html" class="drawer-link active"><span class="drawer-link-num">01</span> Home</a></li>
+          <li><a href="about.html" class="drawer-link"><span class="drawer-link-num">02</span> About Us</a></li>
+          <li><a href="service.html" class="drawer-link"><span class="drawer-link-num">03</span> Services</a></li>
+          <li><a href="pricing.html" class="drawer-link"><span class="drawer-link-num">04</span> Pricing</a></li>
+          <li><a href="journal.html" class="drawer-link"><span class="drawer-link-num">05</span> Journal</a></li>
+          <li><a href="dashboard.html" class="drawer-link"><span class="drawer-link-num">06</span> Dashboard</a></li>
+          <li><a href="contact.html" class="drawer-link"><span class="drawer-link-num">07</span> Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="drawer-footer">
+        <a href="login.html" id="drawer-login-btn" class="btn btn-primary btn-block">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+        <button id="drawer-quote-btn" class="btn btn-secondary btn-block" onclick="openQuoteModal('Drawer Consultation')">
+          <span>Request Consultation</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    
+    <section id="hero" class="h2-hero-section" aria-label="Home 2 Hero Showcase">
+      <div class="h2-container h2-hero-grid">
+
+        
+        <div class="h2-hero-left-col">
+          <div class="h2-hero-eyebrow-wrap">
+            <span class="h2-hero-eyebrow-text">AQUORA RESORT ATELIER</span>
+            <span class="h2-hero-eyebrow-dash" aria-hidden="true"></span>
+          </div>
+
+          <h1 class="h2-hero-headline">
+            Waterscape Royalty,<br>
+            <span class="h2-hero-accent-text">Masterfully Sculpted</span>
+          </h1>
+
+          <p class="h2-hero-narrative">
+            For those who appreciate unhurried craftsmanship. Over 80 hours of hydrodynamic precision engineered into a bespoke kinetic sanctuary of commanding poise and timeless luxury.
+          </p>
+
+          
+          <div class="h2-hero-stats-card">
+            <div class="h2-hero-stat-col">
+              <span class="h2-hstat-num">50<span class="hstat-plus">+</span></span>
+              <span class="h2-hstat-label">MEASUREMENTS</span>
+            </div>
+            <div class="h2-hero-stat-divider" aria-hidden="true"></div>
+            <div class="h2-hero-stat-col">
+              <span class="h2-hstat-num">80<span class="hstat-plus">+</span></span>
+              <span class="h2-hstat-label">HOURS / POOL</span>
+            </div>
+            <div class="h2-hero-stat-divider" aria-hidden="true"></div>
+            <div class="h2-hero-stat-col">
+              <span class="h2-hstat-num">4,000<span class="hstat-plus">+</span></span>
+              <span class="h2-hstat-label">CURATED STONES</span>
+            </div>
+          </div>
+
+          
+          <div class="h2-hero-trust-strip">
+            <span class="h2-trust-crown-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+            </span>
+            <span class="h2-trust-text">
+              <strong>4.9 / 5 Patrons Rating</strong> • Master Pools Guild Heritage Certified
+            </span>
+          </div>
+        </div>
+
+        
+        <div class="h2-hero-right-col">
+          <div class="h2-hero-mosaic-wrap">
+
+            
+            <div class="h2-mosaic-card card-top-left" onclick="openLightbox('assets/home2_hero.jpg', 'The Twilight Sanctuary', 'Custom vanishing-edge pool with integrated stepping stones and ambient underwater illumination.')">
+              <img src="assets/home2_hero.jpg" alt="Luxury villa vanishing edge pool at twilight" class="h2-mosaic-img" loading="eager" width="600" height="420">
+              <div class="h2-mosaic-scrim"></div>
+              <div class="h2-mosaic-tag">
+                <span class="h2-mosaic-tag-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><circle cx="7" cy="7" r=".5" fill="currentColor"/></svg>
+                </span>
+                <span>Bespoke Pool</span>
+              </div>
+            </div>
+
+            
+            <div class="h2-mosaic-card card-top-right" onclick="openLightbox('assets/hero_infinity.jpg', 'The Horizon Cantilever', 'Suspended coastal cliff cantilever pool with crystal-clear laminar overflow.')">
+              <img src="assets/hero_infinity.jpg" alt="Malibu cliffside infinity swimming pool overlooking ocean" class="h2-mosaic-img" loading="eager" width="600" height="420">
+              <div class="h2-mosaic-scrim"></div>
+              <div class="h2-mosaic-tag">
+                <span class="h2-mosaic-tag-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><circle cx="7" cy="7" r=".5" fill="currentColor"/></svg>
+                </span>
+                <span>Ceremonial Spa</span>
+              </div>
+            </div>
+
+            
+            <div class="h2-mosaic-card card-bottom-left" onclick="openLightbox('assets/home2_material_studio.jpg', 'Honed Silver Travertine', 'Monolithic stone coping and precision waterline mosaic detail.')">
+              <img src="assets/home2_material_studio.jpg" alt="Close-up architectural stone coping and clear pool water" class="h2-mosaic-img" loading="lazy" width="600" height="350">
+              <div class="h2-mosaic-scrim"></div>
+              <div class="h2-mosaic-tag">
+                <span class="h2-mosaic-tag-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><circle cx="7" cy="7" r=".5" fill="currentColor"/></svg>
+                </span>
+                <span>Italian Travertine</span>
+              </div>
+            </div>
+
+            
+            <div class="h2-mosaic-card card-bottom-right" onclick="openLightbox('assets/hero_night.jpg', 'Bioluminescent Optics', 'Underwater circadian LED lighting system for evening resort living.')">
+              <img src="assets/hero_night.jpg" alt="Nighttime luxury pool with architectural lighting and sunken lounge" class="h2-mosaic-img" loading="lazy" width="600" height="350">
+              <div class="h2-mosaic-scrim"></div>
+              <div class="h2-mosaic-tag">
+                <span class="h2-mosaic-tag-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><circle cx="7" cy="7" r=".5" fill="currentColor"/></svg>
+                </span>
+                <span>Atelier Waterscape</span>
+              </div>
+            </div>
+
+            
+            <button class="h2-mosaic-center-btn" onclick="openLightbox('assets/home2_hero.jpg', 'AQUORA — Architectural Masterpiece', 'Explore full cinematic estate waterscape portfolio.')" aria-label="Explore Architectural Waterscape Showcase" title="Explore Architectural Showcase">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="pool-experience" class="h2-section h2-experience-section" aria-labelledby="exp-section-title">
+      <div class="h2-container">
+        
+        <div class="h2-section-header text-center">
+          <div class="h2-eyebrow">
+            <span class="h2-eyebrow-beacon" aria-hidden="true"></span>
+            <span>02 — BESPOKE WATER TYPOLOGIES</span>
+          </div>
+          <h2 id="exp-section-title" class="h2-title">
+            The Experience Matrix: <span class="h2-accent-text">Choose Your Horizon</span>
+          </h2>
+          <p class="h2-subtitle">
+            Every estate topography demands its own hydraulic masterstroke. Select a signature architectural paradigm to discover its vanishing optics, acoustic tuning, and structural synergy.
+          </p>
+        </div>
+
+        
+        <div class="h2-paradigm-deck" role="tablist" aria-label="Water Typology Paradigms">
+          
+          <button class="h2-paradigm-tab active" role="tab" aria-selected="true" aria-controls="exp-panel"
+            data-exp="infinity" onclick="selectExperience('infinity', this)">
+            <div class="h2-ptab-top">
+              <span class="h2-ptab-num">TYPOLOGY 01</span>
+              <span class="h2-ptab-badge">Panoramic</span>
+            </div>
+            <h3 class="h2-ptab-title">The Infinity Escape</h3>
+            <p class="h2-ptab-subtitle">Vanishing Weir • Optical Horizon</p>
+            <div class="h2-ptab-indicator" aria-hidden="true"></div>
+          </button>
+
+          
+          <button class="h2-paradigm-tab" role="tab" aria-selected="false" aria-controls="exp-panel"
+            data-exp="family" onclick="selectExperience('family', this)">
+            <div class="h2-ptab-top">
+              <span class="h2-ptab-num">TYPOLOGY 02</span>
+              <span class="h2-ptab-badge">Multi-Zone</span>
+            </div>
+            <h3 class="h2-ptab-title">The Family Sanctuary</h3>
+            <p class="h2-ptab-subtitle">Zero-Entry Shelf • Baja Solarium</p>
+            <div class="h2-ptab-indicator" aria-hidden="true"></div>
+          </button>
+
+          
+          <button class="h2-paradigm-tab" role="tab" aria-selected="false" aria-controls="exp-panel"
+            data-exp="contemporary" onclick="selectExperience('contemporary', this)">
+            <div class="h2-ptab-top">
+              <span class="h2-ptab-num">TYPOLOGY 03</span>
+              <span class="h2-ptab-badge">Geometric</span>
+            </div>
+            <h3 class="h2-ptab-title">The Knife-Edge Oasis</h3>
+            <p class="h2-ptab-subtitle">360° Slot Perimeter • Liquid Mirror</p>
+            <div class="h2-ptab-indicator" aria-hidden="true"></div>
+          </button>
+
+          
+          <button class="h2-paradigm-tab" role="tab" aria-selected="false" aria-controls="exp-panel"
+            data-exp="resort" onclick="selectExperience('resort', this)">
+            <div class="h2-ptab-top">
+              <span class="h2-ptab-num">TYPOLOGY 04</span>
+              <span class="h2-ptab-badge">Estate Resort</span>
+            </div>
+            <h3 class="h2-ptab-title">The Private Resort</h3>
+            <p class="h2-ptab-subtitle">Sunken Fire Lounge • Geothermal Spa</p>
+            <div class="h2-ptab-indicator" aria-hidden="true"></div>
+          </button>
+        </div>
+
+        
+        <div class="h2-paradigm-stage-card" id="exp-panel" role="tabpanel">
+          
+          <div class="h2-stage-visual-container">
+            <div class="h2-stage-img-frame">
+              <img id="exp-image" src="assets/hero_infinity.jpg" alt="The Infinity Escape by AQUORA" class="h2-stage-img">
+              <div class="h2-stage-vignette"></div>
+
+              
+              <div class="h2-stage-status-pill">
+                <span class="h2-pulse-dot" aria-hidden="true"></span>
+                <span id="exp-status-text">Hydraulic CFD Simulation Active</span>
+              </div>
+
+              
+              <button class="h2-stage-inspect-btn" onclick="inspectCurrentParadigm()" aria-label="Inspect Visual Fullscreen" title="Inspect Fullscreen">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+                <span>Inspect Visual</span>
+              </button>
+
+              
+              <div id="exp-pins-container" class="h2-blueprint-pins-layer">
+                
+                <div class="h2-blueprint-pin" style="top: 48%; left: 68%;" id="pin-1">
+                  <div class="pin-beacon">
+                    <div class="pin-wave"></div>
+                    <div class="pin-center"></div>
+                  </div>
+                  <div class="pin-card">
+                    <span class="pin-label">WEIR WALL ELEVATION</span>
+                    <strong class="pin-text" id="pin-1-text">±1.2mm Laser Vanishing Lip</strong>
+                  </div>
+                </div>
+
+                
+                <div class="h2-blueprint-pin" style="top: 76%; left: 28%;" id="pin-2">
+                  <div class="pin-beacon">
+                    <div class="pin-wave"></div>
+                    <div class="pin-center"></div>
+                  </div>
+                  <div class="pin-card">
+                    <span class="pin-label">ACOUSTIC ATTENUATION</span>
+                    <strong class="pin-text" id="pin-2-text">Sub-Basin Silent Chute &lt;16dB</strong>
+                  </div>
+                </div>
+
+                
+                <div class="h2-blueprint-pin" style="top: 26%; left: 22%;" id="pin-3">
+                  <div class="pin-beacon">
+                    <div class="pin-wave"></div>
+                    <div class="pin-center"></div>
+                  </div>
+                  <div class="pin-card">
+                    <span class="pin-label">SURFACE FINISH</span>
+                    <strong class="pin-text" id="pin-3-text">Monolithic Travertine Coping</strong>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="h2-stage-bottom-strip">
+                <div class="h2-bottom-badge">
+                  <span class="badge-label">ENGINEERING PROFILE</span>
+                  <span id="exp-badge" class="badge-value">Vanishing Perimeter Catch Basin</span>
+                </div>
+                <div class="h2-stage-scale-indicator">
+                  <span class="scale-label">CALIBRATION:</span>
+                  <span class="scale-val" id="exp-scale-val">0.02% SLOPE PRECISION</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="h2-stage-dossier">
+            
+            <div class="h2-dossier-header">
+              <div class="h2-dossier-meta-left">
+                <span class="h2-code-badge" id="exp-code">PARADIGM CODE: AW-INF-01</span>
+                <span class="h2-acoustic-badge" id="exp-acoustic">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                  </svg>
+                  <span id="exp-acoustic-text">Silent Flow Profile (&lt;16dB)</span>
+                </span>
+              </div>
+            </div>
+
+            
+            <div class="h2-dossier-body">
+              <h3 id="exp-title" class="h2-dossier-title">The Infinity Escape</h3>
+              <p id="exp-desc" class="h2-dossier-desc">
+                Engineered for properties with expansive horizons. The water surface extends seamlessly to a laser-calibrated vanishing edge, eliminating the visual boundary between pool and sky while silently recirculating into a subterranean surge basin with zero acoustic splash.
+              </p>
+            </div>
+
+            
+            <div class="h2-dossier-specs-grid">
+              <div class="h2-dspec-cell">
+                <div class="dspec-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+                <div class="dspec-info">
+                  <span class="dspec-label">Weir Precision</span>
+                  <span id="exp-spec-1" class="dspec-val">±1.2mm Laser Leveled Weir</span>
+                </div>
+              </div>
+
+              <div class="h2-dspec-cell">
+                <div class="dspec-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 12h20M2 12a10 10 0 0 1 10-10M2 12a10 10 0 0 0 10 10"/>
+                  </svg>
+                </div>
+                <div class="dspec-info">
+                  <span class="dspec-label">Acoustic Rating</span>
+                  <span id="exp-spec-2" class="dspec-val">Whisper Chute &lt;16dB</span>
+                </div>
+              </div>
+
+              <div class="h2-dspec-cell">
+                <div class="dspec-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                  </svg>
+                </div>
+                <div class="dspec-info">
+                  <span class="dspec-label">Hydraulic Turn</span>
+                  <span id="exp-spec-3" class="dspec-val">Variable Speed Dual Surge</span>
+                </div>
+              </div>
+
+              <div class="h2-dspec-cell">
+                <div class="dspec-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <div class="dspec-info">
+                  <span class="dspec-label">Ideal Topography</span>
+                  <span id="exp-spec-4" class="dspec-val">Coastal Bluffs &amp; Hilltops</span>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="h2-dossier-synergy">
+              <div class="synergy-label-wrap">
+                <span class="synergy-badge">RECOMMENDED MATERIAL SYNERGY</span>
+              </div>
+              <p class="synergy-text" id="exp-synergy">
+                Silver Travertine Flamed Coping + Caribbean Deep Cyan Pebble Interior + Monolithic Glass Tile Spillway.
+              </p>
+            </div>
+
+            
+            <div class="h2-dossier-actions">
+              <button class="btn btn-primary" onclick="openQuoteModal('Infinity Paradigm Selection')">
+                <span>Inquire About This Paradigm</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+
+              <button class="btn btn-secondary" onclick="inspectCurrentParadigm()">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Inspect Blueprint Gallery</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="project-stories" class="h2-section h2-stories-section" aria-labelledby="stories-section-title">
+      <div class="h2-container">
+        
+        <div class="h2-section-header text-center">
+          <div class="h2-eyebrow">
+            <span class="h2-eyebrow-beacon" aria-hidden="true"></span>
+            <span>03 — COMPLETED RESIDENCES</span>
+          </div>
+          <h2 id="stories-section-title" class="h2-title">
+            Stories Written In Water: <span class="h2-accent-text">Living Monoliths</span>
+          </h2>
+          <p class="h2-subtitle">
+            An architectural anthology of private estate waterscapes engineered into dramatic geographies — from coastal bluffs to desert mountain sanctuaries.
+          </p>
+        </div>
+
+        <div class="h2-monograph-list">
+
+          
+          <article class="h2-monograph-card" id="residence-azure">
+            
+            <div class="h2-monograph-ribbon">
+              <div class="h2-mribbon-left">
+                <span class="h2-mribbon-index">ESTATE ARCHIVE #001</span>
+                <span class="h2-mribbon-divider" aria-hidden="true">•</span>
+                <span class="h2-mribbon-location">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  MALIBU, CALIFORNIA
+                </span>
+              </div>
+              <div class="h2-mribbon-center">
+                <span class="h2-mribbon-archetype">58' OLYMPIC BASIN • 42° BLUFF CANTILEVER</span>
+              </div>
+              <div class="h2-mribbon-right">
+                <span class="h2-mribbon-award">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  AIA HYDRAULIC EXCELLENCE HONOREE
+                </span>
+              </div>
+            </div>
+
+            
+            <div class="h2-monograph-content-grid">
+              
+              <div class="h2-monograph-visual">
+                <div class="h2-mvisual-frame">
+                  <img src="assets/project_infinity.jpg" alt="The Azure Residence infinity pool cantilevered over Malibu cliffs" class="h2-mvisual-img">
+                  <div class="h2-mvisual-vignette"></div>
+
+                  
+                  <div class="h2-mvisual-status-pill">
+                    <span class="h2-pulse-dot" aria-hidden="true"></span>
+                    <span>42° Bedrock Incline Mastered</span>
+                  </div>
+
+                  
+                  <button class="h2-mvisual-inspect-btn" onclick="openLightbox('assets/project_infinity.jpg', 'The Azure Residence — Malibu, California', '58ft Cantilevered vanishing edge suspended over a 42-degree Pacific ocean bluff. Anchored by thirty-two steel friction piles into granite bedrock.')" aria-label="Inspect High-Res Archive">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                    </svg>
+                    <span>Inspect Archive</span>
+                  </button>
+
+                  
+                  <div class="h2-mvisual-thumbs">
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/project_infinity.jpg', 'The Azure Residence — Sunset Horizon', 'Pacific sunset alignment over the 58ft vanishing weir lip.')" title="Sunset Horizon">
+                      <img src="assets/project_infinity.jpg" alt="Sunset Perspective">
+                      <span>01 Sunset Horizon</span>
+                    </button>
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/hero_infinity.jpg', 'The Azure Residence — Precision Weir Lip', 'Sub-millimeter calibrated weir overflow chute.')" title="Weir Detail">
+                      <img src="assets/hero_infinity.jpg" alt="Weir Detail">
+                      <span>02 Precision Weir</span>
+                    </button>
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/manifesto_cantilever.jpg', 'The Azure Residence — Bedrock Cantilever', 'Subterranean foundation locked with friction piles.')" title="Foundation Detail">
+                      <img src="assets/manifesto_cantilever.jpg" alt="Foundation Detail">
+                      <span>03 Friction Piles</span>
+                    </button>
+                  </div>
+
+                  
+                  <div class="h2-mvisual-telemetry">
+                    <span class="h2-telemetry-tag">GEOLOGICAL INTEGRATION:</span>
+                    <span class="h2-telemetry-val">32 STEEL FRICTION PILES ANCHORED 40FT INTO BEDROCK</span>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="h2-monograph-editorial">
+                <div>
+                  <span class="h2-meditorial-tag">PACIFIC BLUFF CANTILEVER</span>
+                  <h3 class="h2-meditorial-title">The Azure Residence</h3>
+                  <p class="h2-meditorial-narrative">
+                    Suspended over a sheer 42-degree coastal bluff in Malibu, this commission resolved severe geological shear through thirty-two subterranean steel friction piles anchored into granite bedrock. The water boundary dissolves completely into the Pacific horizon, paired with custom monolithic travertine sun platforms that appear to float weightlessly upon the water surface.
+                  </p>
+                </div>
+
+                
+                <div class="h2-milestone-timeline">
+                  <div class="h2-milestone-track">
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Geological Survey</span>
+                      <span class="h2-ms-date">WK 01</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Bedrock Piling</span>
+                      <span class="h2-ms-date">WK 04</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Shell &amp; Plaster</span>
+                      <span class="h2-ms-date">WK 11</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Weir Calibration</span>
+                      <span class="h2-ms-date">WK 17</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Handover</span>
+                      <span class="h2-ms-date">WK 18</span>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="h2-material-chips">
+                  <span class="h2-mat-chip">Arctic Pearl Pebble Plaster</span>
+                  <span class="h2-mat-chip">Italian Silver Travertine</span>
+                  <span class="h2-mat-chip">Submerged Amber LED</span>
+                  <span class="h2-mat-chip">58' Precision Weir Lip</span>
+                </div>
+
+                
+                <div class="h2-recognition-strip">
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #f59e0b;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>AIA Hydraulic Excellence</span>
+                  </div>
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <span>Architectural Record</span>
+                  </div>
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>18-Week Delivery</span>
+                  </div>
+                </div>
+
+                
+                <div class="h2-meditorial-actions">
+                  <button class="btn btn-primary" onclick="openLightbox('assets/project_infinity.jpg', 'The Azure Residence', 'Malibu, CA — 58ft Cantilevered vanishing edge over Pacific ocean.')">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span>View Full Monograph</span>
+                  </button>
+                  <button class="btn btn-secondary" onclick="openQuoteModal('The Azure Residence Inquire')">
+                    <span>Commission Similar</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-monograph-card" id="residence-palm">
+            
+            <div class="h2-monograph-ribbon">
+              <div class="h2-mribbon-left">
+                <span class="h2-mribbon-index">ESTATE ARCHIVE #002</span>
+                <span class="h2-mribbon-divider" aria-hidden="true">•</span>
+                <span class="h2-mribbon-location">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  PALM SPRINGS, CALIFORNIA
+                </span>
+              </div>
+              <div class="h2-mribbon-center">
+                <span class="h2-mribbon-archetype">12-GUEST SUNKEN FIRE ATRIUM • GEOTHERMAL HYDRO-SPA</span>
+              </div>
+              <div class="h2-mribbon-right">
+                <span class="h2-mribbon-award">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  LUXURY RESORT DESIGN AWARD
+                </span>
+              </div>
+            </div>
+
+            
+            <div class="h2-monograph-content-grid reverse">
+              
+              <div class="h2-monograph-editorial">
+                <div>
+                  <span class="h2-meditorial-tag">DESERT MODERN WELLNESS RETREAT</span>
+                  <h3 class="h2-meditorial-title">The Palm Retreat</h3>
+                  <p class="h2-meditorial-narrative">
+                    Commissioned for sunset entertainment at the base of the San Jacinto mountains, this architectural centerpiece integrates a circular dry conversation atrium enveloped by crystalline waters. Micro fiber-optic constellation nodes illuminate the basin floor at twilight, while an autonomous geothermal loop maintains the elevated spa at 104°F year-round with zero thermal drift.
+                  </p>
+                </div>
+
+                
+                <div class="h2-milestone-timeline">
+                  <div class="h2-milestone-track">
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Site Planning</span>
+                      <span class="h2-ms-date">WK 01</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Geothermal Drill</span>
+                      <span class="h2-ms-date">WK 03</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Atrium Pour</span>
+                      <span class="h2-ms-date">WK 07</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Fiber-Optic Install</span>
+                      <span class="h2-ms-date">WK 12</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Final Commissioning</span>
+                      <span class="h2-ms-date">WK 14</span>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="h2-material-chips">
+                  <span class="h2-mat-chip">Charcoal Honed Basalt</span>
+                  <span class="h2-mat-chip">Fiber-Optic Constellation Floor</span>
+                  <span class="h2-mat-chip">Dual Geothermal Circuits</span>
+                  <span class="h2-mat-chip">Fire Atrium Integration</span>
+                </div>
+
+                
+                <div class="h2-recognition-strip">
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #f59e0b;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Luxury Resort Design Award</span>
+                  </div>
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <span>Desert Living Magazine</span>
+                  </div>
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    <span>Zero-Dust Site Protocol</span>
+                  </div>
+                </div>
+
+                
+                <div class="h2-meditorial-actions">
+                  <button class="btn btn-primary" onclick="openLightbox('assets/gallery_fire_lounge.jpg', 'The Palm Retreat', 'Palm Springs, CA — Sunken fire pit within crystal basin.')">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span>View Full Monograph</span>
+                  </button>
+                  <button class="btn btn-secondary" onclick="openQuoteModal('The Palm Retreat Inquire')">
+                    <span>Commission Similar</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              
+              <div class="h2-monograph-visual">
+                <div class="h2-mvisual-frame">
+                  <img src="assets/gallery_fire_lounge.jpg" alt="The Palm Retreat desert pool with sunken fire pit" class="h2-mvisual-img">
+                  <div class="h2-mvisual-vignette"></div>
+
+                  
+                  <div class="h2-mvisual-status-pill">
+                    <span class="h2-pulse-dot" aria-hidden="true"></span>
+                    <span>San Jacinto Thermal Oasis</span>
+                  </div>
+
+                  
+                  <button class="h2-mvisual-inspect-btn" onclick="openLightbox('assets/gallery_fire_lounge.jpg', 'The Palm Retreat — Palm Springs, California', 'Sunken fire conversation pit within an illuminated crystal basin. Multi-zone geothermal heating system.')" aria-label="Inspect High-Res Archive">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                    </svg>
+                    <span>Inspect Archive</span>
+                  </button>
+
+                  
+                  <div class="h2-mvisual-thumbs">
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/gallery_fire_lounge.jpg', 'The Palm Retreat — Fire Atrium', '12-person dry conversation lounge enveloped by heated water.')" title="Fire Atrium">
+                      <img src="assets/gallery_fire_lounge.jpg" alt="Fire Atrium">
+                      <span>01 Fire Atrium</span>
+                    </button>
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/cta_twilight.jpg', 'The Palm Retreat — Twilight Illumination', 'Micro fiber-optic constellation floor lights.')" title="Twilight Ambience">
+                      <img src="assets/cta_twilight.jpg" alt="Twilight Ambience">
+                      <span>02 Twilight Ambience</span>
+                    </button>
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/project_resort.jpg', 'The Palm Retreat — Wellness Spa', 'Adjacent hydro-spa maintained at 104°F.')" title="Wellness Spa">
+                      <img src="assets/project_resort.jpg" alt="Wellness Spa">
+                      <span>03 Wellness Spa</span>
+                    </button>
+                  </div>
+
+                  
+                  <div class="h2-mvisual-telemetry">
+                    <span class="h2-telemetry-tag">CLIMATE SYSTEM:</span>
+                    <span class="h2-telemetry-val">INDEPENDENT DUAL-ZONE 104°F GEOTHERMAL RECIRCULATION</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-monograph-card" id="residence-courtyard">
+            
+            <div class="h2-monograph-ribbon">
+              <div class="h2-mribbon-left">
+                <span class="h2-mribbon-index">ESTATE ARCHIVE #003</span>
+                <span class="h2-mribbon-divider" aria-hidden="true">•</span>
+                <span class="h2-mribbon-location">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  SCOTTSDALE, ARIZONA
+                </span>
+              </div>
+              <div class="h2-mribbon-center">
+                <span class="h2-mribbon-archetype">ZERO-EDGE LIQUID MIRROR • HAND-CARVED COLONNADE</span>
+              </div>
+              <div class="h2-mribbon-right">
+                <span class="h2-mribbon-award">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  ARCHITECTURAL DIGEST FEATURED
+                </span>
+              </div>
+            </div>
+
+            
+            <div class="h2-monograph-content-grid">
+              
+              <div class="h2-monograph-visual">
+                <div class="h2-mvisual-frame">
+                  <img src="assets/project_courtyard.jpg" alt="The Courtyard Pavilion reflecting pool with limestone colonnade" class="h2-mvisual-img">
+                  <div class="h2-mvisual-vignette"></div>
+
+                  
+                  <div class="h2-mvisual-status-pill">
+                    <span class="h2-pulse-dot" aria-hidden="true"></span>
+                    <span>Acoustic Reflection Mirror</span>
+                  </div>
+
+                  
+                  <button class="h2-mvisual-inspect-btn" onclick="openLightbox('assets/project_courtyard.jpg', 'The Courtyard Pavilion — Scottsdale, Arizona', 'Zero-edge reflection pool with travertine columns. Four concealed sheet spillways for whisper-quiet acoustics.')" aria-label="Inspect High-Res Archive">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                    </svg>
+                    <span>Inspect Archive</span>
+                  </button>
+
+                  
+                  <div class="h2-mvisual-thumbs">
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/project_courtyard.jpg', 'The Courtyard Pavilion — Reflection Colonnade', 'Roman travertine columns reflected in flush liquid glass.')" title="Colonnade Reflection">
+                      <img src="assets/project_courtyard.jpg" alt="Colonnade Reflection">
+                      <span>01 Colonnade Mirror</span>
+                    </button>
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/hero_villa.jpg', 'The Courtyard Pavilion — Perimeter Slot', '10mm concealed slot drain preventing surface ripples.')" title="Perimeter Slot">
+                      <img src="assets/hero_villa.jpg" alt="Perimeter Slot">
+                      <span>02 Perimeter Slot</span>
+                    </button>
+                    <button class="h2-mthumb-chip" onclick="openLightbox('assets/gallery_minimal.jpg', 'The Courtyard Pavilion — Submerged Chaise Ledge', 'Hand-cut cobalt mosaic waterline and shallow tanning shelf.')" title="Chaise Ledge">
+                      <img src="assets/gallery_minimal.jpg" alt="Chaise Ledge">
+                      <span>03 Chaise Ledge</span>
+                    </button>
+                  </div>
+
+                  
+                  <div class="h2-mvisual-telemetry">
+                    <span class="h2-telemetry-tag">ACOUSTIC PROFILE:</span>
+                    <span class="h2-telemetry-val">360° PERIMETER SLOT WITH RESIDUAL DAMPENING (&lt;12dB)</span>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="h2-monograph-editorial">
+                <div>
+                  <span class="h2-meditorial-tag">MEDITERRANEAN COURTYARD MIRROR</span>
+                  <h3 class="h2-meditorial-title">The Courtyard Pavilion</h3>
+                  <p class="h2-meditorial-narrative">
+                    Nestled within private courtyard colonnades in the Sonoran desert, this installation treats water as a living architectural mirror. A perimeter slot-drain system permits the water to rise exactly flush with surrounding hand-chiseled Roman travertine pavers, dampening surface cresting and echoing the sound of four concealed sheet spillways through the loggia.
+                  </p>
+                </div>
+
+                
+                <div class="h2-milestone-timeline">
+                  <div class="h2-milestone-track">
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Colonnade Survey</span>
+                      <span class="h2-ms-date">WK 01</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Travertine Sourcing</span>
+                      <span class="h2-ms-date">WK 02</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Slot-Drain Install</span>
+                      <span class="h2-ms-date">WK 06</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Mosaic Inlay</span>
+                      <span class="h2-ms-date">WK 10</span>
+                    </div>
+                    <div class="h2-milestone done">
+                      <div class="h2-ms-dot"></div>
+                      <span class="h2-ms-label">Final Handover</span>
+                      <span class="h2-ms-date">WK 12</span>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="h2-material-chips">
+                  <span class="h2-mat-chip">Roman Travertine Pavers</span>
+                  <span class="h2-mat-chip">Cobalt &amp; Quartz Mosaic</span>
+                  <span class="h2-mat-chip">2700K Warm LEDs</span>
+                  <span class="h2-mat-chip">4 Sheet Spillways</span>
+                </div>
+
+                
+                <div class="h2-recognition-strip">
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #f59e0b;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Architectural Digest Featured</span>
+                  </div>
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <span>Luxury Home &amp; Garden</span>
+                  </div>
+                  <div class="h2-recog-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                    <span>12dB Acoustic Mastery</span>
+                  </div>
+                </div>
+
+                
+                <div class="h2-meditorial-actions">
+                  <button class="btn btn-primary" onclick="openLightbox('assets/project_courtyard.jpg', 'The Courtyard Pavilion', 'Scottsdale, AZ — Zero-edge reflection pool with travertine columns.')">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span>View Full Monograph</span>
+                  </button>
+                  <button class="btn btn-secondary" onclick="openQuoteModal('The Courtyard Pavilion Inquire')">
+                    <span>Commission Similar</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="inspiration-wall" class="h2-section h2-inspiration-section" aria-labelledby="insp-section-title">
+      <div class="h2-container">
+        
+        <div class="h2-section-header text-center">
+          <div class="h2-eyebrow">
+            <span class="h2-eyebrow-beacon" aria-hidden="true"></span>
+            <span>04 — CURATED VAULT: DESIGN ANTHOLOGY</span>
+          </div>
+          <h2 id="insp-section-title" class="h2-title">
+            The Curated Vault: <span class="h2-accent-text">The Art Of Water Architecture</span>
+          </h2>
+          <p class="h2-subtitle">
+            An exclusive editorial collection of vanishing-edge horizons, subterranean fire atriums, monolithic quartzite plunge mirrors, and circadian nightscapes.
+          </p>
+        </div>
+
+        
+        <div class="h2-inspiration-filter-bar" role="tablist" aria-label="Curated Vault Categories">
+          <button class="h2-filter-pill active" data-filter="all" onclick="filterInspiration('all', this)">
+            <span>All Works</span>
+            <span class="h2-filter-count">08</span>
+          </button>
+          <button class="h2-filter-pill" data-filter="infinity" onclick="filterInspiration('infinity', this)">
+            <span>Infinity Horizons</span>
+            <span class="h2-filter-count">02</span>
+          </button>
+          <button class="h2-filter-pill" data-filter="fire" onclick="filterInspiration('fire', this)">
+            <span>Fire &amp; Thermal Spas</span>
+            <span class="h2-filter-count">02</span>
+          </button>
+          <button class="h2-filter-pill" data-filter="minimal" onclick="filterInspiration('minimal', this)">
+            <span>Minimalist Geometric</span>
+            <span class="h2-filter-count">02</span>
+          </button>
+          <button class="h2-filter-pill" data-filter="landscape" onclick="filterInspiration('landscape', this)">
+            <span>Resort Cascades</span>
+            <span class="h2-filter-count">02</span>
+          </button>
+        </div>
+
+        
+        <div class="h2-inspiration-mosaic" id="inspiration-mosaic">
+
+          
+          <article class="h2-insp-card h2-insp-span-2" data-category="infinity" onclick="openLightbox('assets/hero_infinity.jpg', 'The Crestview Horizon Weir — Malibu, CA', 'Laser-calibrated vanishing edge over Pacific ocean with zero acoustic turbulence.')">
+            <div class="h2-insp-img-wrap">
+              <img src="assets/hero_infinity.jpg" alt="The Crestview Horizon Weir vanishing edge pool" class="h2-insp-img">
+              <div class="h2-insp-vignette"></div>
+              <div class="h2-insp-top-bar">
+                <span class="h2-insp-badge">VANISHING HORIZON • MALIBU BLUFF</span>
+                <span class="h2-insp-lens-pill" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <span>Inspect</span>
+                </span>
+              </div>
+              <div class="h2-insp-meta-overlay">
+                <h3 class="h2-insp-title">The Crestview Horizon Weir</h3>
+                <p class="h2-insp-narrative">"An unbroken optical bridge spanning the Pacific horizon with zero acoustic splash."</p>
+                <div class="h2-insp-specs-row">
+                  <span class="h2-ispec-pill">±1.2mm Weir Tolerance</span>
+                  <span class="h2-ispec-pill">Subterranean Surge Chute</span>
+                  <span class="h2-ispec-pill">Pacific Sightline</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-insp-card" data-category="infinity" onclick="openLightbox('assets/gallery_knife_edge.jpg', 'The 360° Knife-Edge Mirror — Newport Coast, CA', 'Seamless flush slot-drain perimeter forming a reflective liquid glass surface.')">
+            <div class="h2-insp-img-wrap">
+              <img src="assets/gallery_knife_edge.jpg" alt="Perimeter Knife Edge mirror pool" class="h2-insp-img">
+              <div class="h2-insp-vignette"></div>
+              <div class="h2-insp-top-bar">
+                <span class="h2-insp-badge">SLOT DRAIN MIRROR • NEWPORT COAST</span>
+                <span class="h2-insp-lens-pill" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <span>Inspect</span>
+                </span>
+              </div>
+              <div class="h2-insp-meta-overlay">
+                <h3 class="h2-insp-title">The 360° Knife-Edge Mirror</h3>
+                <p class="h2-insp-narrative">"Water perfectly flush with hand-honed charcoal basalt coping."</p>
+                <div class="h2-insp-specs-row">
+                  <span class="h2-ispec-pill">10mm Slot Perimeter</span>
+                  <span class="h2-ispec-pill">Basalt Stone Paving</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-insp-card" data-category="fire" onclick="openLightbox('assets/gallery_fire_lounge.jpg', 'The Twilight Fire Sanctuary — Palm Springs, CA', 'Cantilevered sunken fire conversation pit with custom gas burners.')">
+            <div class="h2-insp-img-wrap">
+              <img src="assets/gallery_fire_lounge.jpg" alt="Sunken Fire Lounge Pavilion" class="h2-insp-img">
+              <div class="h2-insp-vignette"></div>
+              <div class="h2-insp-top-bar">
+                <span class="h2-insp-badge">FIRE ATRIUM • PALM SPRINGS</span>
+                <span class="h2-insp-lens-pill" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <span>Inspect</span>
+                </span>
+              </div>
+              <div class="h2-insp-meta-overlay">
+                <h3 class="h2-insp-title">The Twilight Fire Sanctuary</h3>
+                <p class="h2-insp-narrative">"Subterranean natural gas fire pit cantilevered directly into heated waters."</p>
+                <div class="h2-insp-specs-row">
+                  <span class="h2-ispec-pill">12-Guest Dry Lounge</span>
+                  <span class="h2-ispec-pill">104°F Geothermal Loop</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-insp-card h2-insp-span-2" data-category="fire" onclick="openLightbox('assets/hero_night.jpg', 'Circadian Celestial Illumination — Beverly Hills, CA', 'Twilight waterscape with fiber-optic constellations and perimeter illumination.')">
+            <div class="h2-insp-img-wrap">
+              <img src="assets/hero_night.jpg" alt="Nocturnal waterscape with celestial lighting" class="h2-insp-img">
+              <div class="h2-insp-vignette"></div>
+              <div class="h2-insp-top-bar">
+                <span class="h2-insp-badge">NOCTURNAL ILLUMINATION • BEVERLY HILLS</span>
+                <span class="h2-insp-lens-pill" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <span>Inspect</span>
+                </span>
+              </div>
+              <div class="h2-insp-meta-overlay">
+                <h3 class="h2-insp-title">Circadian Celestial Illumination</h3>
+                <p class="h2-insp-narrative">"Submerged 2700K basal LEDs synchronized with celestial constellation fiber optics."</p>
+                <div class="h2-insp-specs-row">
+                  <span class="h2-ispec-pill">Circadian Warm Glow</span>
+                  <span class="h2-ispec-pill">Micro Constellations</span>
+                  <span class="h2-ispec-pill">Architectural Lumens</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-insp-card" data-category="minimal" onclick="openLightbox('assets/project_courtyard.jpg', 'The Colonnade Reflection Glass — Scottsdale, AZ', 'Liquid mirror basin framed by Roman travertine architectural columns.')">
+            <div class="h2-insp-img-wrap">
+              <img src="assets/project_courtyard.jpg" alt="Mediterranean courtyard reflecting pool" class="h2-insp-img">
+              <div class="h2-insp-vignette"></div>
+              <div class="h2-insp-top-bar">
+                <span class="h2-insp-badge">MEDITERRANEAN LOGGIA • SCOTTSDALE</span>
+                <span class="h2-insp-lens-pill" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <span>Inspect</span>
+                </span>
+              </div>
+              <div class="h2-insp-meta-overlay">
+                <h3 class="h2-insp-title">The Colonnade Reflection Glass</h3>
+                <p class="h2-insp-narrative">"Roman travertine loggia reflected in undisturbed liquid glass."</p>
+                <div class="h2-insp-specs-row">
+                  <span class="h2-ispec-pill">4 Sheet Cascades</span>
+                  <span class="h2-ispec-pill">Roman Colonnade</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-insp-card" data-category="minimal" onclick="openLightbox('assets/gallery_minimal.jpg', 'The Obsidian Plunge Basin — Bel Air, CA', 'Pure dark obsidian quartzite plunge pool with linear stepping walkways.')">
+            <div class="h2-insp-img-wrap">
+              <img src="assets/gallery_minimal.jpg" alt="Obsidian quartzite plunge pool" class="h2-insp-img">
+              <div class="h2-insp-vignette"></div>
+              <div class="h2-insp-top-bar">
+                <span class="h2-insp-badge">MONOLITHIC QUARTZITE • BEL AIR</span>
+                <span class="h2-insp-lens-pill" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <span>Inspect</span>
+                </span>
+              </div>
+              <div class="h2-insp-meta-overlay">
+                <h3 class="h2-insp-title">The Obsidian Plunge Basin</h3>
+                <p class="h2-insp-narrative">"Geometric perfection in dark obsidian quartzite and linear limestone."</p>
+                <div class="h2-insp-specs-row">
+                  <span class="h2-ispec-pill">Obsidian Quartzite</span>
+                  <span class="h2-ispec-pill">Zero Wave Crest</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-insp-card h2-insp-span-2" data-category="landscape" onclick="openLightbox('assets/project_resort.jpg', 'The Monte Vista Resort Solarium — Santa Barbara, CA', 'Expansive multi-tiered resort living with shallow Baja tanning solarium.')">
+            <div class="h2-insp-img-wrap">
+              <img src="assets/project_resort.jpg" alt="Resort style multi tiered swimming pool" class="h2-insp-img">
+              <div class="h2-insp-vignette"></div>
+              <div class="h2-insp-top-bar">
+                <span class="h2-insp-badge">MULTI-TIERED RESORT • SANTA BARBARA</span>
+                <span class="h2-insp-lens-pill" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <span>Inspect</span>
+                </span>
+              </div>
+              <div class="h2-insp-meta-overlay">
+                <h3 class="h2-insp-title">The Monte Vista Resort Solarium</h3>
+                <p class="h2-insp-narrative">"Generational multi-zone recreation with a 9-inch submerged Baja shelf and cabana spillways."</p>
+                <div class="h2-insp-specs-row">
+                  <span class="h2-ispec-pill">9&Prime; Baja Solarium</span>
+                  <span class="h2-ispec-pill">Elevated Hydro-Spa</span>
+                  <span class="h2-ispec-pill">Multi-Zone Living</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="h2-insp-card h2-insp-span-2" data-category="landscape" onclick="openLightbox('assets/project_tropical.jpg', 'The Emerald Lagoon & Cavern Grotto — Kauai, HI', 'Organic natural boulder rock formations and secluded thermal spa grotto.')">
+            <div class="h2-insp-img-wrap">
+              <img src="assets/project_tropical.jpg" alt="Tropical lagoon pool with grotto" class="h2-insp-img">
+              <div class="h2-insp-vignette"></div>
+              <div class="h2-insp-top-bar">
+                <span class="h2-insp-badge">ORGANIC GROTTO • KAUAI</span>
+                <span class="h2-insp-lens-pill" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <span>Inspect</span>
+                </span>
+              </div>
+              <div class="h2-insp-meta-overlay">
+                <h3 class="h2-insp-title">The Emerald Lagoon &amp; Grotto</h3>
+                <p class="h2-insp-narrative">"Natural volcanic basalt boulders paired with an engineered hidden thermal grotto."</p>
+                <div class="h2-insp-specs-row">
+                  <span class="h2-ispec-pill">Volcanic Basalt</span>
+                  <span class="h2-ispec-pill">Cavern Spa Grotto</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        
+        <div class="h2-vault-cta-card">
+          <div class="h2-vcta-left">
+            <span class="h2-vcta-badge">BESPOKE ARCHITECTURAL INQUIRY</span>
+            <h3 class="h2-vcta-title">Have A Vision Beyond These Paradigms?</h3>
+            <p class="h2-vcta-desc">
+              Our master engineering atelier creates custom 3D virtual reality simulations, site-specific CFD hydraulic models, and structural plans for private residences worldwide.
+            </p>
+          </div>
+          <div class="h2-vcta-right">
+            <button class="btn btn-primary" onclick="openQuoteModal('Curated Vault Custom Commission')">
+              <span>Commission A Custom Concept</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <button class="btn btn-secondary" onclick="openQuoteModal('Download Curated Vault Monograph')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download Monograph Portfolio</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="construction-journey" class="h2-section h2-journey-section" aria-labelledby="journey-section-title">
+      <div class="h2-container">
+        <div class="h2-section-header text-center">
+          <div class="h2-eyebrow">
+            <span class="h2-eyebrow-beacon" aria-hidden="true"></span>
+            <span>05 — THE JOURNEY: FROM VISION TO WATER</span>
+          </div>
+          <h2 id="journey-section-title" class="h2-title">
+            From Raw Topography <span class="h2-accent-text">To Living Liquid Art</span>
+          </h2>
+          <p class="h2-subtitle">
+            A proprietary six-phase engineering pipeline managed completely turnkey by our licensed civil engineers, AIA architects, and master guild artisans.
+          </p>
+        </div>
+
+        
+        <div class="h2-journey-pipeline">
+
+          <div class="h2-journey-card">
+            <div class="h2-jcard-img-wrap">
+              <img src="assets/journey_phase1_land.jpg" alt="Phase 1: Raw Land & Topographical Survey" class="h2-jcard-img" loading="lazy">
+              <div class="h2-jcard-img-overlay"></div>
+              <div class="h2-jcard-img-badges">
+                <span class="h2-jcard-badge">PHASE 01</span>
+                <span class="h2-jcard-duration">2–3 WEEKS</span>
+              </div>
+              <span class="h2-jcard-order-tag">01 • Raw Land &amp; Topography</span>
+            </div>
+            <div class="h2-jcard-body">
+              <div class="h2-jcard-num-row">
+                <span class="h2-journey-num">01</span>
+                <div class="h2-jcard-status-dot" title="Phase Active Status"></div>
+              </div>
+              <h3 class="h2-journey-stage-name">Topographical Discovery</h3>
+              <p class="h2-journey-desc">
+                Sub-millimeter lidar topographical scanning, geotechnical borehole soil core sampling, and solar trajectory mapping across every season.
+              </p>
+              <ul class="h2-jcard-deliverables">
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 3D Millimeter Lidar Terrain Mesh</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Soil Bearing Capacity (4,000+ PSF)</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Winter/Summer Sun Vector Model</li>
+              </ul>
+              <div class="h2-jcard-equipment">
+                <span class="h2-jequip-tag">EQUIPMENT</span>
+                <span class="h2-jequip-val">Leica Geosystems 3D Scanner</span>
+              </div>
+              <div class="h2-journey-pill-footer">Phase 1 • Site Assessment</div>
+            </div>
+          </div>
+
+          <div class="h2-journey-card">
+            <div class="h2-jcard-img-wrap">
+              <img src="assets/journey_phase2_design.jpg" alt="Phase 2: 3D VR & Spatial Architecture" class="h2-jcard-img" loading="lazy">
+              <div class="h2-jcard-img-overlay"></div>
+              <div class="h2-jcard-img-badges">
+                <span class="h2-jcard-badge">PHASE 02</span>
+                <span class="h2-jcard-duration">3–4 WEEKS</span>
+              </div>
+              <span class="h2-jcard-order-tag">02 • Spatial Architecture &amp; CAD</span>
+            </div>
+            <div class="h2-jcard-body">
+              <div class="h2-jcard-num-row">
+                <span class="h2-journey-num">02</span>
+                <div class="h2-jcard-status-dot" title="Phase Active Status"></div>
+              </div>
+              <h3 class="h2-journey-stage-name">3D Virtual Reality &amp; VR</h3>
+              <p class="h2-journey-desc">
+                Hyper-realistic Unreal Engine 5 spatial modeling. Walk your pool terrace in VR before groundbreaking, test sightlines, and tune water acoustics.
+              </p>
+              <ul class="h2-jcard-deliverables">
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Oculus 3D VR Spatial Walkthrough</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> CFD Water Flow Hydraulic Analysis</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Circadian Night Lighting Previews</li>
+              </ul>
+              <div class="h2-jcard-equipment">
+                <span class="h2-jequip-tag">SIMULATION</span>
+                <span class="h2-jequip-val">Autodesk CFD &amp; Unreal 5</span>
+              </div>
+              <div class="h2-journey-pill-footer">Phase 2 • Spatial Architecture</div>
+            </div>
+          </div>
+
+          <div class="h2-journey-card">
+            <div class="h2-jcard-img-wrap">
+              <img src="assets/journey_phase3_excavation.jpg" alt="Phase 3: Earth Excavation & Hydraulic Engineering" class="h2-jcard-img" loading="lazy">
+              <div class="h2-jcard-img-overlay"></div>
+              <div class="h2-jcard-img-badges">
+                <span class="h2-jcard-badge">PHASE 03</span>
+                <span class="h2-jcard-duration">2–3 WEEKS</span>
+              </div>
+              <span class="h2-jcard-order-tag">03 • Earth Excavation &amp; Hydraulics</span>
+            </div>
+            <div class="h2-jcard-body">
+              <div class="h2-jcard-num-row">
+                <span class="h2-journey-num">03</span>
+                <div class="h2-jcard-status-dot" title="Phase Active Status"></div>
+              </div>
+              <h3 class="h2-journey-stage-name">Hydraulic Engineering</h3>
+              <p class="h2-journey-desc">
+                Detailed MEP plumbing schematics, variable-speed filtration loops, whisper spillway acoustic baffles, and curated physical quarry stone presentation.
+              </p>
+              <ul class="h2-jcard-deliverables">
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Zero-Loss Dual Hydraulic Loops</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Geothermal Energy Efficiency Plan</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Quarry Hand-Selection Sample Box</li>
+              </ul>
+              <div class="h2-jcard-equipment">
+                <span class="h2-jequip-tag">ENGINEERING</span>
+                <span class="h2-jequip-val">Dual 3" Pentair Variable Pumping</span>
+              </div>
+              <div class="h2-journey-pill-footer">Phase 3 • MEP Hydraulics</div>
+            </div>
+          </div>
+
+          <div class="h2-journey-card">
+            <div class="h2-jcard-img-wrap">
+              <img src="assets/journey_phase4_structure.jpg" alt="Phase 4: Structural Rebar Grid & Turnkey Approvals" class="h2-jcard-img" loading="lazy">
+              <div class="h2-jcard-img-overlay"></div>
+              <div class="h2-jcard-img-badges">
+                <span class="h2-jcard-badge">PHASE 04</span>
+                <span class="h2-jcard-duration">4–6 WEEKS</span>
+              </div>
+              <span class="h2-jcard-order-tag">04 • Structural Rebar &amp; Formwork</span>
+            </div>
+            <div class="h2-jcard-body">
+              <div class="h2-jcard-num-row">
+                <span class="h2-journey-num">04</span>
+                <div class="h2-jcard-status-dot" title="Phase Active Status"></div>
+              </div>
+              <h3 class="h2-journey-stage-name">Turnkey Approvals</h3>
+              <p class="h2-journey-desc">
+                Complete municipal liaison. Our in-house licensed civil and structural engineers handle Coastal Commission, geotechnical approvals, and HOA clearances.
+              </p>
+              <ul class="h2-jcard-deliverables">
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Structural PE Engineering Stamps</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Coastal Commission Permits</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> HOA Architectural Board Filing</li>
+              </ul>
+              <div class="h2-jcard-equipment">
+                <span class="h2-jequip-tag">COMPLIANCE</span>
+                <span class="h2-jequip-val">Licensed PE Stamped Plans</span>
+              </div>
+              <div class="h2-journey-pill-footer">Phase 4 • Turnkey Permitting</div>
+            </div>
+          </div>
+
+          <div class="h2-journey-card">
+            <div class="h2-jcard-img-wrap">
+              <img src="assets/journey_phase5_construction.jpg" alt="Phase 5: Middle of Construction Gunite Shotcrete Placement" class="h2-jcard-img" loading="lazy">
+              <div class="h2-jcard-img-overlay"></div>
+              <div class="h2-jcard-img-badges">
+                <span class="h2-jcard-badge">PHASE 05</span>
+                <span class="h2-jcard-duration">12–16 WEEKS</span>
+              </div>
+              <span class="h2-jcard-order-tag">05 • Middle of Construction: Gunite</span>
+            </div>
+            <div class="h2-jcard-body">
+              <div class="h2-jcard-num-row">
+                <span class="h2-journey-num">05</span>
+                <div class="h2-jcard-status-dot" title="Phase Active Status"></div>
+              </div>
+              <h3 class="h2-journey-stage-name">Master Craft Build</h3>
+              <p class="h2-journey-desc">
+                Grade 60 double-grid rebar reinforcement, 4,500 PSI pneumatically placed gunite monolithic shell, artisan stone coping, and micro-glass pebble interior.
+              </p>
+              <ul class="h2-jcard-deliverables">
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> ±1.2mm Laser Weir Calibrated</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 4,500 PSI Gunite Shell Placement</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Hand-Honed Basalt &amp; Glass Tile</li>
+              </ul>
+              <div class="h2-jcard-equipment">
+                <span class="h2-jequip-tag">ARTISANRY</span>
+                <span class="h2-jequip-val">Master Mason Guild Guild-Only</span>
+              </div>
+              <div class="h2-journey-pill-footer">Phase 5 • Heavy Construction</div>
+            </div>
+          </div>
+
+          <div class="h2-journey-card">
+            <div class="h2-jcard-img-wrap">
+              <img src="assets/journey_phase6_water.jpg" alt="Phase 6: Finished Living Water Oasis Handover" class="h2-jcard-img" loading="lazy">
+              <div class="h2-jcard-img-overlay"></div>
+              <div class="h2-jcard-img-badges">
+                <span class="h2-jcard-badge">PHASE 06</span>
+                <span class="h2-jcard-duration">1–2 WEEKS</span>
+              </div>
+              <span class="h2-jcard-order-tag">06 • Finished Living Water Oasis</span>
+            </div>
+            <div class="h2-jcard-body">
+              <div class="h2-jcard-num-row">
+                <span class="h2-journey-num">06</span>
+                <div class="h2-jcard-status-dot" title="Phase Active Status"></div>
+              </div>
+              <h3 class="h2-journey-stage-name">Commission &amp; Reveal</h3>
+              <p class="h2-journey-desc">
+                White-glove chemical water balancing, smartphone automation commissioning, poolside concierge briefing, and your celebratory inaugural sunset swim.
+              </p>
+              <ul class="h2-jcard-deliverables">
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 72-Hour Continuous Hydro-Balancing</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Smart App Automation Integration</li>
+                <li><svg class="h2-chk-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 25-Year Structural Handover</li>
+              </ul>
+              <div class="h2-jcard-equipment">
+                <span class="h2-jequip-tag">TELEMETRY</span>
+                <span class="h2-jequip-val">Pentair IntelliCenter Automation</span>
+              </div>
+              <div class="h2-journey-pill-footer">Phase 6 • Sanctuary Commissioned</div>
+            </div>
+          </div>
+
+        </div>
+
+        
+        <div class="h2-journey-guarantee-bar">
+          <div class="h2-jguarantee-item">
+            <div class="h2-jguar-val">25 Years</div>
+            <div class="h2-jguar-lbl">Monolithic Shell Structural Warranty</div>
+          </div>
+          <div class="h2-jguar-sep" aria-hidden="true"></div>
+          <div class="h2-jguarantee-item">
+            <div class="h2-jguar-val">100% In-House</div>
+            <div class="h2-jguar-lbl">Licensed Engineers &amp; Master Artisans</div>
+          </div>
+          <div class="h2-jguar-sep" aria-hidden="true"></div>
+          <div class="h2-jguarantee-item">
+            <div class="h2-jguar-val">±1.2mm</div>
+            <div class="h2-jguar-lbl">Laser Weir Hydraulic Precision</div>
+          </div>
+          <div class="h2-jguar-sep" aria-hidden="true"></div>
+          <div class="h2-jguarantee-item">
+            <div class="h2-jguar-val">Daily 4K Drone</div>
+            <div class="h2-jguar-lbl">Live Private Portal Milestones</div>
+          </div>
+        </div>
+
+        
+        <div class="h2-journey-action-card">
+          <div class="h2-jaction-text">
+            <span class="h2-jaction-badge">BEGIN YOUR ARCHITECTURAL PIPELINE</span>
+            <h3 class="h2-jaction-title">Ready To Discover What Is Possible On Your Estate?</h3>
+            <p class="h2-jaction-desc">
+              Our principal engineers perform on-site topographical feasibility reviews, soil evaluations, and view vector assessments nationwide.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="openQuoteModal('Phase 1 Site Feasibility Review')">
+            <span>Book Topographical Feasibility Study</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="project-room" class="h2-section h2-project-room-section" aria-labelledby="room-section-title">
+      <div class="h2-container">
+        <div class="h2-section-header text-center">
+          <div class="h2-eyebrow">
+            <span class="h2-eyebrow-beacon" aria-hidden="true"></span>
+            <span>06 — CLIENT ECOSYSTEM: PRIVATE PROJECT ROOM</span>
+          </div>
+          <h2 id="room-section-title" class="h2-title">Your Project. <span class="highlight-aqua">One Private Space</span>.</h2>
+          <p class="h2-subtitle">
+            Every client enjoys private 24/7 access to our bespoke portal with drone milestones, permit tracking, AIA payment schedules, and architectural messaging.
+          </p>
+        </div>
+
+        <div class="h2-dashboard-frame">
+          
+          
+          <div class="h2-dash-header-bar">
+            <div class="h2-dash-header-left">
+              <div class="h2-dash-status-dot"></div>
+              <div>
+                <div class="h2-dash-estate-title">The Sterling Horizon Residence — Malibu Estate</div>
+                <div class="h2-dash-estate-sub">Project ID: AW-2026-CA88 • Lead Architect: Julian Vane, AIA</div>
+              </div>
+            </div>
+            <div class="h2-dash-progress-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Phase 5 in Progress (72% Complete)</span>
+            </div>
+          </div>
+
+          
+          <div class="h2-dash-body-grid">
+
+            
+            <div class="h2-dash-milestones-card">
+              <div class="h2-dash-card-title">
+                <span>Construction Milestones</span>
+                <span style="font-size: 0.78rem; color: var(--color-secondary); font-weight: 600;">Updated Today at 08:30 AM</span>
+              </div>
+
+              <div class="h2-milestone-list">
+                <div class="h2-milestone-item">
+                  <div class="h2-m-item-left">
+                    <div class="h2-m-check-icon done"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <span class="h2-m-name">Site Excavation &amp; Grade Stabilization</span>
+                  </div>
+                  <span class="h2-m-status-badge">Completed • May 14</span>
+                </div>
+
+                <div class="h2-milestone-item">
+                  <div class="h2-m-item-left">
+                    <div class="h2-m-check-icon done"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <span class="h2-m-name">Steel Rebar Cage &amp; Hydraulic Plumbing Rough-in</span>
+                  </div>
+                  <span class="h2-m-status-badge">Completed • Jun 02</span>
+                </div>
+
+                <div class="h2-milestone-item">
+                  <div class="h2-m-item-left">
+                    <div class="h2-m-check-icon done"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <span class="h2-m-name">4,500 PSI Pneumatic Gunite Shell Placement &amp; Cure</span>
+                  </div>
+                  <span class="h2-m-status-badge">Completed • Jun 28</span>
+                </div>
+
+                <div class="h2-milestone-item">
+                  <div class="h2-m-item-left">
+                    <div class="h2-m-check-icon done" style="background: var(--color-secondary);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                    <span class="h2-m-name">Waterline Glass Tile &amp; Travertine Coping Installation</span>
+                  </div>
+                  <span class="h2-m-status-badge" style="color: #00e5ff;">Active On-Site</span>
+                </div>
+
+                <div class="h2-milestone-item">
+                  <div class="h2-m-item-left">
+                    <div class="h2-m-check-icon pending">•</div>
+                    <span class="h2-m-name">Plaster Application &amp; Hydro-Fill Commissioning</span>
+                  </div>
+                  <span class="h2-m-status-badge" style="color: var(--text-muted);">Scheduled Jul 18</span>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="h2-dash-side-panel">
+              <div class="h2-dash-mini-card">
+                <div class="h2-dash-card-title">
+                  <span>AIA Payment Schedule</span>
+                </div>
+                <div class="h2-payment-row">
+                  <span class="h2-pay-title">Deposit &amp; Engineering</span>
+                  <span class="h2-pay-status" style="color: #10b981;">Paid ($85,000)</span>
+                </div>
+                <div class="h2-payment-row">
+                  <span class="h2-pay-title">Shell &amp; Gunite Draw</span>
+                  <span class="h2-pay-status" style="color: #10b981;">Paid ($140,000)</span>
+                </div>
+                <div class="h2-payment-row">
+                  <span class="h2-pay-title">Finishes &amp; Coping</span>
+                  <span class="h2-pay-status" style="color: var(--color-secondary);">Current ($110,000)</span>
+                </div>
+                <div class="h2-payment-row">
+                  <span class="h2-pay-title">Final Handover</span>
+                  <span class="h2-pay-status" style="color: var(--text-muted);">Pending ($45,000)</span>
+                </div>
+              </div>
+
+              <div class="h2-dash-mini-card">
+                <div class="h2-dash-card-title">
+                  <span>Permits &amp; Docs</span>
+                </div>
+                <div class="h2-payment-row">
+                  <span class="h2-pay-title">Coastal Commission #9841</span>
+                  <span class="h2-pay-status" style="color: #10b981;">Approved</span>
+                </div>
+                <div class="h2-payment-row">
+                  <span class="h2-pay-title">Structural PE Stamped PDF</span>
+                  <span class="h2-pay-status" style="color: #10b981;">Verified</span>
+                </div>
+                <div class="h2-payment-row">
+                  <span class="h2-pay-title">Daily Drone 4K Logs</span>
+                  <span class="h2-pay-status" style="color: var(--color-secondary);"><a href="#project-room" onclick="showToast('Viewing Daily Drone logs: 14 flights recorded.')">View (14)</a></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          
+          <div class="h2-dash-action-footer">
+            <span class="h2-dash-footer-note">Experience complete peace of mind with 100% transparent construction telemetry.</span>
+            <div style="display: flex; gap: 0.8rem; align-items: center;">
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Connecting to your dedicated architectural concierge...')">
+                <span>Message Lead Architect</span>
+              </button>
+              <a href="login.html" class="btn btn-primary btn-sm">
+                <span>Login To Full Portal</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="testimonials" class="h2-section h2-testimonials-section" aria-labelledby="testimonials-title">
+      <div class="h2-container">
+        
+        
+        <div class="h2-section-header text-center">
+          <div class="h2-eyebrow">
+            <span class="h2-eyebrow-beacon" aria-hidden="true"></span>
+            <span>07 — PATRON MONOGRAPHS: VERIFIED TESTIMONIALS</span>
+          </div>
+          <h2 id="testimonials-title" class="h2-title">
+            Trusted By America's <span class="h2-accent-text">Most Discerning Patrons</span>
+          </h2>
+          <p class="h2-subtitle">
+            Private homeowners, AIA principal architects, and luxury estate developers who entrusted AQUORA with their flagship water architecture.
+          </p>
+        </div>
+
+        
+        <div class="h2-testimonials-grid">
+
+          
+          <article class="h2-tcard">
+            <div class="h2-tcard-glow-edge"></div>
+            
+            <div class="h2-tcard-top">
+              <div class="h2-tcard-stars" aria-label="5 out of 5 stars">
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+              </div>
+              <span class="h2-tcard-badge">VERIFIED ESTATE PATRON</span>
+            </div>
+
+            <div class="h2-tcard-typology">
+              <span class="h2-ttyp-dot"></span>
+              <span>The Crestview Horizon Weir • Malibu Bluff, CA</span>
+            </div>
+
+            <blockquote class="h2-tcard-quote">
+              "Building a cantilevered infinity weir on a 42-degree coastal bluff in Malibu seemed impossible until AQUORA took over. Their structural engineers drilled 32 friction piles into bedrock with sub-millimeter precision. The vanishing edge aligns seamlessly with the Pacific sunset, completely silent with zero splash. Their daily drone portal gave us complete peace of mind throughout construction."
+            </blockquote>
+
+            <div class="h2-tcard-metrics-row">
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">32 Piles</span>
+                <span class="h2-tmetric-lbl">Bedrock Anchor</span>
+              </div>
+              <div class="h2-tmetric-sep"></div>
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">&lt;16dB</span>
+                <span class="h2-tmetric-lbl">Silent Weir Flow</span>
+              </div>
+              <div class="h2-tmetric-sep"></div>
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">2025</span>
+                <span class="h2-tmetric-lbl">Completed</span>
+              </div>
+            </div>
+
+            <footer class="h2-tcard-author-row">
+              <div class="h2-tauthor-avatar" aria-hidden="true">
+                <span>JS</span>
+              </div>
+              <div class="h2-tauthor-info">
+                <div class="h2-tauthor-name">Dr. Julian &amp; Elena Sterling</div>
+                <div class="h2-tauthor-title">Private Estate Owners • Malibu, CA</div>
+              </div>
+            </footer>
+          </article>
+
+          
+          <article class="h2-tcard h2-tcard-featured">
+            <div class="h2-tcard-glow-edge"></div>
+            
+            <div class="h2-tcard-top">
+              <div class="h2-tcard-stars" aria-label="5 out of 5 stars">
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+              </div>
+              <span class="h2-tcard-badge highlight">AIA PARTNER COLLABORATION</span>
+            </div>
+
+            <div class="h2-tcard-typology">
+              <span class="h2-ttyp-dot"></span>
+              <span>The 360° Knife-Edge Mirror • Newport Coast, CA</span>
+            </div>
+
+            <blockquote class="h2-tcard-quote">
+              "As an architectural principal, I hold zero tolerance for sloppy tolerances. AQUORA is the only engineering atelier in California that mastered an absolute zero-crest flush slot perimeter around the entire pool. The liquid mirror meets our hand-honed charcoal basalt coping like polished glass. They execute complex architectural visions with zero compromise."
+            </blockquote>
+
+            <div class="h2-tcard-metrics-row">
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">10mm</span>
+                <span class="h2-tmetric-lbl">Perimeter Slot</span>
+              </div>
+              <div class="h2-tmetric-sep"></div>
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">±0.0mm</span>
+                <span class="h2-tmetric-lbl">Deck Leveling</span>
+              </div>
+              <div class="h2-tmetric-sep"></div>
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">AD</span>
+                <span class="h2-tmetric-lbl">Featured Work</span>
+              </div>
+            </div>
+
+            <footer class="h2-tcard-author-row">
+              <div class="h2-tauthor-avatar" aria-hidden="true">
+                <span>MT</span>
+              </div>
+              <div class="h2-tauthor-info">
+                <div class="h2-tauthor-name">Marcus Thorne, AIA</div>
+                <div class="h2-tauthor-title">Principal Architect, Studio Thorne • Beverly Hills, CA</div>
+              </div>
+            </footer>
+          </article>
+
+          
+          <article class="h2-tcard">
+            <div class="h2-tcard-glow-edge"></div>
+            
+            <div class="h2-tcard-top">
+              <div class="h2-tcard-stars" aria-label="5 out of 5 stars">
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="h2-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+              </div>
+              <span class="h2-tcard-badge">FLAGSHIP RESORT RETREAT</span>
+            </div>
+
+            <div class="h2-tcard-typology">
+              <span class="h2-ttyp-dot"></span>
+              <span>The Twilight Fire Sanctuary • Palm Springs, CA</span>
+            </div>
+
+            <blockquote class="h2-tcard-quote">
+              "Our sunken fire lounge cantilevered directly into the heated waters has completely redefined how our family lives and entertains. Sitting inside the illuminated water while the fire pit burns at desert twilight is truly mesmerizing. The geothermal heat circuits bring the hydro-spa to 104°F in minutes. Turnkey municipal permitting made it completely effortless."
+            </blockquote>
+
+            <div class="h2-tcard-metrics-row">
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">12-Seat</span>
+                <span class="h2-tmetric-lbl">Cantilevered Lounge</span>
+              </div>
+              <div class="h2-tmetric-sep"></div>
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">104°F</span>
+                <span class="h2-tmetric-lbl">Geothermal Loop</span>
+              </div>
+              <div class="h2-tmetric-sep"></div>
+              <div class="h2-tmetric">
+                <span class="h2-tmetric-val">25-Yr</span>
+                <span class="h2-tmetric-lbl">Warranty Backed</span>
+              </div>
+            </div>
+
+            <footer class="h2-tcard-author-row">
+              <div class="h2-tauthor-avatar" aria-hidden="true">
+                <span>CV</span>
+              </div>
+              <div class="h2-tauthor-info">
+                <div class="h2-tauthor-name">Victoria &amp; Christian Vance</div>
+                <div class="h2-tauthor-title">Private Estate Owners • Palm Springs, CA</div>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+
+        
+        <div class="h2-testimonials-trust-bar">
+          <div class="h2-ttrust-item">
+            <span class="h2-ttrust-val">100%</span>
+            <span class="h2-ttrust-lbl">On-Schedule Delivery Rate</span>
+          </div>
+          <div class="h2-ttrust-sep" aria-hidden="true"></div>
+          <div class="h2-ttrust-item">
+            <span class="h2-ttrust-val">4.98 / 5.0</span>
+            <span class="h2-ttrust-lbl">Verified Patron Satisfaction</span>
+          </div>
+          <div class="h2-ttrust-sep" aria-hidden="true"></div>
+          <div class="h2-ttrust-item">
+            <span class="h2-ttrust-val">25 Years</span>
+            <span class="h2-ttrust-lbl">Structural Warranty Backed</span>
+          </div>
+          <div class="h2-ttrust-sep" aria-hidden="true"></div>
+          <div class="h2-ttrust-item">
+            <span class="h2-ttrust-val">$140M+</span>
+            <span class="h2-ttrust-lbl">Completed Estate Valuations</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="resort-invitation" class="h2-invitation-section" aria-label="Schedule Consultation Invitation">
+      <div class="h2-container">
+        <div class="h2-invitation-card">
+          
+          <div class="h2-invitation-bg-wrap">
+            <img src="assets/cta_twilight.jpg" alt="Twilight architectural swimming pool and luxury villa" class="h2-invitation-img" loading="lazy">
+            <div class="h2-invitation-scrim" aria-hidden="true"></div>
+            <div class="h2-invitation-water-glow" aria-hidden="true"></div>
+          </div>
+
+          
+          <div class="h2-invitation-inner">
+            <span class="h2-invitation-eyebrow">08 — COMMISSION YOUR SANCTUARY</span>
+
+            <h2 class="h2-invitation-headline">
+              Your Backyard Has <span class="highlight-aqua">More Potential</span>.
+            </h2>
+
+            <p class="h2-invitation-sub">
+              Let us design something truly extraordinary together. Our senior architectural principals are currently booking private feasibility site visits for this season.
+            </p>
+
+            <div class="h2-invitation-actions">
+              <button class="btn btn-primary btn-large" onclick="openQuoteModal('Home 2 Final CTA')">
+                <span>Schedule Private Consultation</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+              <a href="#inspiration-wall" class="btn btn-secondary btn-large">
+                <span>Explore The Curated Vault</span>
+              </a>
+            </div>
+
+            <div class="h2-invitation-guarantees">
+              <div class="h2-guarantee-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>25-Year Structural Guarantee</span>
+              </div>
+              <div class="h2-guarantee-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 14 14"></polyline>
+                </svg>
+                <span>AIA Certified Architects</span>
+              </div>
+              <div class="h2-guarantee-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Turnkey Permitting &amp; Construction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer id="footer" class="site-footer" role="contentinfo">
+    <div class="footer-container">
+
+      
+      <div class="footer-top">
+
+        
+        <div class="footer-brand-col">
+          <a href="home2.html" class="footer-brand-logo" aria-label="AQUORA Home">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">AQUORA</span>
+              <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+            </div>
+          </a>
+          <p class="footer-description">
+            Designing and engineering bespoke architectural pools and outdoor living environments for modern luxury estates. Mastercrafted from Pacific coastal bluffs to private island sanctuaries.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media">
+            <a href="#footer" class="social-link" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="Instagram" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Disciplines</h4>
+          <ul class="footer-links">
+            <li><a href="service detail.html?service=inground">Inground Pools</a></li>
+            <li><a href="service detail.html?service=vanishing">Vanishing Edge</a></li>
+            <li><a href="service detail.html?service=knife-edge">Knife-Edge</a></li>
+            <li><a href="service detail.html?service=fire-caldera">Fire Calderas</a></li>
+            <li><a href="service detail.html?service=hydro-spa">Hydro Spas</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="journal.html">Journals</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html#team">Architects</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Client Portal</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html#milestones">Milestones</a></li>
+            <li><a href="dashboard.html#materials">Materials</a></li>
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col footer-contact-col">
+          <h4 class="footer-col-title">Address &amp; Contact</h4>
+          <div class="footer-contact-list">
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>New York, NY 10022, USA</span>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:concierge@aquora.com">concierge@aquora.com</a>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+18004927665">+1 (800) 492-POOL</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 AQUORA. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#footer">Privacy Policy</a>
+          <a href="#footer">Terms of Service</a>
+          <a href="#footer">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  
+  <div id="quote-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="quote-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">ESTATE INQUIRY</span>
+        <h3 id="quote-modal-title" class="modal-title">Request a Masterplan Proposal</h3>
+        <p class="modal-subtitle">Share your vision and our senior architectural director will prepare an initial
+          spatial and hydraulic feasibility analysis.</p>
+      </div>
+
+      <form id="quote-form" class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-name">Full Name *</label>
+            <input type="text" id="quote-name" required placeholder="e.g. Victoria Sterling" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="quote-email">Email Address *</label>
+            <input type="email" id="quote-email" required placeholder="victoria@estate.com" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-phone">Phone Number *</label>
+            <input type="tel" id="quote-phone" required placeholder="+1 (555) 019-2834" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="quote-type">Pool Paradigm *</label>
+            <select id="quote-type" class="form-input" required>
+              <option value="The Infinity Escape">The Infinity Escape</option>
+              <option value="The Family Retreat">The Family Retreat</option>
+              <option value="The Contemporary Oasis">The Contemporary Oasis</option>
+              <option value="The Private Resort">The Private Resort</option>
+              <option value="Custom Architectural Plunge">Custom Architectural Plunge</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-budget">Estimated Investment Range</label>
+            <select id="quote-budget" class="form-input">
+              <option value="$150,000 - $300,000">$150,000 – $300,000</option>
+              <option value="$300,000 - $600,000" selected>$300,000 – $600,000</option>
+              <option value="$600,000 - $1,200,000">$600,000 – $1,200,000</option>
+              <option value="$1,200,000+">$1,200,000+ (Ultra-Estate Signature)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quote-location">Location / City</label>
+            <input type="text" id="quote-location" placeholder="e.g. Malibu, Newport Beach, Aspen" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="quote-notes">Vision Details or Site Specifications</label>
+          <textarea id="quote-notes" rows="3"
+            placeholder="Tell us about your property, terrain slope, preferred stone finishes, or desired amenities..."
+            class="form-input"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Submit Proposal Request</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <p class="form-disclaimer">All inquiries are safeguarded under strict privacy and non-disclosure standards.</p>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="login-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="login-modal-title">
+    <div class="modal-dialog modal-dialog-sm">
+      <button class="modal-close-btn" onclick="closeLoginModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">PORTAL ACCESS</span>
+        <h3 id="login-modal-title" class="modal-title">Client Dashboard Login</h3>
+        <p class="modal-subtitle">Access your project milestones, drone progress, and direct architectural messages.</p>
+      </div>
+
+      <div class="demo-credentials-callout">
+        <span class="callout-label">Instant Demo Credentials:</span>
+        <code>Email: client@aquora.com | Pass: paradise2026</code>
+        <button type="button" class="btn-fill-demo" onclick="fillDemoCredentials()">Auto-Fill</button>
+      </div>
+
+      <form id="login-form" class="modal-form" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label for="login-email">Client Email</label>
+          <input type="email" id="login-email" required placeholder="name@estate.com" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Access Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••••••" class="form-input">
+        </div>
+        <div class="form-row-remember">
+          <label class="checkbox-label">
+            <input type="checkbox" checked> <span>Keep me authenticated</span>
+          </label>
+          <a href="#login" onclick="showToast('Password reset instructions sent to registered estate email.')"
+            class="forgot-link">Reset Code</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Enter Client Portal</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="lightbox-modal" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-label="Image Preview Lightbox">
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close Lightbox">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="lightbox-image-stage">
+        <img id="lightbox-image" src="" alt="Expanded pool project preview" class="lightbox-img">
+      </div>
+
+      <div class="lightbox-caption-bar">
+        <div class="lightbox-caption-text">
+          <h3 id="lightbox-title" class="lightbox-title">Perimeter Knife-Edge Sanctuary</h3>
+          <p id="lightbox-description" class="lightbox-desc">Newport Coast, CA — Zero spillover precision optical basin.</p>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="openQuoteModal('Lightbox Consultation')">
+          <span>Inquire About This Style</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="toast-notification" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="home2.js"></script>
+</body>
+
+</html>

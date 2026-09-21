@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+  <title>Contact &amp; Private Atelier Inquiries | AQUORA</title>
+  <meta name="description"
+    content="Initiate your private estate commission with AQUORA. Connect with our principal architects at our Newport Beach, Malibu, or Palm Beach ateliers.">
+  <meta name="keywords"
+    content="contact luxury pool builder, private pool consultation, luxury pool architects, AQUORA atelier, Newport Beach pool design">
+  <link rel="icon" type="image/png" href="assets/aquora-logo.png">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+  
+  <div class="water-caustics-ambient" aria-hidden="true"></div>
+
+  
+  <header id="main-header" class="site-header" role="banner">
+    <div class="header-container">
+
+      
+      <a href="index.html" class="brand-logo" aria-label="AQUORA Home">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </a>
+
+      
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle" id="home-dropdown-trigger" aria-expanded="false"
+              aria-haspopup="true">
+              <span>Home</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="home-dropdown-menu" role="menu" aria-labelledby="home-dropdown-trigger">
+              <a href="index.html" class="dropdown-link" role="menuitem">Home 1</a>
+              <div class="dropdown-divider"></div>
+              <a href="home2.html" class="dropdown-link" role="menuitem">Home 2</a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="journal.html" class="nav-link">Journal</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      
+      <div class="header-controls">
+        
+        <button id="theme-toggle-btn" class="control-btn theme-toggle" aria-label="Toggle Light and Dark Mode"
+          title="Toggle Theme">
+          <svg class="theme-icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        
+        <button id="rtl-toggle-btn" class="control-btn rtl-toggle" aria-label="Toggle Right-to-Left Layout"
+          title="Toggle RTL">
+          <span class="rtl-text">RTL</span>
+        </button>
+
+        
+        <a href="login.html" id="header-login-btn" class="btn btn-primary desktop-only" aria-label="Login">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        
+        <button id="mobile-hamburger-btn" class="mobile-hamburger" aria-label="Open Navigation Menu"
+          aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name" style="font-size: 1.15rem;">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </div>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close Navigation Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-content">
+      <div class="drawer-home-switcher">
+        <span class="drawer-section-label">SELECT EDITION</span>
+        <div class="drawer-home-buttons">
+          <a href="index.html" class="drawer-home-btn" id="drawer-home-1">
+            <span>Home 1</span>
+            <small>Resort Luxury</small>
+          </a>
+          <a href="home2.html" class="drawer-home-btn" id="drawer-home-2">
+            <span>Home 2</span>
+            <small>The Experience</small>
+          </a>
+        </div>
+      </div>
+
+      <nav class="drawer-nav">
+        <ul class="drawer-menu">
+          <li><a href="index.html" class="drawer-link"><span class="drawer-link-num">01</span> Home</a></li>
+          <li><a href="about.html" class="drawer-link"><span class="drawer-link-num">02</span> About Us</a></li>
+          <li><a href="service.html" class="drawer-link"><span class="drawer-link-num">03</span> Services</a></li>
+          <li><a href="pricing.html" class="drawer-link"><span class="drawer-link-num">04</span> Pricing</a></li>
+          <li><a href="journal.html" class="drawer-link"><span class="drawer-link-num">05</span> Journal</a></li>
+          <li><a href="dashboard.html" class="drawer-link"><span class="drawer-link-num">06</span> Dashboard</a></li>
+          <li><a href="contact.html" class="drawer-link active"><span class="drawer-link-num">07</span> Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="drawer-footer">
+        <a href="login.html" class="btn btn-primary btn-block">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+        <button class="btn btn-secondary btn-block" onclick="openQuoteModal('Mobile Drawer')">
+          <span>Request Consultation</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    
+    <section class="contact-hero" id="contact-hero" aria-label="Contact Concierge">
+      <div class="contact-hero-bg" aria-hidden="true">
+        <div class="contact-hero-overlay"></div>
+        <div class="contact-hero-grid-lines"></div>
+        <div class="contact-hero-orb orb-c1"></div>
+        <div class="contact-hero-orb orb-c2"></div>
+      </div>
+
+      <div class="contact-hero-container">
+        <div class="contact-hero-content">
+          <div class="contact-eyebrow">
+            <span class="contact-pulse-dot"></span>
+            <span>ESTATE COMMISSION &amp; CONCIERGE · EST. 2009</span>
+          </div>
+
+          <h1 class="contact-hero-title">
+            Begin Your <span class="highlight-aqua">Aquatic Masterpiece</span>
+          </h1>
+
+          <p class="contact-hero-subtitle">
+            Every monumental waterscape originates with a confidential dialogue. Our principal architects and hydraulic engineers consult with discerning estate owners, family offices, and leading landscape studios worldwide.
+          </p>
+
+          
+          <div class="contact-hero-pills">
+            <div class="contact-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>Direct Concierge: <strong>+1 (800) 492-POOL</strong></span>
+            </div>
+            <div class="contact-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Feasibility Turnaround: <strong>Under 24 Hours</strong></span>
+            </div>
+            <div class="contact-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Ateliers: <strong>Newport Beach • Malibu • Palm Beach</strong></span>
+            </div>
+          </div>
+
+          
+          <div class="contact-hero-actions">
+            <a href="#contact-interaction" class="btn btn-primary btn-large">
+              <span>Initiate Commission Inquiry</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+            <a href="#contact-map" class="btn btn-secondary btn-large">
+              <span>Explore Atelier Studios</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        
+        <div class="contact-hero-media" aria-label="Architectural Showcase Gallery">
+          <div class="contact-triptych-stage">
+            
+            
+            <div class="triptych-backdrop-glow" aria-hidden="true"></div>
+
+            
+            <div class="triptych-coordinate-tag" aria-hidden="true">
+              <span>33°36'N 117°54'W</span>
+              <span class="coord-divider">/</span>
+              <span>ATELIER ARCHIVES</span>
+            </div>
+
+            
+            <div class="triptych-card triptych-main">
+              <div class="triptych-img-wrap">
+                <img src="assets/hero_villa.jpg" alt="Pacific Coast Luxury Villa Commission" class="triptych-img" loading="eager" />
+                <div class="triptych-scrim"></div>
+              </div>
+              <div class="triptych-badge">
+                <span class="triptych-badge-dot"></span>
+                <span class="triptych-badge-text">MALIBU BLUFF · PACIFIC VILLA</span>
+              </div>
+              <div class="triptych-meta-card">
+                <span class="triptych-meta-title">Private Commission</span>
+                <span class="triptych-meta-sub">Hydraulic Horizon Edge · 42m Perimeter</span>
+              </div>
+            </div>
+
+            
+            <div class="triptych-card triptych-secondary">
+              <div class="triptych-img-wrap">
+                <img src="assets/gallery_knife_edge.jpg" alt="Knife Edge Precision Architectural Waterscape" class="triptych-img" loading="eager" />
+                <div class="triptych-scrim"></div>
+              </div>
+              <div class="triptych-badge-mini">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>360° Knife-Edge Precision</span>
+              </div>
+            </div>
+
+            
+            <div class="triptych-card triptych-tertiary">
+              <div class="triptych-img-wrap">
+                <img src="assets/hero_night.jpg" alt="Twilight Illumination and Caldera Fire Feature" class="triptych-img" loading="eager" />
+                <div class="triptych-scrim"></div>
+              </div>
+              <div class="triptych-badge-mini">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M12 2c1.1 0 2 .9 2 2v2a2 2 0 1 1-4 0V4c0-1.1.9-2 2-2zm0 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                </svg>
+                <span>Twilight Ambience · Caldera</span>
+              </div>
+            </div>
+
+            
+            <div class="triptych-floating-chip">
+              <div class="triptych-pulse-ring"></div>
+              <div class="triptych-chip-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="triptych-chip-info">
+                <span class="triptych-chip-label">Concierge Active</span>
+                <span class="triptych-chip-val">Direct Studio Access</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="contact-interaction" id="contact-interaction" aria-label="Commission Inquiries & Addresses">
+      <div class="contact-section-container">
+
+        <div class="contact-interaction-grid">
+
+          
+          <div class="contact-form-col">
+            <div class="contact-form-card">
+              <div class="contact-form-header">
+                <span class="contact-card-eyebrow">CONFIDENTIAL ESTATE BRIEFING</span>
+                <h2 class="contact-form-title">Private Commission <span class="highlight-aqua">Feasibility Inquiry</span></h2>
+                <p class="contact-form-desc">
+                  Provide your estate specifications below. Our Principal Design Director will personally review your site parameters and provide a comprehensive feasibility brief within 24 hours.
+                </p>
+              </div>
+
+              <form id="contact-commission-form" class="contact-main-form" novalidate>
+                
+                <div class="cform-row-2">
+                  <div class="cform-group">
+                    <label for="c-name" class="cform-label">Full Name <span class="req">*</span></label>
+                    <input type="text" id="c-name" name="name" class="cform-input" placeholder="Enter your full name" required>
+                    <span class="cform-error" id="err-c-name">Please enter your full name</span>
+                  </div>
+                  <div class="cform-group">
+                    <label for="c-email" class="cform-label">Estate / Patron Email <span class="req">*</span></label>
+                    <input type="email" id="c-email" name="email" class="cform-input" placeholder="name@estate.com" required>
+                    <span class="cform-error" id="err-c-email">Please enter a valid email address</span>
+                  </div>
+                </div>
+
+                
+                <div class="cform-row-2">
+                  <div class="cform-group">
+                    <label for="c-phone" class="cform-label">Phone / WhatsApp <span class="req">*</span></label>
+                    <input type="tel" id="c-phone" name="phone" class="cform-input" placeholder="+1 (949) 555-0194" required>
+                    <span class="cform-error" id="err-c-phone">Please enter your telephone number</span>
+                  </div>
+                  <div class="cform-group">
+                    <label for="c-mode" class="cform-label">Preferred Meeting Mode</label>
+                    <div class="cform-select-wrap">
+                      <select id="c-mode" name="mode" class="cform-select">
+                        <option value="In-Person Atelier Visit (Newport Beach)">In-Person Atelier Visit (Newport Beach Flagship)</option>
+                        <option value="On-Site Private Estate Walkthrough">On-Site Private Estate Walkthrough</option>
+                        <option value="Malibu Studio Appointment">Malibu Pacific Studio Appointment</option>
+                        <option value="Palm Beach Royal Atelier Appointment">Palm Beach Royal Atelier Appointment</option>
+                        <option value="Confidential Encrypted Video Conference">Confidential Encrypted Video Conference</option>
+                      </select>
+                      <svg class="select-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="cform-row-2">
+                  <div class="cform-group">
+                    <label for="c-location" class="cform-label">Estate Property City / Region <span class="req">*</span></label>
+                    <input type="text" id="c-location" name="location" class="cform-input" placeholder="e.g. Newport Coast, Malibu Bluff, Aspen" required>
+                    <span class="cform-error" id="err-c-location">Please indicate property location</span>
+                  </div>
+                  <div class="cform-group">
+                    <label for="c-paradigm" class="cform-label">Design Paradigm</label>
+                    <div class="cform-select-wrap">
+                      <select id="c-paradigm" name="paradigm" class="cform-select">
+                        <option value="Vanishing Infinity Edge Monolith">Vanishing Infinity Edge Monolith</option>
+                        <option value="Inground Architectural Masterpiece">Inground Architectural Masterpiece</option>
+                        <option value="Elevated Acrylic Glass Above-Ground">Elevated Acrylic Glass Above-Ground</option>
+                        <option value="Custom Sculptural with Sunken Fire Lounge &amp; Spa">Custom Sculptural with Sunken Fire Lounge &amp; Spa</option>
+                        <option value="Resort Lagoon, Grotto &amp; Living Landscape">Resort Lagoon, Grotto &amp; Living Landscape</option>
+                        <option value="Full Estate Aquatic Masterplan Renovation">Full Estate Aquatic Masterplan Renovation</option>
+                      </select>
+                      <svg class="select-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="cform-row-2">
+                  <div class="cform-group">
+                    <label for="c-budget" class="cform-label">Estimated Allocation Range</label>
+                    <div class="cform-select-wrap">
+                      <select id="c-budget" name="budget" class="cform-select">
+                        <option value="$150,000 - $300,000">$150,000 – $300,000 (Private Residence)</option>
+                        <option value="$300,000 - $600,000" selected>$300,000 – $600,000 (Architectural Commission)</option>
+                        <option value="$600,000 - $1,200,000">$600,000 – $1,200,000 (Resort Living Estate)</option>
+                        <option value="$1,200,000+">$1,200,000+ (Ultra-Luxury Presidential Estate)</option>
+                      </select>
+                      <svg class="select-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                  </div>
+                  <div class="cform-group">
+                    <label for="c-timeline" class="cform-label">Desired Groundbreaking Horizon</label>
+                    <div class="cform-select-wrap">
+                      <select id="c-timeline" name="timeline" class="cform-select">
+                        <option value="Immediate (1–2 Months)">Immediate (Next 30–60 Days)</option>
+                        <option value="Q1/Q2 Season (3–6 Months)" selected>Season Ahead (3–6 Months)</option>
+                        <option value="Architectural Planning (6–12 Months)">Architectural Planning (6–12 Months)</option>
+                        <option value="Future Vision Masterplanning">Future Vision Masterplanning</option>
+                      </select>
+                      <svg class="select-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="cform-group">
+                  <label for="c-notes" class="cform-label">Vision Details &amp; Topographic Parameters</label>
+                  <textarea id="c-notes" name="notes" rows="4" class="cform-textarea"
+                    placeholder="Describe your site topography (slope, ocean view, rock ledge), desired stone finishes (Turkish travertine, quartzite), infinity spillway orientation, or special features..."></textarea>
+                </div>
+
+                
+                <div class="cform-group">
+                  <label class="cform-label">Architectural Plans or Site Survey (Optional)</label>
+                  <div class="cform-dropzone" id="cform-dropzone">
+                    <input type="file" id="c-file-input" class="dropzone-file-input" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" multiple>
+                    <div class="dropzone-inner">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                      </svg>
+                      <div class="dropzone-text">
+                        <span class="dropzone-prompt"><strong>Click to attach</strong> or drag &amp; drop architectural files</span>
+                        <span class="dropzone-sub">PDF, CAD/DWG, high-res photos up to 50MB</span>
+                      </div>
+                    </div>
+                    <div class="dropzone-file-list" id="dropzone-file-list"></div>
+                  </div>
+                </div>
+
+                
+                <button type="submit" class="btn btn-primary btn-large btn-block cform-submit-btn" id="cform-submit-btn">
+                  <span class="submit-text">Submit Private Feasibility Inquiry</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+
+                
+                <div class="cform-security-footer">
+                  <div class="security-shield-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <p class="security-text">
+                    <strong>Strict Privacy &amp; NDA Protocol:</strong> All submitted property data, surveys, and contact details are safeguarded under strict AIA non-disclosure standards. We never share client intelligence.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          
+          <div class="contact-addresses-col">
+
+            <div class="ateliers-header-badge">
+              <span class="badge-dot"></span>
+              <span>GLOBAL ATELIER NETWORK</span>
+            </div>
+            <h3 class="ateliers-col-title">Atelier Headquarters</h3>
+            <p class="ateliers-col-desc">Private consultations and material finish studios by appointment.</p>
+
+            
+            <div class="atelier-card active-card" data-atelier="newport">
+              <div class="atelier-card-top">
+                <div class="atelier-flagship-pill">GLOBAL ATELIER FLAGSHIP</div>
+                <span class="atelier-status-live"><span class="pulse-green"></span> Open Today</span>
+              </div>
+              <h4 class="atelier-city">Newport Beach, California</h4>
+              <p class="atelier-address">
+                1200 Bayside Drive, Suite 400<br>
+                Newport Beach, CA 92625 · United States
+              </p>
+              <div class="atelier-details-grid">
+                <div class="adetail-item">
+                  <span class="adetail-label">Studio Lead</span>
+                  <span class="adetail-val">Marcus Ellroy, Principal Architect</span>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Direct Atelier Phone</span>
+                  <a href="tel:+19498852872" class="adetail-link">+1 (949) 885-AQUORA</a>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Operating Hours</span>
+                  <span class="adetail-val">Mon – Sat: 8:00 AM – 7:00 PM PST</span>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Showroom Focus</span>
+                  <span class="adetail-val">Material Library &amp; 3D VR Holodeck</span>
+                </div>
+              </div>
+              <div class="atelier-card-actions">
+                <button class="btn btn-secondary btn-sm" onclick="selectStudioOnMap('newport')">View on Studio Map</button>
+                <a href="https://maps.google.com/?q=Newport+Beach+CA" target="_blank" rel="noopener" class="atelier-directions-link">
+                  <span>Get Directions</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+
+            
+            <div class="atelier-card" data-atelier="malibu">
+              <div class="atelier-card-top">
+                <div class="atelier-sub-pill">PACIFIC BLUFF DESIGN STUDIO</div>
+                <span class="atelier-status-app"><span class="pulse-cyan"></span> Private Booking</span>
+              </div>
+              <h4 class="atelier-city">Malibu, California</h4>
+              <p class="atelier-address">
+                23410 Civic Center Way, Suite 210<br>
+                Malibu, CA 90265 · United States
+              </p>
+              <div class="atelier-details-grid">
+                <div class="adetail-item">
+                  <span class="adetail-label">Studio Lead</span>
+                  <span class="adetail-val">Serena Voss, Materials Director</span>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Direct Studio Phone</span>
+                  <a href="tel:+13105927665" class="adetail-link">+1 (310) 592-POOL</a>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Operating Hours</span>
+                  <span class="adetail-val">By Private Patron Appointment</span>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Studio Focus</span>
+                  <span class="adetail-val">Cantilever &amp; Coastal Engineering</span>
+                </div>
+              </div>
+              <div class="atelier-card-actions">
+                <button class="btn btn-secondary btn-sm" onclick="selectStudioOnMap('malibu')">View on Studio Map</button>
+                <a href="https://maps.google.com/?q=Malibu+CA" target="_blank" rel="noopener" class="atelier-directions-link">
+                  <span>Get Directions</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+
+            
+            <div class="atelier-card" data-atelier="palmbeach">
+              <div class="atelier-card-top">
+                <div class="atelier-sub-pill">EAST COAST FEASIBILITY HUB</div>
+                <span class="atelier-status-live"><span class="pulse-green"></span> Open Today</span>
+              </div>
+              <h4 class="atelier-city">Palm Beach, Florida</h4>
+              <p class="atelier-address">
+                250 Worth Avenue, Suite 300<br>
+                Palm Beach, FL 33480 · United States
+              </p>
+              <div class="atelier-details-grid">
+                <div class="adetail-item">
+                  <span class="adetail-label">Studio Lead</span>
+                  <span class="adetail-val">Dario Reinholt, Hydraulic Engineer</span>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Direct Atelier Phone</span>
+                  <a href="tel:+15617402872" class="adetail-link">+1 (561) 740-AQUORA</a>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Operating Hours</span>
+                  <span class="adetail-val">Mon – Fri: 9:00 AM – 6:00 PM EST</span>
+                </div>
+                <div class="adetail-item">
+                  <span class="adetail-label">Studio Focus</span>
+                  <span class="adetail-val">Tropical Lagoon &amp; Grotto Living</span>
+                </div>
+              </div>
+              <div class="atelier-card-actions">
+                <button class="btn btn-secondary btn-sm" onclick="selectStudioOnMap('palmbeach')">View on Studio Map</button>
+                <a href="https://maps.google.com/?q=Palm+Beach+FL" target="_blank" rel="noopener" class="atelier-directions-link">
+                  <span>Get Directions</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="contact-map-section" id="contact-map" aria-label="Interactive Atelier Map">
+      <div class="contact-section-container">
+
+        <div class="map-section-header">
+          <div class="contact-eyebrow">
+            <span class="contact-pulse-dot"></span>
+            <span>GEOGRAPHIC PRESENCE</span>
+          </div>
+          <h2 class="map-section-title">Explore Our <span class="highlight-aqua">Atelier Studios</span></h2>
+          <p class="map-section-desc">Experience our material finishes in person. Each AQUORA studio features dedicated stone libraries, 1:1 scale hydraulic weir mockups, and private patron tasting lounges.</p>
+        </div>
+
+        
+        <div class="studio-tabs-bar" role="tablist" aria-label="Atelier Locations">
+          <button class="studio-tab-btn active" role="tab" aria-selected="true" data-target="newport" id="tab-newport">
+            <span class="tab-city">Newport Beach Flagship</span>
+            <span class="tab-state">California · Global HQ</span>
+          </button>
+          <button class="studio-tab-btn" role="tab" aria-selected="false" data-target="malibu" id="tab-malibu">
+            <span class="tab-city">Malibu Pacific Studio</span>
+            <span class="tab-state">California · Coastal Atelier</span>
+          </button>
+          <button class="studio-tab-btn" role="tab" aria-selected="false" data-target="palmbeach" id="tab-palmbeach">
+            <span class="tab-city">Palm Beach Royal</span>
+            <span class="tab-state">Florida · East Coast Hub</span>
+          </button>
+        </div>
+
+        
+        <div class="map-viewport-wrapper">
+
+          
+          <div class="map-hud-overlay" id="map-hud-overlay">
+            <div class="hud-badge" id="hud-badge">GLOBAL FLAGSHIP ATELIER</div>
+            <h3 class="hud-title" id="hud-title">Newport Beach Headquarters</h3>
+            <p class="hud-coords" id="hud-coords">
+              <svg class="coord-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px;" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg> 33.6189° N, 117.9298° W · Elev. 42 ft
+            </p>
+            <p class="hud-address" id="hud-address">
+              1200 Bayside Drive, Suite 400<br>
+              Newport Beach, California 92625
+            </p>
+
+            <div class="hud-specs">
+              <div class="hud-spec-row">
+                <span class="hspec-key">Private Jet Access</span>
+                <span class="hspec-val" id="hud-airport">John Wayne Airport (SNA) — 12 mins</span>
+              </div>
+              <div class="hud-spec-row">
+                <span class="hspec-key">Helipad Coordinates</span>
+                <span class="hspec-val" id="hud-helipad">33°37'10"N 117°53'44"W</span>
+              </div>
+              <div class="hud-spec-row">
+                <span class="hspec-key">Showroom Features</span>
+                <span class="hspec-val" id="hud-amenities">3D Digital Holodeck · 20+ Stone Slab Library · Wet Weir Demo</span>
+              </div>
+              <div class="hud-spec-row">
+                <span class="hspec-key">Valet &amp; Parking</span>
+                <span class="hspec-val" id="hud-parking">Private Secure Subterranean Valet</span>
+              </div>
+            </div>
+
+            <div class="hud-actions">
+              <a href="tel:+19498852872" class="btn btn-primary btn-sm" id="hud-call-btn">Call Newport Atelier</a>
+              <a href="https://maps.google.com/?q=1200+Bayside+Dr+Newport+Beach+CA" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" id="hud-nav-btn">
+                <span>Navigate via GPS</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          
+          <div class="map-interactive-stage" id="map-interactive-stage">
+            <div class="map-cartography-grid" aria-hidden="true"></div>
+            <div class="map-topo-rings" aria-hidden="true"></div>
+
+            
+            <div class="map-vector-ambient" id="map-vector-ambient">
+              <div class="radar-sweep-center"></div>
+            </div>
+
+            
+            
+            <div class="map-studio-marker active" id="marker-newport" style="top: 48%; left: 42%;" onclick="selectStudioOnMap('newport')">
+              <div class="marker-pulse"></div>
+              <div class="marker-pin">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+              <div class="marker-callout">
+                <span class="mcallout-title">Newport Beach</span>
+                <span class="mcallout-sub">Global Flagship</span>
+              </div>
+            </div>
+
+            
+            <div class="map-studio-marker" id="marker-malibu" style="top: 36%; left: 32%;" onclick="selectStudioOnMap('malibu')">
+              <div class="marker-pulse"></div>
+              <div class="marker-pin">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+              <div class="marker-callout">
+                <span class="mcallout-title">Malibu Studio</span>
+                <span class="mcallout-sub">Pacific Bluff</span>
+              </div>
+            </div>
+
+            
+            <div class="map-studio-marker" id="marker-palmbeach" style="top: 62%; left: 74%;" onclick="selectStudioOnMap('palmbeach')">
+              <div class="marker-pulse"></div>
+              <div class="marker-pin">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+              <div class="marker-callout">
+                <span class="mcallout-title">Palm Beach</span>
+                <span class="mcallout-sub">Royal Atelier</span>
+              </div>
+            </div>
+
+            
+            <div class="map-view-controls">
+              <button class="map-ctrl-btn active" id="btn-view-arch" onclick="setMapView('arch')">Architectural</button>
+              <button class="map-ctrl-btn" id="btn-view-sat" onclick="setMapView('sat')">Satellite Dark</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="contact-process-section" id="contact-process" aria-label="Consultation Process">
+      <div class="contact-section-container">
+
+        <div class="process-header">
+          <div class="contact-eyebrow">
+            <span class="contact-pulse-dot"></span>
+            <span>CONSULTATION LIFECYCLE</span>
+          </div>
+          <h2 class="process-title">From First Contact to <span class="highlight-aqua">Waterscape Reality</span></h2>
+          <p class="process-desc">We respect the cadence and privacy of ultra-high-net-worth estate commissioning. Here is our exact 4-stage architectural onboarding protocol.</p>
+        </div>
+
+        <div class="process-steps-grid">
+          
+          <div class="process-step-card">
+            <div class="pstep-num">01</div>
+            <div class="pstep-tag">24-HOUR TURNAROUND</div>
+            <h3 class="pstep-title">Confidential Feasibility &amp; Briefing</h3>
+            <p class="pstep-desc">
+              Your estate parameters are reviewed by our Principal Architect. We analyze local municipal code, coastal setbacks, and preliminary hydraulic demands before your discovery session.
+            </p>
+            <ul class="pstep-checklist">
+              <li>AIA non-disclosure agreement execution</li>
+              <li>Zoning &amp; environmental constraint audit</li>
+              <li>Preliminary spatial scope alignment</li>
+            </ul>
+          </div>
+
+          
+          <div class="process-step-card">
+            <div class="pstep-num">02</div>
+            <div class="pstep-tag">ON-SITE SURVEY</div>
+            <h3 class="pstep-title">LiDAR Drone &amp; Soil Topology Scan</h3>
+            <p class="pstep-desc">
+              Our engineering surveyors deploy millimeter-precision LiDAR drones to map elevation slopes, solar trajectories, sightlines from master suites, and sub-surface rock geology.
+            </p>
+            <ul class="pstep-checklist">
+              <li>Digital terrain elevation modeling</li>
+              <li>Solar azimuth reflection simulation</li>
+              <li>Hydro-geological soil bore analysis</li>
+            </ul>
+          </div>
+
+          
+          <div class="process-step-card">
+            <div class="pstep-num">03</div>
+            <div class="pstep-tag">DESIGN PRESENTATION</div>
+            <h3 class="pstep-title">3D Digital Twin &amp; Material Studio</h3>
+            <p class="pstep-desc">
+              Experience your waterscape in our VR holodeck. Stand at the weir edge at solstice sunset. Select Turkish travertine, honed quartzites, and titanium fixtures with tactile physical samples.
+            </p>
+            <ul class="pstep-checklist">
+              <li>Full 3D photorealistic virtual twin</li>
+              <li>Lighting temperature scene curation</li>
+              <li>Physical stone sample board curation</li>
+            </ul>
+          </div>
+
+          
+          <div class="process-step-card">
+            <div class="pstep-num">04</div>
+            <div class="pstep-tag">TURNKEY DELIVERY</div>
+            <h3 class="pstep-title">AIA Contract &amp; Escrow Guarantee</h3>
+            <p class="pstep-desc">
+              Transparent, fixed-price turnkey contracts with milestone escrow disbursements. Backed by dedicated AQUORA construction crews and our 25-year structural shell warranty.
+            </p>
+            <ul class="pstep-checklist">
+              <li>Milestone-gated construction escrow</li>
+              <li>Full municipal permitting management</li>
+              <li>25-year structural shell warranty</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="concierge-status-bar">
+          <div class="cstatus-left">
+            <div class="cstatus-indicator">
+              <span class="cstatus-dot"></span>
+              <span class="cstatus-text">Atelier Feasibility Desk: <strong>ACTIVE</strong></span>
+            </div>
+            <div class="cstatus-divider"></div>
+            <span class="cstatus-info">Current Proposal Review Queue: <strong>Same Day</strong></span>
+          </div>
+          <div class="cstatus-right">
+            <button class="btn btn-primary btn-sm" onclick="openQuoteModal('Status Bar CTA')">
+              <span>Reserve Feasibility Slot</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="contact-faq-section" id="contact-faq" aria-label="Frequently Asked Questions">
+      <div class="contact-section-container">
+
+        <div class="faq-section-header">
+          <div class="contact-eyebrow">
+            <span class="contact-pulse-dot"></span>
+            <span>CLARITY &amp; PROTOCOL</span>
+          </div>
+          <h2 class="faq-section-title">Client Inquiries &amp; <span class="highlight-aqua">Atelier Protocol</span></h2>
+          <p class="faq-section-desc">Everything you need to know about initiating a bespoke architectural commission with AQUORA.</p>
+        </div>
+
+        <div class="contact-faq-container">
+          <div class="contact-faq-accordion" id="contact-faq-accordion">
+
+            
+            <div class="cfaq-item">
+              <button class="cfaq-trigger" aria-expanded="false">
+                <span class="cfaq-question">What is the initial investment threshold for an AQUORA pool?</span>
+                <span class="cfaq-icon"></span>
+              </button>
+              <div class="cfaq-panel">
+                <div class="cfaq-answer">
+                  <p>Our turnkey architectural projects typically begin at $150,000 for foundational inground and slot-drain installations, with vanishing-edge cantilevers and complex cliffside hydraulic engineering ranging upwards of $350,000 to $1,500,000+. Every masterplan proposal is backed by our fixed-price turnkey guarantee.</p>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="cfaq-item">
+              <button class="cfaq-trigger" aria-expanded="false">
+                <span class="cfaq-question">How does AQUORA coordinate with our existing architect or interior team?</span>
+                <span class="cfaq-icon"></span>
+              </button>
+              <div class="cfaq-panel">
+                <div class="cfaq-answer">
+                  <p>Over 70% of our commissions are collaborative partnerships with world-class residential architectural studios and landscape architects. We provide full BIM (Building Information Modeling) Revit and CAD integrations, hydraulic flow simulations, and structural engineering calculations to integrate seamlessly into your master architectural drawing package.</p>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="cfaq-item">
+              <button class="cfaq-trigger" aria-expanded="false">
+                <span class="cfaq-question">Do you handle municipal permitting, zoning variances, and coastal clearances?</span>
+                <span class="cfaq-icon"></span>
+              </button>
+              <div class="cfaq-panel">
+                <div class="cfaq-answer">
+                  <p>Yes. AQUORA maintains an internal regulatory expedition team with specialized expertise in complex jurisdictions—including California Coastal Commission approvals, hillside geological review boards, and historic preservation districts. We manage the entire submittal, engineering stamping, and inspection process turnkey.</p>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="cfaq-item">
+              <button class="cfaq-trigger" aria-expanded="false">
+                <span class="cfaq-question">Can prospective patrons visit an ongoing or completed AQUORA estate pool?</span>
+                <span class="cfaq-icon"></span>
+              </button>
+              <div class="cfaq-panel">
+                <div class="cfaq-answer">
+                  <p>Through our private <strong>Patron Ambassador Network</strong>, we can arrange confidential private walkthroughs of completed estate commissions in Newport Coast, Malibu, and Palm Beach, subject to homeowner schedule and prior non-disclosure clearance. Additionally, all three of our ateliers maintain working 1:1 scale finish mockups and VR simulation holodecks.</p>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="cfaq-item">
+              <button class="cfaq-trigger" aria-expanded="false">
+                <span class="cfaq-question">What are your financial milestone structures and escrow protections?</span>
+                <span class="cfaq-icon"></span>
+              </button>
+              <div class="cfaq-panel">
+                <div class="cfaq-answer">
+                  <p>Every AQUORA commission is governed under standard AIA fixed-price contracts. Payments are strictly milestone-gated (e.g., Shell Pour, Hydraulic Rough-in, Stone Coping, Commissioning &amp; Handover) and held in insured third-party construction escrow. No advance retainers are released until objective independent engineering sign-offs are verified.</p>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="cfaq-item">
+              <button class="cfaq-trigger" aria-expanded="false">
+                <span class="cfaq-question">What warranty coverage and post-completion concierge services are included?</span>
+                <span class="cfaq-icon"></span>
+              </button>
+              <div class="cfaq-panel">
+                <div class="cfaq-answer">
+                  <p>All AQUORA pools are backed by our industry-leading <strong>25-Year Structural Monolithic Shell Warranty</strong> and a 5-year comprehensive equipment and hydraulic piping warranty. Every estate patron receives dedicated 24/7 access to our service concierge, seasonal winterization and startup services, and automated remote water chemistry monitoring.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer id="footer" class="site-footer" role="contentinfo">
+    <div class="footer-container">
+
+      
+      <div class="footer-top">
+
+        
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-logo" aria-label="AQUORA Home">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">AQUORA</span>
+              <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+            </div>
+          </a>
+          <p class="footer-description">
+            Designing and engineering bespoke architectural pools and outdoor living environments for modern luxury estates. Mastercrafted from Pacific coastal bluffs to private island sanctuaries.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media">
+            <a href="#footer" class="social-link" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="Instagram" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Disciplines</h4>
+          <ul class="footer-links">
+            <li><a href="service detail.html?service=inground">Inground Pools</a></li>
+            <li><a href="service detail.html?service=vanishing">Vanishing Edge</a></li>
+            <li><a href="service detail.html?service=knife-edge">Knife-Edge</a></li>
+            <li><a href="service detail.html?service=fire-caldera">Fire Calderas</a></li>
+            <li><a href="service detail.html?service=hydro-spa">Hydro Spas</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="journal.html">Journals</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html#team">Architects</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Client Portal</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html#milestones">Milestones</a></li>
+            <li><a href="dashboard.html#materials">Materials</a></li>
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col footer-contact-col">
+          <h4 class="footer-col-title">Address &amp; Contact</h4>
+          <div class="footer-contact-list">
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>New York, NY 10022, USA</span>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:concierge@aquora.com">concierge@aquora.com</a>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+18004927665">+1 (800) 492-POOL</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 AQUORA. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#footer">Privacy Policy</a>
+          <a href="#footer">Terms of Service</a>
+          <a href="#footer">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  
+  <div id="quote-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">ESTATE INQUIRY</span>
+        <h3 id="quote-modal-title" class="modal-title">Request a Masterplan Proposal</h3>
+        <p class="modal-subtitle">Share your vision and our senior architectural director will prepare an initial spatial and hydraulic feasibility analysis.</p>
+      </div>
+
+      <form id="quote-form" class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-name">Full Name *</label>
+            <input type="text" id="quote-name" required placeholder="Enter your full name" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="quote-email">Email Address *</label>
+            <input type="email" id="quote-email" required placeholder="name@estate.com" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-phone">Phone Number *</label>
+            <input type="tel" id="quote-phone" required placeholder="+1 (555) 019-2834" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="quote-type">Pool Paradigm *</label>
+            <select id="quote-type" class="form-input" required>
+              <option value="Vanishing Infinity Edge">Vanishing Infinity Edge</option>
+              <option value="Inground Architectural">Inground Architectural</option>
+              <option value="Elevated Acrylic Glass Above-Ground">Elevated Acrylic Glass Above-Ground</option>
+              <option value="Custom Sculptural with Spa & Fire">Custom Sculptural with Spa & Fire</option>
+              <option value="Resort Lagoon & Waterfall Grotto">Resort Lagoon & Waterfall Grotto</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-budget">Estimated Investment Range</label>
+            <select id="quote-budget" class="form-input">
+              <option value="$150,000 - $300,000">$150,000 – $300,000</option>
+              <option value="$300,000 - $600,000" selected>$300,000 – $600,000</option>
+              <option value="$600,000 - $1,200,000">$600,000 – $1,200,000</option>
+              <option value="$1,200,000+">$1,200,000+ (Ultra-Estate Signature)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quote-location">Location / City</label>
+            <input type="text" id="quote-location" placeholder="e.g. Malibu, Newport Beach, Aspen" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="quote-notes">Vision Details or Site Specifications</label>
+          <textarea id="quote-notes" rows="3"
+            placeholder="Tell us about your property, terrain slope, preferred stone finishes, or desired amenities..."
+            class="form-input"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Submit Proposal Request</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <p class="form-disclaimer">All inquiries are safeguarded under strict privacy and non-disclosure standards.</p>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="login-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="modal-dialog modal-dialog-sm">
+      <button class="modal-close-btn" onclick="closeLoginModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">PORTAL ACCESS</span>
+        <h3 id="login-modal-title" class="modal-title">Client Dashboard Login</h3>
+        <p class="modal-subtitle">Access your project milestones, drone progress, and direct architectural messages.</p>
+      </div>
+
+      <div class="demo-credentials-callout">
+        <span class="callout-label">Instant Demo Credentials:</span>
+        <code>Email: client@aquora.com | Pass: paradise2026</code>
+        <button type="button" class="btn-fill-demo" onclick="fillDemoCredentials()">Auto-Fill</button>
+      </div>
+
+      <form id="login-form" class="modal-form" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label for="login-email">Client Email</label>
+          <input type="email" id="login-email" required placeholder="name@estate.com" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Access Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••••••" class="form-input">
+        </div>
+        <div class="form-row-remember">
+          <label class="checkbox-label">
+            <input type="checkbox" checked> <span>Keep me authenticated</span>
+          </label>
+          <a href="#login" onclick="showToast('Password reset instructions sent to registered estate email.')" class="forgot-link">Reset Code</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Enter Client Portal</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="toast-notification" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  
+  <script src="contact.js"></script>
+</body>
+
+</html>

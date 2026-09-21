@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+  <title>Client Construction Dashboard | AQUORA</title>
+  <meta name="description"
+    content="Private client portal for AQUORA patrons: Track architectural construction milestones, review natural stone and mosaic finishes, monitor AIA escrow installments, access municipal permits, and message the project team.">
+  <link rel="icon" type="image/png" href="assets/aquora-logo.png">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body class="dashboard-body">
+  
+  <div class="water-caustics-ambient" aria-hidden="true"></div>
+
+  
+  <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="dashboard-layout-wrapper">
+
+    
+    <aside id="dashboard-sidebar" class="dashboard-sidebar" aria-label="Dashboard Navigation">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand" aria-label="AQUORA Home">
+          <div class="sidebar-logo-mark" aria-hidden="true">
+            <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+          </div>
+          <div class="sidebar-brand-text">
+            <span class="sbrand-title">AQUORA</span>
+            <span class="sbrand-sub">ARCHITECTURAL POOLS &amp; LIVING</span>
+          </div>
+        </a>
+        <button id="sidebar-close-btn" class="sidebar-close-btn mobile-only" aria-label="Close Navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidebar-nav-label">PORTAL NAVIGATION</div>
+
+      <nav class="sidebar-nav" aria-label="Patron Views">
+        <ul class="sidebar-menu">
+          <li>
+            <button class="nav-tab-btn active" data-tab="overview" id="nav-btn-overview">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+              </svg>
+              <span class="nav-text">Overview &amp; Analytics</span>
+              <span class="nav-active-pill" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" data-tab="milestones" id="nav-btn-milestones">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span class="nav-text">Construction Milestones</span>
+              <span class="nav-badge-pill" style="background: rgba(0, 229, 255, 0.16); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.4);">Stage 4</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" data-tab="materials" id="nav-btn-materials">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+              <span class="nav-text">Materials &amp; Finishes</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" data-tab="escrow" id="nav-btn-escrow">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+              </svg>
+              <span class="nav-text">Escrow &amp; AIA Billing</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" data-tab="permits" id="nav-btn-permits">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+              <span class="nav-text">Permits &amp; Inspections</span>
+              <span class="nav-badge-pill" style="background: rgba(0, 229, 255, 0.16); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.4);">7/8</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" data-tab="messages" id="nav-btn-messages">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span class="nav-text">Architect Team Channel</span>
+              <span class="nav-badge-pill" style="background: rgba(56, 189, 248, 0.16); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4);">Live</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" data-tab="telemetry" id="nav-btn-telemetry">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+              <span class="nav-text">Pool Telemetry &amp; IoT</span>
+              <span class="nav-badge-pill" style="background: rgba(0, 229, 255, 0.16); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.4);">IoT</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" onclick="openVariationModal()" id="nav-btn-settings">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <line x1="4" y1="21" x2="4" y2="14"></line>
+                <line x1="4" y1="10" x2="4" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="3"></line>
+                <line x1="20" y1="21" x2="20" y2="16"></line>
+                <line x1="20" y1="12" x2="20" y2="3"></line>
+                <line x1="1" y1="14" x2="7" y2="14"></line>
+                <line x1="9" y1="8" x2="15" y2="8"></line>
+                <line x1="17" y1="16" x2="23" y2="16"></line>
+              </svg>
+              <span class="nav-text">Change Orders &amp; Requests</span>
+            </button>
+          </li>
+          <li>
+            <a href="coming soon.html" class="nav-tab-btn" id="nav-btn-coming-soon" title="Coming Soon Showcase">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span class="nav-text">Coming Soon</span>
+              <span class="nav-badge-pill" style="background: rgba(0, 229, 255, 0.18); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.4);">SOON</span>
+            </a>
+          </li>
+          <li>
+            <a href="404.html" class="nav-tab-btn" id="nav-btn-404" title="404 Error Page">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span class="nav-text">404 Error Page</span>
+              <span class="nav-badge-pill pill-alert">404</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-vip-card">
+        <div class="vip-icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="vip-text-meta">
+          <span class="vip-title">BEL-AIR COMMISSION</span>
+          <span class="vip-sub">Project #AW-2026-88</span>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="index.html" class="sidebar-return-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Return to Main Website</span>
+        </a>
+      </div>
+    </aside>
+
+    
+    <div class="dashboard-main-container">
+
+      
+      <header class="dashboard-topbar" id="dashboard-topbar" role="banner">
+        <div class="dashboard-topbar-inner">
+          <div class="topbar-left">
+            <button id="sidebar-toggle-btn" class="topbar-icon-btn hamburger-btn mobile-only" aria-label="Toggle Navigation Sidebar">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+
+            <div class="topbar-greeting-wrap">
+              <div class="topbar-eyebrow">
+                <svg class="topbar-pin-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>PATRON ESTATE WATERSCAPE PORTAL</span>
+              </div>
+              <h1 class="topbar-heading">Welcome back, Alistair Vance</h1>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <div class="topbar-search-wrap">
+              <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="dashboard-search-input" class="topbar-search-input"
+                placeholder="Search milestones, permits, materials, engineering..." aria-label="Search dashboard">
+              <span class="search-kbd-shortcut">⌘K</span>
+            </div>
+
+            <button id="rtl-toggle-btn" class="topbar-icon-btn rtl-btn" aria-label="Toggle RTL View" title="Toggle RTL">
+              <span>RTL</span>
+            </button>
+
+            
+            <button id="theme-toggle-btn" class="topbar-icon-btn theme-btn" aria-label="Toggle Light and Dark Mode"
+              title="Toggle Theme">
+              <svg class="theme-icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="theme-icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+
+            
+            <div class="topbar-dropdown-wrap" id="notif-dropdown-wrap">
+              <button id="notif-bell-btn" class="topbar-icon-btn notif-btn" aria-label="View notifications"
+                aria-expanded="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                <span class="notif-badge-count" id="notif-badge-dot">3</span>
+              </button>
+              <div class="topbar-dropdown-panel notif-panel" id="notif-panel" role="menu" aria-label="Notifications">
+                <div class="notif-panel-header">
+                  <span class="notif-title">Construction Alerts &amp; Updates</span>
+                  <button class="notif-mark-read" onclick="markAllNotificationsRead()">Mark all read</button>
+                </div>
+                <ul class="notif-list">
+                  <li class="notif-item unread">
+                    <div class="notif-icon-box notif-icon-cyan"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="notif-content">
+                      <div class="notif-headline">Structural Shotcrete Shell Inspection Passed</div>
+                      <div class="notif-meta">LADBS Special Inspector #8819 · 5,120 PSI Verified</div>
+                    </div>
+                  </li>
+                  <li class="notif-item unread">
+                    <div class="notif-icon-box notif-icon-azure"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16.5 9.4-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                    <div class="notif-content">
+                      <div class="notif-headline">Turkish Aegean Travertine Slabs Delivered</div>
+                      <div class="notif-meta">Denizli Quarry Lot #14 · 14/14 Slabs on Site</div>
+                    </div>
+                  </li>
+                  <li class="notif-item">
+                    <div class="notif-icon-box notif-icon-cyan"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                    <div class="notif-content">
+                      <div class="notif-headline">Marcus Ellroy uploaded Weir Laser Leveling Drone Survey</div>
+                      <div class="notif-meta">Principal Architect · Today 10:14 AM</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            
+            <div class="topbar-dropdown-wrap" id="profile-dropdown-wrap">
+              <button class="topbar-user-pill" id="user-profile-pill" aria-label="Patron profile menu" aria-expanded="false" type="button">
+                <div class="user-avatar-wrap">
+                  <img src="assets/team_marcus.jpg" alt="Alistair Vance" class="topbar-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="user-avatar fallback-avatar" style="display:none;">AV</div>
+                </div>
+                <div class="user-meta desktop-only">
+                  <span class="user-name">Alistair Vance</span>
+                  <span class="user-role">Patron</span>
+                </div>
+                <svg class="user-chevron desktop-only" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="topbar-dropdown-panel profile-panel" id="user-profile-panel" role="menu" aria-label="Patron Profile">
+                <div class="profile-panel-user">
+                  <div class="profile-panel-avatar">
+                    <img src="assets/team_marcus.jpg" alt="Alistair Vance" class="panel-avatar-img">
+                  </div>
+                  <div class="profile-panel-meta">
+                    <span class="panel-user-name">Alistair Vance</span>
+                    <span class="panel-user-estate">Bel-Air Estate Patron</span>
+                    <span class="panel-user-id">Commission #AW-2026-88</span>
+                  </div>
+                </div>
+                <div class="profile-panel-divider"></div>
+                <ul class="profile-menu-list">
+                  <li>
+                    <button class="profile-menu-item" onclick="switchDashboardTab('overview')">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      <span>Patron Overview</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="profile-menu-item" onclick="switchDashboardTab('milestones')">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span>Milestones &amp; Stage</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="profile-menu-item" onclick="openVariationModal()">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                      <span>Change Requests</span>
+                    </button>
+                  </li>
+                  <li class="profile-menu-sep"></li>
+                  <li>
+                    <a href="index.html" class="profile-menu-item profile-logout-link">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                      <span>Return to Website</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      
+      <main id="dashboard-main-content" class="dashboard-main" role="main">
+
+        
+        <div class="dashboard-tab-pane active" id="pane-overview">
+
+          <section class="ref-kpi-row" aria-label="Key Performance Indicators">
+            <div class="ref-kpi-card">
+              <div class="ref-kpi-header">
+                <span class="ref-kpi-title">TOTAL COMMISSION VALUE</span>
+                <div class="ref-kpi-icon ref-icon-azure">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+              </div>
+              <div class="ref-kpi-val">$720,000.00</div>
+              <div class="ref-kpi-footer">
+                <span class="ref-trend-pill trend-up">↗ $485,000</span>
+                <span class="ref-trend-desc">disbursed vs $235,000 escrow</span>
+              </div>
+            </div>
+
+            <div class="ref-kpi-card">
+              <div class="ref-kpi-header">
+                <span class="ref-kpi-title">CONSTRUCTION PROGRESS</span>
+                <div class="ref-kpi-icon ref-icon-cyan">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M2 12h20M2 12a10 10 0 0 1 10-10M2 12a10 10 0 0 0 10 10"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </div>
+              </div>
+              <div class="ref-kpi-val">68% Complete</div>
+              <div class="ref-kpi-footer">
+                <span class="ref-trend-pill trend-optimal"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Stage 4 of 6</span>
+                <span class="ref-trend-desc">Target fill: Nov 12, 2026</span>
+              </div>
+            </div>
+
+            <div class="ref-kpi-card">
+              <div class="ref-kpi-header">
+                <span class="ref-kpi-title">MUNICIPAL CLEARANCES</span>
+                <div class="ref-kpi-icon ref-icon-azure">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="ref-kpi-val">7 / 8 Approved</div>
+              <div class="ref-kpi-footer">
+                <span class="ref-trend-pill trend-optimal"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Code Compliant</span>
+                <span class="ref-trend-desc">Final barrier signoff Oct 28</span>
+              </div>
+            </div>
+
+            <div class="ref-kpi-card">
+              <div class="ref-kpi-header">
+                <span class="ref-kpi-title">HYDRO-PLANT STATUS</span>
+                <div class="ref-kpi-icon ref-icon-cyan">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="ref-kpi-val">99.4% Nominal</div>
+              <div class="ref-kpi-footer">
+                <span class="ref-trend-pill trend-optimal"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 82°F · pH 7.35</span>
+                <span class="ref-trend-desc">IntelliFlo 84 GPM active</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="ref-charts-row" aria-label="Performance Analytics">
+            <div class="ref-chart-card ref-growth-card">
+              <div class="ref-card-header">
+                <div class="ref-header-titles">
+                  <h2 class="ref-card-title">Construction Milestone &amp; Expenditure Trajectory</h2>
+                  <p class="ref-card-sub">Cumulative AIA escrow disbursements vs. target architectural timeline (Stages 1–6)</p>
+                </div>
+                <div class="ref-time-pills">
+                  <button class="ref-time-btn active" type="button">6 Months</button>
+                  <button class="ref-time-btn" type="button">Full Build</button>
+                </div>
+              </div>
+
+              <div class="ref-chart-legend">
+                <div class="ref-legend-item">
+                  <span class="ref-legend-swatch swatch-rev"></span>
+                  <span>Disbursed Escrow ($)</span>
+                </div>
+                <div class="ref-legend-item">
+                  <span class="ref-legend-dot dot-visitors"></span>
+                  <span>Milestone Completion (%)</span>
+                </div>
+              </div>
+
+              <div class="ref-area-chart-container" id="line-chart-container">
+                <svg viewBox="0 0 760 260" class="ref-svg-chart" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="refAreaGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#0066ff" stop-opacity="0.45" />
+                      <stop offset="60%" stop-color="#00e5ff" stop-opacity="0.16" />
+                      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.0" />
+                    </linearGradient>
+                  </defs>
+
+                  <line x1="85" y1="20" x2="740" y2="20" class="ref-grid-line" />
+                  <line x1="85" y1="60" x2="740" y2="60" class="ref-grid-line" />
+                  <line x1="85" y1="100" x2="740" y2="100" class="ref-grid-line" />
+                  <line x1="85" y1="140" x2="740" y2="140" class="ref-grid-line" />
+                  <line x1="85" y1="180" x2="740" y2="180" class="ref-grid-line" />
+                  <line x1="85" y1="220" x2="740" y2="220" class="ref-grid-line" />
+
+                  <text x="80" y="24" class="ref-axis-y">$720k</text>
+                  <text x="80" y="64" class="ref-axis-y">$600k</text>
+                  <text x="80" y="104" class="ref-axis-y">$480k</text>
+                  <text x="80" y="144" class="ref-axis-y">$360k</text>
+                  <text x="80" y="184" class="ref-axis-y">$240k</text>
+                  <text x="80" y="214" class="ref-axis-y">$120k</text>
+                  <text x="80" y="244" class="ref-axis-y">$0k Mar</text>
+
+                  <path d="M 120 225 Q 220 205, 345 160 T 580 105 T 700 45" fill="none" class="ref-visitors-line" />
+                  <circle cx="120" cy="225" r="3.5" class="ref-vpoint" />
+                  <circle cx="230" cy="210" r="3.5" class="ref-vpoint" />
+                  <circle cx="345" cy="160" r="3.5" class="ref-vpoint" />
+                  <circle cx="460" cy="130" r="3.5" class="ref-vpoint" />
+                  <circle cx="580" cy="105" r="3.5" class="ref-vpoint" />
+                  <circle cx="700" cy="45" r="3.5" class="ref-vpoint" />
+
+                  <path d="M 120 220 C 180 210, 260 175, 345 145 C 430 115, 480 125, 580 95 C 640 75, 670 55, 700 40 L 700 240 L 120 240 Z" fill="url(#refAreaGradient)" />
+
+                  <path d="M 120 220 C 180 210, 260 175, 345 145 C 430 115, 480 125, 580 95 C 640 75, 670 55, 700 40" fill="none" class="ref-rev-line" />
+
+                  <g class="chart-data-point" data-info="Stage 01 (Jun): Site Excavation &amp; Bedrock Caissons · $80,000 Disbursed">
+                    <circle cx="120" cy="220" r="5" class="point-circle ref-pt" />
+                  </g>
+                  <g class="chart-data-point" data-info="Stage 02 (Jul): Grade 60 Rebar &amp; Hydraulic Rough-In · $190,000 Cumulative">
+                    <circle cx="230" cy="195" r="5" class="point-circle ref-pt" />
+                  </g>
+                  <g class="chart-data-point" data-info="Stage 03 (Aug): 5,000 PSI Shotcrete Monolithic Shell · $365,000 Cumulative">
+                    <circle cx="345" cy="145" r="5" class="point-circle ref-pt" />
+                  </g>
+                  <g class="chart-data-point" data-info="Stage 04 (Sep): Knife-Edge Weir &amp; Aegean Coping · $485,000 Cumulative">
+                    <circle cx="460" cy="120" r="5" class="point-circle ref-pt" />
+                  </g>
+                  <g class="chart-data-point" data-info="Stage 05 (Oct Est): Bisazza Venetian Mosaics &amp; Acrylic Wall · $580,000 Target">
+                    <circle cx="580" cy="95" r="5" class="point-circle ref-pt" />
+                  </g>
+                  <g class="chart-data-point active" data-info="Stage 06 (Nov Est): Hydro-Commissioning &amp; Handover · $720,000 Turnkey Total">
+                    <circle cx="700" cy="40" r="7" class="point-circle ref-pt point-current" />
+                    <circle cx="700" cy="40" r="14" class="point-ripple" />
+                  </g>
+
+                  <text x="120" y="254" class="ref-axis-x">Jun</text>
+                  <text x="230" y="254" class="ref-axis-x">Jul</text>
+                  <text x="345" y="254" class="ref-axis-x">Aug</text>
+                  <text x="460" y="254" class="ref-axis-x">Sep (Current)</text>
+                  <text x="580" y="254" class="ref-axis-x">Oct</text>
+                  <text x="700" y="254" class="ref-axis-x">Nov (Handover)</text>
+                </svg>
+                <div id="chart-tooltip" class="chart-tooltip" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="ref-chart-card ref-category-card">
+              <div class="ref-card-header">
+                <div class="ref-header-titles">
+                  <h2 class="ref-card-title">Procurement &amp; Material Status</h2>
+                  <p class="ref-card-sub">Fabrication, staging, and installation rates for architectural finishes</p>
+                </div>
+              </div>
+
+              <div class="ref-barchart-wrapper">
+                <div class="ref-bar-scale">
+                  <span>100%</span>
+                  <span>80%</span>
+                  <span>60%</span>
+                  <span>40%</span>
+                  <span>20%</span>
+                  <span>0%</span>
+                </div>
+                <div class="ref-bar-columns">
+                  <div class="ref-bar-col">
+                    <div class="ref-bar-track">
+                      <div class="ref-bar-fill bar-1 barchart-fill" style="height: 100%;" data-tooltip="Aegean Travertine: 14/14 slabs staged on site (100%)"></div>
+                    </div>
+                    <span class="ref-bar-lbl">Travertine</span>
+                  </div>
+                  <div class="ref-bar-col">
+                    <div class="ref-bar-track">
+                      <div class="ref-bar-fill bar-2 barchart-fill" style="height: 100%;" data-tooltip="Grade 60 Structural Steel: 100% tied and inspected"></div>
+                    </div>
+                    <span class="ref-bar-lbl">Rebar</span>
+                  </div>
+                  <div class="ref-bar-col">
+                    <div class="ref-bar-track">
+                      <div class="ref-bar-fill bar-3 barchart-fill" style="height: 100%;" data-tooltip="Pneumatic Shotcrete Shell: 5,120 PSI break passed (100%)"></div>
+                    </div>
+                    <span class="ref-bar-lbl">Shotcrete</span>
+                  </div>
+                  <div class="ref-bar-col">
+                    <div class="ref-bar-track">
+                      <div class="ref-bar-fill bar-4 barchart-fill" style="height: 85%;" data-tooltip="Bisazza Cobalt Mosaics: Cleared US Customs, ready for mortar (85%)"></div>
+                    </div>
+                    <span class="ref-bar-lbl">Bisazza Tile</span>
+                  </div>
+                  <div class="ref-bar-col">
+                    <div class="ref-bar-track">
+                      <div class="ref-bar-fill bar-5 barchart-fill" style="height: 68%;" data-tooltip="ClearVue 3-inch Acrylic Panel: Prepped for crane lift (68%)"></div>
+                    </div>
+                    <span class="ref-bar-lbl">Acrylic Wall</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ref-bar-slider-track">
+                <button class="ref-slider-arrow" aria-label="Previous categories" type="button">◀</button>
+                <div class="ref-slider-rail">
+                  <div class="ref-slider-thumb"></div>
+                </div>
+                <button class="ref-slider-arrow" aria-label="Next categories" type="button">▶</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="ref-split-row" aria-label="Site Activity &amp; Structural Tolerances">
+            <div class="ref-split-card">
+              <div class="ref-card-header">
+                <div class="ref-header-titles">
+                  <div class="ref-title-with-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="ref-section-icon">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <h2 class="ref-card-title">Weekly Site Activity &amp; Trade Allocation</h2>
+                  </div>
+                  <p class="ref-card-sub">Daily artisan labor and heavy engineering deployment at Bel-Air job site</p>
+                </div>
+              </div>
+
+              <div class="ref-progress-list">
+                <div class="ref-prog-item">
+                  <div class="ref-prog-labels">
+                    <span class="ref-prog-day">Monday · Heavy Earthwork &amp; Shoring</span>
+                    <span class="ref-prog-val">85% Deployed</span>
+                  </div>
+                  <div class="ref-prog-track">
+                    <div class="ref-prog-bar" style="width: 85%;"></div>
+                  </div>
+                </div>
+
+                <div class="ref-prog-item">
+                  <div class="ref-prog-labels">
+                    <span class="ref-prog-day">Tuesday · Structural Rebar &amp; Hydraulic Lines</span>
+                    <span class="ref-prog-val">92% Deployed</span>
+                  </div>
+                  <div class="ref-prog-track">
+                    <div class="ref-prog-bar" style="width: 92%;"></div>
+                  </div>
+                </div>
+
+                <div class="ref-prog-item">
+                  <div class="ref-prog-labels">
+                    <span class="ref-prog-day">Wednesday · Shell Waterproofing &amp; Core Curing</span>
+                    <span class="ref-prog-val">78% Deployed</span>
+                  </div>
+                  <div class="ref-prog-track">
+                    <div class="ref-prog-bar" style="width: 78%;"></div>
+                  </div>
+                </div>
+
+                <div class="ref-prog-item">
+                  <div class="ref-prog-labels">
+                    <span class="ref-prog-day">Thursday · Vanishing Weir Laser Leveling</span>
+                    <span class="ref-prog-val">88% Deployed</span>
+                  </div>
+                  <div class="ref-prog-track">
+                    <div class="ref-prog-bar" style="width: 88%;"></div>
+                  </div>
+                </div>
+
+                <div class="ref-prog-item">
+                  <div class="ref-prog-labels">
+                    <span class="ref-prog-day">Friday · Deputy Inspector &amp; Architectural Walk</span>
+                    <span class="ref-prog-val">96% Deployed</span>
+                  </div>
+                  <div class="ref-prog-track">
+                    <div class="ref-prog-bar" style="width: 96%;"></div>
+                  </div>
+                </div>
+
+                <div class="ref-prog-item is-peak">
+                  <div class="ref-prog-labels">
+                    <span class="ref-prog-day">Saturday (Peak) · Surge Tank &amp; Hydrostatic Calibration</span>
+                    <span class="ref-prog-val peak-val">99% Active</span>
+                  </div>
+                  <div class="ref-prog-track">
+                    <div class="ref-prog-bar bar-peak" style="width: 99%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ref-split-card">
+              <div class="ref-card-header">
+                <div class="ref-header-titles">
+                  <div class="ref-title-with-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="ref-section-icon">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 8v8M8 12h8"></path>
+                    </svg>
+                    <h2 class="ref-card-title">Structural Quality &amp; Engineering Scores</h2>
+                  </div>
+                  <p class="ref-card-sub">Independent laboratory tests and municipal deputy inspector sign-offs</p>
+                </div>
+              </div>
+
+              <div class="ref-gauges-grid">
+                <div class="ref-gauge-col">
+                  <div class="ref-gauge-ring-wrap">
+                    <svg viewBox="0 0 100 100" class="ref-gauge-svg">
+                      <circle cx="50" cy="50" r="42" class="ref-gauge-bg" />
+                      <circle cx="50" cy="50" r="42" class="ref-gauge-arc" style="stroke: #00e5ff; stroke-dasharray: 264; stroke-dashoffset: 0;" />
+                    </svg>
+                    <span class="ref-gauge-pct">114%</span>
+                  </div>
+                  <span class="ref-gauge-label">Shell PSI Break</span>
+                </div>
+
+                <div class="ref-gauge-col">
+                  <div class="ref-gauge-ring-wrap">
+                    <svg viewBox="0 0 100 100" class="ref-gauge-svg">
+                      <circle cx="50" cy="50" r="42" class="ref-gauge-bg" />
+                      <circle cx="50" cy="50" r="42" class="ref-gauge-arc" style="stroke: #0066ff; stroke-dasharray: 264; stroke-dashoffset: 3.2;" />
+                    </svg>
+                    <span class="ref-gauge-pct">99%</span>
+                  </div>
+                  <span class="ref-gauge-label">Weir Planar Level</span>
+                </div>
+
+                <div class="ref-gauge-col">
+                  <div class="ref-gauge-ring-wrap">
+                    <svg viewBox="0 0 100 100" class="ref-gauge-svg">
+                      <circle cx="50" cy="50" r="42" class="ref-gauge-bg" />
+                      <circle cx="50" cy="50" r="42" class="ref-gauge-arc" style="stroke: #38bdf8; stroke-dasharray: 264; stroke-dashoffset: 0;" />
+                    </svg>
+                    <span class="ref-gauge-pct">100%</span>
+                  </div>
+                  <span class="ref-gauge-label">Hydraulic Hold</span>
+                </div>
+
+                <div class="ref-gauge-col">
+                  <div class="ref-gauge-ring-wrap">
+                    <svg viewBox="0 0 100 100" class="ref-gauge-svg">
+                      <circle cx="50" cy="50" r="42" class="ref-gauge-bg" />
+                      <circle cx="50" cy="50" r="42" class="ref-gauge-arc" style="stroke: #00e5ff; stroke-dasharray: 264; stroke-dashoffset: 10.5;" />
+                    </svg>
+                    <span class="ref-gauge-pct">96%</span>
+                  </div>
+                  <span class="ref-gauge-label">Bonding Grid</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="ref-table-card" aria-label="Recent Work Orders">
+            <div class="ref-table-header">
+              <div class="ref-table-title-group">
+                <h2 class="ref-card-title">Active Construction Scope &amp; Site Work Orders</h2>
+                <p class="ref-card-sub">Live status tracking for specialized subcontractors, municipal inspections, and material deliveries</p>
+              </div>
+              <button class="ref-btn-new-booking" onclick="openVariationModal()" type="button">
+                <span>+ REQUEST SITE INSPECTION</span>
+              </button>
+            </div>
+
+            <div class="ref-table-scroll-wrapper">
+              <table class="ref-data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">WORK ORDER #</th>
+                    <th scope="col">CONSTRUCTION SPECIFICATION &amp; SCOPE</th>
+                    <th scope="col">TRADE CONTRACTOR &amp; SUPERINTENDENT</th>
+                    <th scope="col">SCHEDULED DATE</th>
+                    <th scope="col">MILESTONE VALUE</th>
+                    <th scope="col">STATUS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="ref-col-id">#CW-8842</td>
+                    <td class="ref-col-details">
+                      <span class="ref-disc-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span>
+                      <span class="ref-disc-title">Knife-Edge Weir Laser Coping Alignment</span>
+                    </td>
+                    <td class="ref-col-instructor">D. Reinholt &bull; <em>Master Stone Masons</em></td>
+                    <td class="ref-col-date">Today, On-Site</td>
+                    <td class="ref-col-amount">$120,000.00</td>
+                    <td class="ref-col-status">
+                      <span class="ref-status-badge badge-confirmed">Active Execution</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ref-col-id">#CW-8835</td>
+                    <td class="ref-col-details">
+                      <span class="ref-disc-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                      <span class="ref-disc-title">Dual Pentair IntelliFlo® Variable-Speed Pump Rack</span>
+                    </td>
+                    <td class="ref-col-instructor">Apex Fluidics &bull; <em>Hydraulic Techs</em></td>
+                    <td class="ref-col-date">Sep 20, 2026, 02:30 PM</td>
+                    <td class="ref-col-amount">$34,500.00</td>
+                    <td class="ref-col-status">
+                      <span class="ref-status-badge badge-completed">Installed <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ref-col-id">#CW-8821</td>
+                    <td class="ref-col-details">
+                      <span class="ref-disc-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/><path d="M15 13 9 7l4-4 6 6h3l-3 3v3z"/></svg></span>
+                      <span class="ref-disc-title">Monolithic Shotcrete 28-Day Break Compression Test</span>
+                    </td>
+                    <td class="ref-col-instructor">T. Sterling, PE &bull; <em>City Deputy Inspector</em></td>
+                    <td class="ref-col-date">Sep 14, 2026</td>
+                    <td class="ref-col-amount">5,120 PSI (Pass)</td>
+                    <td class="ref-col-status">
+                      <span class="ref-status-badge badge-completed">Certified <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ref-col-id">#CW-8810</td>
+                    <td class="ref-col-details">
+                      <span class="ref-disc-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9Z"/><path d="M11 3 8 9l4 12 4-12-3-6"/><path d="M2 9h20"/></svg></span>
+                      <span class="ref-disc-title">Bisazza Cobalt Venetian Mosaic &amp; Epoxy Staging</span>
+                    </td>
+                    <td class="ref-col-instructor">Venetian Tile Studio &bull; <em>Serena Voss</em></td>
+                    <td class="ref-col-date">Sep 28, 2026, 09:00 AM</td>
+                    <td class="ref-col-amount">$95,000.00</td>
+                    <td class="ref-col-status">
+                      <span class="ref-status-badge badge-confirmed">Staged On-Site</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ref-col-id">#CW-8795</td>
+                    <td class="ref-col-details">
+                      <span class="ref-disc-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+                      <span class="ref-disc-title">California Coastal Environmental Runoff Buffer</span>
+                    </td>
+                    <td class="ref-col-instructor">California Coastal Commission Board</td>
+                    <td class="ref-col-date">Aug 26, 2026</td>
+                    <td class="ref-col-amount">Stamp #CCC-0941</td>
+                    <td class="ref-col-status">
+                      <span class="ref-status-badge badge-completed">Approved <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+        </div>
+
+        
+        <div class="dashboard-tab-pane" id="pane-milestones">
+          <div class="pane-header-block">
+            <div class="pheader-breadcrumb">
+              <button class="pbc-back-btn" onclick="switchDashboardTab('overview')" aria-label="Return to Overview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Overview</span>
+              </button>
+              <span class="pbc-sep">/</span>
+              <span>COMMISSION #AW-2026-88</span>
+              <span class="pbc-sep">/</span>
+              <span class="pbc-curr">CONSTRUCTION MILESTONES</span>
+            </div>
+            <div class="pheader-main-row">
+              <div>
+                <h1 class="pheader-title">Waterscape Construction Milestones &amp; Drone Logs</h1>
+                <p class="pheader-subtitle">Detailed 6-stage architectural lifecycle tracking, high-resolution
+                  orthomosaic drone surveys, and municipal engineering sign-offs.</p>
+              </div>
+              <div class="pheader-actions">
+                <button class="btn btn-secondary btn-sm" onclick="switchDashboardTab('overview')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard Overview</span>
+                </button>
+                <button class="btn btn-secondary btn-sm"
+                  onclick="openLightbox('assets/project_infinity.jpg', 'Current Weir Coping Progress - Week 16')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                  <span>Drone Survey</span>
+                </button>
+                <button class="btn btn-primary btn-sm" onclick="openVariationModal()">
+                  <span>+ Schedule Site Inspection</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="milestones-stepper-panel" aria-label="Construction Phase Progression">
+            <div class="mstepper-header">
+              <div class="mstepper-title-wrap">
+                <span class="mstepper-pill">CURRENT STATUS: PHASE 4 ACTIVE</span>
+                <h2 class="mstepper-h2">Architectural Construction Lifecycle Progression</h2>
+              </div>
+              <div class="mstepper-metric">
+                <span class="mstepper-pct">68% Complete</span>
+                <span class="mstepper-target">Target Water Fill: November 12, 2026</span>
+              </div>
+            </div>
+
+            
+            <div class="mstepper-bar-track" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+              <div class="mstepper-bar-fill" style="width: 68%;"></div>
+            </div>
+
+            
+            <div class="mstepper-steps-grid">
+              <div class="mstep-item item-done">
+                <div class="mstep-indicator">
+                  <span class="mstep-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="mstep-line"></span>
+                </div>
+                <div class="mstep-info">
+                  <span class="mstep-num">STAGE 01</span>
+                  <strong class="mstep-name">Caissons &amp; Bedrock</strong>
+                  <span class="mstep-date">Completed Jun 12</span>
+                </div>
+              </div>
+
+              <div class="mstep-item item-done">
+                <div class="mstep-indicator">
+                  <span class="mstep-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="mstep-line"></span>
+                </div>
+                <div class="mstep-info">
+                  <span class="mstep-num">STAGE 02</span>
+                  <strong class="mstep-name">Rebar &amp; Hydraulics</strong>
+                  <span class="mstep-date">Completed Jul 08</span>
+                </div>
+              </div>
+
+              <div class="mstep-item item-done">
+                <div class="mstep-indicator">
+                  <span class="mstep-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="mstep-line"></span>
+                </div>
+                <div class="mstep-info">
+                  <span class="mstep-num">STAGE 03</span>
+                  <strong class="mstep-name">Shotcrete Shell</strong>
+                  <span class="mstep-date">Completed Aug 14</span>
+                </div>
+              </div>
+
+              <div class="mstep-item item-active">
+                <div class="mstep-indicator">
+                  <span class="mstep-badge"><span class="mstep-pulse"></span>04</span>
+                  <span class="mstep-line"></span>
+                </div>
+                <div class="mstep-info">
+                  <span class="mstep-num text-cyan">STAGE 04 · ACTIVE</span>
+                  <strong class="mstep-name text-cyan">Weir &amp; Coping</strong>
+                  <span class="mstep-date">Laser Leveling (68%)</span>
+                </div>
+              </div>
+
+              <div class="mstep-item item-upcoming">
+                <div class="mstep-indicator">
+                  <span class="mstep-badge">05</span>
+                  <span class="mstep-line"></span>
+                </div>
+                <div class="mstep-info">
+                  <span class="mstep-num">STAGE 05</span>
+                  <strong class="mstep-name">Glass &amp; Acrylic</strong>
+                  <span class="mstep-date">Est. Oct 02, 2026</span>
+                </div>
+              </div>
+
+              <div class="mstep-item item-upcoming">
+                <div class="mstep-indicator">
+                  <span class="mstep-badge">06</span>
+                </div>
+                <div class="mstep-info">
+                  <span class="mstep-num">STAGE 06</span>
+                  <strong class="mstep-name">Commissioning</strong>
+                  <span class="mstep-date">Target Nov 12, 2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="milestones-timeline-grid">
+
+            <div class="milestone-card card-completed">
+              <div class="mcard-status-badge status-completed">Completed <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="mcard-phase-num">STAGE 01</div>
+              <h3 class="mcard-title">Site Excavation &amp; Bedrock Anchoring</h3>
+              <p class="mcard-desc">Hillside elevation carving, grade leveling, and 18 drilled caissons to competent
+                bedrock.</p>
+              <div class="mcard-meta">
+                <span class="meta-date">Completed: June 12, 2026</span>
+                <span class="meta-inspector">Inspector: T. Sterling, PE</span>
+              </div>
+              <div class="mcard-thumb"
+                onclick="openLightbox('assets/pool_inground.jpg', 'Stage 01: Caisson & Bedrock Excavation')">
+                <img src="assets/pool_inground.jpg" alt="Excavation site" loading="lazy">
+                <span class="thumb-zoom-hint">Inspect Log</span>
+              </div>
+            </div>
+
+            <div class="milestone-card card-completed">
+              <div class="mcard-status-badge status-completed">Completed <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="mcard-phase-num">STAGE 02</div>
+              <h3 class="mcard-title">Dual-Grid Steel Rebar &amp; Hydraulic Rough-In</h3>
+              <p class="mcard-desc">Grade 60 structural steel cage with 4-inch schedule 80 PVC hydraulic circulation
+                loop.</p>
+              <div class="mcard-meta">
+                <span class="meta-date">Completed: July 08, 2026</span>
+                <span class="meta-inspector">City Signoff: #LADBS-8819</span>
+              </div>
+              <div class="mcard-thumb"
+                onclick="openLightbox('assets/pool_custom.jpg', 'Stage 02: Steel Rebar Cage & Plumbing')">
+                <img src="assets/pool_custom.jpg" alt="Rebar cage and hydraulics" loading="lazy">
+                <span class="thumb-zoom-hint">Inspect Log</span>
+              </div>
+            </div>
+
+            <div class="milestone-card card-completed">
+              <div class="mcard-status-badge status-completed">Completed <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="mcard-phase-num">STAGE 03</div>
+              <h3 class="mcard-title">Pneumatic Shotcrete Monolith Shell</h3>
+              <p class="mcard-desc">4,500 PSI monolithic concrete shotcrete pour with crystalline waterproofing
+                admixture.</p>
+              <div class="mcard-meta">
+                <span class="meta-date">Completed: August 14, 2026</span>
+                <span class="meta-inspector">28-Day Break: 5,120 PSI</span>
+              </div>
+              <div class="mcard-thumb"
+                onclick="openLightbox('assets/manifesto_cantilever.jpg', 'Stage 03: Monolithic Shotcrete Shell Pour')">
+                <img src="assets/manifesto_cantilever.jpg" alt="Monolithic shell pour" loading="lazy">
+                <span class="thumb-zoom-hint">Inspect Log</span>
+              </div>
+            </div>
+
+            <div class="milestone-card card-active">
+              <div class="mcard-status-badge status-active"><span class="pulse-cyan"></span> Active Execution</div>
+              <div class="mcard-phase-num">STAGE 04</div>
+              <h3 class="mcard-title">Vanishing Infinity Weir &amp; Stone Coping</h3>
+              <p class="mcard-desc">Precision laser leveling of 62ft monolithic weir edge stone and installation of
+                surge trough gutters.</p>
+              <div class="mcard-meta">
+                <span class="meta-date">Target Signoff: Sep 28, 2026</span>
+                <span class="meta-inspector">Lead Mason: D. Reinholt</span>
+              </div>
+              <div class="mcard-thumb"
+                onclick="openLightbox('assets/project_infinity.jpg', 'Stage 04: Knife-Edge Weir Stonework')">
+                <img src="assets/project_infinity.jpg" alt="Weir coping installation" loading="lazy">
+                <span class="thumb-zoom-hint">Inspect Log</span>
+              </div>
+            </div>
+
+            <div class="milestone-card card-upcoming">
+              <div class="mcard-status-badge status-upcoming">Scheduled</div>
+              <div class="mcard-phase-num">STAGE 05</div>
+              <h3 class="mcard-title">Bisazza Glass Mosaics &amp; Acrylic Wall</h3>
+              <p class="mcard-desc">Hand-laid Italian glass tile finish and crane seating of 3-inch structural clear
+                acrylic viewing panel.</p>
+              <div class="mcard-meta">
+                <span class="meta-date">Est. Start: Oct 02, 2026</span>
+                <span class="meta-inspector">Status: Materials Staged</span>
+              </div>
+              <div class="mcard-thumb"
+                onclick="openLightbox('assets/home2_material_studio.jpg', 'Stage 05: Tile and Acrylic Specifications')">
+                <img src="assets/home2_material_studio.jpg" alt="Bisazza tile staging" loading="lazy">
+                <span class="thumb-zoom-hint">Inspect Log</span>
+              </div>
+            </div>
+
+            <div class="milestone-card card-upcoming">
+              <div class="mcard-status-badge status-upcoming">Scheduled</div>
+              <div class="mcard-phase-num">STAGE 06</div>
+              <h3 class="mcard-title">Hydro-Commissioning &amp; Handover</h3>
+              <p class="mcard-desc">Mineral water fill, hydraulic pump calibration, lighting scene automation, and
+                patron keys handover.</p>
+              <div class="mcard-meta">
+                <span class="meta-date">Target Handover: Nov 12, 2026</span>
+                <span class="meta-inspector">AIA G704 Handover</span>
+              </div>
+              <div class="mcard-thumb"
+                onclick="openLightbox('assets/cta_twilight.jpg', 'Stage 06: Final Handover Vision')">
+                <img src="assets/cta_twilight.jpg" alt="Completed pool handover" loading="lazy">
+                <span class="thumb-zoom-hint">Inspect Log</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        
+        <div class="dashboard-tab-pane" id="pane-materials">
+          <div class="pane-header-block">
+            <div class="pheader-breadcrumb">
+              <button class="pbc-back-btn" onclick="switchDashboardTab('overview')" aria-label="Return to Overview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Overview</span>
+              </button>
+              <span class="pbc-sep">/</span>
+              <span>DESIGN SPECIFICATIONS</span>
+              <span class="pbc-sep">/</span>
+              <span class="pbc-curr">MATERIALS &amp; FINISHES</span>
+            </div>
+            <div class="pheader-main-row">
+              <div>
+                <h1 class="pheader-title">Design &amp; Material Specifications Studio</h1>
+                <p class="pheader-subtitle">Approved natural stone finishes, Italian glass mosaics, cast monolithic
+                  acrylic, and aerospace titanium hardware with supplier origin certificates.</p>
+              </div>
+              <div class="pheader-actions">
+                <button class="btn btn-secondary btn-sm" onclick="switchDashboardTab('overview')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard Overview</span>
+                </button>
+                <button class="btn btn-primary btn-sm" onclick="openVariationModal()">
+                  <span>+ Request Material Variation</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="materials-cards-grid">
+
+            <div class="material-spec-card">
+              <div class="matspec-img-wrap"
+                onclick="openLightbox('assets/gallery_minimal.jpg', 'Turkish Aegean Honed Travertine')">
+                <img src="assets/gallery_minimal.jpg" alt="Aegean Travertine" loading="lazy">
+                <span class="matspec-approved-pill">Patron Approved <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </div>
+              <div class="matspec-body">
+                <span class="matspec-cat">COPING &amp; SUNKEN LOUNGE</span>
+                <h3 class="matspec-name">Aegean Honed Travertine</h3>
+                <p class="matspec-desc">Thermal-treated natural limestone slabs with anti-slip micro-honed finish. Zero
+                  heat retention under direct sun.</p>
+                <div class="matspec-details-list">
+                  <div class="mdetail-row">
+                    <span class="md-key">Origin</span>
+                    <span class="md-val">Denizli Quarry, Turkey</span>
+                  </div>
+                  <div class="mdetail-row">
+                    <span class="md-key">Dimensions</span>
+                    <span class="md-val">24" × 36" × 2" Monolithic</span>
+                  </div>
+                  <div class="mdetail-row">
+                    <span class="md-key">Batch Status</span>
+                    <span class="md-val text-cyan">14 / 14 Slabs on Site</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="material-spec-card">
+              <div class="matspec-img-wrap"
+                onclick="openLightbox('assets/gallery_fire_lounge.jpg', 'Bisazza Custom Cobalt Glass Mosaics')">
+                <img src="assets/gallery_fire_lounge.jpg" alt="Bisazza Glass Mosaic" loading="lazy">
+                <span class="matspec-approved-pill">Patron Approved <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </div>
+              <div class="matspec-body">
+                <span class="matspec-cat">INTERIOR BASIN FINISH</span>
+                <h3 class="matspec-name">Bisazza Custom Cobalt Mosaic</h3>
+                <p class="matspec-desc">Custom gradient 20mm Venetian glass mosaic tesserae creating natural abyssal
+                  blue light refraction.</p>
+                <div class="matspec-details-list">
+                  <div class="mdetail-row">
+                    <span class="md-key">Origin</span>
+                    <span class="md-val">Vicenza, Italy</span>
+                  </div>
+                  <div class="mdetail-row">
+                    <span class="md-key">Grout Matrix</span>
+                    <span class="md-val">Epoxy Litokol Starlike EVO</span>
+                  </div>
+                  <div class="mdetail-row">
+                    <span class="md-key">Batch Status</span>
+                    <span class="md-val text-cyan">Cleared Customs (Long Beach)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="material-spec-card">
+              <div class="matspec-img-wrap"
+                onclick="openLightbox('assets/manifesto_cantilever.jpg', 'ClearVue Structural Acrylic Window')">
+                <img src="assets/manifesto_cantilever.jpg" alt="ClearVue Acrylic" loading="lazy">
+                <span class="matspec-approved-pill">Patron Approved <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </div>
+              <div class="matspec-body">
+                <span class="matspec-cat">CANTILEVER FACADE</span>
+                <h3 class="matspec-name">ClearVue Structural Monolithic Acrylic</h3>
+                <p class="matspec-desc">3-inch cast polymethyl methacrylate panel with 92% optical clarity and 30-year
+                  UV degradation guarantee.</p>
+                <div class="matspec-details-list">
+                  <div class="mdetail-row">
+                    <span class="md-key">Span</span>
+                    <span class="md-val">18ft Length × 4.5ft Height</span>
+                  </div>
+                  <div class="mdetail-row">
+                    <span class="md-key">Thickness</span>
+                    <span class="md-val">76mm (3.0 inches)</span>
+                  </div>
+                  <div class="mdetail-row">
+                    <span class="md-key">Batch Status</span>
+                    <span class="md-val text-cyan">Scheduled for Crane Lift (Oct 08)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="material-spec-card">
+              <div class="matspec-img-wrap"
+                onclick="openLightbox('assets/gallery_knife_edge.jpg', 'Brushed Titanium Hydraulic Jets')">
+                <img src="assets/gallery_knife_edge.jpg" alt="Titanium Fixtures" loading="lazy">
+                <span class="matspec-approved-pill">Patron Approved <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </div>
+              <div class="matspec-body">
+                <span class="matspec-cat">HYDRAULIC HARDWARE</span>
+                <h3 class="matspec-name">Grade 5 Titanium Flush Inlets</h3>
+                <p class="matspec-desc">Custom machined zero-profile hydrotherapy returns and drain grates. Completely
+                  impervious to salt and oxidation.</p>
+                <div class="matspec-details-list">
+                  <div class="mdetail-row">
+                    <span class="md-key">Material</span>
+                    <span class="md-val">Ti-6Al-4V Aerospace Alloy</span>
+                  </div>
+                  <div class="mdetail-row">
+                    <span class="md-key">Finish</span>
+                    <span class="md-val">PVD Matte Brushed Graphite</span>
+                  </div>
+                  <div class="mdetail-row">
+                    <span class="md-key">Batch Status</span>
+                    <span class="md-val text-cyan">100% On-Site Inventory</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        
+        <div class="dashboard-tab-pane" id="pane-escrow">
+          <div class="pane-header-block">
+            <div class="pheader-breadcrumb">
+              <button class="pbc-back-btn" onclick="switchDashboardTab('overview')" aria-label="Return to Overview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Overview</span>
+              </button>
+              <span class="pbc-sep">/</span>
+              <span>ESCROW &amp; AIA BILLING</span>
+              <span class="pbc-sep">/</span>
+              <span class="pbc-curr">PAYMENT INSTALLMENTS</span>
+            </div>
+            <div class="pheader-main-row">
+              <div>
+                <h1 class="pheader-title">AIA Milestone Escrow Account &amp; Disbursement Schedule</h1>
+                <p class="pheader-subtitle">Contract funds are safeguarded in insured construction escrow and disbursed
+                  strictly upon verified independent architectural and municipal sign-offs.</p>
+              </div>
+              <div class="pheader-actions">
+                <button class="btn btn-secondary btn-sm" onclick="switchDashboardTab('overview')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard Overview</span>
+                </button>
+                <button class="btn btn-secondary btn-sm" onclick="downloadAiaAudit()">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download AIA G702 Summary</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="escrow-summary-grid">
+            <div class="esummary-card">
+              <span class="esum-label">Total Contract Value</span>
+              <div class="esum-val">$720,000.00</div>
+              <span class="esum-sub">Fixed Turnkey AIA A101 Agreement</span>
+            </div>
+            <div class="esummary-card">
+              <span class="esum-label">Disbursed from Escrow</span>
+              <div class="esum-val text-cyan">$485,000.00</div>
+              <span class="esum-sub">4 Milestones Verified &amp; Signed</span>
+            </div>
+            <div class="esummary-card">
+              <span class="esum-label">Remaining in Escrow</span>
+              <div class="esum-val text-gold">$235,000.00</div>
+              <span class="esum-sub">Held in First Republic / JPMorgan Escrow</span>
+            </div>
+          </div>
+
+          <div class="dash-table-wrapper">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Milestone #</th>
+                  <th>Description</th>
+                  <th>Allocation</th>
+                  <th>Verification Date</th>
+                  <th>Escrow Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>M-01</strong></td>
+                  <td>Site Prep, Engineering &amp; Bedrock Caissons</td>
+                  <td><strong>$80,000.00</strong></td>
+                  <td>June 12, 2026</td>
+                  <td><span class="badge-status-paid">Disbursed <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                  <td><button class="btn-table-action"
+                      onclick="viewInvoice('INV-AW-8801', '$80,000.00', 'M1: Site Prep & Excavation')">View
+                      Invoice</button></td>
+                </tr>
+                <tr>
+                  <td><strong>M-02</strong></td>
+                  <td>Grade 60 Steel Rebar &amp; Hydraulic Plumbing</td>
+                  <td><strong>$110,000.00</strong></td>
+                  <td>July 08, 2026</td>
+                  <td><span class="badge-status-paid">Disbursed <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                  <td><button class="btn-table-action"
+                      onclick="viewInvoice('INV-AW-8802', '$110,000.00', 'M2: Steel Rebar & Plumbing')">View
+                      Invoice</button></td>
+                </tr>
+                <tr>
+                  <td><strong>M-03</strong></td>
+                  <td>Pneumatic Shotcrete Shell (5,000 PSI)</td>
+                  <td><strong>$175,000.00</strong></td>
+                  <td>August 14, 2026</td>
+                  <td><span class="badge-status-paid">Disbursed <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                  <td><button class="btn-table-action"
+                      onclick="viewInvoice('INV-AW-8803', '$175,000.00', 'M3: Shotcrete Shell')">View Invoice</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>M-04</strong></td>
+                  <td>Vanishing Infinity Weir &amp; Stone Coping</td>
+                  <td><strong>$120,000.00</strong></td>
+                  <td>September 08, 2026</td>
+                  <td><span class="badge-status-paid">Disbursed <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                  <td><button class="btn-table-action"
+                      onclick="viewInvoice('INV-AW-8804', '$120,000.00', 'M4: Coping & Weir Stone')">View
+                      Invoice</button></td>
+                </tr>
+                <tr class="row-highlight">
+                  <td><strong>M-05</strong></td>
+                  <td>Bisazza Glass Mosaic &amp; Acrylic Wall Install</td>
+                  <td><strong>$95,000.00</strong></td>
+                  <td>Est. Oct 15, 2026</td>
+                  <td><span class="badge-status-due">Due at Signoff</span></td>
+                  <td><button class="btn-table-action"
+                      onclick="showToast('Milestone 5 is currently pending inspection signoff.')">Inspection
+                      Pending</button></td>
+                </tr>
+                <tr>
+                  <td><strong>M-06</strong></td>
+                  <td>Commissioning, Automation &amp; Final Handover</td>
+                  <td><strong>$140,000.00</strong></td>
+                  <td>Est. Nov 12, 2026</td>
+                  <td><span class="badge-status-upcoming">In Escrow</span></td>
+                  <td><button class="btn-table-action disabled">Scheduled</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        
+        <div class="dashboard-tab-pane" id="pane-permits">
+          <div class="pane-header-block">
+            <div class="pheader-breadcrumb">
+              <button class="pbc-back-btn" onclick="switchDashboardTab('overview')" aria-label="Return to Overview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Overview</span>
+              </button>
+              <span class="pbc-sep">/</span>
+              <span>REGULATORY RECORDS</span>
+              <span class="pbc-sep">/</span>
+              <span class="pbc-curr">PERMITS &amp; INSPECTIONS</span>
+            </div>
+            <div class="pheader-main-row">
+              <div>
+                <h1 class="pheader-title">Permits, Inspections &amp; Engineering Clearances</h1>
+                <p class="pheader-subtitle">Official municipal compliance archive, California Coastal Commission
+                  approvals, and verified special deputy inspector certificates.</p>
+              </div>
+              <div class="pheader-actions">
+                <button class="btn btn-secondary btn-sm" onclick="switchDashboardTab('overview')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard Overview</span>
+                </button>
+                <span class="permits-total-badge">7 / 8 Approved</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="permits-grid">
+
+            <div class="permit-card">
+              <div class="pcard-top">
+                <span class="pcard-stamp stamp-approved">APPROVED <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="pcard-id">#CCC-2026-0941</span>
+              </div>
+              <h3 class="pcard-title">California Coastal Commission Permit</h3>
+              <p class="pcard-desc">Coastal environmental setback approval, geological slope buffer authorization, and
+                stormwater runoff mitigation.</p>
+              <div class="pcard-footer">
+                <span>Issued: March 14, 2026</span>
+                <span class="pcard-link"
+                  onclick="showToast('CCC Clearance Certificate #CCC-2026-0941 verified on file.')">View Official
+                  Stamp</span>
+              </div>
+            </div>
+
+            <div class="permit-card">
+              <div class="pcard-top">
+                <span class="pcard-stamp stamp-approved">APPROVED <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="pcard-id">#LADBS-GEO-442</span>
+              </div>
+              <h3 class="pcard-title">Hillside Geological &amp; Soils Clearance</h3>
+              <p class="pcard-desc">Geotechnical soil bore report sign-off, seismic bedrock anchor validation, and
+                friction pile load test certification.</p>
+              <div class="pcard-footer">
+                <span>Approved: April 22, 2026</span>
+                <span class="pcard-link"
+                  onclick="showToast('Geotechnical Bore Test Report #LADBS-GEO-442 verified.')">View Official
+                  Stamp</span>
+              </div>
+            </div>
+
+            <div class="permit-card">
+              <div class="pcard-top">
+                <span class="pcard-stamp stamp-approved">APPROVED <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="pcard-id">#LADBS-STR-8819</span>
+              </div>
+              <h3 class="pcard-title">Structural Rebar &amp; Caisson Inspection</h3>
+              <p class="pcard-desc">Deputy special inspection of grade 60 epoxy-coated steel cage, lap splices, and bond
+                beams prior to concrete pour.</p>
+              <div class="pcard-footer">
+                <span>Approved: July 08, 2026</span>
+                <span class="pcard-link" onclick="showToast('LADBS Special Inspector Field Tag #8819 verified.')">View
+                  Official Stamp</span>
+              </div>
+            </div>
+
+            <div class="permit-card">
+              <div class="pcard-top">
+                <span class="pcard-stamp stamp-approved">APPROVED <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="pcard-id">#LADBS-PLB-5102</span>
+              </div>
+              <h3 class="pcard-title">Underground Hydraulic Plumbing Test</h3>
+              <p class="pcard-desc">50 PSI 24-hour hydrostatic pressure hold test on all suction, return, spa jet, and
+                vanishing weir return lines.</p>
+              <div class="pcard-footer">
+                <span>Approved: July 11, 2026</span>
+                <span class="pcard-link" onclick="showToast('Plumbing Hydrostatic Pressure Tag #5102 verified.')">View
+                  Official Stamp</span>
+              </div>
+            </div>
+
+            <div class="permit-card">
+              <div class="pcard-top">
+                <span class="pcard-stamp stamp-approved">APPROVED <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="pcard-id">#LADBS-ELE-1920</span>
+              </div>
+              <h3 class="pcard-title">Equipotential Bonding Grid &amp; Grounding</h3>
+              <p class="pcard-desc">Copper bonding grid compliance (#8 AWG solid copper) across pool shell, coping, fire
+                features, and pool deck.</p>
+              <div class="pcard-footer">
+                <span>Approved: August 12, 2026</span>
+                <span class="pcard-link" onclick="showToast('Electrical Bonding Certificate #1920 verified.')">View
+                  Official Stamp</span>
+              </div>
+            </div>
+
+            <div class="permit-card card-pending">
+              <div class="pcard-top">
+                <span class="pcard-stamp stamp-pending">IN PROGRESS <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                <span class="pcard-id">#LADBS-HYD-773</span>
+              </div>
+              <h3 class="pcard-title">Final Hydrostatic Shell &amp; Barrier Inspection</h3>
+              <p class="pcard-desc">Final perimeter safety barrier compliance, automated safety cover lock, and full
+                volume hydrostatic balance check.</p>
+              <div class="pcard-footer">
+                <span>Scheduled: Oct 28, 2026</span>
+                <span class="pcard-link text-cyan">Scheduled with City Inspector</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        
+        <div class="dashboard-tab-pane" id="pane-messages">
+          <div class="pane-header-block">
+            <div class="pheader-breadcrumb">
+              <button class="pbc-back-btn" onclick="switchDashboardTab('overview')" aria-label="Return to Overview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Overview</span>
+              </button>
+              <span class="pbc-sep">/</span>
+              <span>COMMUNICATIONS</span>
+              <span class="pbc-sep">/</span>
+              <span class="pbc-curr">ARCHITECT TEAM CHANNEL</span>
+            </div>
+            <div class="pheader-main-row">
+              <div>
+                <h1 class="pheader-title">Direct Architectural Team Channel</h1>
+                <p class="pheader-subtitle">Real-time encrypted communication thread with your Lead Architect, Materials
+                  Director, and Project Superintendent.</p>
+              </div>
+              <div class="pheader-actions">
+                <button class="btn btn-secondary btn-sm" onclick="switchDashboardTab('overview')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard Overview</span>
+                </button>
+                <div class="msg-status-pill">
+                  <span class="pulse-cyan"></span>
+                  <span>Marcus Ellroy (Principal Architect) · <strong>Active Now</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-system-wrapper">
+            
+            <div class="chat-team-sidebar">
+              <div class="team-member-item active">
+                <div class="tmember-avatar-wrap">
+                  <img src="assets/team_marcus.jpg" alt="Marcus Ellroy" class="tmember-avatar">
+                  <span class="online-indicator"></span>
+                </div>
+                <div class="tmember-info">
+                  <span class="tmember-name">Marcus Ellroy</span>
+                  <span class="tmember-title">Principal Architect</span>
+                  <span class="tmember-status">Active now</span>
+                </div>
+              </div>
+
+              <div class="team-member-item">
+                <div class="tmember-avatar-wrap">
+                  <img src="assets/team_serena.jpg" alt="Serena Voss" class="tmember-avatar">
+                  <span class="online-indicator"></span>
+                </div>
+                <div class="tmember-info">
+                  <span class="tmember-name">Serena Voss</span>
+                  <span class="tmember-title">Materials Director</span>
+                  <span class="tmember-status">On site (Bel-Air)</span>
+                </div>
+              </div>
+
+              <div class="team-member-item">
+                <div class="tmember-avatar-wrap">
+                  <img src="assets/team_dario.jpg" alt="Dario Reinholt" class="tmember-avatar">
+                  <span class="online-indicator"></span>
+                </div>
+                <div class="tmember-info">
+                  <span class="tmember-name">Dario Reinholt</span>
+                  <span class="tmember-title">Lead Hydraulic Engineer</span>
+                  <span class="tmember-status">Atelier Lab</span>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="chat-main-stream">
+              <div class="chat-messages-container" id="chat-messages-container">
+
+                <div class="chat-timestamp-divider"><span>Yesterday</span></div>
+
+                <div class="chat-msg msg-architect">
+                  <img src="assets/team_marcus.jpg" alt="Marcus" class="cmsg-avatar">
+                  <div class="cmsg-bubble">
+                    <div class="cmsg-header">
+                      <span class="cmsg-author">Marcus Ellroy</span>
+                      <span class="cmsg-time">4:20 PM</span>
+                    </div>
+                    <p>Good afternoon, Alistair. Excellent news on site today—the Los Angeles City structural engineer
+                      completed the official signoff on the steel rebar matrix and hydraulic pressure lines without a
+                      single revision.</p>
+                  </div>
+                </div>
+
+                <div class="chat-msg msg-patron">
+                  <div class="cmsg-bubble">
+                    <div class="cmsg-header">
+                      <span class="cmsg-author">You (Alistair Vance)</span>
+                      <span class="cmsg-time">5:12 PM</span>
+                    </div>
+                    <p>Superb update, Marcus. Victoria and I reviewed the stone batch photos you sent over. The veining
+                      on the Turkish travertine looks magnificent against the sunset horizon.</p>
+                  </div>
+                </div>
+
+                <div class="chat-timestamp-divider"><span>Today</span></div>
+
+                <div class="chat-msg msg-architect">
+                  <img src="assets/team_marcus.jpg" alt="Marcus" class="cmsg-avatar">
+                  <div class="cmsg-bubble">
+                    <div class="cmsg-header">
+                      <span class="cmsg-author">Marcus Ellroy</span>
+                      <span class="cmsg-time">10:14 AM</span>
+                    </div>
+                    <p>Our stone masons are laser-aligning the 62ft knife-edge weir stones this morning. I've uploaded
+                      the high-res drone photo to your Milestones tab. Would you like to schedule an on-site champagne
+                      walkthrough this Friday afternoon at 4 PM?</p>
+                  </div>
+                </div>
+
+              </div>
+
+              
+              <form class="chat-input-form" id="chat-input-form" onsubmit="handleSendMessage(event)">
+                <div class="chat-input-inner">
+                  <button type="button" class="chat-btn-attach"
+                    onclick="showToast('Attachment tool: CAD/PDF selection ready.')" title="Attach file">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48">
+                      </path>
+                    </svg>
+                  </button>
+                  <input type="text" id="chat-input-field" class="chat-input-field"
+                    placeholder="Send confidential message to Marcus Ellroy..." autocomplete="off" required>
+                  <button type="submit" class="chat-btn-send" id="chat-btn-send" title="Send message">
+                    <span>Send</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="dashboard-tab-pane" id="pane-telemetry">
+          <div class="pane-header-block">
+            <div class="pheader-breadcrumb">
+              <button class="pbc-back-btn" onclick="switchDashboardTab('overview')" aria-label="Return to Overview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Overview</span>
+              </button>
+              <span class="pbc-sep">/</span>
+              <span>IOT AUTOMATION</span>
+              <span class="pbc-sep">/</span>
+              <span class="pbc-curr">HYDRO-SENSORY TELEMETRY</span>
+            </div>
+            <div class="pheader-main-row">
+              <div>
+                <h1 class="pheader-title">Real-Time Hydro-Sensory Telemetry &amp; Chemistry Automation</h1>
+                <p class="pheader-subtitle">Real-time water temperature, mineral pH stabilization, oxidation-reduction
+                  balance, and variable-speed pump diagnostics.</p>
+              </div>
+              <div class="pheader-actions">
+                <button class="btn btn-secondary btn-sm" onclick="switchDashboardTab('overview')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard Overview</span>
+                </button>
+                <span class="live-sensor-pill"><span class="pulse-cyan"></span> IoT Sub-System Online</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="telemetry-deep-grid">
+            <div class="telemetry-gauge-card">
+              <div class="tgauge-top">
+                <span class="tgauge-badge badge-temp">TEMPERATURE</span>
+                <span class="tgauge-status">Active Heating</span>
+              </div>
+              <div class="tgauge-center">
+                <div class="gauge-ring-wrap">
+                  <svg viewBox="0 0 100 100" class="gauge-svg">
+                    <circle cx="50" cy="50" r="40" class="gauge-bg-ring" />
+                    <circle cx="50" cy="50" r="40" class="gauge-active-ring"
+                      style="stroke: #00e5ff; stroke-dasharray: 251; stroke-dashoffset: 45;" />
+                  </svg>
+                  <div class="gauge-content"><span class="gauge-num">82°F</span></div>
+                </div>
+              </div>
+              <div class="tgauge-footer">
+                <span class="tgauge-lbl">Primary Basin</span>
+                <span class="tgauge-meta">Target: 84°F · Geo-Inverter Online</span>
+              </div>
+            </div>
+
+            <div class="telemetry-gauge-card">
+              <div class="tgauge-top">
+                <span class="tgauge-badge badge-ph">PH BALANCE</span>
+                <span class="tgauge-status">Optimal Range</span>
+              </div>
+              <div class="tgauge-center">
+                <div class="gauge-ring-wrap">
+                  <svg viewBox="0 0 100 100" class="gauge-svg">
+                    <circle cx="50" cy="50" r="40" class="gauge-bg-ring" />
+                    <circle cx="50" cy="50" r="40" class="gauge-active-ring"
+                      style="stroke: #0066ff; stroke-dasharray: 251; stroke-dashoffset: 65;" />
+                  </svg>
+                  <div class="gauge-content"><span class="gauge-num">7.35</span></div>
+                </div>
+              </div>
+              <div class="tgauge-footer">
+                <span class="tgauge-lbl">Automated CO₂ Injection</span>
+                <span class="tgauge-meta">Safe Threshold: 7.20 – 7.60</span>
+              </div>
+            </div>
+
+            <div class="telemetry-gauge-card">
+              <div class="tgauge-top">
+                <span class="tgauge-badge badge-orp">OXIDATION (ORP)</span>
+                <span class="tgauge-status">Ozone Sanitized</span>
+              </div>
+              <div class="tgauge-center">
+                <div class="gauge-ring-wrap">
+                  <svg viewBox="0 0 100 100" class="gauge-svg">
+                    <circle cx="50" cy="50" r="40" class="gauge-bg-ring" />
+                    <circle cx="50" cy="50" r="40" class="gauge-active-ring"
+                      style="stroke: #0066ff; stroke-dasharray: 251; stroke-dashoffset: 55;" />
+                  </svg>
+                  <div class="gauge-content"><span class="gauge-num">760</span></div>
+                </div>
+              </div>
+              <div class="tgauge-footer">
+                <span class="tgauge-lbl">Millivolt Sanitization</span>
+                <span class="tgauge-meta">UV-C Hydro Chamber Active</span>
+              </div>
+            </div>
+
+            <div class="telemetry-gauge-card">
+              <div class="tgauge-top">
+                <span class="tgauge-badge badge-salt">MINERAL SALINITY</span>
+                <span class="tgauge-status">Dead Sea Blend</span>
+              </div>
+              <div class="tgauge-center">
+                <div class="gauge-ring-wrap">
+                  <svg viewBox="0 0 100 100" class="gauge-svg">
+                    <circle cx="50" cy="50" r="40" class="gauge-bg-ring" />
+                    <circle cx="50" cy="50" r="40" class="gauge-active-ring"
+                      style="stroke: #00e5ff; stroke-dasharray: 251; stroke-dashoffset: 70;" />
+                  </svg>
+                  <div class="gauge-content"><span class="gauge-num">3,200</span></div>
+                </div>
+              </div>
+              <div class="tgauge-footer">
+                <span class="tgauge-lbl">Mineral Density</span>
+                <span class="tgauge-meta">Target: 3,000 – 3,400 PPM</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="hydraulic-plant-card">
+            <div class="hplant-title">Pentair IntelliFlo® Hydraulic Plant Telemetry</div>
+            <div class="hplant-grid">
+              <div class="hplant-item">
+                <span class="hplant-k">Main Circulation Pump</span>
+                <span class="hplant-v text-cyan">2,450 RPM (84 GPM)</span>
+              </div>
+              <div class="hplant-item">
+                <span class="hplant-k">Weir Spillway Booster</span>
+                <span class="hplant-v text-cyan">1,800 RPM (Active Knife Edge)</span>
+              </div>
+              <div class="hplant-item">
+                <span class="hplant-k">Filter Vessel Pressure</span>
+                <span class="hplant-v">14.2 PSI (Clean Glass Media)</span>
+              </div>
+              <div class="hplant-item">
+                <span class="hplant-k">UV-C Sterilizer Lamp</span>
+                <span class="hplant-v text-cyan">94% Service Life Remaining</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      
+      <footer class="dashboard-bottom-bar">
+        <div class="dbottom-left">
+          <span>© 2026 AQUORA · Patron Estate Services</span>
+          <span class="dbottom-divider">•</span>
+          <a href="javascript:void(0)"
+            onclick="showToast('AIA G702 / G704 Contract Terms: Governed by California state architectural licensing standards.')">AIA
+            Contract Standards</a>
+        </div>
+        <div class="dbottom-right">
+          <span>Project Support: <strong>+1 (800) 492-POOL</strong></span>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  
+  <div id="variation-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="var-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeVariationModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">ESTATE CHANGE ORDER</span>
+        <h3 id="var-modal-title" class="modal-title">Submit Scope Variation Request</h3>
+        <p class="modal-subtitle">Request design adjustments, lighting scene modifications, or expedited finishes for
+          your Bel-Air commission.</p>
+      </div>
+
+      <form id="variation-form" class="modal-form" onsubmit="handleVariationSubmit(event)">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="var-type">Variation Category</label>
+            <select id="var-type" class="form-input" required>
+              <option value="Stone & Coping Adjustment">Natural Stone &amp; Coping Finish Adjustment</option>
+              <option value="Spa Jet & Hydrotherapy Expansion">Spa Jet &amp; Hydrotherapy Expansion</option>
+              <option value="Sunken Fire Lounge Add-on">Sunken Fire Lounge Specification</option>
+              <option value="Lighting Scene Scene Modification">Night Water Lighting Scene Calibration</option>
+              <option value="Audio / Automation Protocol">Sub-Surface Audio &amp; IoT Automation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="var-urgency">Priority Cadence</label>
+            <select id="var-urgency" class="form-input">
+              <option value="Standard Review">Standard Review (Within 48h)</option>
+              <option value="Urgent (Site Phase Active)">Urgent (Site Phase Active - 24h)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="var-desc">Detailed Variation Specifications</label>
+          <textarea id="var-desc" rows="4" class="form-input"
+            placeholder="Describe your proposed adjustment or requested sample presentation in detail..."
+            required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Transmit Variation Order to Principal Architect</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="lightbox-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    onclick="closeLightbox(event)">
+    <div class="lightbox-dialog">
+      <button class="modal-close-btn" onclick="closeLightboxDirect()" aria-label="Close Lightbox">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="Enlarged site survey" class="lightbox-image">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  
+  <div id="invoice-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="inv-modal-title">
+    <div class="modal-dialog modal-dialog-sm">
+      <button class="modal-close-btn" onclick="closeInvoiceModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">AIA G702 INVOICE</span>
+        <h3 id="inv-modal-title" class="modal-title">Escrow Disbursement Receipt</h3>
+        <p class="modal-subtitle" id="inv-modal-sub">Verified third-party construction escrow voucher.</p>
+      </div>
+
+      <div class="invoice-box-content">
+        <div class="inv-row">
+          <span class="inv-k">Invoice Number:</span>
+          <strong id="inv-modal-id">INV-AW-8803</strong>
+        </div>
+        <div class="inv-row">
+          <span class="inv-k">Amount Disbursed:</span>
+          <strong id="inv-modal-amount" class="text-cyan">$175,000.00</strong>
+        </div>
+        <div class="inv-row">
+          <span class="inv-k">Milestone:</span>
+          <span id="inv-modal-phase">Shotcrete Shell Pour</span>
+        </div>
+        <div class="inv-row">
+          <span class="inv-k">Escrow Agent:</span>
+          <span>First Republic / JPMorgan Escrow Trust</span>
+        </div>
+        <div class="inv-row">
+          <span class="inv-k">Engineering Cert:</span>
+          <span class="text-cyan" style="display: inline-flex; align-items: center; gap: 4px;">Verified &amp; Stamped <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="downloadInvoicePdf()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download Official PDF Receipt</span>
+      </button>
+    </div>
+  </div>
+
+  
+  <div id="toast-notification" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

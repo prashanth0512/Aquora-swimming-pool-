@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script>
+    (function () {
+      var t = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+  <title>404 // Sub-Aquatic Void | AQUORA Architectural Living</title>
+  <link rel="icon" type="image/png" href="assets/aquora-logo.png">
+  <meta name="description"
+    content="The coordinates you requested have vanished below the surface or have not yet been surveyed. Return to AQUORA Architectural Pools & Living.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="404.css">
+</head>
+
+<body class="page-404-body">
+
+  <canvas id="caustics-canvas" class="p404-bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="p404-glow-orb p404-glow-top" aria-hidden="true"></div>
+  <div class="p404-glow-orb p404-glow-bottom" aria-hidden="true"></div>
+  <div class="p404-grid-mesh" aria-hidden="true"></div>
+
+  <div class="p404-topbar">
+    <a href="index.html" class="brand-logo" aria-label="AQUORA Home">
+      <div class="logo-mark" aria-hidden="true">
+        <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+      </div>
+      <div class="brand-text-group">
+        <span class="brand-name">AQUORA</span>
+        <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+      </div>
+    </a>
+
+    <div class="p404-controls">
+      <button id="theme-toggle-btn" class="p404-ctrl-btn theme-toggle" aria-label="Toggle Light and Dark Mode" title="Toggle Theme">
+        <svg class="p404-icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="p404-icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <button id="rtl-toggle-btn" class="p404-ctrl-btn rtl-toggle" aria-label="Toggle Right-to-Left Direction" title="Toggle RTL">
+        <span class="p404-rtl-text">RTL</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="p404-viewport-container">
+
+    <div class="p404-stage-wrap" id="p404-stage">
+      
+      <div class="p404-ripple-ring ring-1" aria-hidden="true"></div>
+      <div class="p404-ripple-ring ring-2" aria-hidden="true"></div>
+      <div class="p404-ripple-ring ring-3" aria-hidden="true"></div>
+
+      <div class="p404-moving-wrapper" id="p404-moving-number">
+        <div class="p404-digit-glitch" data-text="404">
+          <span class="digit digit-4">4</span>
+          <span class="digit digit-zero">
+            <span class="zero-portal">
+              <span class="portal-core"></span>
+              <span class="portal-wave"></span>
+            </span>
+          </span>
+          <span class="digit digit-4-alt">4</span>
+        </div>
+        <div class="p404-reflection-shadow" aria-hidden="true"></div>
+      </div>
+
+      <div class="p404-meta-badge">
+        <span class="p404-beacon-pulse" aria-hidden="true"></span>
+        <span class="p404-meta-text">DEPTH 404 // HYDRAULIC VOID REACHED</span>
+        <span class="p404-coord-tag">33°37'10"N 117°53'44"W</span>
+      </div>
+
+      <h1 class="p404-title">
+        This Horizon Does <span class="highlight-aqua">Not Exist</span>
+      </h1>
+
+      <p class="p404-description">
+        The architectural waterscape you requested has vanished below the surface or was never surveyed. Resurface to our estate portfolio or enter the Client Portal.
+      </p>
+
+      <div class="p404-actions">
+        <a href="index.html" class="btn btn-primary p404-action-btn" id="btn-404-home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Return to Surface (Home)</span>
+        </a>
+
+        <a href="dashboard.html" class="btn btn-secondary p404-action-btn" id="btn-404-dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>Client Portal</span>
+        </a>
+
+        <a href="home2.html" class="btn btn-ghost p404-action-btn" id="btn-404-experience">
+          <span>Explore Home 2</span>
+          <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="p404-quick-nav">
+        <span class="p404-nav-label">QUICK COMPASS:</span>
+        <div class="p404-nav-chips">
+          <a href="about.html" class="p404-chip">About Us</a>
+          <a href="service.html" class="p404-chip">Services</a>
+          <a href="pricing.html" class="p404-chip">Pricing</a>
+          <a href="journal.html" class="p404-chip">Journal</a>
+          <a href="contact.html" class="p404-chip">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <div class="p404-bottom-status" role="contentinfo">
+    <div class="p404-status-item">
+      <span class="status-dot"></span>
+      <span>HYDRODYNAMIC TELEMETRY: ZERO_PRESSURE</span>
+    </div>
+    <div class="p404-status-divider" aria-hidden="true"></div>
+    <div class="p404-status-item">
+      <span>ERROR_CODE: HTTP_404_PAGE_NOT_FOUND</span>
+    </div>
+    <div class="p404-status-divider" aria-hidden="true"></div>
+    <div class="p404-status-item">
+      <span>AQUORA ATELIER ARCHITECTURE &copy; 2026</span>
+    </div>
+  </div>
+
+  <script src="404.js"></script>
+</body>
+
+</html>

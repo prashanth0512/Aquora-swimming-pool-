@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+  <title>Sign In &bull; Client Patron Portal | AQUORA</title>
+  <meta name="description"
+    content="Sign in to the confidential AQUORA client portal to access bespoke pool blueprints, hydraulic schematics, and personal concierge consultation.">
+  <link rel="icon" type="image/png" href="assets/aquora-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body class="auth-body">
+  <div class="auth-wrapper">
+
+    
+    <aside class="auth-hero-pane" aria-label="AQUORA Architectural Living">
+      <div class="auth-hero-bg" style="background-image: url('assets/hero_villa.jpg');" aria-hidden="true"></div>
+      <div class="auth-hero-scrim" aria-hidden="true"></div>
+      <div class="auth-hero-caustic-glow" aria-hidden="true"></div>
+
+      <div class="auth-hero-content">
+        
+        <a href="index.html" class="auth-brand-badge" aria-label="AQUORA Homepage">
+          <div class="auth-logo-icon" aria-hidden="true">
+            <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+          </div>
+          <div class="auth-brand-text">
+            <span class="auth-brand-name">AQUORA</span>
+            <span class="auth-brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+          </div>
+        </a>
+
+        
+        <div class="auth-hero-quote-block">
+          <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+          <blockquote class="auth-quote">
+            Water is an architectural canvas of light, kinetic reflection, and quiet grandeur.
+          </blockquote>
+          <cite class="auth-cite">&mdash; Dario Reinholt, Principal Hydraulic Director</cite>
+        </div>
+
+        
+        <div class="auth-hero-pills">
+          <div class="auth-stat-pill">
+            <span class="stat-dot"></span>
+            <span>256-Bit Encrypted Patron Vault</span>
+          </div>
+          <div class="auth-stat-pill">
+            <span class="stat-num">140+</span>
+            <span>Private Estates Commissioned</span>
+          </div>
+          <div class="auth-stat-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Confidential AIA Protocols</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    
+    <main class="auth-form-pane" role="main">
+      <div class="auth-card-container">
+
+        
+        <div class="auth-toolbar">
+          <a href="index.html" class="auth-return-home" aria-label="Return to AQUORA homepage">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Return to Site</span>
+          </a>
+          <div class="auth-tool-group">
+            
+            <button id="rtl-toggle-btn" class="auth-tool-btn rtl-toggle" aria-label="Toggle Right-to-Left Layout"
+              title="Toggle RTL">
+              <span class="rtl-text">RTL</span>
+            </button>
+
+            
+            <button id="theme-toggle-btn" class="auth-tool-btn theme-toggle" aria-label="Toggle Light and Dark Mode"
+              title="Toggle Theme">
+              <svg class="theme-icon icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="theme-icon icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        
+        <div class="auth-card">
+          <div class="auth-card-glow" aria-hidden="true"></div>
+
+          
+          <a href="index.html" class="auth-card-brand" aria-label="AQUORA Homepage">
+            <div class="auth-card-brand-logo" aria-hidden="true">
+              <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+            </div>
+            <div class="auth-card-brand-text">
+              <span class="auth-card-brand-name">AQUORA</span>
+              <span class="auth-card-brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+            </div>
+          </a>
+
+          <div class="auth-card-header">
+            <span class="auth-eyebrow">
+              <span class="pulse-dot"></span>
+              ESTATE CLIENT PORTAL
+            </span>
+            <h1 class="auth-title">Welcome <em>Back</em></h1>
+            <p class="auth-subtitle">Review private schematics, 3D renders &amp; telemetry.</p>
+          </div>
+
+          
+          <form id="login-form" class="auth-form" novalidate>
+            
+            <div class="form-group">
+              <label for="login-email" class="form-label">Estate Email Address</label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </span>
+                <input type="email" id="login-email" name="email" class="form-input" placeholder="name@estate.com"
+                  required autocomplete="email" spellcheck="false">
+              </div>
+              <span class="input-error" id="err-login-email">Please enter a valid estate email address.</span>
+            </div>
+
+            
+            <div class="form-group">
+              <label for="login-password" class="form-label">Confidential Password</label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                </span>
+                <input type="password" id="login-password" name="password" class="form-input" placeholder="••••••••••••"
+                  required autocomplete="current-password">
+                <button type="button" class="btn-toggle-pw" id="btn-toggle-pw" aria-label="Toggle password visibility">
+                  <svg class="eye-open" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <svg class="eye-closed" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;" aria-hidden="true">
+                    <path
+                      d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24">
+                    </path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                  </svg>
+                </button>
+              </div>
+              <span class="input-error" id="err-login-password">Please enter your confidential access password.</span>
+            </div>
+
+            
+            <div class="form-row-utility">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="remember-me" name="remember" checked>
+                <span class="checkmark" aria-hidden="true"></span>
+                <span class="checkbox-label">Keep me authenticated</span>
+              </label>
+              <a href="#" class="forgot-pw-link" id="forgot-pw-link">Forgot Password?</a>
+            </div>
+
+            
+            <button type="submit" class="btn-auth-submit" id="btn-login-submit">
+              <span>Sign In to Patron Portal</span>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            
+            <div class="auth-divider">
+              <span>or continue with</span>
+            </div>
+
+            
+            <div class="social-auth-grid">
+              <button type="button" class="btn-social-auth" id="btn-google-auth" aria-label="Sign in with Google">
+                <svg class="social-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    fill="#4285F4" />
+                  <path
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    fill="#34A853" />
+                  <path
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                    fill="#FBBC05" />
+                  <path
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                    fill="#EA4335" />
+                </svg>
+                <span>Google</span>
+              </button>
+
+              <button type="button" class="btn-social-auth" id="btn-apple-auth" aria-label="Sign in with Apple">
+                <svg class="social-icon apple-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.66-.8 1.11-1.92.99-3.04-1 .04-2.22.67-2.92 1.49-.62.72-1.16 1.87-1.01 2.98 1.12.09 2.27-.58 2.94-1.43z" />
+                </svg>
+                <span>Apple</span>
+              </button>
+            </div>
+
+            
+            <div class="auth-switch-box">
+              <span>New to AQUORA?</span>
+              <a href="signup.html" class="auth-switch-link">Create Account</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  
+  <div id="toast-notification" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+  <title>AQUORA | Architectural Pools &amp; Living</title>
+  <link rel="icon" type="image/png" href="assets/aquora-logo.png">
+  <link rel="apple-touch-icon" href="assets/aquora-logo.png">
+  <meta name="description"
+    content="AQUORA crafts bespoke, resort-inspired infinity pools, architectural waterscapes, and ultra-luxury outdoor living spaces for premier estates.">
+  <meta name="keywords"
+    content="luxury pools, custom swimming pools, infinity pool construction, architectural pool builder, outdoor living design">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  
+  <div class="water-caustics-ambient" aria-hidden="true"></div>
+
+  
+  <header id="main-header" class="site-header" role="banner">
+    <div class="header-container">
+
+      
+      <a href="#hero" class="brand-logo" aria-label="AQUORA Home">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </a>
+
+      
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle active" id="home-dropdown-trigger" aria-expanded="false"
+              aria-haspopup="true" aria-current="page">
+              <span>Home</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="home-dropdown-menu" role="menu" aria-labelledby="home-dropdown-trigger">
+              <a href="index.html" class="dropdown-link active" role="menuitem">Home 1</a>
+              <div class="dropdown-divider"></div>
+              <a href="home2.html" class="dropdown-link" role="menuitem">Home 2</a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="journal.html" class="nav-link">Journal</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      
+      <div class="header-controls">
+        
+        <button id="theme-toggle-btn" class="control-btn theme-toggle" aria-label="Toggle Light and Dark Mode"
+          title="Toggle Theme">
+          <svg class="theme-icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        
+        <button id="rtl-toggle-btn" class="control-btn rtl-toggle" aria-label="Toggle Right-to-Left Layout"
+          title="Toggle RTL">
+          <span class="rtl-text">RTL</span>
+        </button>
+
+        
+        <a href="login.html" id="header-login-btn" class="btn btn-primary desktop-only" aria-label="Login">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        
+        <button id="mobile-hamburger-btn" class="mobile-hamburger" aria-label="Open Navigation Menu"
+          aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name" style="font-size: 1.15rem;">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </div>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close Navigation Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-content">
+      <div class="drawer-home-switcher">
+        <span class="drawer-section-label">SELECT EDITION</span>
+        <div class="drawer-home-buttons">
+          <a href="index.html" class="drawer-home-btn active" id="drawer-home-1">
+            <span>Home 1</span>
+            <small>Resort Luxury</small>
+          </a>
+          <a href="home2.html" class="drawer-home-btn" id="drawer-home-2">
+            <span>Home 2</span>
+            <small>The Experience</small>
+          </a>
+        </div>
+      </div>
+
+      <nav class="drawer-nav">
+        <ul class="drawer-menu">
+          <li><a href="index.html" class="drawer-link active"><span class="drawer-link-num">01</span> Home</a></li>
+          <li><a href="about.html" class="drawer-link"><span class="drawer-link-num">02</span> About Us</a></li>
+          <li><a href="service.html" class="drawer-link"><span class="drawer-link-num">03</span> Services</a></li>
+          <li><a href="pricing.html" class="drawer-link"><span class="drawer-link-num">04</span> Pricing</a></li>
+          <li><a href="journal.html" class="drawer-link"><span class="drawer-link-num">05</span> Journal</a></li>
+          <li><a href="dashboard.html" class="drawer-link"><span class="drawer-link-num">06</span> Dashboard</a></li>
+          <li><a href="contact.html" class="drawer-link"><span class="drawer-link-num">07</span> Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="drawer-footer">
+        <a href="login.html" id="drawer-login-btn" class="btn btn-primary btn-block">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+        <button id="drawer-quote-btn" class="btn btn-secondary btn-block">
+          <span>Request Consultation</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  
+  <main id="main-content">
+
+    
+    <section id="hero" class="hero-section" aria-label="Hero Introduction">
+      
+      <div class="hero-bg-wrapper" aria-hidden="true">
+        <img src="assets/hero_villa.jpg" alt="" class="hero-bg-image" fetchpriority="high">
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      
+      <div class="hero-glow-layer" aria-hidden="true"></div>
+
+      <div class="hero-container">
+
+        
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text">3D ARCHITECTURAL SIMULATION • VISION TO REALITY</span>
+          </div>
+
+          <h1 class="hero-title">
+            See Your Pool Before We <span class="highlight-aqua">Build It in Reality</span>
+          </h1>
+
+          <p class="hero-description">
+            From architectural concept to finished retreat, every detail is carefully considered in real-time 3D simulation before construction begins.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#featured-projects" class="btn btn-primary btn-large" aria-label="Explore Pool Designs">
+              <span>Explore Pool Designs</span>
+              <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <button id="hero-quote-btn" class="btn btn-secondary btn-large" onclick="openQuoteModal('Hero 3D Simulation')" aria-label="Start Your Project">
+              <span>Start Your Project</span>
+              <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <span class="hero-stat-number">500<span class="accent-plus">+</span></span>
+              <span class="hero-stat-label">Pools Built</span>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-number">15<span class="accent-plus">+</span></span>
+              <span class="hero-stat-label">Years Experience</span>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-number">100<span class="accent-plus">%</span></span>
+              <span class="hero-stat-label">Fixed Turnkey</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="hero-3d-wrapper" id="hero-3d-wrapper">
+          <div class="pool-canvas-stage" id="pool-canvas-stage" role="region" aria-label="Interactive 3D Pool Simulation">
+            
+            
+            <canvas id="pool-3d-canvas"></canvas>
+
+            
+            <div class="pool-3d-hud">
+              <div class="hud-top-meta">
+                <div class="hud-phase-badge">
+                  <span class="hud-beacon-pulse" aria-hidden="true"></span>
+                  <span id="hud-stage-num">PHASE 01 // IDEA</span>
+                </div>
+                <div class="hud-dimension-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  <span>14.40m × 6.40m CAD MODEL</span>
+                </div>
+              </div>
+
+              <div class="hud-info-body">
+                <h2 id="hud-stage-title" class="hud-title">ARCHITECTURAL BLUEPRINT</h2>
+                <p id="hud-stage-sub" class="hud-sub">Sub-millimeter LIDAR survey &amp; CAD geometry. Every master pool begins with an idea.</p>
+              </div>
+
+              
+              <div class="hud-progress-track" aria-hidden="true">
+                <div id="hud-progress-fill" class="hud-progress-runner"></div>
+              </div>
+            </div>
+
+            
+            <div class="pool-3d-controls">
+              <button id="orbit-toggle-btn" class="ctrl-btn active" title="Toggle 360° Cinematic Orbit" aria-label="Toggle Auto Orbit" aria-pressed="true">
+                <svg class="icon-spin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 4 23 10 17 10"></polyline>
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+                <span>360° ORBIT</span>
+              </button>
+
+              <button id="reset-view-btn" class="ctrl-btn" title="Reset Camera View to 3/4 Hero Perspective" aria-label="Reset Camera View">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                  <polyline points="3 3 3 8 8 8"></polyline>
+                </svg>
+                <span>RESET</span>
+              </button>
+            </div>
+
+            
+            <div class="pool-3d-stage-tabs" role="tablist" aria-label="Commissioning Journey Phases">
+              <button class="stage-pill-btn active" role="tab" aria-selected="true" aria-controls="hud-stage-title">
+                <span class="pill-num">01</span>
+                <span class="pill-name">IDEA</span>
+              </button>
+              <button class="stage-pill-btn" role="tab" aria-selected="false" aria-controls="hud-stage-title">
+                <span class="pill-num">02</span>
+                <span class="pill-name">STRUCTURE</span>
+              </button>
+              <button class="stage-pill-btn" role="tab" aria-selected="false" aria-controls="hud-stage-title">
+                <span class="pill-num">03</span>
+                <span class="pill-name">MATERIALS</span>
+              </button>
+              <button class="stage-pill-btn" role="tab" aria-selected="false" aria-controls="hud-stage-title">
+                <span class="pill-num">04</span>
+                <span class="pill-name">REALITY</span>
+              </button>
+            </div>
+
+            
+            <div class="pool-3d-drag-hint" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+              <span>DRAG TO ROTATE &bull; SCROLL TO ZOOM</span>
+            </div>
+
+            
+            <div id="pool-3d-fallback" class="pool-3d-fallback" style="display: none;">
+              <img src="assets/hero_infinity.jpg" alt="Architectural Luxury Swimming Pool" class="fallback-img">
+              <div class="fallback-overlay">
+                <span class="fallback-badge">ARCHITECTURAL DESIGN</span>
+                <h3 class="fallback-title">Turnkey Vanishing Edge Pool</h3>
+                <p class="fallback-sub">Precision engineered with monolithic gunite &amp; Navona travertine.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="hero-bottom-transition-bar">
+        <div class="scrollbar-container">
+          <div class="scrollbar-meta">
+            <span class="scrollbar-label">AQUORA // ARCHITECTURAL ODYSSEY</span>
+            <span class="scrollbar-indicator-text">PHASE 01 : THE MANIFESTO</span>
+          </div>
+          <div class="scrollbar-track" id="hero-scrollbar-track" aria-hidden="true">
+            <div class="scrollbar-runner" id="hero-scrollbar-runner"></div>
+          </div>
+          <a href="#architectural-manifesto" class="scrollbar-action-cue" aria-label="Scroll to Architectural Manifesto">
+            <span>SCROLL TO EXPLORE</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="architectural-manifesto" class="content-section manifesto-section" aria-label="Architectural Philosophy">
+      <div class="section-container">
+        <div class="manifesto-grid">
+
+          
+          <div class="manifesto-content">
+            <span class="section-eyebrow"><span class="eyebrow-beacon" aria-hidden="true"></span>ARCHITECTURAL PHILOSOPHY</span>
+            <h2 class="manifesto-title">
+              Water As Living Architecture,
+              <span class="highlight-aqua">Engineered Beyond Limits</span>
+            </h2>
+
+            <p class="manifesto-narrative">
+              At AQUORA, a swimming pool is the sculptural, kinetic heartbeat of the estate. We synthesize high-seismic cantilever engineering, hydrodynamic acoustics, and monolithic quarry stone into bespoke waterscapes tailored to the geological cadence of your property.
+            </p>
+
+            
+            <div class="manifesto-spec-list">
+              <div class="manifesto-spec-card">
+                <div class="spec-card-head">
+                  <span class="spec-card-num">01</span>
+                  <h4 class="spec-card-title">Vanishing Weir Precision</h4>
+                </div>
+                <p class="spec-card-desc">
+                  Laser-calibrated 0.02mm vanishing edge tolerances for silent laminar flow and flawless optical water reflection.
+                </p>
+              </div>
+
+              <div class="manifesto-spec-card">
+                <div class="spec-card-head">
+                  <span class="spec-card-num">02</span>
+                  <h4 class="spec-card-title">Parametric Hydro-Circulation</h4>
+                </div>
+                <p class="spec-card-desc">
+                  Sub-surface acoustic circulation eliminating turbulence while maintaining continuous 84°F thermal equilibrium.
+                </p>
+              </div>
+
+              <div class="manifesto-spec-card">
+                <div class="spec-card-head">
+                  <span class="spec-card-num">03</span>
+                  <h4 class="spec-card-title">Monolithic Italian Travertine</h4>
+                </div>
+                <p class="spec-card-desc">
+                  Quarry-selected structural stone slabs hand-fitted with seismic isolation and concealed acoustic drainage.
+                </p>
+              </div>
+            </div>
+
+            
+            <div class="manifesto-stats-row">
+              <div class="m-stat">
+                <span class="m-stat-val">100%</span>
+                <span class="m-stat-lbl">Custom Engineered</span>
+              </div>
+              <div class="m-stat">
+                <span class="m-stat-val">25-Yr</span>
+                <span class="m-stat-lbl">Structural Warranty</span>
+              </div>
+              <div class="m-stat">
+                <span class="m-stat-val">0.02mm</span>
+                <span class="m-stat-lbl">Weir Tolerance</span>
+              </div>
+              <div class="m-stat">
+                <span class="m-stat-val">Zero</span>
+                <span class="m-stat-lbl">Compromise</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="manifesto-visuals-col">
+            <div class="manifesto-composition-wrap">
+
+              
+              <div class="manifesto-ambient-glow" aria-hidden="true"></div>
+
+              
+              <div class="manifesto-card-small" onclick="openLightbox('assets/manifesto_lounge.jpg', 'Thermal Travertine Baja Shelf', 'Submerged honed marble sun loungers with integrated perimeter warm LED optics.')">
+                <div class="manifesto-card-small-inner">
+                  <img src="assets/manifesto_lounge.jpg" alt="Submerged marble loungers in luxury estate pool" class="manifesto-img-small" loading="lazy" width="500" height="375">
+                  <div class="manifesto-img-overlay"></div>
+
+                  <div class="small-floating-chip">
+                    <span class="live-dot pulse" aria-hidden="true"></span>
+                    <span>Submerged Marble • 84°F</span>
+                  </div>
+
+                  <div class="small-inspect-lens" title="Inspect Fullscreen">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="manifesto-card-big" onclick="openLightbox('assets/manifesto_cantilever.jpg', 'The Horizon Cantilever Cliff', 'Structural cantilever engineering suspended over coastal Mediterranean bluffs with crystal-clear vanishing edge.')">
+                <div class="manifesto-card-big-inner">
+                  <img src="assets/manifesto_cantilever.jpg" alt="Cantilevered cliffside luxury infinity pool" class="manifesto-img-big" loading="lazy" width="600" height="800">
+                  <div class="manifesto-img-overlay"></div>
+
+                  <div class="manifesto-floating-top">
+                    <span class="manifesto-badge-pill">Masterwork 01</span>
+                    <div class="manifesto-inspect-lens" title="Inspect Fullscreen">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="manifesto-caption-strip">
+                    <h4 class="manifesto-img-title">The Horizon Cantilever</h4>
+                    <p class="manifesto-img-desc">Monolithic reinforced concrete cantilever with frameless structural acrylic balustrades.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="why-choose-us" class="content-section why-section" aria-label="Why Choose Us">
+      <div class="section-container">
+
+        <div class="section-header text-center">
+          <span class="section-eyebrow"><span class="eyebrow-beacon" aria-hidden="true"></span>DISTINCTION &amp; MASTERY</span>
+          <h2 class="section-title">Built Around Your <span class="highlight-aqua">Vision</span></h2>
+          <p class="section-subtitle">
+            We combine thoughtful design, precision engineering, premium materials, and expert craftsmanship to create
+            pools made for exceptional living.
+          </p>
+        </div>
+
+        
+        <div class="features-grid">
+
+          
+          <article class="feature-card scroll-slide-left">
+            <div class="card-num-watermark">01</div>
+            <div class="feature-icon-wrapper">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Bespoke Design</h3>
+            <p class="feature-card-desc">
+              Tailored 3D parametric blueprints and site-specific architectural concepts that seamlessly echo your
+              home's geometry and surrounding natural vistas.
+            </p>
+            <div class="feature-card-footer">
+              <span class="feature-card-highlight">Custom 3D Visualizer Included</span>
+            </div>
+          </article>
+
+          
+          <article class="feature-card scroll-slide-left">
+            <div class="card-num-watermark">02</div>
+            <div class="feature-icon-wrapper">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Precision Engineering</h3>
+            <p class="feature-card-desc">
+              Comprehensive geotechnical analysis, seismic-rated steel frameworks, and advanced computational fluid
+              hydraulics ensure structural longevity.
+            </p>
+            <div class="feature-card-footer">
+              <span class="feature-card-highlight">Laser Hydrostatic Balancing</span>
+            </div>
+          </article>
+
+          
+          <article class="feature-card scroll-slide-left">
+            <div class="card-num-watermark">03</div>
+            <div class="feature-icon-wrapper">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Premium Materials</h3>
+            <p class="feature-card-desc">
+              Hand-selected honed travertine, imported Italian glass iridescent mosaics, saltwater titanium heaters, and
+              antimicrobial quartz aggregate finishes.
+            </p>
+            <div class="feature-card-footer">
+              <span class="feature-card-highlight">Artisan Grade Finishes</span>
+            </div>
+          </article>
+
+          
+          <article class="feature-card scroll-slide-left">
+            <div class="card-num-watermark">04</div>
+            <div class="feature-icon-wrapper">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Expert Craftsmanship</h3>
+            <p class="feature-card-desc">
+              Dedicated master artisans with decades of specialized pool masonry experience, backed by daily digital
+              site logs and rigorous quality checklists.
+            </p>
+            <div class="feature-card-footer">
+              <span class="feature-card-highlight">In-House Master Guild</span>
+            </div>
+          </article>
+
+        </div>
+
+        
+        <div class="stats-banner-strip">
+          <div class="stat-banner-col">
+            <span class="stat-banner-num">500<span class="plus">+</span></span>
+            <span class="stat-banner-title">Pools Built</span>
+            <span class="stat-banner-sub">Across Coastal & Mountain Estates</span>
+          </div>
+          <div class="stat-banner-separator" aria-hidden="true"></div>
+          <div class="stat-banner-col">
+            <span class="stat-banner-num">15<span class="plus">+</span></span>
+            <span class="stat-banner-title">Years Experience</span>
+            <span class="stat-banner-sub">Mastering Luxury Waterscapes</span>
+          </div>
+          <div class="stat-banner-separator" aria-hidden="true"></div>
+          <div class="stat-banner-col">
+            <span class="stat-banner-num">100<span class="plus">%</span></span>
+            <span class="stat-banner-title">Client Satisfaction</span>
+            <span class="stat-banner-sub">Flawless Turnkey Execution</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="featured-projects" class="content-section projects-section" aria-label="Featured Pool Projects">
+      <div class="section-container">
+
+        <div class="section-header text-center">
+          <span class="section-eyebrow"><span class="eyebrow-beacon" aria-hidden="true"></span>PORTFOLIO OF MASTERPIECES</span>
+          <h2 class="section-title">Pools Worth <span class="highlight-aqua">Coming Home</span> To</h2>
+          <p class="section-subtitle">
+            Explore a curated selection of our most celebrated residential installations.
+          </p>
+        </div>
+
+        
+        <div class="portfolio-section-chips" role="tablist" aria-label="Masterpieces Categories">
+          <button class="portfolio-chip active" data-category="all" role="tab" aria-selected="true">All Masterpieces</button>
+          <button class="portfolio-chip" data-category="infinity" role="tab" aria-selected="false">Vanishing Edge</button>
+          <button class="portfolio-chip" data-category="resort" role="tab" aria-selected="false">Private Resort</button>
+          <button class="portfolio-chip" data-category="courtyard" role="tab" aria-selected="false">Monolith Minimal</button>
+          <button class="portfolio-chip" data-category="tropical" role="tab" aria-selected="false">Lagoon &amp; Grotto</button>
+        </div>
+
+        
+        <div class="projects-editorial-grid">
+
+          
+          <article class="project-card scroll-slide-left" data-project="infinity">
+            <div class="project-img-container">
+              <img src="assets/project_infinity.jpg" alt="Modern Infinity pool project in Malibu Heights"
+                class="project-img" loading="lazy" width="600" height="400">
+              <div class="project-overlay"></div>
+              <span class="project-tag-floating">Vanishing Edge</span>
+            </div>
+            <div class="project-meta-box">
+              <div class="project-meta-header">
+                <span class="project-location">Malibu Heights, CA</span>
+                <span class="project-spec-mini">60 ft • Zero Edge</span>
+              </div>
+              <h3 class="project-name">The Pacific Horizon</h3>
+              <p class="project-desc">
+                Cantilevered vanishing-edge engineering suspended over coastal bluffs with linear fire trough.
+              </p>
+              <button class="project-view-btn"
+                onclick="openLightbox('assets/project_infinity.jpg', 'The Pacific Horizon', 'Malibu Heights, CA — Cantilevered vanishing-edge infinity pool with perimeter slot drain and linear fire trough.')">
+                <span>Inspect Project</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          
+          <article class="project-card scroll-slide-left" data-project="resort">
+            <div class="project-img-container">
+              <img src="assets/project_resort.jpg" alt="Resort Escape pool project in Palm Beach" class="project-img"
+                loading="lazy" width="600" height="400">
+              <div class="project-overlay"></div>
+              <span class="project-tag-floating">Private Resort</span>
+            </div>
+            <div class="project-meta-box">
+              <div class="project-meta-header">
+                <span class="project-location">Palm Beach, FL</span>
+                <span class="project-spec-mini">Baja Shelf • Cabana</span>
+              </div>
+              <h3 class="project-name">The Palmetto Oasis</h3>
+              <p class="project-desc">
+                Submerged sun shelf tanning lounges, teak cabana pavilion, and sea-glass mosaics.
+              </p>
+              <button class="project-view-btn"
+                onclick="openLightbox('assets/project_resort.jpg', 'The Palmetto Oasis', 'Palm Beach, FL — In-water tanning shelf, travertine perimeter deck, and luxury pavilion lounge.')">
+                <span>Inspect Project</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          
+          <article class="project-card scroll-slide-left" data-project="courtyard">
+            <div class="project-img-container">
+              <img src="assets/project_courtyard.jpg" alt="Contemporary Courtyard pool project in Beverly Hills"
+                class="project-img" loading="lazy" width="600" height="400">
+              <div class="project-overlay"></div>
+              <span class="project-tag-floating">Monolith Minimal</span>
+            </div>
+            <div class="project-meta-box">
+              <div class="project-meta-header">
+                <span class="project-location">Beverly Hills, CA</span>
+                <span class="project-spec-mini">Basalt • Waterfall</span>
+              </div>
+              <h3 class="project-name">The Monolith Courtyard</h3>
+              <p class="project-desc">
+                Dark basalt stepping stones hovering across deep waters with architectural sheet waterfall.
+              </p>
+              <button class="project-view-btn"
+                onclick="openLightbox('assets/project_courtyard.jpg', 'The Monolith Courtyard', 'Beverly Hills, CA — Basalt monolith walls, reflecting lap pool, and architectural stepping stones.')">
+                <span>Inspect Project</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          
+          <article class="project-card scroll-slide-left" data-project="tropical">
+            <div class="project-img-container">
+              <img src="assets/project_tropical.jpg" alt="Tropical Retreat pool project in Maui Coast"
+                class="project-img" loading="lazy" width="600" height="400">
+              <div class="project-overlay"></div>
+              <span class="project-tag-floating">Lagoon & Grotto</span>
+            </div>
+            <div class="project-meta-box">
+              <div class="project-meta-header">
+                <span class="project-location">Maui Coast, HI</span>
+                <span class="project-spec-mini">Grotto • Lava Stone</span>
+              </div>
+              <h3 class="project-name">The Maui Sanctuary</h3>
+              <p class="project-desc">
+                Organic volcanic stone masonry, two-tiered cascading waterfall grotto, and horizon curve.
+              </p>
+              <button class="project-view-btn"
+                onclick="openLightbox('assets/project_tropical.jpg', 'The Maui Sanctuary', 'Maui Coast, HI — Cascading natural boulder waterfall, volcanic stone coping, and ocean-facing horizon curve.')">
+                <span>Inspect Project</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="pool-types" class="content-section pool-types-section" aria-label="Pool Types">
+      <div class="section-container">
+
+        <div class="section-header text-center">
+          <span class="section-eyebrow"><span class="eyebrow-beacon" aria-hidden="true"></span>TAILORED CLASSIFICATIONS</span>
+          <h2 class="section-title">Designed For Your <span class="highlight-aqua">Lifestyle</span></h2>
+          <p class="section-subtitle">
+            Every estate is unique. We engineer three distinct architectural paradigms calibrated to your terrain and
+            aesthetic aspirations.
+          </p>
+        </div>
+
+        
+        <div class="pool-types-grid">
+
+          
+          <article class="pool-type-card scroll-slide-left">
+            <div class="pool-type-image-holder">
+              <img src="assets/pool_inground.jpg" alt="Inground pool installation with knife-edge overflow"
+                class="type-img" loading="lazy" width="600" height="450">
+              <div class="type-badge-pill">Category 01</div>
+            </div>
+            <div class="pool-type-content">
+              <h3 class="type-title">Inground Pools</h3>
+              <p class="type-description">
+                Seamless subterranean architecture featuring flush knife-edge perimeter overflows, concealed drainage
+                channels, and continuous honed travertine terraces.
+              </p>
+              <ul class="type-feature-list">
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> Knife-edge slot drain overflow</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> Zero-transition flush coping</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> High-flow concealed returns</li>
+              </ul>
+              <div class="type-action-row">
+                <a href="service detail.html?service=inground" class="type-explore-link">
+                  <span>Explore Inground Pools</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="pool-type-card scroll-slide-left">
+            <div class="pool-type-image-holder">
+              <img src="assets/pool_aboveground.jpg" alt="Above-ground architectural glass pool with hardwood deck"
+                class="type-img" loading="lazy" width="600" height="450">
+              <div class="type-badge-pill">Category 02</div>
+            </div>
+            <div class="pool-type-content">
+              <h3 class="type-title">Above-Ground Pools</h3>
+              <p class="type-description">
+                Ultra-modern elevated structural installations boasting transparent structural acrylic observation
+                walls, integrated into tiered multi-level hardwood decking.
+              </p>
+              <ul class="type-feature-list">
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> 4-inch structural acrylic viewing windows</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> Multi-level Brazilian Ipe hardwood surrounds</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> Ideal for sloped or challenging hillsides</li>
+              </ul>
+              <div class="type-action-row">
+                <a href="service detail.html?service=above-ground" class="type-explore-link">
+                  <span>Explore Above-Ground</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="pool-type-card scroll-slide-left">
+            <div class="pool-type-image-holder">
+              <img src="assets/pool_custom.jpg" alt="Custom sculptural pool with swim-up bar and fire bowls"
+                class="type-img" loading="lazy" width="600" height="450">
+              <div class="type-badge-pill">Category 03</div>
+            </div>
+            <div class="pool-type-content">
+              <h3 class="type-title">Custom Pools</h3>
+              <p class="type-description">
+                Bespoke sculptural masterworks combining curved vanishing glass walls, elevated hydrotherapy spa spills,
+                sunken swim-up cocktail bars, and gas fire features.
+              </p>
+              <ul class="type-feature-list">
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> Sunken swim-up wet bars & stools</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> Integrated 360° spillover spa sanitarium</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg> Automated architectural gas fire bowls</li>
+              </ul>
+              <div class="type-action-row">
+                <a href="service detail.html?service=custom" class="type-explore-link">
+                  <span>Explore Custom Pools</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="design-gallery" class="content-section gallery-section" aria-label="Design Gallery">
+      <div class="section-container">
+
+        <div class="section-header text-center">
+          <span class="section-eyebrow"><span class="eyebrow-beacon" aria-hidden="true"></span>VISUAL ARCHIVE</span>
+          <h2 class="section-title">Find Your <span class="highlight-aqua">Inspiration</span></h2>
+          <p class="section-subtitle">
+            Filter through our curated anthology of waterscapes and discover the design vocabulary for your private
+            sanctuary.
+          </p>
+        </div>
+
+        
+        <div class="gallery-filter-chips" role="tablist" aria-label="Gallery Categories">
+          <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-chip" data-filter="modern" role="tab" aria-selected="false">Modern</button>
+          <button class="filter-chip" data-filter="resort" role="tab" aria-selected="false">Resort</button>
+          <button class="filter-chip" data-filter="minimal" role="tab" aria-selected="false">Minimal</button>
+          <button class="filter-chip" data-filter="tropical" role="tab" aria-selected="false">Tropical</button>
+          <button class="filter-chip" data-filter="contemporary" role="tab" aria-selected="false">Contemporary</button>
+          <button class="filter-chip" data-filter="custom" role="tab" aria-selected="false">Custom</button>
+        </div>
+
+        
+        <div class="gallery-grid" id="gallery-masonry-grid">
+
+          
+          <div class="gallery-item gallery-item-featured scroll-slide-left" data-category="modern resort"
+            onclick="openLightbox('assets/hero_infinity.jpg', 'The Horizon Cantilever', 'Modern & Resort — Oceanfront glass edge pool with travertine deck.')">
+            <div class="gallery-item-inner">
+              <img src="assets/hero_infinity.jpg" alt="Modern oceanfront infinity pool" class="gallery-img"
+                loading="lazy" width="800" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Featured Waterscape</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Modern • Resort • Malibu</span>
+                <h4 class="gallery-title">The Horizon Cantilever</h4>
+                <p class="gallery-caption-mini">Cantilevered vanishing edge suspended over ocean bluffs.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item scroll-slide-left" data-category="minimal contemporary"
+            onclick="openLightbox('assets/gallery_minimal.jpg', 'Aegean Minimalist Lap', 'Minimal & Contemporary — Honed white marble terrace with architectural pergola.')">
+            <div class="gallery-item-inner">
+              <img src="assets/gallery_minimal.jpg" alt="Minimalist geometric lap pool with white marble"
+                class="gallery-img" loading="lazy" width="600" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Minimal Lap</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Minimal • Contemporary</span>
+                <h4 class="gallery-title">Aegean Minimalist Lap</h4>
+                <p class="gallery-caption-mini">Honed white marble terrace with architectural pergola.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item scroll-slide-left" data-category="resort"
+            onclick="openLightbox('assets/project_resort.jpg', 'Baja Shelf Sunken Lounges', 'Resort — Palm Beach estate with submerged chaise loungers and cabana.')">
+            <div class="gallery-item-inner">
+              <img src="assets/project_resort.jpg" alt="Luxury resort pool with in-water sun loungers"
+                class="gallery-img" loading="lazy" width="600" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Resort Estate</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Resort Living</span>
+                <h4 class="gallery-title">Baja Shelf Sunken Lounges</h4>
+                <p class="gallery-caption-mini">Palm Beach estate with submerged chaise loungers.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item scroll-slide-left" data-category="contemporary minimal"
+            onclick="openLightbox('assets/project_courtyard.jpg', 'Zen Basalt Stepping Pool', 'Contemporary — Basalt stone monolith walls and architectural sheet waterfall.')">
+            <div class="gallery-item-inner">
+              <img src="assets/project_courtyard.jpg" alt="Contemporary courtyard pool with stepping stones"
+                class="gallery-img" loading="lazy" width="600" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Zen Monolith</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Contemporary</span>
+                <h4 class="gallery-title">Zen Basalt Stepping Pool</h4>
+                <p class="gallery-caption-mini">Dark basalt stones hovering over architectural sheet water.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item scroll-slide-left" data-category="custom"
+            onclick="openLightbox('assets/pool_custom.jpg', 'Curved Amphitheater Swim-Up', 'Custom — Curved infinity glass wall with sunken swim-up bar and fire urns.')">
+            <div class="gallery-item-inner">
+              <img src="assets/pool_custom.jpg" alt="Custom curved swimming pool with swim-up bar" class="gallery-img"
+                loading="lazy" width="600" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Custom Curvature</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Custom Masterpiece</span>
+                <h4 class="gallery-title">Curved Amphitheater Swim-Up</h4>
+                <p class="gallery-caption-mini">Integrated sunken wet bar, fire urns, and glass perimeter.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item scroll-slide-left" data-category="tropical resort"
+            onclick="openLightbox('assets/project_tropical.jpg', 'Cascading Rock Grotto', 'Tropical — Organic boulder masonry and tiered waterfall lagoon.')">
+            <div class="gallery-item-inner">
+              <img src="assets/project_tropical.jpg" alt="Tropical resort pool with cascading rock waterfall"
+                class="gallery-img" loading="lazy" width="600" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Organic Lagoon</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Tropical Sanctuary</span>
+                <h4 class="gallery-title">Cascading Rock Grotto</h4>
+                <p class="gallery-caption-mini">Volcanic boulder craftsmanship with two-tiered waterfall.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item scroll-slide-left" data-category="modern contemporary"
+            onclick="openLightbox('assets/pool_aboveground.jpg', 'Architectural Acrylic Deck', 'Modern & Contemporary — Elevated pool with transparent acrylic glass viewing wall.')">
+            <div class="gallery-item-inner">
+              <img src="assets/pool_aboveground.jpg" alt="Architectural acrylic wall swimming pool" class="gallery-img"
+                loading="lazy" width="600" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Acrylic Glass</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Above-Ground Modern</span>
+                <h4 class="gallery-title">Architectural Acrylic Deck</h4>
+                <p class="gallery-caption-mini">Tiered Ipe hardwood terrace with 4-inch transparent viewing wall.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item scroll-slide-left" data-category="modern minimal contemporary"
+            onclick="openLightbox('assets/gallery_knife_edge.jpg', 'Horizon Knife-Edge Basin', 'Modern &amp; Minimal — Submerged basalt stepping stones with perimeter knife-edge vanishing reflection.')">
+            <div class="gallery-item-inner">
+              <img src="assets/gallery_knife_edge.jpg" alt="Luxury knife-edge infinity pool with basalt stepping stones"
+                class="gallery-img" loading="lazy" width="600" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Knife-Edge Basin</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Modern • Minimal</span>
+                <h4 class="gallery-title">Horizon Knife-Edge Basin</h4>
+                <p class="gallery-caption-mini">Submerged basalt stepping stones with perimeter knife-edge vanishing reflection.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item gallery-item-featured scroll-slide-left" data-category="resort custom"
+            onclick="openLightbox('assets/hero_night.jpg', 'Nocturne Bioluminescent Pavilion', 'Resort &amp; Custom — Nighttime pool with underwater LEDs and resort cabana.')">
+            <div class="gallery-item-inner">
+              <img src="assets/hero_night.jpg" alt="Nighttime luxury resort pool illuminated" class="gallery-img"
+                loading="lazy" width="800" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Night Illuminance</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Resort • Nightscapes</span>
+                <h4 class="gallery-title">Nocturne Bioluminescent Pavilion</h4>
+                <p class="gallery-caption-mini">Architectural evening illumination with submerged RGBW optic fiber.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item scroll-slide-left" data-category="resort custom modern"
+            onclick="openLightbox('assets/gallery_fire_lounge.jpg', 'Sunken Fire &amp; Water Caldera', 'Resort &amp; Custom — Circular illuminated sunken fire lounge encircled by glass-edge twilight waters.')">
+            <div class="gallery-item-inner">
+              <img src="assets/gallery_fire_lounge.jpg" alt="Sunken fire lounge in luxury estate swimming pool"
+                class="gallery-img" loading="lazy" width="600" height="450">
+              <div class="gallery-floating-top">
+                <span class="gallery-tag-pill">Fire &amp; Water Caldera</span>
+                <div class="gallery-inspect-circle" title="Enlarge Image">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery-hover-card">
+                <span class="gallery-badge">Resort • Custom</span>
+                <h4 class="gallery-title">Sunken Fire &amp; Water Caldera</h4>
+                <p class="gallery-caption-mini">Circular illuminated fire lounge encircled by glass-edge twilight waters.</p>
+                <span class="gallery-action-hint">Inspect Masterpiece →</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="gallery-footer-action">
+          <button class="btn btn-secondary btn-large" onclick="openQuoteModal('Lookbook Gallery Request')">
+            <span>Explore Full Gallery Lookbook</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="process-timeline" class="content-section process-section" aria-label="Process and Timeline">
+      <div class="section-container">
+
+        <div class="section-header text-center">
+          <span class="section-eyebrow"><span class="eyebrow-beacon" aria-hidden="true"></span>PRECISION METHODOLOGY</span>
+          <h2 class="section-title">From First Sketch To <span class="highlight-aqua">First Swim</span></h2>
+          <p class="section-subtitle">
+            A seamless turnkey journey guided by architectural precision. Typical delivery is achieved in <strong>8–16
+              Weeks</strong> without compromise.
+          </p>
+          <div class="timeline-indicator-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Standard Turnkey Timeline: 8–16 Weeks</span>
+          </div>
+        </div>
+
+        
+        <div class="timeline-vertical-wrapper">
+          <div class="timeline-vertical-spine" aria-hidden="true">
+            <div class="timeline-vertical-fill" id="timeline-progress-fill"></div>
+          </div>
+
+          <div class="timeline-vertical-flow">
+
+            
+            <div class="timeline-row step-left scroll-slide-left" data-step="1">
+              <div class="timeline-card-col">
+                <article class="timeline-v-card">
+                  <div class="timeline-card-badge-row">
+                    <span class="step-phase">Phase 01</span>
+                    <span class="step-duration">Duration: 1 Week</span>
+                  </div>
+                  <h3 class="step-title">Consultation &amp; Topography</h3>
+                  <p class="step-desc">
+                    On-site elevation analysis, sun trajectory mapping, lifestyle audit, and preliminary budget
+                    modeling with our principal architect.
+                  </p>
+                  <div class="timeline-pill-tags">
+                    <span class="t-pill">Topography Audit</span>
+                    <span class="t-pill">Sun Orientation</span>
+                    <span class="t-pill">Site Feasibility</span>
+                  </div>
+                </article>
+              </div>
+              <div class="timeline-node-col">
+                <div class="step-marker">
+                  <span class="step-marker-number">01</span>
+                  <span class="step-marker-pulse" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="timeline-spacer-col" aria-hidden="true"></div>
+            </div>
+
+            
+            <div class="timeline-row step-right scroll-slide-left" data-step="2">
+              <div class="timeline-spacer-col" aria-hidden="true"></div>
+              <div class="timeline-node-col">
+                <div class="step-marker">
+                  <span class="step-marker-number">02</span>
+                  <span class="step-marker-pulse" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="timeline-card-col">
+                <article class="timeline-v-card">
+                  <div class="timeline-card-badge-row">
+                    <span class="step-phase">Phase 02</span>
+                    <span class="step-duration">Duration: 2–3 Weeks</span>
+                  </div>
+                  <h3 class="step-title">Parametric 3D Design &amp; Blueprints</h3>
+                  <p class="step-desc">
+                    Photorealistic 3D parametric renderings, structural engineering blueprints, hydraulic circulation
+                    calculations, and nightscape lighting plans.
+                  </p>
+                  <div class="timeline-pill-tags">
+                    <span class="t-pill">3D Rendering</span>
+                    <span class="t-pill">Hydraulics Spec</span>
+                    <span class="t-pill">Engineering</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            
+            <div class="timeline-row step-left scroll-slide-left" data-step="3">
+              <div class="timeline-card-col">
+                <article class="timeline-v-card">
+                  <div class="timeline-card-badge-row">
+                    <span class="step-phase">Phase 03</span>
+                    <span class="step-duration">Duration: 1–2 Weeks</span>
+                  </div>
+                  <h3 class="step-title">Artisan Material Selection</h3>
+                  <p class="step-desc">
+                    Private studio curation of imported limestone, iridescent glass mosaic palettes, saltwater titanium
+                    heating systems, and bespoke water feature fixtures.
+                  </p>
+                  <div class="timeline-pill-tags">
+                    <span class="t-pill">Italian Mosaic</span>
+                    <span class="t-pill">Travertine Coping</span>
+                    <span class="t-pill">Titanium Heaters</span>
+                  </div>
+                </article>
+              </div>
+              <div class="timeline-node-col">
+                <div class="step-marker">
+                  <span class="step-marker-number">03</span>
+                  <span class="step-marker-pulse" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="timeline-spacer-col" aria-hidden="true"></div>
+            </div>
+
+            
+            <div class="timeline-row step-right scroll-slide-left" data-step="4">
+              <div class="timeline-spacer-col" aria-hidden="true"></div>
+              <div class="timeline-node-col">
+                <div class="step-marker">
+                  <span class="step-marker-number">04</span>
+                  <span class="step-marker-pulse" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="timeline-card-col">
+                <article class="timeline-v-card">
+                  <div class="timeline-card-badge-row">
+                    <span class="step-phase">Phase 04</span>
+                    <span class="step-duration">Duration: 2–4 Weeks</span>
+                  </div>
+                  <h3 class="step-title">Permits &amp; Coastal Clearances</h3>
+                  <p class="step-desc">
+                    Complete municipal submission handling, zoning variances, coastal commission clearances, and
+                    environmental compliance certifications.
+                  </p>
+                  <div class="timeline-pill-tags">
+                    <span class="t-pill">Municipal Expediting</span>
+                    <span class="t-pill">Coastal Variance</span>
+                    <span class="t-pill">Full Compliance</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            
+            <div class="timeline-row step-left scroll-slide-left" data-step="5">
+              <div class="timeline-card-col">
+                <article class="timeline-v-card">
+                  <div class="timeline-card-badge-row">
+                    <span class="step-phase">Phase 05</span>
+                    <span class="step-duration">Duration: 4–6 Weeks</span>
+                  </div>
+                  <h3 class="step-title">Precision Construction &amp; Shotcrete</h3>
+                  <p class="step-desc">
+                    Laser excavation, double-cage steel rebar armature, high-density pneumatic 5,000 PSI shotcrete shell
+                    pouring, plumbing, and artisan waterline tiling.
+                  </p>
+                  <div class="timeline-pill-tags">
+                    <span class="t-pill">Laser Excavation</span>
+                    <span class="t-pill">Shotcrete Pour</span>
+                    <span class="t-pill">Hydraulic Pressure</span>
+                  </div>
+                </article>
+              </div>
+              <div class="timeline-node-col">
+                <div class="step-marker">
+                  <span class="step-marker-number">05</span>
+                  <span class="step-marker-pulse" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="timeline-spacer-col" aria-hidden="true"></div>
+            </div>
+
+            
+            <div class="timeline-row step-right scroll-slide-left" data-step="6">
+              <div class="timeline-spacer-col" aria-hidden="true"></div>
+              <div class="timeline-node-col">
+                <div class="step-marker">
+                  <span class="step-marker-number">06</span>
+                  <span class="step-marker-pulse" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="timeline-card-col">
+                <article class="timeline-v-card">
+                  <div class="timeline-card-badge-row">
+                    <span class="step-phase">Phase 06</span>
+                    <span class="step-duration">Duration: 1 Week</span>
+                  </div>
+                  <h3 class="step-title">Commissioning, Calibration &amp; Handover</h3>
+                  <p class="step-desc">
+                    Hydrostatic pressure certification, robotic filtration calibration, smart app automation pairing,
+                    and private concierge handover ceremony.
+                  </p>
+                  <div class="timeline-pill-tags">
+                    <span class="t-pill">App Automation</span>
+                    <span class="t-pill">Water Balancing</span>
+                    <span class="t-pill">Handover Ready</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="client-dashboard" class="content-section dashboard-section"
+      aria-label="Client Dashboard and Final Call to Action">
+      <div class="section-container">
+
+        
+        <div class="section-header text-center">
+          <span class="section-eyebrow"><span class="eyebrow-beacon" aria-hidden="true"></span>DIGITAL ECOSYSTEM &amp; CLIENT PORTAL</span>
+          <h2 class="section-title">Intelligent Pool Construction &amp; <span class="highlight-aqua">Live Tracking</span></h2>
+          <p class="section-subtitle">
+            Experience unprecedented transparency. Real-time site telemetry, drone milestone feeds, and stage-by-stage
+            architectural approvals right at your fingertips.
+          </p>
+        </div>
+
+        
+        <div class="dashboard-promo-grid">
+
+          
+          <div class="dashboard-promo-content">
+            <span class="section-eyebrow"><span class="eyebrow-beacon" aria-hidden="true"></span>DIGITAL TRANSPARENCY</span>
+            <h3 class="section-title" style="font-size: clamp(1.8rem, 2.5vw, 2.3rem); margin-bottom: 0.8rem;">Your Project. <span class="highlight-aqua">Always Within Reach</span>.</h3>
+            <p class="section-subtitle" style="margin: 0 0 2rem 0; max-width: 100%;">
+              Every AQUORA commission includes lifetime access to our proprietary private client portal. Monitor each
+              milestone from your smartphone or desktop in real time.
+            </p>
+
+            <div class="dashboard-features-list">
+              <div class="dashboard-feat-item">
+                <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <polyline points="9 11 12 14 22 4"></polyline>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                  </svg></div>
+                <div>
+                  <h4 class="feat-title">Live Milestone Tracking</h4>
+                  <p class="feat-sub">Daily progress photos, drone aerial updates, and scheduled completion metrics.</p>
+                </div>
+              </div>
+
+              <div class="dashboard-feat-item">
+                <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 14 14"></polyline>
+                  </svg></div>
+                <div>
+                  <h4 class="feat-title">Design & Material Approvals</h4>
+                  <p class="feat-sub">Review 3D architectural revisions and approve luxury stone & tile swatches
+                    digitally.</p>
+                </div>
+              </div>
+
+              <div class="dashboard-feat-item">
+                <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg></div>
+                <div>
+                  <h4 class="feat-title">Escrow & Milestone Invoicing</h4>
+                  <p class="feat-sub">Transparent stage-by-stage billing tied directly to certified inspection
+                    sign-offs.</p>
+                </div>
+              </div>
+
+              <div class="dashboard-feat-item">
+                <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg></div>
+                <div>
+                  <h4 class="feat-title">Direct Architect Messaging</h4>
+                  <p class="feat-sub">Instant direct encrypted line with your dedicated project superintendent and
+                    master guild mason.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-action-btn-row">
+              <a href="dashboard.html" class="btn btn-primary btn-large">
+                <span>Enter Client Dashboard →</span>
+              </a>
+              <button id="demo-dashboard-btn" class="btn btn-secondary btn-large" onclick="toggleDemoMilestone()">
+                <span>Simulate Next Phase</span>
+              </button>
+            </div>
+          </div>
+
+          
+          <div class="dashboard-ui-preview-wrap">
+            <div class="dashboard-device-card">
+
+              
+              <div class="device-header">
+                <div class="device-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <div class="device-title">aquara-client-portal.internal / malibu-estate-804</div>
+                <div class="device-status-badge">
+                  <span class="live-pulse-dot"></span> LIVE
+                </div>
+              </div>
+
+              
+              <div class="device-body">
+
+                
+                <div class="portal-project-bar">
+                  <div class="portal-proj-info">
+                    <span class="portal-eyebrow">ACTIVE COMMISSION</span>
+                    <h3 class="portal-title">The Pacific Horizon Villa</h3>
+                    <span class="portal-location">Malibu Heights, CA • Contract #AQ-2026-084</span>
+                  </div>
+                  <div class="portal-progress-ring-box">
+                    <div class="portal-progress-num" id="demo-percent-text">68%</div>
+                    <div class="portal-progress-sub">Overall Completed</div>
+                  </div>
+                </div>
+
+                
+                <div class="portal-tabs" role="tablist">
+                  <button class="portal-tab active" data-tab="milestones" role="tab"
+                    aria-selected="true">Milestones</button>
+                  <button class="portal-tab" data-tab="materials" role="tab" aria-selected="false">Materials</button>
+                  <button class="portal-tab" data-tab="permits" role="tab" aria-selected="false">Permits</button>
+                  <button class="portal-tab" data-tab="team" role="tab" aria-selected="false">Team</button>
+                </div>
+
+                
+                <div class="portal-tab-pane active" id="tab-pane-milestones">
+                  <div class="milestone-status-card">
+                    <div class="status-card-header">
+                      <span class="phase-tag" id="demo-phase-tag">Phase 05 of 06</span>
+                      <span class="badge-status in-progress" id="demo-status-pill">Active Construction</span>
+                    </div>
+                    <h4 class="current-phase-title" id="demo-phase-title">Pneumatic Shotcrete Shell Curing & Hydraulics
+                    </h4>
+                    <p class="current-phase-desc" id="demo-phase-desc">
+                      High-strength 5,000 PSI shotcrete structure poured. 28-day water curing protocol underway.
+                      Submerged LED conduit and hydro-massage returns installed and pressure tested at 50 PSI.
+                    </p>
+                    <div class="phase-progress-bar-wrap">
+                      <div class="phase-bar-track">
+                        <div class="phase-bar-fill" id="demo-phase-bar" style="width: 68%;"></div>
+                      </div>
+                      <div class="phase-bar-labels">
+                        <span>Started: Aug 12</span>
+                        <span id="demo-est-completion">Est. Handover: Oct 28</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                  <div class="activity-feed">
+                    <div class="feed-item">
+                      <div class="feed-icon approved"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg></div>
+                      <div class="feed-content">
+                        <span class="feed-time">Yesterday, 4:15 PM</span>
+                        <p class="feed-text">Municipal Hydraulic Pressure Inspection <strong>PASSED (100%)</strong>.</p>
+                      </div>
+                    </div>
+                    <div class="feed-item">
+                      <div class="feed-icon info"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <line x1="12" y1="16" x2="12" y2="12"></line>
+                          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg></div>
+                      <div class="feed-content">
+                        <span class="feed-time">3 days ago</span>
+                        <p class="feed-text">Italian Bisazza Mosaic Glass tiles arrived at regional distribution hub.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="portal-tab-pane" id="tab-pane-materials">
+                  <div class="materials-swatch-list">
+                    <div class="swatch-item">
+                      <div class="swatch-color" style="background: #e6dfd3;"></div>
+                      <div class="swatch-info">
+                        <strong>Honed Navona Travertine</strong>
+                        <small>Decking & Knife Edge • 24x48 Architectural Pavers</small>
+                      </div>
+                      <span class="swatch-status approved">Approved</span>
+                    </div>
+                    <div class="swatch-item">
+                      <div class="swatch-color" style="background: linear-gradient(135deg, #0077b6, #00b4d8, #90e0ef);">
+                      </div>
+                      <div class="swatch-info">
+                        <strong>Bisazza Iridescent Glass Mosaic</strong>
+                        <small>Waterline & Tanning Shelf • Custom Blend</small>
+                      </div>
+                      <span class="swatch-status approved">Approved</span>
+                    </div>
+                    <div class="swatch-item">
+                      <div class="swatch-color" style="background: #2b2b2b;"></div>
+                      <div class="swatch-info">
+                        <strong>Absolute Black Flamed Granite</strong>
+                        <small>Vanishing Edge Spillway & Trough</small>
+                      </div>
+                      <span class="swatch-status in-transit">In Transit</span>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="portal-tab-pane" id="tab-pane-permits">
+                  <div class="permits-list">
+                    <div class="permit-item">
+                      <div class="permit-status-icon success"><svg width="14" height="14" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="2">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg></div>
+                      <div class="permit-info">
+                        <strong>Coastal Geotechnical Permit #CP-9021</strong>
+                        <small>Issued by California Coastal Commission</small>
+                      </div>
+                      <span class="badge-status approved">Cleared</span>
+                    </div>
+                    <div class="permit-item">
+                      <div class="permit-status-icon success"><svg width="14" height="14" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="2">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg></div>
+                      <div class="permit-info">
+                        <strong>Structural Engineering & Setback Sign-off</strong>
+                        <small>City of Malibu Building & Safety</small>
+                      </div>
+                      <span class="badge-status approved">Cleared</span>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="portal-tab-pane" id="tab-pane-team">
+                  <div class="team-chat-preview">
+                    <div class="chat-bubble received">
+                      <span class="chat-sender">Julian Vance • Lead Project Architect</span>
+                      <p>Good morning! The concrete cure tests exceeded 5,200 PSI today. We are clearing the site for
+                        the mosaic coping installation tomorrow.</p>
+                      <span class="chat-timestamp">09:30 AM</span>
+                    </div>
+                    <div class="chat-bubble sent">
+                      <span class="chat-sender">You (Client)</span>
+                      <p>Fantastic news Julian, the drone aerial photography from yesterday looks sensational!</p>
+                      <span class="chat-timestamp">09:42 AM</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        
+        <div class="final-cta-card">
+          
+          <div class="final-cta-bg-wrapper">
+            <img src="assets/cta_twilight.jpg" alt="Panoramic luxury resort pool illuminated at twilight"
+              class="final-cta-img" loading="lazy" width="1400" height="788">
+            <div class="final-cta-scrim" aria-hidden="true"></div>
+            <div class="final-cta-water-glow" aria-hidden="true"></div>
+          </div>
+
+          <div class="final-cta-inner">
+            <span class="final-cta-eyebrow">START YOUR JOURNEY</span>
+            <h2 class="final-cta-headline">Ready To Create Your <span class="highlight-aqua">Private Paradise</span>?</h2>
+            <p class="final-cta-subtitle">
+              Let's turn your vision into a pool designed around the way you live. Connect with our architectural studio
+              for a complimentary masterplan consultation.
+            </p>
+
+            <div class="final-cta-buttons">
+              <button class="btn btn-primary btn-large" onclick="openQuoteModal('Final CTA Quote')">
+                <span>Get a Free Quote</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+              <button class="btn btn-secondary btn-large" onclick="openQuoteModal('Consultation Booking')">
+                <span>Book a Consultation</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="final-cta-guarantees">
+              <div class="guarantee-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <span>25-Year Structural Integrity</span>
+              </div>
+              <div class="guarantee-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 14 14"></polyline>
+                </svg>
+                <span>Fixed-Price Turnkey Guarantee</span>
+              </div>
+              <div class="guarantee-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>
+                <span>Award-Winning Architectural Studio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer id="footer" class="site-footer" role="contentinfo">
+    <div class="footer-container">
+
+      
+      <div class="footer-top">
+
+        
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-logo" aria-label="AQUORA Home">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">AQUORA</span>
+              <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+            </div>
+          </a>
+          <p class="footer-description">
+            Designing and engineering bespoke architectural pools and outdoor living environments for modern luxury estates. Mastercrafted from Pacific coastal bluffs to private island sanctuaries.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media">
+            <a href="#footer" class="social-link" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="Instagram" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Disciplines</h4>
+          <ul class="footer-links">
+            <li><a href="service detail.html?service=inground">Inground Pools</a></li>
+            <li><a href="service detail.html?service=vanishing">Vanishing Edge</a></li>
+            <li><a href="service detail.html?service=knife-edge">Knife-Edge</a></li>
+            <li><a href="service detail.html?service=fire-caldera">Fire Calderas</a></li>
+            <li><a href="service detail.html?service=hydro-spa">Hydro Spas</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="journal.html">Journals</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html#team">Architects</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Client Portal</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html#milestones">Milestones</a></li>
+            <li><a href="dashboard.html#materials">Materials</a></li>
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col footer-contact-col">
+          <h4 class="footer-col-title">Address &amp; Contact</h4>
+          <div class="footer-contact-list">
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>New York, NY 10022, USA</span>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:concierge@aquora.com">concierge@aquora.com</a>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+18004927665">+1 (800) 492-POOL</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 AQUORA. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#footer">Privacy Policy</a>
+          <a href="#footer">Terms of Service</a>
+          <a href="#footer">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  
+  <div id="quote-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="quote-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">ESTATE INQUIRY</span>
+        <h3 id="quote-modal-title" class="modal-title">Request a Masterplan Proposal</h3>
+        <p class="modal-subtitle">Share your vision and our senior architectural director will prepare an initial
+          spatial and hydraulic feasibility analysis.</p>
+      </div>
+
+      <form id="quote-form" class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-name">Full Name *</label>
+            <input type="text" id="quote-name" required placeholder="e.g. Victoria Sterling" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="quote-email">Email Address *</label>
+            <input type="email" id="quote-email" required placeholder="victoria@estate.com" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-phone">Phone Number *</label>
+            <input type="tel" id="quote-phone" required placeholder="+1 (555) 019-2834" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="quote-type">Pool Paradigm *</label>
+            <select id="quote-type" class="form-input" required>
+              <option value="Vanishing Infinity Edge">Vanishing Infinity Edge</option>
+              <option value="Inground Architectural">Inground Architectural</option>
+              <option value="Elevated Acrylic Glass Above-Ground">Elevated Acrylic Glass Above-Ground</option>
+              <option value="Custom Sculptural with Spa & Fire">Custom Sculptural with Spa & Fire</option>
+              <option value="Resort Lagoon & Waterfall Grotto">Resort Lagoon & Waterfall Grotto</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-budget">Estimated Investment Range</label>
+            <select id="quote-budget" class="form-input">
+              <option value="$150,000 - $300,000">$150,000 – $300,000</option>
+              <option value="$300,000 - $600,000" selected>$300,000 – $600,000</option>
+              <option value="$600,000 - $1,200,000">$600,000 – $1,200,000</option>
+              <option value="$1,200,000+">$1,200,000+ (Ultra-Estate Signature)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quote-location">Location / City</label>
+            <input type="text" id="quote-location" placeholder="e.g. Malibu, Newport Beach, Aspen" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="quote-notes">Vision Details or Site Specifications</label>
+          <textarea id="quote-notes" rows="3"
+            placeholder="Tell us about your property, terrain slope, preferred stone finishes, or desired amenities..."
+            class="form-input"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Submit Proposal Request</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <p class="form-disclaimer">All inquiries are safeguarded under strict privacy and non-disclosure standards.</p>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="login-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="login-modal-title">
+    <div class="modal-dialog modal-dialog-sm">
+      <button class="modal-close-btn" onclick="closeLoginModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">PORTAL ACCESS</span>
+        <h3 id="login-modal-title" class="modal-title">Client Dashboard Login</h3>
+        <p class="modal-subtitle">Access your project milestones, drone progress, and direct architectural messages.</p>
+      </div>
+
+      <div class="demo-credentials-callout">
+        <span class="callout-label">Instant Demo Credentials:</span>
+        <code>Email: client@aquora.com | Pass: paradise2026</code>
+        <button type="button" class="btn-fill-demo" onclick="fillDemoCredentials()">Auto-Fill</button>
+      </div>
+
+      <form id="login-form" class="modal-form" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label for="login-email">Client Email</label>
+          <input type="email" id="login-email" required placeholder="name@estate.com" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Access Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••••••" class="form-input">
+        </div>
+        <div class="form-row-remember">
+          <label class="checkbox-label">
+            <input type="checkbox" checked> <span>Keep me authenticated</span>
+          </label>
+          <a href="#login" onclick="showToast('Password reset instructions sent to registered estate email.')"
+            class="forgot-link">Reset Code</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Enter Client Portal</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="lightbox-modal" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-label="Image Preview Lightbox">
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close Lightbox">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="lightbox-image-stage">
+        <img id="lightbox-image" src="" alt="Expanded pool project preview" class="lightbox-img">
+      </div>
+
+      <div class="lightbox-caption-bar">
+        <div class="lightbox-caption-text">
+          <h3 id="lightbox-title" class="lightbox-title">Pacific Horizon Villa</h3>
+          <p id="lightbox-description" class="lightbox-desc">Malibu Heights, CA — Cantilevered vanishing-edge infinity
+            pool.</p>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="openQuoteModal('Lightbox Consultation')">
+          <span>Inquire About This Style</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="toast-notification" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="hero-pool-3d.js"></script>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+  <title>The Journal - Pool Design Insights &amp; Architectural Living | AQUORA</title>
+  <meta name="description"
+    content="Explore expert insights, architectural pool design editorials, and luxury living inspiration from AQUORA — the world's premier pool construction atelier.">
+  <meta name="keywords"
+    content="luxury pool design journal, architectural pool blog, infinity pool guide, custom pool inspiration, AQUORA editorial">
+  <link rel="icon" type="image/png" href="assets/aquora-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="journal.css">
+</head>
+
+<body>
+  
+  <div class="water-caustics-ambient" aria-hidden="true"></div>
+
+  
+  <header id="main-header" class="site-header" role="banner">
+    <div class="header-container">
+
+      
+      <a href="index.html" class="brand-logo" aria-label="AQUORA Home">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </a>
+
+      
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle" id="home-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="home-dropdown-menu" role="menu" aria-labelledby="home-dropdown-trigger">
+              <a href="index.html" class="dropdown-link" role="menuitem">Home 1</a>
+              <div class="dropdown-divider"></div>
+              <a href="home2.html" class="dropdown-link" role="menuitem">Home 2</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="journal.html" class="nav-link active" aria-current="page">Journal</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-control-btn" aria-label="Toggle light and dark theme" title="Toggle theme">
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="rtl-toggle" class="text-control-btn" aria-label="Toggle Right-To-Left layout" title="Switch layout direction">
+          <span>RTL</span>
+        </button>
+
+        <a href="login.html" id="login-btn" class="btn btn-primary btn-sm" aria-label="Open client login">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <button id="mobile-hamburger-btn" class="mobile-hamburger" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name" style="font-size: 1.15rem;">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </div>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close Navigation Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-content">
+      <div class="drawer-home-switcher">
+        <span class="drawer-section-label">SELECT EDITION</span>
+        <div class="drawer-home-buttons">
+          <a href="index.html" class="drawer-home-btn" id="drawer-home-1"><span>Home 1</span><small>Resort Luxury</small></a>
+          <a href="home2.html" class="drawer-home-btn" id="drawer-home-2"><span>Home 2</span><small>The Experience</small></a>
+        </div>
+      </div>
+      <nav class="drawer-nav">
+        <ul class="drawer-menu">
+          <li><a href="index.html" class="drawer-link"><span class="drawer-link-num">01</span> Home</a></li>
+          <li><a href="about.html" class="drawer-link"><span class="drawer-link-num">02</span> About Us</a></li>
+          <li><a href="service.html" class="drawer-link"><span class="drawer-link-num">03</span> Services</a></li>
+          <li><a href="pricing.html" class="drawer-link"><span class="drawer-link-num">04</span> Pricing</a></li>
+          <li><a href="journal.html" class="drawer-link active"><span class="drawer-link-num">05</span> Journal</a></li>
+          <li><a href="dashboard.html" class="drawer-link"><span class="drawer-link-num">06</span> Dashboard</a></li>
+          <li><a href="contact.html" class="drawer-link"><span class="drawer-link-num">07</span> Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="drawer-footer">
+        <a href="login.html" id="drawer-login-btn" class="btn btn-primary btn-block">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+        <button id="drawer-quote-btn" class="btn btn-secondary btn-block">
+          <span>Request Consultation</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    
+    <section class="journal-hero" aria-label="Journal Hero">
+      <div class="journal-hero-bg">
+        <div class="journal-hero-overlay"></div>
+        <div class="journal-hero-grid-lines" aria-hidden="true"></div>
+        <div class="journal-hero-orb orb-1" aria-hidden="true"></div>
+        <div class="journal-hero-orb orb-2" aria-hidden="true"></div>
+      </div>
+
+      <div class="journal-hero-container">
+        <div class="journal-hero-grid">
+
+          
+          <div class="journal-hero-left">
+            <div class="hero-eyebrow">
+              <span class="hero-eyebrow-dot"></span>
+              <span>ARCHITECTURAL JOURNAL &amp; PERSPECTIVES</span>
+            </div>
+
+            <h1 class="journal-hero-title">
+              Designing <span class="highlight-aqua">Liquid Sanctuaries</span> of Tomorrow
+            </h1>
+
+            <p class="journal-hero-subtitle">
+              Explore the technical precision, sculptural elegance, and material mastery behind the world’s most extraordinary private aquatic commissions.
+            </p>
+
+            
+            <div class="hero-topic-tags" aria-label="Journal topic tags" id="hero-topic-tags">
+              <button class="hero-topic-tag active" data-topic="all" type="button">All Disciplines</button>
+              <button class="hero-topic-tag" data-topic="philosophy" type="button">Design Philosophy</button>
+              <button class="hero-topic-tag" data-topic="materials" type="button">Material Studio</button>
+              <button class="hero-topic-tag" data-topic="engineering" type="button">Hydraulic Engineering</button>
+              <button class="hero-topic-tag" data-topic="lighting" type="button">Lighting Design</button>
+              <button class="hero-topic-tag" data-topic="living" type="button">Landscape &amp; Living</button>
+            </div>
+
+            
+            <div class="hero-cta-group">
+              <a href="#journal-cards-grid" class="btn btn-primary hero-btn-main">
+                <span>Start Reading Journal</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#journal-cards-grid" class="btn btn-ghost hero-btn-ghost">
+                <span>Browse Topics</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            
+            <div class="journal-hero-meta">
+              <div class="journal-hero-stat">
+                <span class="stat-num">48</span>
+                <span class="stat-label">Published Monograms</span>
+              </div>
+              <div class="journal-hero-divider"></div>
+              <div class="journal-hero-stat">
+                <span class="stat-num">6</span>
+                <span class="stat-label">Disciplines</span>
+              </div>
+              <div class="journal-hero-divider"></div>
+              <div class="journal-hero-stat">
+                <span class="stat-num">15+</span>
+                <span class="stat-label">Years Atelier Research</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="journal-hero-right">
+            <div class="hero-card-deck" id="hero-card-deck">
+              
+              <div class="deck-card deck-card-back-2" aria-hidden="true"></div>
+
+              
+              <div class="deck-card deck-card-back-1" aria-hidden="true"></div>
+
+              
+              <div class="deck-card deck-card-front" id="hero-front-card">
+                <div class="deck-card-image" style="background-image: url('assets/hero_infinity.jpg');"></div>
+                <div class="deck-card-gradient"></div>
+
+                
+                <div class="deck-card-top-bar">
+                  <span class="deck-badge-featured">
+                    <span class="deck-badge-star"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> FEATURED MONOGRAPH
+                  </span>
+                  <span class="deck-badge-rating">
+                    <span class="rating-star"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> 4.9 <small>Architectural Rating</small>
+                  </span>
+                </div>
+
+                
+                <div class="deck-card-glass-info">
+                  <span class="deck-card-category">Design Philosophy</span>
+                  <h2 class="deck-card-title">The Art of Infinity Edge Mastery</h2>
+                  <p class="deck-card-desc">Vanishing-edge engineering merging water, sky, and horizon in flawless architectural unison.</p>
+                  <div class="deck-card-footer">
+                    <div class="deck-author-group">
+                      <img src="assets/team_marcus.jpg" alt="Marcus Ellroy" class="deck-author-avatar" />
+                      <div class="deck-author-meta">
+                        <span class="deck-author-name">Marcus Ellroy</span>
+                        <span class="deck-author-time">8 min read · Editorial Lead</span>
+                      </div>
+                    </div>
+                    <a href="journal-detail.html?article=infinity-edge-mastery" class="deck-read-btn" aria-label="Read The Art of Infinity Edge Mastery">
+                      <span>Read</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="journal-hero-scroll-cue" aria-hidden="true">
+        <span>Scroll to Explore</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    
+    <section class="journal-grid-section" aria-label="Journal Articles">
+      <div class="journal-section-container">
+
+        <div class="journal-section-header">
+          <div class="journal-eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span>FEATURED EDITORIALS</span>
+          </div>
+          <h2 class="journal-section-title">Curated Perspectives on <span class="highlight-aqua">Aquatic Architecture</span></h2>
+          <p class="journal-section-desc">Six landmark articles exploring the convergence of engineering precision, sculptural design, and resort-grade luxury.</p>
+        </div>
+
+        
+        <div class="journal-cards-grid" id="journal-cards-grid">
+
+          
+          <article class="journal-card" data-article-id="infinity-edge-mastery" aria-label="Read: The Art of Infinity Edge Mastery">
+            <div class="journal-card-image-wrap">
+              <div class="journal-card-image jc-img-1"></div>
+              <div class="journal-card-image-overlay"></div>
+              <span class="journal-card-category">Design Philosophy</span>
+              <span class="journal-card-read-time">8 min read</span>
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <img src="assets/team_marcus.jpg" alt="Marcus Ellroy" class="journal-card-author-img">
+                <div class="journal-card-meta-info">
+                  <span class="journal-card-author">Marcus Ellroy, Principal Architect</span>
+                  <span class="journal-card-date">September 12, 2026</span>
+                </div>
+              </div>
+              <h3 class="journal-card-title">The Art of Infinity Edge Mastery</h3>
+              <p class="journal-card-excerpt">How vanishing-edge engineering transforms a pool into an optical illusion — merging water with sky, horizon, and landscape in perfect architectural harmony.</p>
+              <a href="journal-detail.html?article=infinity-edge-mastery" class="journal-card-btn" id="btn-article-1">
+                <span>View Article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          
+          <article class="journal-card" data-article-id="stone-water-dialogue" aria-label="Read: Stone & Water Dialogue">
+            <div class="journal-card-image-wrap">
+              <div class="journal-card-image jc-img-2"></div>
+              <div class="journal-card-image-overlay"></div>
+              <span class="journal-card-category">Material Studio</span>
+              <span class="journal-card-read-time">6 min read</span>
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <img src="assets/team_serena.jpg" alt="Serena Voss" class="journal-card-author-img">
+                <div class="journal-card-meta-info">
+                  <span class="journal-card-author">Serena Voss, Materials Director</span>
+                  <span class="journal-card-date">August 28, 2026</span>
+                </div>
+              </div>
+              <h3 class="journal-card-title">Stone &amp; Water: A Timeless Dialogue</h3>
+              <p class="journal-card-excerpt">The elemental tension between hewn stone and liquid water creates architecture's most enduring conversation. A deep study in travertine, quartzite, and Turkish limestone.</p>
+              <a href="journal-detail.html?article=stone-water-dialogue" class="journal-card-btn" id="btn-article-2">
+                <span>View Article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          
+          <article class="journal-card" data-article-id="hydraulic-engineering-secrets" aria-label="Read: Hydraulic Engineering Secrets">
+            <div class="journal-card-image-wrap">
+              <div class="journal-card-image jc-img-3"></div>
+              <div class="journal-card-image-overlay"></div>
+              <span class="journal-card-category">Engineering</span>
+              <span class="journal-card-read-time">10 min read</span>
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <img src="assets/team_dario.jpg" alt="Dario Reinholt" class="journal-card-author-img">
+                <div class="journal-card-meta-info">
+                  <span class="journal-card-author">Dario Reinholt, Hydraulic Engineer</span>
+                  <span class="journal-card-date">August 5, 2026</span>
+                </div>
+              </div>
+              <h3 class="journal-card-title">Hydraulic Engineering: The Invisible Architecture</h3>
+              <p class="journal-card-excerpt">Behind every silken water surface lies a precision-engineered hydraulic ecosystem. Explore the science of flow rates, filtration systems, and variable-speed pump dynamics.</p>
+              <a href="journal-detail.html?article=hydraulic-engineering-secrets" class="journal-card-btn" id="btn-article-3">
+                <span>View Article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          
+          <article class="journal-card" data-article-id="night-pool-lighting-design" aria-label="Read: Night Pool Lighting Design">
+            <div class="journal-card-image-wrap">
+              <div class="journal-card-image jc-img-4"></div>
+              <div class="journal-card-image-overlay"></div>
+              <span class="journal-card-category">Lighting Design</span>
+              <span class="journal-card-read-time">7 min read</span>
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <img src="assets/team_elara.jpg" alt="Elara Novak" class="journal-card-author-img">
+                <div class="journal-card-meta-info">
+                  <span class="journal-card-author">Elara Novak, Lighting Designer</span>
+                  <span class="journal-card-date">July 19, 2026</span>
+                </div>
+              </div>
+              <h3 class="journal-card-title">After Dark: The Art of Pool Lighting Design</h3>
+              <p class="journal-card-excerpt">Nightfall transforms a pool into a luminous jewel. From fiber optic constellations to chromatherapy LED systems, we illuminate the science of after-dark aquatic drama.</p>
+              <a href="journal-detail.html?article=night-pool-lighting-design" class="journal-card-btn" id="btn-article-4">
+                <span>View Article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          
+          <article class="journal-card" data-article-id="resort-pool-landscaping" aria-label="Read: Resort Pool Landscaping">
+            <div class="journal-card-image-wrap">
+              <div class="journal-card-image jc-img-5"></div>
+              <div class="journal-card-image-overlay"></div>
+              <span class="journal-card-category">Landscape &amp; Living</span>
+              <span class="journal-card-read-time">9 min read</span>
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <img src="assets/team_marcus.jpg" alt="Marcus Ellroy" class="journal-card-author-img">
+                <div class="journal-card-meta-info">
+                  <span class="journal-card-author">Marcus Ellroy, Principal Architect</span>
+                  <span class="journal-card-date">June 30, 2026</span>
+                </div>
+              </div>
+              <h3 class="journal-card-title">Resort Landscaping: Designing the Pool's Living Frame</h3>
+              <p class="journal-card-excerpt">Great pools do not exist in isolation. The surrounding landscape — its planting, hardscape, and spatial flow — is the frame that elevates a pool into a complete resort experience.</p>
+              <a href="journal-detail.html?article=resort-pool-landscaping" class="journal-card-btn" id="btn-article-5">
+                <span>View Article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          
+          <article class="journal-card" data-article-id="pool-construction-timeline" aria-label="Read: Inside the Pool Construction Timeline">
+            <div class="journal-card-image-wrap">
+              <div class="journal-card-image jc-img-6"></div>
+              <div class="journal-card-image-overlay"></div>
+              <span class="journal-card-category">Behind the Build</span>
+              <span class="journal-card-read-time">11 min read</span>
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <img src="assets/team_dario.jpg" alt="Dario Reinholt" class="journal-card-author-img">
+                <div class="journal-card-meta-info">
+                  <span class="journal-card-author">Dario Reinholt, Hydraulic Engineer</span>
+                  <span class="journal-card-date">June 8, 2026</span>
+                </div>
+              </div>
+              <h3 class="journal-card-title">Inside the Build: A Pool's Journey from Vision to Reality</h3>
+              <p class="journal-card-excerpt">From the first site survey to the moment water flows for the first time, every stage of an AQUORA commission is a choreography of precision, craft, and architectural intention.</p>
+              <a href="journal-detail.html?article=pool-construction-timeline" class="journal-card-btn" id="btn-article-6">
+                <span>View Article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="journal-faq-section" aria-label="Frequently Asked Questions">
+      <div class="journal-section-container">
+
+        <div class="journal-faq-inner">
+          <div class="journal-faq-left">
+            <div class="journal-eyebrow-badge">
+              <span class="badge-dot"></span>
+              <span>KNOWLEDGE BASE</span>
+            </div>
+            <h2 class="journal-faq-title">Questions About <span class="highlight-aqua">Architectural Pool Design</span></h2>
+            <p class="journal-faq-subtitle">Our editorial team answers the most important questions from discerning homeowners considering a bespoke aquatic commission.</p>
+            <a href="service.html" class="btn btn-secondary jnl-faq-btn">
+              <span>Explore Our Services</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="journal-faq-right">
+            <div class="faq-accordion" id="faq-accordion">
+
+              <div class="faq-item" id="faq-1">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-1">
+                  <span class="faq-num">01</span>
+                  <span class="faq-question">How long does a luxury pool construction typically take?</span>
+                  <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="faq-panel" id="faq-panel-1" aria-hidden="true">
+                  <p>A bespoke AQUORA pool commission typically spans 14–26 weeks from design approval to first fill, depending on the complexity of the architectural design, site conditions, permitting jurisdiction, and the scope of integrated features such as infinity edges, grottos, or spa systems. Our turnkey project management ensures each phase proceeds on schedule with zero client-side administrative burden.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" id="faq-2">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-2">
+                  <span class="faq-num">02</span>
+                  <span class="faq-question">What makes an infinity edge pool structurally different from a standard pool?</span>
+                  <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="faq-panel" id="faq-panel-2" aria-hidden="true">
+                  <p>Infinity edge pools require a precisely engineered catch basin, a dedicated high-capacity recirculation pump, and a vanishing-edge wall built to within millimeter tolerances to achieve the seamless overflow effect. The structural engineering involves cantilever calculations for cliff-edge installations, reinforced gunite formations, and a hydraulic balance system that prevents backflow during wind events — all of which demand specialist engineering expertise that goes well beyond standard pool construction.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" id="faq-3">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-3">
+                  <span class="faq-num">03</span>
+                  <span class="faq-question">Which stone finishes are most suitable for luxury pool surrounds?</span>
+                  <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="faq-panel" id="faq-panel-3" aria-hidden="true">
+                  <p>Our most-selected stone finishes include Turkish travertine (its natural thermal properties keep the surface cool underfoot), French Vals limestone for understated sophistication, Italian quartzite for high-wear durability, and sandblasted granite for contemporary estates. All stones are sealed with our proprietary micro-crystalline treatment, which provides UV and chlorine resistance without altering the stone's natural character or tactile warmth.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" id="faq-4">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-4">
+                  <span class="faq-num">04</span>
+                  <span class="faq-question">How do you approach pool lighting design for evening ambiance?</span>
+                  <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="faq-panel" id="faq-panel-4" aria-hidden="true">
+                  <p>Our lighting design process begins with a dedicated photometric study during the architectural phase. We layer three tiers of illumination: in-pool chromatherapy LED niche lights, perimeter uplighting on landscape features, and integrated hardscape step lighting. All systems are controlled through a smart home-integrated scene controller, allowing pre-programmed mood sequences — from a tranquil blue dawn palette to a dramatic sunset amber theatre — at the touch of a single button.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" id="faq-5">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-5">
+                  <span class="faq-num">05</span>
+                  <span class="faq-question">What warranty coverage does AQUORA provide?</span>
+                  <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="faq-panel" id="faq-panel-5" aria-hidden="true">
+                  <p>Every AQUORA commission carries a 25-year structural warranty on the gunite shell and a 10-year finish warranty on all applied stone and tile work. Equipment packages are warranted at 5 years with a dedicated white-glove service concierge available 24/7. Our AIA escrow-backed payment milestones and fixed-price contracts ensure complete financial transparency throughout the build, eliminating the cost overruns that plague conventional pool contractors.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="journal-cta-section" aria-label="Commission Your Pool">
+      <div class="journal-section-container">
+        <div class="journal-cta-card">
+          <div class="journal-cta-bg-lines" aria-hidden="true"></div>
+          <div class="journal-cta-orb cta-orb-1" aria-hidden="true"></div>
+          <div class="journal-cta-orb cta-orb-2" aria-hidden="true"></div>
+
+          <div class="journal-cta-content">
+            <div class="journal-eyebrow-badge journal-cta-badge">
+              <span class="badge-dot"></span>
+              <span>BEGIN YOUR COMMISSION</span>
+            </div>
+            <h2 class="journal-cta-title">Ready to Create <span class="highlight-aqua">Your Masterpiece?</span></h2>
+            <p class="journal-cta-desc">From the first sketch to the first splash — our principal design team is ready to translate your vision into an architectural reality. Every commission begins with a private consultation.</p>
+            <div class="journal-cta-actions">
+              <button class="btn btn-primary btn-large" onclick="openQuoteModal('Journal CTA')" id="journal-cta-quote-btn">
+                <span>Commission Your Pool</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+              <a href="service.html" class="btn btn-secondary btn-large">
+                <span>View All Services</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+            <p class="journal-cta-note">Private consultations available by appointment · Newport Beach · Malibu · Palm Beach</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer id="footer" class="site-footer" role="contentinfo">
+    <div class="footer-container">
+
+      
+      <div class="footer-top">
+
+        
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-logo" aria-label="AQUORA Home">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">AQUORA</span>
+              <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+            </div>
+          </a>
+          <p class="footer-description">
+            Designing and engineering bespoke architectural pools and outdoor living environments for modern luxury estates. Mastercrafted from Pacific coastal bluffs to private island sanctuaries.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media">
+            <a href="#footer" class="social-link" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="Instagram" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Disciplines</h4>
+          <ul class="footer-links">
+            <li><a href="service detail.html?service=inground">Inground Pools</a></li>
+            <li><a href="service detail.html?service=vanishing">Vanishing Edge</a></li>
+            <li><a href="service detail.html?service=knife-edge">Knife-Edge</a></li>
+            <li><a href="service detail.html?service=fire-caldera">Fire Calderas</a></li>
+            <li><a href="service detail.html?service=hydro-spa">Hydro Spas</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="journal.html">Journals</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html#team">Architects</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Client Portal</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html#milestones">Milestones</a></li>
+            <li><a href="dashboard.html#materials">Materials</a></li>
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col footer-contact-col">
+          <h4 class="footer-col-title">Address &amp; Contact</h4>
+          <div class="footer-contact-list">
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>New York, NY 10022, USA</span>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:concierge@aquora.com">concierge@aquora.com</a>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+18004927665">+1 (800) 492-POOL</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 AQUORA. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#footer">Privacy Policy</a>
+          <a href="#footer">Terms of Service</a>
+          <a href="#footer">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  
+  <div id="quote-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal-header">
+        <span class="modal-eyebrow">ARCHITECTURAL COMMISSION INQUIRY</span>
+        <h3 id="quote-modal-title" class="modal-title">Commission Your Private Paradise</h3>
+        <p class="modal-subtitle">Share your estate vision with our principal designers for a turnkey proposal and 3D concept review.</p>
+      </div>
+      <form id="quote-form" class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row-2">
+          <div class="form-group"><label for="quote-name">Full Name *</label><input type="text" id="quote-name" required placeholder="e.g. Victoria Sterling" class="form-input"></div>
+          <div class="form-group"><label for="quote-email">Email Address *</label><input type="email" id="quote-email" required placeholder="victoria@estate.com" class="form-input"></div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group"><label for="quote-phone">Phone Number *</label><input type="tel" id="quote-phone" required placeholder="+1 (555) 019-2834" class="form-input"></div>
+          <div class="form-group">
+            <label for="quote-type">Pool Paradigm *</label>
+            <select id="quote-type" class="form-input" required>
+              <option value="Vanishing Infinity Edge">Vanishing Infinity Edge</option>
+              <option value="Inground Architectural">Inground Architectural</option>
+              <option value="Custom Sculptural with Spa & Fire">Custom Sculptural with Spa &amp; Fire</option>
+              <option value="Resort Lagoon & Waterfall Grotto">Resort Lagoon &amp; Waterfall Grotto</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label for="quote-notes">Vision Details or Site Specifications</label><textarea id="quote-notes" rows="3" placeholder="Tell us about your property, terrain slope, preferred stone finishes..." class="form-input"></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block btn-large"><span>Submit Proposal Request</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+        <p class="form-disclaimer">All inquiries are safeguarded under strict privacy and non-disclosure standards.</p>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="login-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="modal-dialog modal-dialog-sm">
+      <button class="modal-close-btn" onclick="closeLoginModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal-header">
+        <span class="modal-eyebrow">PORTAL ACCESS</span>
+        <h3 id="login-modal-title" class="modal-title">Client Dashboard Login</h3>
+        <p class="modal-subtitle">Access your project milestones, drone progress, and direct architectural messages.</p>
+      </div>
+      <div class="demo-credentials-callout">
+        <span class="callout-label">Instant Demo Credentials:</span>
+        <code>Email: client@aquora.com | Pass: paradise2026</code>
+        <button type="button" class="btn-fill-demo" onclick="fillDemoCredentials()">Auto-Fill</button>
+      </div>
+      <form id="login-form" class="modal-form" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group"><label for="login-email">Client Email</label><input type="email" id="login-email" required placeholder="name@estate.com" class="form-input"></div>
+        <div class="form-group"><label for="login-password">Access Password</label><input type="password" id="login-password" required placeholder="••••••••••••" class="form-input"></div>
+        <button type="submit" class="btn btn-primary btn-block btn-large"><span>Enter Client Portal</span></button>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="toast-notification" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="index.js"></script>
+  <script src="journal.js"></script>
+</body>
+
+</html>

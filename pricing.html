@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+  <title>Pricing &amp; Investment Matrices &bull; Turnkey Architectural Pools | AQUORA</title>
+  <meta name="description"
+    content="Explore transparent architectural pool pricing and turnkey investment tiers by AQUORA. Fixed-price contracts, AIA escrow milestones, and 25-year structural warranties.">
+  <link rel="icon" type="image/png" href="assets/aquora-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="pricing.css">
+</head>
+
+<body>
+  
+  <div class="water-caustics-ambient" aria-hidden="true"></div>
+
+  
+  <header id="main-header" class="site-header" role="banner">
+    <div class="header-container">
+
+      
+      <a href="index.html" class="brand-logo" aria-label="AQUORA Home">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-name">AQUORA</span>
+          <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+        </div>
+      </a>
+
+      
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle" id="home-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="home-dropdown-menu" role="menu" aria-labelledby="home-dropdown-trigger">
+              <a href="index.html" class="dropdown-link" role="menuitem">Home 1</a>
+              <div class="dropdown-divider"></div>
+              <a href="home2.html" class="dropdown-link" role="menuitem">Home 2</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link active" aria-current="page">Pricing</a></li>
+          <li class="nav-item"><a href="journal.html" class="nav-link">Journal</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-control-btn" aria-label="Toggle light and dark theme" title="Toggle theme">
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="rtl-toggle" class="text-control-btn" aria-label="Toggle Right-To-Left layout" title="Switch layout direction">
+          <span>RTL</span>
+        </button>
+
+        <a href="login.html" id="login-btn" class="btn btn-primary btn-sm" aria-label="Open client login">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <button id="mobile-hamburger-btn" class="mobile-hamburger" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <div class="logo-mark" aria-hidden="true"><img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img"></div>
+        <div class="brand-text-group"><span class="brand-name" style="font-size:1.15rem;">AQUORA</span><span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span></div>
+      </div>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="drawer-content">
+      <div class="drawer-home-switcher">
+        <span class="drawer-section-label">SELECT EDITION</span>
+        <div class="drawer-home-buttons">
+          <a href="index.html" class="drawer-home-btn" id="drawer-home-1"><span>Home 1</span><small>Resort Luxury</small></a>
+          <a href="home2.html" class="drawer-home-btn" id="drawer-home-2"><span>Home 2</span><small>The Experience</small></a>
+        </div>
+      </div>
+      <nav class="drawer-nav">
+        <ul class="drawer-menu">
+          <li><a href="index.html" class="drawer-link"><span class="drawer-link-num">01</span> Home</a></li>
+          <li><a href="about.html" class="drawer-link"><span class="drawer-link-num">02</span> About Us</a></li>
+          <li><a href="service.html" class="drawer-link"><span class="drawer-link-num">03</span> Services</a></li>
+          <li><a href="pricing.html" class="drawer-link active"><span class="drawer-link-num">04</span> Pricing</a></li>
+          <li><a href="journal.html" class="drawer-link"><span class="drawer-link-num">05</span> Journal</a></li>
+          <li><a href="dashboard.html" class="drawer-link"><span class="drawer-link-num">06</span> Dashboard</a></li>
+          <li><a href="contact.html" class="drawer-link"><span class="drawer-link-num">07</span> Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="drawer-footer">
+        <a href="login.html" class="btn btn-primary btn-block"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Login</span></a>
+        <button class="btn btn-secondary btn-block" onclick="openQuoteModal('Mobile Pricing CTA')"><span>Request Consultation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      </div>
+    </div>
+  </aside>
+
+  
+  <main id="main-content">
+
+    
+    <section id="pricing-hero" class="prc-hero-section" aria-label="Pricing Hero">
+      <div class="section-container">
+
+        <div class="prc-hero-grid">
+          
+          
+          <div class="prc-hero-text">
+            <div class="section-eyebrow">
+              <span class="eyebrow-beacon" aria-hidden="true"></span>
+              <span>TRANSPARENT ARCHITECTURAL INVESTMENT</span>
+            </div>
+
+            <h1 class="prc-hero-headline">
+              Clarity At Every Stage. <span class="highlight-aqua">Guaranteed From Groundbreak.</span>
+            </h1>
+
+            <p class="prc-hero-sub">
+              No hidden contingencies, no opaque change orders. AQUORA commissions operate on fixed-price turnkey contracts with stage-by-stage AIA escrow releases and a certified 25-year structural warranty.
+            </p>
+
+            
+            <div class="prc-hero-trust-row">
+              <div class="prc-trust-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <span>Fixed-Price Turnkey Guarantee</span>
+              </div>
+              <div class="prc-trust-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 14 14"></polyline>
+                </svg>
+                <span>AIA Escrow Protected Milestones</span>
+              </div>
+              <div class="prc-trust-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>25-Year Structural Integrity</span>
+              </div>
+            </div>
+
+            
+            <div class="prc-hero-actions">
+              <a href="#pricing-matrix" class="btn btn-primary btn-large">
+                <span>Explore Investment Tiers</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </a>
+              <button class="btn btn-secondary btn-large" onclick="openQuoteModal('Pricing Hero Feasibility')">
+                <span>Request Feasibility Study</span>
+              </button>
+            </div>
+          </div>
+
+          
+          <div class="prc-hero-visual">
+            <div class="prc-hero-visual-stage">
+              
+              <div class="prc-hero-glow-fx" aria-hidden="true"></div>
+
+              
+              <div class="prc-frame-main">
+                <img src="assets/hero_night.jpg" alt="AQUORA architectural vanishing edge pool illuminated at night" class="prc-hero-img-main" width="620" height="420" loading="eager">
+                <div class="prc-hero-scrim" aria-hidden="true"></div>
+
+                
+                <div class="prc-floating-badge top">
+                  <span class="live-dot" aria-hidden="true"></span>
+                  <span>&plusmn;0.00 Budget Variance Recorded (2025–2026)</span>
+                </div>
+              </div>
+
+              
+              <div class="prc-frame-accent">
+                <img src="assets/gallery_fire_lounge.jpg" alt="AQUORA bespoke sunken fire lounge and architectural pool integration" class="prc-hero-img-accent" width="360" height="270" loading="eager">
+                <div class="prc-accent-scrim" aria-hidden="true"></div>
+
+                
+                <div class="prc-accent-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span>Bespoke Engineering</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="pricing-matrix" class="about-section prc-matrix-section" aria-labelledby="pricing-matrix-title">
+      <div class="section-container">
+
+        
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-beacon" aria-hidden="true"></span>
+            <span>02 &bull; BESPOKE COMMISSION TIERS</span>
+          </div>
+          <h2 id="pricing-matrix-title" class="section-title">Curated Architectural <span class="highlight-aqua">Investment Matrices</span></h2>
+          <p class="section-subtitle">
+            Three distinct commissioning tiers crafted to align with your estate's topography, engineering complexity, and architectural ambitions.
+          </p>
+        </div>
+
+        
+        <div class="prc-cards-grid">
+
+          
+          <article class="prc-card">
+            <div class="prc-card-header">
+              <span class="prc-card-category">INGROUND ARCHITECTURAL</span>
+              <h3 class="prc-card-title">The Signature Residence</h3>
+              <p class="prc-card-sub">Engineered for private suburban luxury residences and flat terrain private estates.</p>
+            </div>
+
+            <div class="prc-card-pricing">
+              <div class="prc-amount-row">
+                <span class="prc-currency">$</span>
+                <span class="prc-price">185,000</span>
+                <span class="prc-range-sep">&ndash;</span>
+                <span class="prc-price">275,000</span>
+              </div>
+              <span class="prc-timeline-badge">8–10 Weeks Active Construction</span>
+            </div>
+
+            <div class="prc-specs-mini">
+              <span class="prc-spec-chip">&plusmn;1.2mm Weir Tolerance</span>
+              <span class="prc-spec-chip">Navona Travertine Deck</span>
+              <span class="prc-spec-chip">Pentair Automation</span>
+            </div>
+
+            <div class="prc-card-inclusions">
+              <span class="prc-inclusions-title">FULL ARCHITECTURAL INCLUSIONS:</span>
+              <ul class="prc-bullets-list">
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Sub-millimeter lidar topographical scanning &amp; geotechnical core sampling</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>4,500 PSI pneumatically placed monolithic gunite shell with double Grade 60 rebar</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Bisazza Italian glass mosaic waterline tile band &amp; micro-pebble interior</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Dual variable-speed hydraulic filtration loops for whisper-quiet circulation</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Full municipal permitting, California Coastal filings &amp; licensed PE stamps</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>25-Year Monolithic Shell Structural Integrity Warranty</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="prc-card-footer">
+              <button class="btn btn-secondary btn-block" onclick="openQuoteModal('Signature Residence Tier ($185k-$275k)')">
+                <span>Commission Signature Tier &rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          
+          <article class="prc-card featured">
+            <div class="prc-card-header">
+              <div class="prc-header-top-row">
+                <span class="prc-card-category">VANISHING WEIR &amp; CANTILEVER</span>
+                <span class="prc-featured-pill">&starf; MOST COMMISSIONED</span>
+              </div>
+              <h3 class="prc-card-title">The Horizon Monolith</h3>
+              <p class="prc-card-sub">Engineered for sloped hillsides, coastal bluff horizons, and zero-edge mirror reflections.</p>
+            </div>
+
+            <div class="prc-card-pricing">
+              <div class="prc-amount-row">
+                <span class="prc-currency">$</span>
+                <span class="prc-price">320,000</span>
+                <span class="prc-range-sep">&ndash;</span>
+                <span class="prc-price">480,000</span>
+              </div>
+              <span class="prc-timeline-badge highlight">12–14 Weeks Active Construction</span>
+            </div>
+
+            <div class="prc-specs-mini">
+              <span class="prc-spec-chip">360&deg; Knife-Edge / Infinity</span>
+              <span class="prc-spec-chip">Titanium Geothermal Heating</span>
+              <span class="prc-spec-chip">Optical Acrylic Viewport</span>
+            </div>
+
+            <div class="prc-card-inclusions">
+              <span class="prc-inclusions-title">EVERYTHING IN SIGNATURE, PLUS:</span>
+              <ul class="prc-bullets-list">
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Laser-calibrated vanishing infinity weir or 360&deg; perimeter slot overflow</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Subterranean residual acoustic surge reservoir (&lt;10dB sound dampening)</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Optional 4-inch optical submarine acrylic viewport window or overflow wall</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Dual commercial titanium geothermal heating loops (104&deg;F hydro-spa circuit)</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Automated concealed hydraulic slatted safety cover with subterranean vault</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Daily 4K drone progress telemetry &amp; live private client portal access</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="prc-card-footer">
+              <button class="btn btn-primary btn-block btn-large" onclick="openQuoteModal('Horizon Monolith Tier ($320k-$480k)')">
+                <span>Commission Horizon Monolith &rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          
+          <article class="prc-card">
+            <div class="prc-card-header">
+              <span class="prc-card-category">ULTRA-LUXURY FLAGSHIP</span>
+              <h3 class="prc-card-title">The Presidential Estate</h3>
+              <p class="prc-card-sub">Bespoke monumental installation for multi-acre estates, private island sanctuaries, and complex cliffs.</p>
+            </div>
+
+            <div class="prc-card-pricing">
+              <div class="prc-amount-row">
+                <span class="prc-currency">$</span>
+                <span class="prc-price">650,000+</span>
+              </div>
+              <span class="prc-timeline-badge">16–22 Weeks Bespoke Scope</span>
+            </div>
+
+            <div class="prc-specs-mini">
+              <span class="prc-spec-chip">Bedrock Friction Piles</span>
+              <span class="prc-spec-chip">Submerged Fire Caldera</span>
+              <span class="prc-spec-chip">Dedicated On-Site AIA Architect</span>
+            </div>
+
+            <div class="prc-card-inclusions">
+              <span class="prc-inclusions-title">EVERYTHING IN HORIZON, PLUS:</span>
+              <ul class="prc-bullets-list">
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Deep-bedrock structural friction piles engineered for cantilevered coastal bluffs</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>12-person submerged dry conversation caldera with automated 180k BTU fire atrium</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Quarry hand-selection of exotic flamed basalt, Roman travertine &amp; Greek marble</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Integrated kinetic waterfall grottos, architectural foggers &amp; starry constellation floor</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Dedicated on-site Project Architect (AIA) and Master Guild Mason superintendent</span>
+                </li>
+                <li>
+                  <svg class="prc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Private inaugural sunset swim banquet &amp; lifetime seasonal white-glove concierge</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="prc-card-footer">
+              <button class="btn btn-secondary btn-block" onclick="openQuoteModal('Presidential Estate Tier ($650k+)')">
+                <span>Commission Presidential Tier &rarr;</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        
+        <div class="prc-escrow-box">
+          <div class="prc-escrow-header">
+            <div class="section-eyebrow">
+              <span class="eyebrow-beacon" aria-hidden="true"></span>
+              <span>FINANCIAL TRANSPARENCY &bull; ESCROW GOVERNANCE</span>
+            </div>
+            <h3 class="prc-escrow-title">The 5 AIA Certified Milestone Escrow Stages</h3>
+            <p class="prc-escrow-sub">
+              Your investment is safeguarded in a third-party architectural escrow account. Funds are released exclusively upon certified municipal inspection sign-offs and patron authorization.
+            </p>
+          </div>
+
+          <div class="prc-milestones-track">
+            <div class="prc-m-step">
+              <div class="prc-m-badge">10%</div>
+              <h4 class="prc-m-title">Stage 01: Architecture &amp; Permits</h4>
+              <p class="prc-m-desc">3D VR modeling, geotechnical core drills, structural PE stamps &amp; municipal clearances.</p>
+            </div>
+            <div class="prc-m-step">
+              <div class="prc-m-badge">25%</div>
+              <h4 class="prc-m-title">Stage 02: Excavation &amp; Steel</h4>
+              <p class="prc-m-desc">Grade leveling, trenching, plumbing rough-in, and double-grid Grade 60 rebar cage sign-off.</p>
+            </div>
+            <div class="prc-m-step">
+              <div class="prc-m-badge">30%</div>
+              <h4 class="prc-m-title">Stage 03: Monolithic Gunite Shell</h4>
+              <p class="prc-m-desc">Pneumatic 4,500 PSI shotcrete placement, 28-day water curing protocol &amp; core break test.</p>
+            </div>
+            <div class="prc-m-step">
+              <div class="prc-m-badge">25%</div>
+              <h4 class="prc-m-title">Stage 04: Stone, Tile &amp; MEP</h4>
+              <p class="prc-m-desc">Navona travertine coping, Bisazza mosaics, dual Pentair variable pumps &amp; geothermal circuits.</p>
+            </div>
+            <div class="prc-m-step">
+              <div class="prc-m-badge">10%</div>
+              <h4 class="prc-m-title">Stage 05: Handover &amp; Warranty</h4>
+              <p class="prc-m-desc">72-hour chemical hydro-balancing, smart app commissioning, concierge briefing &amp; 25-yr warranty.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="pricing-faqs" class="about-section prc-faqs-section" aria-labelledby="pricing-faqs-title">
+      <div class="section-container">
+
+        
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-beacon" aria-hidden="true"></span>
+            <span>03 &bull; TRANSPARENCY &amp; ASSURANCE</span>
+          </div>
+          <h2 id="pricing-faqs-title" class="section-title">Frequently Asked <span class="highlight-aqua">Investment Questions</span></h2>
+          <p class="section-subtitle">
+            Clear, definitive answers on fixed-price guarantees, escrow schedules, permitting fees, and ongoing maintenance.
+          </p>
+        </div>
+
+        
+        <div class="srv-faqs-accordion">
+          
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" id="pfaq-btn-0">
+              <span class="faq-question">How does the Fixed-Price Turnkey Guarantee protect my budget?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel" id="pfaq-panel-0">
+              <p class="faq-answer">
+                Unlike traditional swimming pool contractors who quote low and inflate costs with unexpected excavation change orders, AQUORA conducts comprehensive geotechnical soil tests and 3D topographical scans prior to contract execution. The price stated in your master agreement is absolute and fixed, absorbing unforeseen subterranean conditions at our own studio expense.
+              </p>
+            </div>
+          </div>
+
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" id="pfaq-btn-1">
+              <span class="faq-question">Are municipal permits, soil core tests, and engineering stamps included in the base price?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel" id="pfaq-panel-1">
+              <p class="faq-answer">
+                Yes, 100%. Every commission tier covers licensed Professional Engineer (PE) structural stamps, geotechnical soil reports, California Coastal Commission filings, seismic engineering, and municipal building department plan reviews. We handle all administrative logistics turnkey.
+              </p>
+            </div>
+          </div>
+
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" id="pfaq-btn-2">
+              <span class="faq-question">How do AIA stage-by-stage escrow milestones protect client capital?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel" id="pfaq-panel-2">
+              <p class="faq-answer">
+                Your investment is held securely in an independent architectural escrow facility. Payments are divided across five distinct milestones (10% &rarr; 25% &rarr; 30% &rarr; 25% &rarr; 10%). A milestone payment is only released after municipal building inspectors and our lead AIA project superintendent certify that physical construction has achieved the required engineering tolerances.
+              </p>
+            </div>
+          </div>
+
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" id="pfaq-btn-3">
+              <span class="faq-question">What happens if I request an architectural revision or material upgrade during construction?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel" id="pfaq-panel-3">
+              <p class="faq-answer">
+                Patrons can request finish or equipment changes at any stage prior to material procurement through our Client Portal. When an adjustment is requested, your dedicated project architect prepares an itemized AIA Change Order detailing exact material cost deltas and schedule implications. No work proceeds until you sign off digitally.
+              </p>
+            </div>
+          </div>
+
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" id="pfaq-btn-4">
+              <span class="faq-question">What ongoing energy, water treatment, and seasonal maintenance expenses should I budget for?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel" id="pfaq-panel-4">
+              <p class="faq-answer">
+                Because all AQUORA pools feature ultra-efficient Pentair variable-frequency drives, dual geothermal heat exchangers, and insulated automated safety covers, electrical consumption is up to 65% lower than conventional installations ($80–$140/month average). Water sanitization is handled by automated medical-grade ozone/UV generators, reducing chemical expenses to under $40/month.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="pricing-cta" class="about-cta-section prc-cta-section" aria-label="Commission Your Waterscape">
+      <div class="section-container">
+        
+        <div class="final-cta-card">
+          
+          <div class="final-cta-bg-wrapper">
+            <img src="assets/cta_twilight.jpg" alt="Panoramic luxury resort swimming pool illuminated at twilight"
+              class="final-cta-img" loading="lazy" width="1400" height="788">
+            <div class="final-cta-scrim" aria-hidden="true"></div>
+            <div class="final-cta-water-glow" aria-hidden="true"></div>
+          </div>
+
+          <div class="final-cta-inner">
+            <span class="final-cta-eyebrow">BEGIN YOUR COMMISSION</span>
+            <h2 class="final-cta-headline">Ready To Create Your <span class="highlight-aqua">Private Paradise</span>?</h2>
+            <p class="final-cta-subtitle">
+              Connect with our architectural studio today for a complimentary on-site topographical feasibility study, 3D preliminary concept review, and guaranteed fixed-price estimate.
+            </p>
+
+            <div class="final-cta-buttons">
+              <button class="btn btn-primary btn-large" onclick="openQuoteModal('Pricing Page Final CTA Quote')">
+                <span>Get a Free Turnkey Quote</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+              <button class="btn btn-secondary btn-large" onclick="openQuoteModal('Pricing Consultation Booking')">
+                <span>Book Architect Consultation</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="final-cta-guarantees">
+              <div class="guarantee-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <span>25-Year Structural Integrity</span>
+              </div>
+              <div class="guarantee-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 14 14"></polyline>
+                </svg>
+                <span>Fixed-Price Turnkey Guarantee</span>
+              </div>
+              <div class="guarantee-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Licensed AIA Architectural Studio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer id="footer" class="site-footer" role="contentinfo">
+    <div class="footer-container">
+
+      
+      <div class="footer-top">
+
+        
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-logo" aria-label="AQUORA Home">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="assets/aquora-logo.png" alt="AQUORA Logo" class="brand-logo-img">
+            </div>
+            <div class="brand-text-group">
+              <span class="brand-name">AQUORA</span>
+              <span class="brand-tagline">ARCHITECTURAL POOLS &amp; LIVING</span>
+            </div>
+          </a>
+          <p class="footer-description">
+            Designing and engineering bespoke architectural pools and outdoor living environments for modern luxury estates. Mastercrafted from Pacific coastal bluffs to private island sanctuaries.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media">
+            <a href="#footer" class="social-link" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#footer" class="social-link" aria-label="Instagram" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Disciplines</h4>
+          <ul class="footer-links">
+            <li><a href="service detail.html?service=inground">Inground Pools</a></li>
+            <li><a href="service detail.html?service=vanishing">Vanishing Edge</a></li>
+            <li><a href="service detail.html?service=knife-edge">Knife-Edge</a></li>
+            <li><a href="service detail.html?service=fire-caldera">Fire Calderas</a></li>
+            <li><a href="service detail.html?service=hydro-spa">Hydro Spas</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="journal.html">Journals</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html#team">Architects</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4 class="footer-col-title">Client Portal</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html#milestones">Milestones</a></li>
+            <li><a href="dashboard.html#materials">Materials</a></li>
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="footer-col footer-contact-col">
+          <h4 class="footer-col-title">Address &amp; Contact</h4>
+          <div class="footer-contact-list">
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>New York, NY 10022, USA</span>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:concierge@aquora.com">concierge@aquora.com</a>
+            </div>
+            <div class="contact-entry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+18004927665">+1 (800) 492-POOL</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 AQUORA. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#footer">Privacy Policy</a>
+          <a href="#footer">Terms of Service</a>
+          <a href="#footer">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  
+  <div id="quote-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">ARCHITECTURAL COMMISSION INQUIRY</span>
+        <h3 id="quote-modal-title" class="modal-title">Commission Your Private Paradise</h3>
+        <p class="modal-subtitle">Share your estate vision with our principal designers for a turnkey proposal and 3D concept review.</p>
+      </div>
+
+      <form id="quote-form" class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-name">Full Name *</label>
+            <input type="text" id="quote-name" required placeholder="Lord/Lady Alexander Vance" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="quote-email">Email Address *</label>
+            <input type="email" id="quote-email" required placeholder="alexander@vance-holdings.com" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-phone">Phone Number *</label>
+            <input type="tel" id="quote-phone" required placeholder="+1 (555) 019-2834" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="quote-type">Commission Tier *</label>
+            <select id="quote-type" class="form-input" required>
+              <option value="The Horizon Monolith ($320k-$480k)" selected>The Horizon Monolith ($320k–$480k &bull; Most Commissioned)</option>
+              <option value="The Signature Residence ($185k-$275k)">The Signature Residence ($185k–$275k)</option>
+              <option value="The Presidential Estate ($650k+)">&bull; The Presidential Estate ($650k+ Ultra-Flagship)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="quote-budget">Estimated Investment Range</label>
+            <select id="quote-budget" class="form-input">
+              <option value="$185,000 - $275,000">$185,000 – $275,000</option>
+              <option value="$320,000 - $480,000" selected>$320,000 – $480,000</option>
+              <option value="$480,000 - $650,000">$480,000 – $650,000</option>
+              <option value="$650,000+">$650,000+ (Ultra-Estate Signature)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quote-location">Location / City</label>
+            <input type="text" id="quote-location" placeholder="e.g. Malibu, Aspen, Palm Beach" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="quote-notes">Vision Details or Site Specifications</label>
+          <textarea id="quote-notes" rows="3" placeholder="Tell us about your property slope, desired stone finishes, or timeline..." class="form-input"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Submit Proposal Request</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <p class="form-disclaimer">All inquiries are safeguarded under strict privacy and non-disclosure standards.</p>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="login-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="modal-dialog modal-dialog-sm">
+      <button class="modal-close-btn" onclick="closeLoginModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">PORTAL ACCESS</span>
+        <h3 id="login-modal-title" class="modal-title">Client Dashboard Login</h3>
+        <p class="modal-subtitle">Access your project milestones, drone progress, and direct architectural messages.</p>
+      </div>
+
+      <div class="demo-credentials-callout">
+        <span class="callout-label">Instant Demo Credentials:</span>
+        <code>Email: client@aquora.com | Pass: paradise2026</code>
+        <button type="button" class="btn-fill-demo" onclick="fillDemoCredentials()">Auto-Fill</button>
+      </div>
+
+      <form id="login-form" class="modal-form" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label for="login-email">Client Email</label>
+          <input type="email" id="login-email" required placeholder="name@estate.com" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Access Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••••••" class="form-input">
+        </div>
+        <div class="form-row-remember">
+          <label class="checkbox-label">
+            <input type="checkbox" checked> <span>Keep me authenticated</span>
+          </label>
+          <a href="#login" onclick="showToast('Password reset instructions sent to registered estate email.')" class="forgot-link">Reset Code</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          <span>Enter Client Portal</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="toast-notification" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="index.js"></script>
+  <script src="pricing.js"></script>
+</body>
+
+</html>
