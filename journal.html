@@ -73,9 +73,11 @@
       </nav>
 
       
-      <div class="header-actions">
-        <button id="theme-toggle" class="icon-control-btn" aria-label="Toggle light and dark theme" title="Toggle theme">
-          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="header-controls">
+        <button id="theme-toggle-btn" class="control-btn theme-toggle" aria-label="Toggle Light and Dark Mode"
+          title="Toggle Theme">
+          <svg class="theme-icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -86,24 +88,28 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg class="theme-icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
 
-        <button id="rtl-toggle" class="text-control-btn" aria-label="Toggle Right-To-Left layout" title="Switch layout direction">
-          <span>RTL</span>
+        <button id="rtl-toggle-btn" class="control-btn rtl-toggle" aria-label="Toggle Right-to-Left Layout"
+          title="Toggle RTL">
+          <span class="rtl-text">RTL</span>
         </button>
 
-        <a href="login.html" id="login-btn" class="btn btn-primary btn-sm" aria-label="Open client login">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="login.html" id="header-login-btn" class="btn btn-primary desktop-only" aria-label="Login">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
           <span>Login</span>
         </a>
 
-        <button id="mobile-hamburger-btn" class="mobile-hamburger" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <button id="mobile-hamburger-btn" class="mobile-hamburger" aria-label="Open Navigation Menu"
+          aria-expanded="false" aria-controls="mobile-nav-drawer">
           <span class="hamburger-line line-1"></span>
           <span class="hamburger-line line-2"></span>
           <span class="hamburger-line line-3"></span>
