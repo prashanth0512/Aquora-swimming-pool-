@@ -2757,13 +2757,14 @@ h4 {
 .feature-card {
   position: relative;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
   padding: 2.4rem 1.8rem;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-base);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .feature-card:hover {
@@ -3413,8 +3414,8 @@ h4 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, rgba(5, 7, 10, 0) 0%, rgba(5, 7, 10, 0.82) 35%, rgba(5, 7, 10, 0.96) 100%);
-  padding: 2.2rem 1.5rem 1.4rem;
+  background: linear-gradient(180deg, rgba(5, 7, 10, 0) 0%, rgba(5, 7, 10, 0.7) 25%, rgba(5, 7, 10, 0.92) 55%, rgba(5, 7, 10, 0.98) 100%);
+  padding: 2.4rem 1.5rem 1.4rem;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-base);
@@ -3439,10 +3440,27 @@ h4 {
 }
 
 .gallery-caption-mini {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.4;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.45;
   margin-bottom: 0.7rem;
+  font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  transition: color var(--transition-fast);
+}
+
+.gallery-item:hover .gallery-caption-mini {
+  color: #ffffff;
+}
+
+[data-theme="light"] .gallery-caption-mini {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="dark"] .gallery-caption-mini {
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 .gallery-action-hint {
@@ -6082,6 +6100,21 @@ h4 {
 [data-theme="light"] #why-choose-us,
 [data-theme="light"] .why-section {
   background-color: #ffffff !important;
+}
+
+[data-theme="light"] .feature-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0, 102, 255, 0.18) !important;
+  box-shadow: 0 4px 20px rgba(10, 61, 98, 0.06) !important;
+}
+
+[data-theme="light"] .feature-card:hover {
+  border-color: #0066ff !important;
+  box-shadow: 0 16px 36px rgba(0, 102, 255, 0.14), 0 0 16px rgba(0, 102, 255, 0.08) !important;
+}
+
+[data-theme="light"] .feature-card-footer {
+  border-top: 1px solid rgba(0, 102, 255, 0.12) !important;
 }
 
 [data-theme="light"] #featured-projects,

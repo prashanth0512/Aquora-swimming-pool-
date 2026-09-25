@@ -1083,26 +1083,51 @@
 .journal-cta-card {
   position: relative;
   overflow: hidden;
+  max-width: 980px;
+  margin: 0 auto;
   background: linear-gradient(135deg,
-      rgba(10, 61, 98, 0.55) 0%,
-      rgba(0, 40, 80, 0.8) 50%,
-      rgba(10, 61, 98, 0.55) 100%);
-  border: 1px solid rgba(0, 180, 216, 0.25);
-  border-radius: var(--radius-xl);
-  padding: 48px 48px;
+      rgba(10, 24, 45, 0.94) 0%,
+      rgba(6, 17, 34, 0.98) 50%,
+      rgba(10, 30, 56, 0.94) 100%);
+  border: 1.5px solid rgba(0, 229, 255, 0.28);
+  border-radius: var(--radius-xl, 24px);
+  padding: 58px 48px;
   text-align: center;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 35px rgba(0, 229, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.journal-cta-card:hover {
+  border-color: rgba(0, 229, 255, 0.48);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6), 0 0 50px rgba(0, 229, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.journal-cta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #00e5ff 50%, transparent 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .journal-cta-bg-lines {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 180, 216, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 180, 216, 0.06) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(0, 229, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
   border-radius: inherit;
   pointer-events: none;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
 }
 
 .journal-cta-orb {
@@ -1115,62 +1140,132 @@
 .cta-orb-1 {
   width: 500px;
   height: 500px;
-  top: -150px;
-  left: -100px;
-  background: radial-gradient(circle, rgba(0, 102, 255, 0.2) 0%, transparent 70%);
+  top: -180px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.22) 0%, transparent 70%);
 }
 
 .cta-orb-2 {
-  width: 400px;
-  height: 400px;
-  bottom: -100px;
-  right: -80px;
-  background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
+  width: 420px;
+  height: 420px;
+  bottom: -140px;
+  right: -90px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.18) 0%, transparent 70%);
 }
 
 .journal-cta-content {
   position: relative;
-  z-index: 1;
-  max-width: 640px;
+  z-index: 2;
+  max-width: 680px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .journal-cta-badge {
-  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 18px 7px 14px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.32);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #00e5ff;
+  text-transform: uppercase;
+  margin: 0 auto 22px;
+  box-shadow: 0 2px 12px rgba(0, 229, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.journal-cta-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00e5ff;
+  box-shadow: 0 0 8px #00e5ff;
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 .journal-cta-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.85rem, 3.4vw, 2.65rem);
   font-weight: 600;
-  color: var(--color-white);
-  line-height: 1.18;
-  margin-bottom: 14px;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
+  text-align: center;
+  width: 100%;
 }
 
 .journal-cta-desc {
   font-family: var(--font-sans);
-  font-size: 0.93rem;
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.65;
-  margin-bottom: 24px;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.68;
+  margin: 0 auto 28px;
+  max-width: 620px;
+  text-align: center;
 }
 
 .journal-cta-actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.journal-cta-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-pill);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.24s ease,
+              border-color 0.24s ease;
+}
+
+.journal-cta-actions .btn svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journal-cta-actions .btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.journal-cta-actions .btn-secondary:hover svg {
+  transform: translate(3px, -3px);
 }
 
 .journal-cta-note {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.04em;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .mobile-nav-drawer {
@@ -1563,4 +1658,126 @@
   border: 1.5px solid rgba(0, 102, 255, 0.35) !important;
   box-shadow: 0 20px 42px rgba(10, 45, 95, 0.14) !important;
   opacity: 0.88 !important;
+}
+
+/* --- Journal CTA Card - Light Mode --- */
+[data-theme="light"] .journal-cta-section {
+  background: var(--bg-page);
+}
+
+[data-theme="light"] .journal-cta-card {
+  background: linear-gradient(135deg,
+      #ffffff 0%,
+      #f4f8fe 45%,
+      #e8f2fd 100%) !important;
+  border: 1.5px solid rgba(0, 102, 255, 0.22) !important;
+  box-shadow:
+    0 24px 60px rgba(0, 45, 110, 0.08),
+    0 6px 20px rgba(0, 102, 255, 0.04),
+    inset 0 1px 0 #ffffff !important;
+}
+
+[data-theme="light"] .journal-cta-card:hover {
+  border-color: rgba(0, 102, 255, 0.42) !important;
+  box-shadow:
+    0 30px 75px rgba(0, 45, 110, 0.12),
+    0 8px 26px rgba(0, 102, 255, 0.08),
+    inset 0 1px 0 #ffffff !important;
+}
+
+[data-theme="light"] .journal-cta-card::before {
+  background: linear-gradient(90deg, transparent 0%, #0066ff 30%, #00d2ff 50%, #0066ff 70%, transparent 100%) !important;
+  opacity: 0.85 !important;
+}
+
+[data-theme="light"] .journal-cta-bg-lines {
+  background-image:
+    linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px) !important;
+  opacity: 0.85 !important;
+}
+
+[data-theme="light"] .journal-cta-card .cta-orb-1 {
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%) !important;
+}
+
+[data-theme="light"] .journal-cta-card .cta-orb-2 {
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.12) 0%, transparent 70%) !important;
+}
+
+[data-theme="light"] .journal-cta-badge {
+  background: rgba(0, 102, 255, 0.08) !important;
+  border: 1.5px solid rgba(0, 102, 255, 0.28) !important;
+  color: #0052cc !important;
+  box-shadow: 0 2px 10px rgba(0, 102, 255, 0.08) !important;
+}
+
+[data-theme="light"] .journal-cta-badge .badge-dot {
+  background: #0066ff !important;
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.6) !important;
+}
+
+[data-theme="light"] .journal-cta-title {
+  color: #071529 !important;
+}
+
+[data-theme="light"] .journal-cta-title .highlight-aqua,
+[data-theme="light"] .journal-cta-title em {
+  background: linear-gradient(135deg, #0052cc 0%, #0284c7 55%, #0099e6 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #0052cc !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 82, 204, 0.2)) !important;
+}
+
+[data-theme="light"] .journal-cta-title .highlight-aqua::after,
+[data-theme="light"] .journal-cta-title em::after {
+  background: linear-gradient(90deg, #0052cc 0%, #0284c7 60%, rgba(0, 153, 230, 0.4) 100%) !important;
+  height: 2.5px !important;
+  box-shadow: 0 1.5px 6px rgba(0, 78, 204, 0.28) !important;
+}
+
+[data-theme="light"] .journal-cta-desc {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .journal-cta-actions .btn-primary {
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid transparent !important;
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.32) !important;
+}
+
+[data-theme="light"] .journal-cta-actions .btn-primary:hover {
+  background: linear-gradient(135deg, #0052cc 0%, #003db3 100%) !important;
+  box-shadow: 0 12px 30px rgba(0, 102, 255, 0.45) !important;
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .journal-cta-actions .btn-secondary {
+  background: #ffffff !important;
+  color: #071529 !important;
+  border: 1.5px solid rgba(0, 102, 255, 0.32) !important;
+  box-shadow: 0 4px 14px rgba(0, 45, 110, 0.08) !important;
+}
+
+[data-theme="light"] .journal-cta-actions .btn-secondary:hover {
+  background: #0066ff !important;
+  color: #ffffff !important;
+  border-color: #0066ff !important;
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .journal-cta-actions .btn-secondary svg {
+  stroke: #071529 !important;
+}
+
+[data-theme="light"] .journal-cta-actions .btn-secondary:hover svg {
+  stroke: #ffffff !important;
+}
+
+[data-theme="light"] .journal-cta-note {
+  color: #64748b !important;
+  font-weight: 500;
 }

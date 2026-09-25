@@ -94,24 +94,36 @@
 .h2-hero-eyebrow-wrap {
   display: inline-flex;
   align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.1rem;
+  gap: 0.55rem;
+  padding: 0.38rem 0.95rem;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.28);
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(0, 229, 255, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.h2-hero-eyebrow-wrap:hover {
+  border-color: rgba(0, 229, 255, 0.55);
+  box-shadow: 0 4px 18px rgba(0, 229, 255, 0.22);
+  transform: translateY(-1px);
 }
 
 .h2-hero-eyebrow-text {
   font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #00e5ff;
 }
 
 .h2-hero-eyebrow-dash {
-  width: 36px;
-  height: 1.5px;
-  background: #00e5ff;
-  opacity: 0.85;
+  display: none;
 }
 
 .h2-hero-headline {
@@ -375,14 +387,25 @@
   background: #ffffff !important;
 }
 
+[data-theme="light"] .h2-hero-eyebrow-wrap {
+  background: rgba(0, 102, 255, 0.06);
+  border-color: rgba(0, 102, 255, 0.22);
+  box-shadow: 0 2px 10px rgba(0, 102, 255, 0.08);
+}
+
+[data-theme="light"] .h2-hero-eyebrow-wrap:hover {
+  border-color: rgba(0, 102, 255, 0.45);
+  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.16);
+}
+
 [data-theme="light"] .h2-hero-eyebrow-text {
   color: #0066ff;
   font-weight: 800;
 }
 
-[data-theme="light"] .h2-hero-eyebrow-dash {
+[data-theme="light"] .h2-hero-eyebrow-wrap .h2-eyebrow-beacon {
   background: #0066ff;
-  opacity: 0.85;
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.5);
 }
 
 [data-theme="light"] .h2-hero-headline {
@@ -2657,7 +2680,7 @@
   border: 1px solid rgba(0, 102, 255, 0.3);
   border-radius: var(--radius-md);
   padding: 1.25rem 2rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0;
   gap: 1.4rem;
   flex-wrap: wrap;
 }
@@ -2906,14 +2929,15 @@
 .h2-dash-progress-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.68rem;
+  gap: 0.45rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--color-white);
-  background: rgba(0, 102, 255, 0.25);
-  border: 1px solid #0066ff;
-  padding: 0.25rem 0.65rem;
+  color: #00e5ff;
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  padding: 0.32rem 0.8rem;
   border-radius: var(--radius-pill);
+  letter-spacing: 0.02em;
 }
 
 .h2-dash-body-grid {
@@ -3057,6 +3081,13 @@
   color: #005ce6 !important;
 }
 
+[data-theme="light"] .h2-dash-progress-pill {
+  color: #0056cc !important;
+  background: rgba(0, 102, 255, 0.1) !important;
+  border: 1px solid rgba(0, 102, 255, 0.32) !important;
+  box-shadow: 0 1px 4px rgba(0, 102, 255, 0.08);
+}
+
 [data-theme="light"] .h2-dash-action-footer {
   background: #f8fbfd !important;
   border-top: 1px solid rgba(10, 61, 98, 0.12) !important;
@@ -3099,8 +3130,8 @@
 }
 
 .h2-tcard.h2-tcard-featured {
-  border-color: rgba(0, 102, 255, 0.45);
-  background: linear-gradient(180deg, rgba(14, 25, 48, 0.95) 0%, rgba(6, 12, 24, 0.98) 100%);
+  border-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(12, 20, 36, 0.92) 0%, rgba(6, 10, 20, 0.97) 100%);
 }
 
 .h2-tcard-top {
@@ -3140,9 +3171,9 @@
 }
 
 .h2-tcard-badge.highlight {
-  color: #ffffff;
-  background: rgba(0, 102, 255, 0.35);
-  border-color: #0066ff;
+  color: #00e5ff;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.25);
 }
 
 .h2-tcard-typology {
@@ -3310,8 +3341,15 @@
 
 [data-theme="light"] .h2-tcard.h2-tcard-featured {
   background: #ffffff;
-  border-color: #0066ff;
-  box-shadow: 0 8px 30px rgba(0, 102, 255, 0.12);
+  border-color: rgba(10, 61, 98, 0.14);
+  box-shadow: 0 6px 24px rgba(10, 61, 98, 0.08);
+}
+
+[data-theme="light"] .h2-tcard-badge,
+[data-theme="light"] .h2-tcard-badge.highlight {
+  color: #0056cc;
+  background: rgba(0, 102, 255, 0.08);
+  border-color: rgba(0, 102, 255, 0.22);
 }
 
 [data-theme="light"] .h2-tcard-typology {

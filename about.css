@@ -863,10 +863,10 @@
 .tl-tag-highlight { color: #00e5ff; background: rgba(0, 229, 255, 0.12); border-color: rgba(0, 229, 255, 0.3); box-shadow: 0 0 8px rgba(0, 229, 255, 0.2); }
 [data-theme="light"] .tl-card { background: rgba(255,255,255,0.9); border-color: rgba(0,100,255,0.1); }
 
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-.team-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); overflow: hidden; transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast); cursor: pointer; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; align-items: stretch; }
+.team-card { display: flex; flex-direction: column; height: 100%; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); overflow: hidden; transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast); cursor: pointer; }
 .team-card:hover { transform: translateY(-6px); border-color: rgba(0, 180, 216, 0.35); box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45); }
-.team-photo-wrap { position: relative; aspect-ratio: 3/4; overflow: hidden; }
+.team-photo-wrap { position: relative; aspect-ratio: 3/4; overflow: hidden; flex-shrink: 0; }
 .team-photo { width: 100%; height: 100%; object-fit: cover; object-position: top center; transform: scale(1.04); transition: transform 0.6s ease; }
 .team-card:hover .team-photo { transform: scale(1.1); }
 
@@ -876,14 +876,16 @@
 .team-card:hover .team-social-row { opacity: 1; transform: translateY(0); }
 .team-social-btn { width: 32px; height: 32px; border-radius: 50%; background: rgba(0, 5, 15, 0.75); backdrop-filter: blur(8px); border: 1px solid rgba(0, 229, 255, 0.3); color: var(--color-secondary-bright); display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast); }
 .team-social-btn:hover { background: rgba(0, 180, 216, 0.25); border-color: rgba(0, 229, 255, 0.6); }
-.team-info { padding: 1.1rem 1.25rem 1.4rem; }
-.team-name { font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem; }
-.team-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-secondary-bright); display: block; margin-bottom: 0.65rem; }
-.team-bio { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.85rem; }
-.team-expertise { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.expertise-chip { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text-muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); border-radius: var(--radius-pill); padding: 0.2rem 0.55rem; }
-[data-theme="light"] .team-card { background: #ffffff; border-color: rgba(0,0,0,0.07); }
-[data-theme="light"] .expertise-chip { background: #f5f7fa; }
+.team-info { padding: 1.15rem 1.05rem 1.35rem; display: flex; flex-direction: column; flex: 1; }
+.team-name { font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem; line-height: 1.2; white-space: nowrap; }
+.team-role { font-size: clamp(0.62rem, 0.72vw, 0.68rem); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-secondary-bright); display: block; margin-bottom: 0.75rem; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.team-bio { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 1.1rem; flex: 1; }
+.team-expertise { display: flex; align-items: center; flex-wrap: nowrap; gap: 0.35rem; margin-top: auto; width: 100%; }
+.expertise-chip { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.03em; color: var(--text-muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); border-radius: var(--radius-pill); padding: 0.22rem 0.45rem; white-space: nowrap; flex: 1 1 0; min-width: 0; text-align: center; overflow: hidden; text-overflow: ellipsis; line-height: 1.2; }
+[data-theme="light"] .team-card { background: #ffffff; border-color: rgba(10, 61, 98, 0.12); box-shadow: 0 4px 20px rgba(10, 61, 98, 0.05); }
+[data-theme="light"] .team-card:hover { border-color: #0066ff; box-shadow: 0 16px 36px rgba(0, 102, 255, 0.14); }
+[data-theme="light"] .team-role { color: #0066ff; }
+[data-theme="light"] .expertise-chip { background: #f1f5f9; border-color: rgba(10, 61, 98, 0.1); color: #334155; }
 
 .about-cta-section {
   padding: clamp(2rem, 3.5vw, 3rem) 0;
