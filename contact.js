@@ -1,5 +1,4 @@
 
-
 'use strict';
 
 const ATELIER_DATA = {
@@ -48,7 +47,6 @@ function selectStudioOnMap(studioId) {
   const data = ATELIER_DATA[studioId];
   if (!data) return;
 
-  
   const tabs = document.querySelectorAll('.studio-tab-btn');
   tabs.forEach(tab => {
     const isTarget = tab.getAttribute('data-target') === studioId;
@@ -56,21 +54,18 @@ function selectStudioOnMap(studioId) {
     tab.setAttribute('aria-selected', isTarget ? 'true' : 'false');
   });
 
-  
   const cards = document.querySelectorAll('.atelier-card');
   cards.forEach(card => {
     const isTarget = card.getAttribute('data-atelier') === studioId;
     card.classList.toggle('active-card', isTarget);
   });
 
-  
   const markers = document.querySelectorAll('.map-studio-marker');
   markers.forEach(marker => {
     const isTarget = marker.id === `marker-${studioId}`;
     marker.classList.toggle('active', isTarget);
   });
 
-  
   const hud = document.getElementById('map-hud-overlay');
   if (hud) {
     hud.style.opacity = '0.3';
@@ -142,7 +137,6 @@ function initCommissionForm() {
   const phoneInput = document.getElementById('c-phone');
   const locationInput = document.getElementById('c-location');
 
-  
   [nameInput, emailInput, phoneInput, locationInput].forEach(input => {
     if (!input) return;
     input.addEventListener('input', () => {
@@ -155,26 +149,22 @@ function initCommissionForm() {
 
     let hasError = false;
 
-    
     if (!nameInput.value.trim()) {
       nameInput.classList.add('has-error');
       hasError = true;
     }
 
-    
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailInput.value.trim())) {
       emailInput.classList.add('has-error');
       hasError = true;
     }
 
-    
     if (!phoneInput.value.trim()) {
       phoneInput.classList.add('has-error');
       hasError = true;
     }
 
-    
     if (!locationInput.value.trim()) {
       locationInput.classList.add('has-error');
       hasError = true;
@@ -187,7 +177,6 @@ function initCommissionForm() {
       return;
     }
 
-    
     const submitBtn = document.getElementById('cform-submit-btn');
     const submitText = submitBtn ? submitBtn.querySelector('.submit-text') : null;
     const originalText = submitText ? submitText.textContent : 'Submit Private Feasibility Inquiry';
@@ -260,8 +249,8 @@ function initDropzone() {
     attachedFiles.forEach((file, index) => {
       const chip = document.createElement('div');
       chip.className = 'dropzone-file-chip';
-      const sizeStr = file.size > 1048576 
-        ? `${(file.size / 1048576).toFixed(1)} MB` 
+      const sizeStr = file.size > 1048576
+        ? `${(file.size / 1048576).toFixed(1)} MB`
         : `${Math.round(file.size / 1024)} KB`;
 
       chip.innerHTML = `
@@ -271,7 +260,6 @@ function initDropzone() {
       fileList.appendChild(chip);
     });
 
-    
     fileList.querySelectorAll('.chip-remove-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -302,14 +290,12 @@ function initFaqAccordion() {
       const item = trigger.closest('.cfaq-item');
       const isOpen = item.classList.contains('open');
 
-      
       accordion.querySelectorAll('.cfaq-item').forEach((i) => {
         i.classList.remove('open');
         const btn = i.querySelector('.cfaq-trigger');
         if (btn) btn.setAttribute('aria-expanded', 'false');
       });
 
-      
       if (!isOpen) {
         item.classList.add('open');
         trigger.setAttribute('aria-expanded', 'true');

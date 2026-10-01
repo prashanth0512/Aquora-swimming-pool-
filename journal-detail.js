@@ -1,10 +1,8 @@
-﻿
 
 'use strict';
 
 const ARTICLES = {
 
-  
   'infinity-edge-mastery': {
     title: 'The Art of Infinity Edge Mastery',
     category: 'Design Philosophy',
@@ -75,7 +73,6 @@ const ARTICLES = {
     `
   },
 
-  
   'stone-water-dialogue': {
     title: 'Stone & Water: A Timeless Dialogue',
     category: 'Material Studio',
@@ -145,7 +142,6 @@ const ARTICLES = {
     `
   },
 
-  
   'hydraulic-engineering-secrets': {
     title: 'Hydraulic Engineering: The Invisible Architecture',
     category: 'Engineering',
@@ -215,7 +211,6 @@ const ARTICLES = {
     `
   },
 
-  
   'night-pool-lighting-design': {
     title: 'After Dark: The Art of Pool Lighting Design',
     category: 'Lighting Design',
@@ -284,7 +279,6 @@ const ARTICLES = {
     `
   },
 
-  
   'resort-pool-landscaping': {
     title: 'Resort Landscaping: Designing the Pool\'s Living Frame',
     category: 'Landscape & Living',
@@ -353,7 +347,6 @@ const ARTICLES = {
     `
   },
 
-  
   'pool-construction-timeline': {
     title: 'Inside the Build: A Pool\'s Journey from Vision to Reality',
     category: 'Behind the Build',
@@ -439,7 +432,7 @@ function renderArticle() {
   const article = ARTICLES[id];
 
   if (!article) {
-    
+
     document.title = 'Article Not Found | AURA WATERS';
     document.querySelector('.jd-hero-title') && (document.getElementById('jd-article-title').textContent = 'Article Not Found');
     document.getElementById('jd-article-body').innerHTML = `
@@ -449,35 +442,28 @@ function renderArticle() {
     return;
   }
 
-  
   document.title = `${article.title} · The Aura Journal | AURA WATERS`;
   const metaDesc = document.getElementById('page-meta-desc');
   if (metaDesc) metaDesc.setAttribute('content', article.excerpt);
 
-  
   const visual = document.getElementById('jd-hero-visual');
   if (visual) {
     visual.setAttribute('data-vis', article.visual);
     setTimeout(() => visual.classList.add('parallax-active'), 200);
   }
 
-  
   const breadLabel = document.getElementById('jd-breadcrumb-label');
   if (breadLabel) breadLabel.textContent = article.category;
 
-  
   const badge = document.getElementById('jd-hero-badge');
   if (badge) badge.querySelector('#jd-category-label').textContent = article.category;
 
-  
   const title = document.getElementById('jd-article-title');
   if (title) title.textContent = article.title;
 
-  
   const excerpt = document.getElementById('jd-article-excerpt');
   if (excerpt) excerpt.textContent = article.excerpt;
 
-  
   const authorAvatar = document.getElementById('jd-author-avatar');
   if (authorAvatar) {
     authorAvatar.innerHTML = `<img src="${article.authorAvatar}" alt="${article.author}" class="jd-author-img">`;
@@ -489,14 +475,12 @@ function renderArticle() {
   const authorRole = document.getElementById('jd-author-role');
   if (authorRole) authorRole.textContent = article.authorRole;
 
-  
   const pubDate = document.getElementById('jd-pub-date');
   if (pubDate) pubDate.textContent = article.date;
 
   const readTime = document.getElementById('jd-read-time');
   if (readTime) readTime.textContent = article.readTime;
 
-  
   const toc = document.getElementById('jd-toc');
   if (toc) {
     toc.innerHTML = article.toc.map(item => `
@@ -504,10 +488,9 @@ function renderArticle() {
     `).join('');
   }
 
-  
   const body = document.getElementById('jd-article-body');
   if (body) {
-    
+
     const specPanel = `
       <div class="jd-spec-panel">
         <p class="jd-spec-panel-title">${article.specsTitle}</p>
@@ -524,7 +507,6 @@ function renderArticle() {
     body.innerHTML = specPanel + article.body;
   }
 
-  
   const relatedGrid = document.getElementById('jd-related-grid');
   if (relatedGrid) {
     const otherIds = Object.keys(ARTICLES).filter(k => k !== id).slice(0, 3);
@@ -584,7 +566,6 @@ function initTocObserver() {
 
   headings.forEach((h) => observer.observe(h));
 
-  
   tocLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -695,12 +676,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initRtlToggle();
   initHeaderScroll();
 
-  
   requestAnimationFrame(() => {
     initTocObserver();
   });
 
-  
   ['quote-modal', 'login-modal'].forEach((id) => {
     const modal = document.getElementById(id);
     if (!modal) return;

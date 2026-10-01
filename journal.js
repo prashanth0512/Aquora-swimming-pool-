@@ -1,5 +1,4 @@
 
-
 'use strict';
 
 function initFaqAccordion() {
@@ -14,14 +13,12 @@ function initFaqAccordion() {
       const panel = item.querySelector('.faq-panel');
       const isOpen = item.classList.contains('open');
 
-      
       accordion.querySelectorAll('.faq-item').forEach((i) => {
         i.classList.remove('open');
         i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
         i.querySelector('.faq-panel').setAttribute('aria-hidden', 'true');
       });
 
-      
       if (!isOpen) {
         item.classList.add('open');
         trigger.setAttribute('aria-expanded', 'true');
@@ -39,7 +36,7 @@ function initCardAnimations() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          
+
           const card = entry.target;
           const index = Array.from(cards).indexOf(card);
           setTimeout(() => {
@@ -58,9 +55,9 @@ function initCardAnimations() {
 function initCardNavigation() {
   const cards = document.querySelectorAll('.journal-card');
   cards.forEach((card) => {
-    
+
     card.addEventListener('click', (e) => {
-      
+
       if (e.target.closest('.journal-card-btn')) return;
 
       const articleId = card.getAttribute('data-article-id');
@@ -69,7 +66,6 @@ function initCardNavigation() {
       }
     });
 
-    
     card.setAttribute('tabindex', '0');
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -222,7 +218,7 @@ function initModalOverlayClose() {
 }
 
 function initHeroInteractions() {
-  
+
   const tags = document.querySelectorAll('.hero-topic-tag');
   const cards = document.querySelectorAll('.journal-card');
 
@@ -254,7 +250,6 @@ function initHeroInteractions() {
         }
       });
 
-      
       const grid = document.getElementById('journal-cards-grid');
       if (grid) {
         grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -262,7 +257,6 @@ function initHeroInteractions() {
     });
   });
 
-  
   const deck = document.getElementById('hero-card-deck');
   const frontCard = document.getElementById('hero-front-card');
 
@@ -282,7 +276,6 @@ function initHeroInteractions() {
       frontCard.style.transform = '';
     });
 
-    
     frontCard.addEventListener('click', (e) => {
       if (e.target.closest('.deck-read-btn')) return;
       window.location.href = 'journal-detail.html?article=infinity-edge-mastery';

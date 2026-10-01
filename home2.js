@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
   initThemeAndDirection();
   initHeaderScroll();
@@ -44,11 +43,9 @@ function initThemeAndDirection() {
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const rtlToggleBtn = document.getElementById('rtl-toggle-btn');
 
-  
   const savedTheme = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
   html.setAttribute('data-theme', savedTheme);
 
-  
   const savedDir = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
   html.setAttribute('dir', savedDir);
 
@@ -59,7 +56,6 @@ function initThemeAndDirection() {
       html.setAttribute('data-theme', nextTheme);
       localStorage.setItem('aquara-theme', nextTheme);
       localStorage.setItem('aura-theme', nextTheme);
-      showToast(`Switched to ${nextTheme === 'dark' ? 'Dark' : 'Light'} Mode`);
     });
   }
 
@@ -182,9 +178,9 @@ const experiencesData = {
     ],
     synergy: 'Silver Travertine Flamed Coping + Caribbean Deep Cyan Pebble Interior + Monolithic Glass Tile Spillway.',
     pins: [
-      { top: '48%', left: '68%', label: 'WEIR WALL ELEVATION', text: '±1.2mm Laser Vanishing Lip' },
-      { top: '76%', left: '28%', label: 'ACOUSTIC ATTENUATION', text: 'Sub-Basin Silent Chute <16dB' },
-      { top: '26%', left: '22%', label: 'SURFACE FINISH', text: 'Monolithic Travertine Coping' }
+      { top: '42%', left: '68%', label: 'WEIR WALL ELEVATION', text: '±1.2mm Laser Vanishing Lip' },
+      { top: '60%', left: '22%', label: 'ACOUSTIC ATTENUATION', text: 'Sub-Basin Silent Chute <16dB' },
+      { top: '22%', left: '20%', label: 'SURFACE FINISH', text: 'Monolithic Travertine Coping' }
     ]
   },
   family: {
@@ -205,9 +201,9 @@ const experiencesData = {
     ],
     synergy: 'French Riviera Limestone Paving + Arctic White Micro-Glass Aggregate + In-Water Ledge Loungers.',
     pins: [
-      { top: '65%', left: '35%', label: 'BAJA TANNING SHELF', text: '9" Submerged Solarium Zone' },
-      { top: '35%', left: '72%', label: 'ELEVATED SPA RIM', text: 'Cascade Hydrotherapy Jets' },
-      { top: '80%', left: '15%', label: 'ACCESS GEOMETRY', text: 'Monolithic Step Tread Design' }
+      { top: '52%', left: '28%', label: 'BAJA TANNING SHELF', text: '9" Submerged Solarium Zone' },
+      { top: '28%', left: '68%', label: 'ELEVATED SPA RIM', text: 'Cascade Hydrotherapy Jets' },
+      { top: '58%', left: '14%', label: 'ACCESS GEOMETRY', text: 'Monolithic Step Tread Design' }
     ]
   },
   contemporary: {
@@ -228,9 +224,9 @@ const experiencesData = {
     ],
     synergy: 'Charcoal Basalt Slabs + Midnight Black Polished Pebble + Brushed 316 Marine Stainless Trim.',
     pins: [
-      { top: '60%', left: '48%', label: 'PERIMETER SLOT', text: '10mm Concealed Slot Drain' },
-      { top: '32%', left: '30%', label: 'SURFACE TENSION', text: 'Level-Deck Mirror Surface' },
-      { top: '75%', left: '76%', label: 'LINEAR ILLUMINATION', text: 'Recessed 3000K Warm Water Glow' }
+      { top: '50%', left: '42%', label: 'PERIMETER SLOT', text: '10mm Concealed Slot Drain' },
+      { top: '26%', left: '22%', label: 'SURFACE TENSION', text: 'Level-Deck Mirror Surface' },
+      { top: '52%', left: '70%', label: 'LINEAR ILLUMINATION', text: 'Recessed 3000K Warm Water Glow' }
     ]
   },
   resort: {
@@ -251,9 +247,9 @@ const experiencesData = {
     ],
     synergy: 'Antalya Gold Marble Coping + Sunken Fire Pit Gas Burners + Deep Ocean Ceramic Tile.',
     pins: [
-      { top: '68%', left: '42%', label: 'SUNKEN FIRE LOUNGE', text: 'Cantilevered Dry Conversation Atrium' },
-      { top: '38%', left: '65%', label: 'ILLUMINATED SPA', text: 'Geothermal 104°F Rapid Heating' },
-      { top: '45%', left: '18%', label: 'CASCADING WEIR', text: 'Engineered Sheet Waterfalls' }
+      { top: '52%', left: '36%', label: 'SUNKEN FIRE LOUNGE', text: 'Cantilevered Dry Conversation Atrium' },
+      { top: '28%', left: '64%', label: 'ILLUMINATED SPA', text: 'Geothermal 104°F Rapid Heating' },
+      { top: '40%', left: '16%', label: 'CASCADING WEIR', text: 'Engineered Sheet Waterfalls' }
     ]
   }
 };
@@ -264,7 +260,6 @@ function selectExperience(key, btn) {
 
   currentExperienceKey = key;
 
-  
   const allTabs = document.querySelectorAll('.h2-paradigm-tab');
   allTabs.forEach(t => {
     t.classList.remove('active');
@@ -281,7 +276,6 @@ function selectExperience(key, btn) {
     }
   }
 
-  
   const img = document.getElementById('exp-image');
   const badge = document.getElementById('exp-badge');
   const title = document.getElementById('exp-title');
@@ -320,7 +314,6 @@ function selectExperience(key, btn) {
   if (s3 && data.specs[2]) s3.textContent = data.specs[2];
   if (s4 && data.specs[3]) s4.textContent = data.specs[3];
 
-  
   if (data.pins && data.pins.length >= 3) {
     for (let i = 1; i <= 3; i++) {
       const pinEl = document.getElementById(`pin-${i}`);
@@ -329,6 +322,14 @@ function selectExperience(key, btn) {
       if (pinEl && pinObj) {
         pinEl.style.top = pinObj.top;
         pinEl.style.left = pinObj.left;
+
+        const leftVal = parseFloat(pinObj.left);
+        if (!isNaN(leftVal) && leftVal > 45) {
+          pinEl.classList.add('pin-flip-left');
+        } else {
+          pinEl.classList.remove('pin-flip-left');
+        }
+
         const labelEl = pinEl.querySelector('.pin-label');
         if (labelEl) labelEl.textContent = pinObj.label;
         if (pinTextEl) pinTextEl.textContent = pinObj.text;
@@ -478,7 +479,6 @@ function initKeyboardNav() {
     }
   });
 
-  
   ['quote-modal', 'login-modal', 'lightbox-modal'].forEach(id => {
     const modal = document.getElementById(id);
     if (modal) {
@@ -492,7 +492,6 @@ function initKeyboardNav() {
     }
   });
 
-  
   const headerLoginBtn = document.getElementById('header-login-btn');
   if (headerLoginBtn) {
     headerLoginBtn.addEventListener('click', openLoginModal);
@@ -516,7 +515,6 @@ function showToast(message) {
 
   container.appendChild(toast);
 
-  
   requestAnimationFrame(() => {
     toast.classList.add('show');
   });

@@ -1,5 +1,4 @@
 
-
 :root {
   --contact-gold: #d8b168;
   --contact-gold-glow: rgba(216, 177, 104, 0.25);
@@ -109,7 +108,7 @@
 .contact-hero-grid-lines {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
@@ -118,7 +117,7 @@
 }
 
 [data-theme="light"] .contact-hero-grid-lines {
-  background-image: 
+  background-image:
     linear-gradient(rgba(10, 61, 98, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(10, 61, 98, 0.04) 1px, transparent 1px);
 }
@@ -212,16 +211,7 @@
 .process-title em::after,
 .faq-section-title em::after,
 .highlight-aqua::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2.5px;
-  background: linear-gradient(90deg, #00f5ff 0%, #0066ff 70%, transparent 100%) !important;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.65);
-  opacity: 0.95;
+  display: none !important;
 }
 
 [data-theme="light"] .contact-hero-title em,
@@ -245,11 +235,7 @@
 [data-theme="light"] .process-title em::after,
 [data-theme="light"] .faq-section-title em::after,
 [data-theme="light"] .highlight-aqua::after {
-  background: linear-gradient(90deg, #004ecc 0%, #0284c7 60%, rgba(0, 153, 230, 0.4) 100%) !important;
-  height: 3px;
-  border-radius: 2px;
-  box-shadow: 0 1.5px 6px rgba(0, 78, 204, 0.28);
-  opacity: 1 !important;
+  display: none !important;
 }
 
 .contact-hero-subtitle {
@@ -2068,11 +2054,11 @@
   .contact-addresses-col .atelier-card {
     flex: initial;
   }
-  
+
   .map-viewport-wrapper {
     grid-template-columns: 1fr;
   }
-  
+
   .map-hud-overlay {
     border-right: none;
     border-bottom: 1px solid var(--border-subtle);
@@ -2131,7 +2117,7 @@
     padding: calc(var(--header-height, 84px) + 16px) 0 36px 0;
     min-height: auto;
   }
-  
+
   .contact-hero-title {
     font-size: clamp(1.85rem, 5vw, 2.3rem);
     text-align: center;
@@ -2166,19 +2152,19 @@
   .triptych-coordinate-tag {
     display: none;
   }
-  
+
   .contact-form-card {
     padding: 28px 20px;
   }
-  
+
   .cform-row-2 {
     grid-template-columns: 1fr;
   }
-  
+
   .process-steps-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .concierge-status-bar {
     flex-direction: column;
     align-items: center;
@@ -2186,11 +2172,11 @@
     border-radius: var(--radius-lg);
     padding: 20px;
   }
-  
+
   .cstatus-right {
     width: 100%;
   }
-  
+
   .cstatus-right .btn {
     width: 100%;
   }
@@ -2236,7 +2222,7 @@
     width: 100%;
     align-items: center;
   }
-  
+
   .contact-hero-actions .btn {
     width: 100%;
     max-width: 100%;

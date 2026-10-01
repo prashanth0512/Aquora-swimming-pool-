@@ -1,4 +1,3 @@
-﻿
 
 const SERVICES_DATA = {
   'inground': {
@@ -985,7 +984,7 @@ const SERVICES_DATA = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  
+
   const urlParams = new URLSearchParams(window.location.search);
   let activeServiceId = urlParams.get('service');
 
@@ -993,13 +992,10 @@ document.addEventListener('DOMContentLoaded', () => {
     activeServiceId = 'inground';
   }
 
-  
   renderSwitcherTabs(activeServiceId);
 
-  
   renderServiceContent(activeServiceId);
 
-  
   window.addEventListener('popstate', () => {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('service') || 'inground';
@@ -1029,7 +1025,6 @@ function renderSwitcherTabs(activeId) {
       <span>${service.title}</span>
     `;
 
-    
     tab.addEventListener('click', (e) => {
       e.preventDefault();
       switchService(service.id);
@@ -1042,21 +1037,17 @@ function renderSwitcherTabs(activeId) {
 function switchService(serviceId) {
   if (!SERVICES_DATA[serviceId]) return;
 
-  
   const newUrl = `service detail.html?service=${serviceId}`;
   window.history.pushState({ service: serviceId }, '', newUrl);
 
-  
   document.querySelectorAll('.srv-tab-pill').forEach(pill => {
     const isCurrent = pill.getAttribute('data-service-id') === serviceId;
     pill.classList.toggle('active', isCurrent);
     pill.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
   });
 
-  
   renderServiceContent(serviceId);
 
-  
   const heroSection = document.getElementById('service-hero');
   if (heroSection) {
     heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1067,16 +1058,13 @@ function renderServiceContent(serviceId) {
   const data = SERVICES_DATA[serviceId];
   if (!data) return;
 
-  
   document.title = `${data.title} &bull; Architectural Services | AURA WATERS`;
 
-  
   setText('bc-current-title', data.title);
-  setHTML('dhero-category-badge', `<span class="eyebrow-beacon" aria-hidden="true"></span>${data.categoryBadge}`);
+  setHTML('dhero-category-badge', `<span class="eyebrow-beacon" aria-hidden="true"></span><span class="badge-text">${data.categoryBadge}</span>`);
   setText('dhero-title', data.title);
   setText('dhero-subtitle', data.subtitle);
 
-  
   const heroImg = document.getElementById('dhero-img');
   if (heroImg) {
     heroImg.src = data.heroImage;
@@ -1086,7 +1074,6 @@ function renderServiceContent(serviceId) {
   setText('dhero-meta-title', data.metaOverlayTitle);
   setText('dhero-meta-desc', data.metaOverlayDesc);
 
-  
   const specsContainer = document.getElementById('dhero-specs-container');
   if (specsContainer) {
     specsContainer.innerHTML = data.specs.map(s => `
@@ -1097,7 +1084,6 @@ function renderServiceContent(serviceId) {
     `).join('');
   }
 
-  
   setText('context-narrative-p1', data.contextP1);
   setText('context-narrative-p2', data.contextP2);
   setText('context-callout-title', data.calloutTitle);
@@ -1114,7 +1100,6 @@ function renderServiceContent(serviceId) {
   }
   setText('context-bp-code', data.blueprintCode);
 
-  
   setText('why-subtitle', `Strategic engineering advantages that make ${data.title} an enduring investment for premier residences.`);
   const whyContainer = document.getElementById('why-pillars-container');
   if (whyContainer) {
@@ -1127,7 +1112,6 @@ function renderServiceContent(serviceId) {
     `).join('');
   }
 
-  
   setText('pricing-subtitle', `Transparent, fixed-price turnkey investment tiers for ${data.title}. All proposals include complete permits, excavation, and structural warranty.`);
   const pricingContainer = document.getElementById('pricing-tiers-container');
   if (pricingContainer) {
@@ -1155,7 +1139,6 @@ function renderServiceContent(serviceId) {
     `).join('');
   }
 
-  
   setText('faqs-subtitle', `Detailed engineering and maintenance answers tailored specifically for ${data.title}.`);
   const faqsContainer = document.getElementById('detail-faqs-container');
   if (faqsContainer) {
@@ -1171,11 +1154,9 @@ function renderServiceContent(serviceId) {
       </div>
     `).join('');
 
-    
     initDetailFaqAccordion();
   }
 
-  
   setText('cta-badge', data.ctaBadge);
   setText('cta-headline', data.ctaHeadline);
   setText('cta-sub', data.ctaSub);
@@ -1223,7 +1204,6 @@ function triggerServiceQuote() {
     openQuoteModal(service ? service.title : 'Architectural Commission');
   }
 
-  
   const select = document.getElementById('quote-type');
   if (select && service) {
     for (let i = 0; i < select.options.length; i++) {

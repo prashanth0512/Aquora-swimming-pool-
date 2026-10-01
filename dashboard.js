@@ -1,5 +1,4 @@
 
-
 'use strict';
 
 function initSidebar() {
@@ -31,7 +30,7 @@ function initSidebar() {
           openSidebar();
         }
       } else {
-        
+
         document.body.classList.toggle('sidebar-collapsed');
       }
     });
@@ -40,7 +39,6 @@ function initSidebar() {
   if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
   if (backdrop) backdrop.addEventListener('click', closeSidebar);
 
-  
   window.addEventListener('resize', () => {
     if (window.innerWidth > 1024 && sidebar.classList.contains('sidebar-open')) {
       closeSidebar();
@@ -61,7 +59,6 @@ function initTabNavigation() {
     });
   });
 
-  
   const initialHash = window.location.hash.replace('#', '');
   if (initialHash && document.getElementById(`pane-${initialHash}`)) {
     switchDashboardTab(initialHash);
@@ -71,33 +68,29 @@ function initTabNavigation() {
 function switchDashboardTab(tabId) {
   if (!tabId) return;
 
-  
   const tabButtons = document.querySelectorAll('.nav-tab-btn');
   tabButtons.forEach(btn => {
     const isCurrent = btn.getAttribute('data-tab') === tabId;
     btn.classList.toggle('active', isCurrent);
   });
 
-  
   const panes = document.querySelectorAll('.dashboard-tab-pane');
   panes.forEach(pane => pane.classList.remove('active'));
 
   const targetPane = document.getElementById(`pane-${tabId}`);
   if (targetPane) {
     targetPane.classList.add('active');
-    
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   }
 
-  
   if (window.history && window.history.replaceState) {
     window.history.replaceState(null, '', `#${tabId}`);
   }
 
-  
   if (tabId === 'messages') {
     setTimeout(() => {
       const input = document.getElementById('chat-input-field');
@@ -105,7 +98,6 @@ function switchDashboardTab(tabId) {
     }, 350);
   }
 
-  
   const sidebar = document.getElementById('dashboard-sidebar');
   const backdrop = document.getElementById('sidebar-backdrop');
   if (sidebar && sidebar.classList.contains('sidebar-open')) {
@@ -119,7 +111,6 @@ function initChartInteractions() {
   const tooltip = document.getElementById('chart-tooltip');
   const chartWrapper = document.getElementById('line-chart-container');
 
-  
   const dataPoints = document.querySelectorAll('.chart-data-point');
   dataPoints.forEach(pt => {
     pt.addEventListener('mouseenter', (e) => {
@@ -146,7 +137,6 @@ function initChartInteractions() {
     });
   });
 
-  
   const barFills = document.querySelectorAll('.barchart-fill');
   barFills.forEach(bar => {
     bar.addEventListener('mouseenter', (e) => {
@@ -155,7 +145,6 @@ function initChartInteractions() {
     });
   });
 
-  
   const segments = document.querySelectorAll('.donut-segment');
   const centerTextVal = document.querySelector('.dcenter-val');
   const centerTextLbl = document.querySelector('.dcenter-lbl');
@@ -183,7 +172,6 @@ function initSearchFilter() {
   const searchInput = document.getElementById('dashboard-search-input');
   if (!searchInput) return;
 
-  
   document.addEventListener('keydown', (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
@@ -195,7 +183,6 @@ function initSearchFilter() {
   searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase().trim();
 
-    
     const milestoneCards = document.querySelectorAll('.milestone-card');
     milestoneCards.forEach(card => {
       const title = card.querySelector('.mcard-title')?.textContent.toLowerCase() || '';
@@ -204,7 +191,6 @@ function initSearchFilter() {
       card.style.display = match ? '' : 'none';
     });
 
-    
     const materialCards = document.querySelectorAll('.material-spec-card');
     materialCards.forEach(card => {
       const name = card.querySelector('.matspec-name')?.textContent.toLowerCase() || '';
@@ -213,7 +199,6 @@ function initSearchFilter() {
       card.style.display = match ? '' : 'none';
     });
 
-    
     const permitCards = document.querySelectorAll('.permit-card');
     permitCards.forEach(card => {
       const title = card.querySelector('.pcard-title')?.textContent.toLowerCase() || '';
@@ -320,7 +305,6 @@ function handleSendMessage(e) {
   const now = new Date();
   const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-  
   const msgEl = document.createElement('div');
   msgEl.className = 'chat-msg msg-patron';
   msgEl.innerHTML = `
@@ -336,7 +320,6 @@ function handleSendMessage(e) {
   input.value = '';
   container.scrollTop = container.scrollHeight;
 
-  
   setTimeout(() => {
     const replies = [
       "Thank you Alistair. I have logged this with our site superintendent and will personally inspect it on tomorrow morning's survey.",
@@ -372,6 +355,7 @@ function openVariationModal() {
   const modal = document.getElementById('variation-modal');
   if (modal) {
     modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('open');
     modal.classList.add('modal-active');
     document.body.style.overflow = 'hidden';
   }
@@ -381,6 +365,7 @@ function closeVariationModal() {
   const modal = document.getElementById('variation-modal');
   if (modal) {
     modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('open');
     modal.classList.remove('modal-active');
     document.body.style.overflow = '';
   }
@@ -401,6 +386,7 @@ function openLightbox(src, caption) {
     img.src = src;
     if (cap) cap.textContent = caption || 'High-Resolution Site Survey';
     modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('open');
     modal.classList.add('modal-active');
     document.body.style.overflow = 'hidden';
   }
@@ -410,6 +396,7 @@ function closeLightboxDirect() {
   const modal = document.getElementById('lightbox-modal');
   if (modal) {
     modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('open');
     modal.classList.remove('modal-active');
     document.body.style.overflow = '';
   }
@@ -433,6 +420,7 @@ function viewInvoice(id, amount, phase) {
     if (amountEl) amountEl.textContent = amount;
     if (phaseEl) phaseEl.textContent = phase;
     modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('open');
     modal.classList.add('modal-active');
     document.body.style.overflow = 'hidden';
   }
@@ -442,9 +430,50 @@ function closeInvoiceModal() {
   const modal = document.getElementById('invoice-modal');
   if (modal) {
     modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('open');
     modal.classList.remove('modal-active');
     document.body.style.overflow = '';
   }
+}
+
+function filterChangeOrders(status, btn) {
+  const pills = document.querySelectorAll('.order-filter-pill');
+  pills.forEach(p => p.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  const cards = document.querySelectorAll('#orders-cards-grid .order-card');
+  cards.forEach(card => {
+    if (status === 'all' || card.getAttribute('data-status') === status) {
+      card.style.display = 'flex';
+      card.style.animation = 'tabFadeIn 0.3s ease';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function signChangeOrder(orderId) {
+  const card = document.querySelector(`.order-card[data-status="signature"]`);
+  if (card) {
+    card.setAttribute('data-status', 'approved');
+    const badge = card.querySelector('.ref-status-badge');
+    if (badge) {
+      badge.className = 'ref-status-badge badge-confirmed';
+      badge.innerHTML = 'Digitally Signed &bull; AIA Executed <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
+    }
+    const docVal = card.querySelector('.omet-val.text-amber');
+    if (docVal) {
+      docVal.className = 'omet-val text-cyan';
+      docVal.textContent = 'AIA G701 Executed';
+    }
+    const actionBtn = card.querySelector('.order-footer-actions .btn-primary');
+    if (actionBtn) {
+      actionBtn.className = 'btn btn-secondary btn-sm';
+      actionBtn.innerHTML = '<span>Executed G701 PDF</span>';
+      actionBtn.setAttribute('onclick', "showToast('Downloading legally executed AIA G701 voucher for #" + orderId + "...')");
+    }
+  }
+  showToast('AIA Document G701 for #' + orderId + ' digitally executed and synchronized with Escrow Ledger!');
 }
 
 function downloadInvoicePdf() {
@@ -583,3 +612,5 @@ window.downloadAiaAudit = downloadAiaAudit;
 window.handleSendMessage = handleSendMessage;
 window.markAllNotificationsRead = markAllNotificationsRead;
 window.showToast = showToast;
+window.filterChangeOrders = filterChangeOrders;
+window.signChangeOrder = signChangeOrder;

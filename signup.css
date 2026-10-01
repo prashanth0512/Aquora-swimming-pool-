@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&display=swap');
 
 :root {
-  
+
   --bg-page: #030712;
   --bg-card: rgba(13, 22, 38, 0.82);
   --border-card: rgba(255, 255, 255, 0.12);
@@ -344,39 +344,65 @@ body.auth-body {
 .auth-hero-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .auth-stat-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 5px 12px;
-  background: rgba(10, 25, 47, 0.7);
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(6, 16, 34, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: var(--radius-pill);
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #e2e8f0;
+  font-size: 0.76rem;
+  font-weight: 650;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .auth-stat-pill .stat-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #10b981;
   box-shadow: 0 0 8px #10b981;
 }
 
 .auth-stat-pill .stat-num {
-  color: var(--color-secondary-bright);
-  font-weight: 800;
+  color: #38bdf8 !important;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
 }
 
 .auth-stat-pill svg {
-  color: var(--color-accent-gold);
+  color: #fbbf24;
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.4));
+}
+
+[data-theme="light"] .auth-stat-pill {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 102, 255, 0.28);
+  color: #07172c;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 102, 255, 0.15);
+}
+
+[data-theme="light"] .auth-stat-pill .stat-num {
+  color: #0047ba !important;
+  font-weight: 850;
+  text-shadow: none;
+}
+
+[data-theme="light"] .auth-stat-pill span {
+  color: #07172c;
+  font-weight: 650;
+}
+
+[data-theme="light"] .auth-stat-pill svg {
+  color: #b45309;
 }
 
 .auth-form-pane {
@@ -1040,7 +1066,7 @@ body.auth-body {
 }
 
 @media (max-width: 1024px) {
-  
+
   .auth-hero-pane {
     display: none !important;
   }
@@ -1073,7 +1099,6 @@ body.auth-body {
     margin: auto;
   }
 
-  
   .auth-card-brand {
     display: inline-flex;
     align-items: center;

@@ -1,9 +1,7 @@
 
-
 (function () {
   'use strict';
 
-  
   function initWhenReady() {
     if (typeof THREE === 'undefined') {
       setTimeout(initWhenReady, 50);
@@ -25,7 +23,6 @@
 
     if (!canvas || !container) return;
 
-    
     function isWebGLAvailable() {
       try {
         const testCanvas = document.createElement('canvas');
@@ -41,20 +38,16 @@
       return;
     }
 
-    
-    
-    
     const scene = new THREE.Scene();
 
     const initialWidth = container.clientWidth || 560;
     const initialHeight = container.clientHeight || 480;
 
     const camera = new THREE.PerspectiveCamera(38, initialWidth / initialHeight, 0.1, 120);
-    
-    
+
     const defaultRadius = 22.5;
-    const defaultPhi = 1.02; 
-    const defaultTheta = 0.85; 
+    const defaultPhi = 1.02;
+    const defaultTheta = 0.85;
 
     let targetRadius = defaultRadius;
     let targetPhi = defaultPhi;
@@ -86,9 +79,6 @@
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    
-    
-    
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
@@ -110,7 +100,6 @@
     sunLight.shadow.bias = -0.0005;
     scene.add(sunLight);
 
-    
     const poolLed1 = new THREE.PointLight(0x00e5ff, 0, 14, 2);
     poolLed1.position.set(-3.5, -1.0, 0);
     scene.add(poolLed1);
@@ -123,32 +112,23 @@
     spaLed.position.set(5.5, 0.0, -3.2);
     scene.add(spaLed);
 
-    
     const villaWashLight = new THREE.DirectionalLight(0xffecd2, 0);
     villaWashLight.position.set(0, 12, -8);
     scene.add(villaWashLight);
 
-    
-    
-    
     const rootGroup = new THREE.Group();
     scene.add(rootGroup);
 
-    
-    const phase1Group = new THREE.Group(); 
-    const phase2Group = new THREE.Group(); 
-    const phase3Group = new THREE.Group(); 
-    const phase4Group = new THREE.Group(); 
+    const phase1Group = new THREE.Group();
+    const phase2Group = new THREE.Group();
+    const phase3Group = new THREE.Group();
+    const phase4Group = new THREE.Group();
     rootGroup.add(phase1Group, phase2Group, phase3Group, phase4Group);
 
-    
-    
-    
     const gridHelper = new THREE.GridHelper(28, 28, 0x00e5ff, 0x1e293b);
     gridHelper.position.y = -1.9;
     phase1Group.add(gridHelper);
 
-    
     function createWireframeEdges(geometry, color = 0x00e5ff, opacity = 0.95) {
       const edges = new THREE.EdgesGeometry(geometry, 25);
       const material = new THREE.LineBasicMaterial({
@@ -160,7 +140,6 @@
       return new THREE.LineSegments(edges, material);
     }
 
-    
     function createDimensionMarker(start, end, textLabel, axis = 'x') {
       const group = new THREE.Group();
       const lineGeo = new THREE.BufferGeometry().setFromPoints([start, end]);
@@ -175,7 +154,6 @@
       line.computeLineDistances();
       group.add(line);
 
-      
       const tickMat = new THREE.LineBasicMaterial({ color: 0x00e5ff, transparent: true, opacity: 0.85 });
       const t1 = 0.3;
       const tick1Geo = new THREE.BufferGeometry().setFromPoints([
@@ -191,30 +169,22 @@
       return group;
     }
 
-    
     const dimLength = createDimensionMarker(new THREE.Vector3(-7.2, 0.4, 4.8), new THREE.Vector3(7.2, 0.4, 4.8), '14.40m LENGTH', 'x');
     const dimWidth = createDimensionMarker(new THREE.Vector3(7.8, 0.4, -3.2), new THREE.Vector3(7.8, 0.4, 3.2), '6.40m WIDTH', 'z');
     const dimDepth = createDimensionMarker(new THREE.Vector3(-7.8, 0.0, 0), new THREE.Vector3(-7.8, -1.8, 0), '1.80m DEPTH', 'y');
     phase1Group.add(dimLength, dimWidth, dimDepth);
 
-    
-    
-    
-    
     const basinLength = 14.0;
     const basinWidth = 6.0;
     const basinDepth = 1.8;
     const wallThick = 0.35;
 
-    
-    
     const floorGeo = new THREE.BoxGeometry(basinLength, 0.25, basinWidth);
-    
+
     const wallLongGeo = new THREE.BoxGeometry(basinLength + wallThick * 2, basinDepth, wallThick);
-    
+
     const wallShortGeo = new THREE.BoxGeometry(wallThick, basinDepth, basinWidth);
 
-    
     const p1FloorWire = createWireframeEdges(floorGeo);
     p1FloorWire.position.set(0, -basinDepth, 0);
     const p1WallNWire = createWireframeEdges(wallLongGeo);
@@ -226,12 +196,10 @@
     const p1WallWWire = createWireframeEdges(wallShortGeo);
     p1WallWWire.position.set(-(basinLength / 2 + wallThick / 2), -basinDepth / 2, 0);
 
-    
     const bajaGeo = new THREE.BoxGeometry(3.6, 1.4, basinWidth - 0.1);
     const p1BajaWire = createWireframeEdges(bajaGeo);
     p1BajaWire.position.set(-basinLength / 2 + 1.8, -basinDepth + 0.7, 0);
 
-    
     const step1Geo = new THREE.BoxGeometry(1.2, 0.3, 2.4);
     const p1Step1Wire = createWireframeEdges(step1Geo);
     p1Step1Wire.position.set(-basinLength / 2 + 4.2, -0.6, 1.5);
@@ -240,7 +208,6 @@
     const p1Step3Wire = createWireframeEdges(step1Geo);
     p1Step3Wire.position.set(-basinLength / 2 + 4.2, -1.4, 1.5);
 
-    
     const spaGeo = new THREE.BoxGeometry(3.2, 1.6, 3.2);
     const p1SpaWire = createWireframeEdges(spaGeo);
     p1SpaWire.position.set(5.2, -0.6, -4.6);
@@ -250,7 +217,6 @@
       p1BajaWire, p1Step1Wire, p1Step2Wire, p1Step3Wire, p1SpaWire
     );
 
-    
     const holoMat = new THREE.MeshBasicMaterial({
       color: 0x00e5ff,
       transparent: true,
@@ -263,10 +229,6 @@
     p1HoloBaja.position.copy(p1BajaWire.position);
     phase1Group.add(p1HoloFloor, p1HoloBaja);
 
-    
-    
-    
-    
     const guniteMat = new THREE.MeshStandardMaterial({
       color: 0x2e3846,
       roughness: 0.92,
@@ -314,7 +276,6 @@
     p2Spa.position.copy(p1SpaWire.position);
     p2Spa.castShadow = true;
 
-    
     const rebarMat = new THREE.LineBasicMaterial({
       color: 0x94a3b8,
       transparent: true,
@@ -322,7 +283,6 @@
       linewidth: 1
     });
 
-    
     const rebarPoints = [];
     for (let x = -basinLength / 2; x <= basinLength / 2; x += 0.8) {
       rebarPoints.push(new THREE.Vector3(x, 0.05, -basinWidth / 2));
@@ -339,7 +299,6 @@
     const rebarGeo = new THREE.BufferGeometry().setFromPoints(rebarPoints);
     const rebarMesh = new THREE.LineSegments(rebarGeo, rebarMat);
 
-    
     const pipeMat = new THREE.MeshStandardMaterial({
       color: 0x0066ff,
       roughness: 0.4,
@@ -363,10 +322,6 @@
       rebarMesh, pipe1, pipe2
     );
 
-    
-    
-    
-    
     const travertineMat = new THREE.MeshStandardMaterial({
       color: 0xe8e0d5,
       roughness: 0.65,
@@ -375,32 +330,26 @@
       opacity: 0.0
     });
 
-    
-    
     const deckNGeo = new THREE.BoxGeometry(22, 0.25, 5.0);
     const deckN = new THREE.Mesh(deckNGeo, travertineMat);
     deckN.position.set(0, -0.125, -6.0);
     deckN.receiveShadow = true;
 
-    
     const deckSGeo = new THREE.BoxGeometry(22, 0.25, 6.0);
     const deckS = new THREE.Mesh(deckSGeo, travertineMat);
     deckS.position.set(0, -0.125, 6.5);
     deckS.receiveShadow = true;
 
-    
     const deckWGeo = new THREE.BoxGeometry(4.0, 0.25, basinWidth + 1.0);
     const deckW = new THREE.Mesh(deckWGeo, travertineMat);
     deckW.position.set(-9.2, -0.125, 0);
     deckW.receiveShadow = true;
 
-    
     const deckEGeo = new THREE.BoxGeometry(4.0, 0.25, basinWidth + 1.0);
     const deckE = new THREE.Mesh(deckEGeo, travertineMat);
     deckE.position.set(9.2, -0.125, 0);
     deckE.receiveShadow = true;
 
-    
     const mosaicMat = new THREE.MeshStandardMaterial({
       color: 0x00a8cc,
       roughness: 0.2,
@@ -417,14 +366,12 @@
     const mosaicE = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.35, basinWidth), mosaicMat);
     mosaicE.position.set(basinLength / 2 - 0.03, -0.18, 0);
 
-    
     const slotMat = new THREE.MeshBasicMaterial({ color: 0x0a101a, transparent: true, opacity: 0.0 });
     const slotN = new THREE.Mesh(new THREE.BoxGeometry(basinLength + 0.6, 0.05, 0.08), slotMat);
     slotN.position.set(0, 0.01, -basinWidth / 2 - 0.05);
     const slotS = new THREE.Mesh(new THREE.BoxGeometry(basinLength + 0.6, 0.05, 0.08), slotMat);
     slotS.position.set(0, 0.01, basinWidth / 2 + 0.05);
 
-    
     const plasterMat = new THREE.MeshStandardMaterial({
       color: 0x0a3d62,
       roughness: 0.45,
@@ -436,7 +383,6 @@
     finishFloor.position.copy(p1FloorWire.position);
     finishFloor.receiveShadow = true;
 
-    
     const acrylicMat = new THREE.MeshPhysicalMaterial({
       color: 0x00e5ff,
       transmission: 0.88,
@@ -449,7 +395,6 @@
     const acrylicView = new THREE.Mesh(new THREE.BoxGeometry(6.0, 1.2, 0.12), acrylicMat);
     acrylicView.position.set(0, -0.6, basinWidth / 2 + wallThick / 2);
 
-    
     const villaMat = new THREE.MeshStandardMaterial({
       color: 0x182230,
       roughness: 0.7,
@@ -462,7 +407,6 @@
     villaWall.castShadow = true;
     villaWall.receiveShadow = true;
 
-    
     const pergolaMat = new THREE.MeshStandardMaterial({
       color: 0x3d271d,
       roughness: 0.6,
@@ -477,7 +421,6 @@
       pergolaGroup.add(slat);
     }
 
-    
     const loungerMat = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       roughness: 0.5,
@@ -502,7 +445,6 @@
       loungersGroup.add(lounger);
     });
 
-    
     const planterMat = new THREE.MeshStandardMaterial({
       color: 0x2b3442,
       roughness: 0.8,
@@ -533,10 +475,6 @@
       planter1, plant1, planter2, plant2
     );
 
-    
-    
-    
-    
     const waterWidth = basinLength - 0.08;
     const waterDepth = basinWidth - 0.08;
     const waterSegmentsX = 48;
@@ -544,11 +482,9 @@
     const waterGeo = new THREE.PlaneGeometry(waterWidth, waterDepth, waterSegmentsX, waterSegmentsZ);
     waterGeo.rotateX(-Math.PI / 2);
 
-    
     const posAttribute = waterGeo.attributes.position;
     const originalPositions = new Float32Array(posAttribute.array);
 
-    
     const waterMat = new THREE.MeshPhysicalMaterial({
       color: 0x00c4d8,
       emissive: 0x003d52,
@@ -568,13 +504,11 @@
     waterMesh.position.set(0, -0.06, 0);
     waterMesh.receiveShadow = true;
 
-    
     const spaWaterGeo = new THREE.PlaneGeometry(2.9, 2.9, 16, 16);
     spaWaterGeo.rotateX(-Math.PI / 2);
     const spaWaterMesh = new THREE.Mesh(spaWaterGeo, waterMat);
     spaWaterMesh.position.set(5.2, 0.12, -4.6);
 
-    
     const causticsMat = new THREE.MeshBasicMaterial({
       color: 0x00e5ff,
       transparent: true,
@@ -587,7 +521,6 @@
 
     phase4Group.add(waterMesh, spaWaterMesh, causticsPlane);
 
-    
     const phase2Materials = [guniteMat, rebarMat, pipeMat];
     const phase3Materials = [
       travertineMat, mosaicMat, slotMat, plasterMat, acrylicMat,
@@ -595,9 +528,6 @@
     ];
     const phase4Materials = [waterMat, causticsMat];
 
-    
-    
-    
     function updateThemeColors() {
       const isLight = document.documentElement.getAttribute('data-theme') === 'light';
 
@@ -633,10 +563,6 @@
     const themeObserver = new MutationObserver(() => updateThemeColors());
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
-    
-    
-    
-    
     const STAGE_COUNT = 4;
     const STAGE_NAMES = [
       { id: '01', code: 'IDEA', title: 'ARCHITECTURAL BLUEPRINT', sub: 'Sub-millimeter LIDAR survey & CAD geometry. Every master pool begins with an idea.' },
@@ -651,10 +577,9 @@
     let autoOrbitActive = true;
     let lastTime = performance.now();
     let stageCycleTimer = 0;
-    const totalAnimationDuration = 5.5; 
-    const stageDurationSeconds = totalAnimationDuration / STAGE_COUNT; 
+    const totalAnimationDuration = 5.5;
+    const stageDurationSeconds = totalAnimationDuration / STAGE_COUNT;
 
-    
     const hudStageNum = document.getElementById('hud-stage-num');
     const hudStageTitle = document.getElementById('hud-stage-title');
     const hudStageSub = document.getElementById('hud-stage-sub');
@@ -687,14 +612,12 @@
       });
     }
 
-    
     window.setHeroPoolStage = function (stageIndex) {
       targetPhaseFloat = stageIndex;
       isAutoAdvancing = false;
       stageCycleTimer = stageIndex * stageDurationSeconds;
       updateHud(stageIndex, 0);
 
-      
       clearTimeout(window._autoAdvanceTimeout);
       window._autoAdvanceTimeout = setTimeout(() => {
         isAutoAdvancing = true;
@@ -725,26 +648,21 @@
       });
     }
 
-    
-    
-    
     function applyPhaseTransitions(p) {
-      
+
       const pMod = p % 4;
 
-      
       function weight(center) {
         const dist = Math.abs(pMod - center);
         const wrappedDist = Math.min(dist, 4 - dist);
         return Math.max(0, 1 - wrappedDist * 1.15);
       }
 
-      const w1 = weight(0.0); 
-      const w2 = weight(1.0); 
-      const w3 = weight(2.0); 
-      const w4 = weight(3.0); 
+      const w1 = weight(0.0);
+      const w2 = weight(1.0);
+      const w3 = weight(2.0);
+      const w4 = weight(3.0);
 
-      
       gridHelper.material.opacity = THREE.MathUtils.lerp(0.08, 0.85, w1);
       dimLength.visible = w1 > 0.05;
       dimWidth.visible = w1 > 0.05;
@@ -753,13 +671,11 @@
       p1WallNWire.material.opacity = w1 * 0.95;
       p1HoloFloor.material.opacity = w1 * 0.08;
 
-      
       const guniteVis = Math.max(w2, w3 * 0.2);
       guniteMat.opacity = THREE.MathUtils.clamp(guniteVis, 0, 1);
       rebarMat.opacity = THREE.MathUtils.clamp(w2 * 0.85, 0, 0.85);
       pipeMat.opacity = THREE.MathUtils.clamp(w2 * 0.9, 0, 0.9);
 
-      
       const matVis = THREE.MathUtils.clamp(w3 + w4, 0, 1);
       travertineMat.opacity = matVis;
       mosaicMat.opacity = matVis;
@@ -773,12 +689,10 @@
       planterMat.opacity = matVis;
       foliageMat.opacity = matVis;
 
-      
       const waterVis = THREE.MathUtils.clamp(w4 * 1.3, 0, 1);
       waterMat.opacity = waterVis * 0.88;
       causticsMat.opacity = waterVis * 0.45;
 
-      
       const ledPower = THREE.MathUtils.lerp(0.0, 3.2, w4);
       poolLed1.intensity = ledPower;
       poolLed2.intensity = ledPower;
@@ -786,9 +700,6 @@
       villaWashLight.intensity = THREE.MathUtils.lerp(0.0, 0.65, w4);
     }
 
-    
-    
-    
     let isDragging = false;
     let prevMouseX = 0;
     let prevMouseY = 0;
@@ -813,14 +724,13 @@
       targetTheta -= deltaX * 0.007;
       targetPhi -= deltaY * 0.007;
 
-      
       targetPhi = THREE.MathUtils.clamp(targetPhi, 0.35, 1.45);
     }
 
     function onPointerUp() {
       if (!isDragging) return;
       isDragging = false;
-      
+
       clearTimeout(resumeOrbitTimer);
       resumeOrbitTimer = setTimeout(() => {
         if (orbitToggleBtn && orbitToggleBtn.classList.contains('active')) {
@@ -845,9 +755,6 @@
 
     container.addEventListener('wheel', onWheel, { passive: false });
 
-    
-    
-    
     let isVisible = true;
     const intersectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -857,31 +764,28 @@
 
     intersectionObserver.observe(container);
 
-    
     let waveTime = 0;
 
     function animate(now) {
       requestAnimationFrame(animate);
 
-      if (!isVisible) return; 
+      if (!isVisible) return;
 
       const dt = Math.min((now - lastTime) / 1000, 0.1);
       lastTime = now;
 
-      
       if (isAutoAdvancing) {
         stageCycleTimer += dt;
         currentPhaseFloat = (stageCycleTimer / stageDurationSeconds) % STAGE_COUNT;
         targetPhaseFloat = currentPhaseFloat;
       } else {
-        
+
         currentPhaseFloat = THREE.MathUtils.lerp(currentPhaseFloat, targetPhaseFloat, 0.16);
       }
 
       applyPhaseTransitions(currentPhaseFloat);
       updateHud(currentPhaseFloat, 0);
 
-      
       if (autoOrbitActive && !isDragging) {
         targetTheta += dt * (Math.PI * 2 / totalAnimationDuration);
       }
@@ -890,20 +794,18 @@
       currentPhi = THREE.MathUtils.lerp(currentPhi, targetPhi, 0.12);
       currentTheta = THREE.MathUtils.lerp(currentTheta, targetTheta, 0.14);
 
-      
       camera.position.x = currentRadius * Math.sin(currentPhi) * Math.sin(currentTheta);
       camera.position.y = currentRadius * Math.cos(currentPhi);
       camera.position.z = currentRadius * Math.sin(currentPhi) * Math.cos(currentTheta);
       camera.lookAt(lookTarget);
 
-      
       if (waterMat.opacity > 0.05) {
         waveTime += dt * 3.2;
         const positions = waterGeo.attributes.position.array;
         for (let i = 0; i < positions.length; i += 3) {
           const u = originalPositions[i];
           const v = originalPositions[i + 2];
-          
+
           const wave1 = Math.sin(u * 1.2 + waveTime * 1.4) * 0.025;
           const wave2 = Math.cos(v * 1.6 + waveTime * 1.1) * 0.02;
           const wave3 = Math.sin((u + v) * 0.8 + waveTime * 0.9) * 0.015;
@@ -917,9 +819,6 @@
 
     requestAnimationFrame(animate);
 
-    
-    
-    
     function handleResize() {
       if (!container || !renderer || !camera) return;
       const w = container.clientWidth;
@@ -935,7 +834,6 @@
     const resizeObserver = new ResizeObserver(handleResize);
     resizeObserver.observe(container);
 
-    
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       autoOrbitActive = false;
       if (orbitToggleBtn) orbitToggleBtn.classList.remove('active');

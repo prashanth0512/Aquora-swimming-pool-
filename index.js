@@ -1,16 +1,11 @@
 
-
 (function () {
   'use strict';
 
-  
-  
-  
   const htmlEl = document.documentElement;
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const savedTheme = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
 
-  
   setTheme(savedTheme);
 
   if (themeToggleBtn) {
@@ -18,7 +13,6 @@
       const currentTheme = htmlEl.getAttribute('data-theme') || 'dark';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       setTheme(newTheme);
-      showToast(newTheme === 'dark' ? 'Switched to Twilight Dark Mode' : 'Switched to Coastal Light Mode');
     });
   }
 
@@ -28,9 +22,6 @@
     localStorage.setItem('aura-theme', theme);
   }
 
-  
-  
-  
   const rtlToggleBtn = document.getElementById('rtl-toggle-btn');
   const savedDir = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
 
@@ -57,7 +48,6 @@
     }
   }
 
-  
   window.addEventListener('storage', (e) => {
     if (e.key === 'aquara-theme' || e.key === 'aura-theme') {
       if (e.newValue) htmlEl.setAttribute('data-theme', e.newValue);
@@ -67,25 +57,24 @@
     }
   });
 
-  
-  
-  
   const mainHeader = document.getElementById('main-header');
   const sections = document.querySelectorAll('section[id], footer[id]');
 
   function initNavigationActiveState() {
-    let currentPath = decodeURIComponent(window.location.pathname).split('/').pop() || 'index.html';
-    currentPath = currentPath.split('?')[0].split('#')[0].toLowerCase();
-    if (!currentPath || currentPath === '') currentPath = 'index.html';
+    const rawPath = decodeURIComponent(window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
+    const rawHref = decodeURIComponent(window.location.href || '').replace(/\\/g, '/').toLowerCase();
+    let currentFile = rawPath.split('/').pop() || 'index.html';
+    currentFile = currentFile.split('?')[0].split('#')[0].toLowerCase();
+    if (!currentFile || currentFile === '') currentFile = 'index.html';
 
-    const isHome1 = currentPath === 'index.html';
-    const isHome2 = currentPath === 'home2.html';
-    const isAbout = currentPath === 'about.html';
-    const isService = currentPath === 'service.html' || currentPath === 'service detail.html';
-    const isPricing = currentPath === 'pricing.html';
-    const isJournal = currentPath === 'journal.html' || currentPath === 'journal-detail.html';
-    const isDashboard = currentPath === 'dashboard.html';
-    const isContact = currentPath === 'contact.html';
+    const isHome2 = currentFile === 'home2.html' || rawHref.includes('home2.html');
+    const isAbout = currentFile === 'about.html' || rawHref.includes('about.html');
+    const isService = currentFile === 'service.html' || currentFile === 'service detail.html' || rawHref.includes('service.html') || rawHref.includes('service%20detail.html') || rawHref.includes('service detail.html');
+    const isPricing = currentFile === 'pricing.html' || rawHref.includes('pricing.html');
+    const isJournal = currentFile === 'journal.html' || currentFile === 'journal-detail.html' || rawHref.includes('journal.html') || rawHref.includes('journal-detail.html');
+    const isDashboard = currentFile === 'dashboard.html' || rawHref.includes('dashboard.html');
+    const isContact = currentFile === 'contact.html' || rawHref.includes('contact.html');
+    const isHome1 = !isHome2 && !isAbout && !isService && !isPricing && !isJournal && !isDashboard && !isContact;
 
     const homeTrigger = document.getElementById('home-dropdown-trigger');
     const homeMenuLinks = document.querySelectorAll('#home-dropdown-menu .dropdown-link');
@@ -97,7 +86,7 @@
       }
       homeMenuLinks.forEach(link => {
         const href = (link.getAttribute('href') || '').toLowerCase();
-        if ((isHome1 && href === 'index.html') || (isHome2 && href === 'home2.html')) {
+        if ((isHome1 && href.includes('index.html')) || (isHome2 && href.includes('home2.html'))) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
@@ -115,12 +104,12 @@
       const href = (link.getAttribute('href') || '').toLowerCase().trim();
       let matches = false;
 
-      if (isAbout && href === 'about.html') matches = true;
-      else if (isService && href === 'service.html') matches = true;
-      else if (isPricing && href === 'pricing.html') matches = true;
-      else if (isJournal && href === 'journal.html') matches = true;
-      else if (isDashboard && (href === 'dashboard.html' || href === '#project-room')) matches = true;
-      else if (isContact && href === 'contact.html') matches = true;
+      if (isAbout && href.includes('about.html')) matches = true;
+      else if (isService && (href.includes('service.html') || href.includes('service detail.html'))) matches = true;
+      else if (isPricing && href.includes('pricing.html')) matches = true;
+      else if (isJournal && (href.includes('journal.html') || href.includes('journal-detail.html'))) matches = true;
+      else if (isDashboard && (href.includes('dashboard.html') || href === '#project-room')) matches = true;
+      else if (isContact && href.includes('contact.html')) matches = true;
 
       if (matches) {
         link.classList.add('active');
@@ -135,14 +124,14 @@
       const href = (link.getAttribute('href') || '').toLowerCase().trim();
       let matches = false;
 
-      if (isHome1 && href === 'index.html') matches = true;
-      else if (isHome2 && href === 'home2.html') matches = true;
-      else if (isAbout && href === 'about.html') matches = true;
-      else if (isService && href === 'service.html') matches = true;
-      else if (isPricing && href === 'pricing.html') matches = true;
-      else if (isJournal && href === 'journal.html') matches = true;
-      else if (isDashboard && href === 'dashboard.html') matches = true;
-      else if (isContact && href === 'contact.html') matches = true;
+      if (isHome1 && href.includes('index.html')) matches = true;
+      else if (isHome2 && href.includes('home2.html')) matches = true;
+      else if (isAbout && href.includes('about.html')) matches = true;
+      else if (isService && href.includes('service.html')) matches = true;
+      else if (isPricing && href.includes('pricing.html')) matches = true;
+      else if (isJournal && href.includes('journal.html')) matches = true;
+      else if (isDashboard && href.includes('dashboard.html')) matches = true;
+      else if (isContact && href.includes('contact.html')) matches = true;
 
       if (matches) {
         link.classList.add('active');
@@ -208,9 +197,6 @@
   initNavigationActiveState();
   handleScroll();
 
-  
-  
-  
   const hamburgerBtn = document.getElementById('mobile-hamburger-btn');
   const drawer = document.getElementById('mobile-nav-drawer');
   const drawerOverlay = document.getElementById('mobile-drawer-overlay');
@@ -258,9 +244,6 @@
     });
   });
 
-  
-  
-  
   const filterChips = document.querySelectorAll('.filter-chip');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -293,9 +276,6 @@
     });
   });
 
-  
-  
-  
   const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-image');
   const lightboxTitle = document.getElementById('lightbox-title');
@@ -330,9 +310,6 @@
     });
   }
 
-  
-  
-  
   const portalTabs = document.querySelectorAll('.portal-tab');
   const portalPanes = document.querySelectorAll('.portal-tab-pane');
 
@@ -355,7 +332,6 @@
     });
   });
 
-  
   const demoPhases = [
     {
       percent: '68%',
@@ -423,9 +399,6 @@
     showToast(`Dashboard updated: ${p.title} (${p.percent})`);
   };
 
-  
-  
-  
   const quoteModal = document.getElementById('quote-modal');
   const quoteTypeSelect = document.getElementById('quote-type');
 
@@ -436,7 +409,7 @@
       document.body.style.overflow = 'hidden';
 
       if (poolType && quoteTypeSelect) {
-        
+
         for (let i = 0; i < quoteTypeSelect.options.length; i++) {
           if (quoteTypeSelect.options[i].text.toLowerCase().includes(poolType.toLowerCase())) {
             quoteTypeSelect.selectedIndex = i;
@@ -469,7 +442,6 @@
     document.getElementById('quote-form').reset();
   };
 
-  
   const heroQuoteBtn = document.getElementById('hero-quote-btn');
   if (heroQuoteBtn) {
     heroQuoteBtn.addEventListener('click', () => window.openQuoteModal('Vanishing Infinity Edge'));
@@ -483,9 +455,6 @@
     });
   }
 
-  
-  
-  
   const loginModal = document.getElementById('login-modal');
   const headerLoginBtn = document.getElementById('header-login-btn');
   const drawerLoginBtn = document.getElementById('drawer-login-btn');
@@ -532,15 +501,12 @@
     const email = emailField ? emailField.value : 'Client';
     window.closeLoginModal();
     showToast(`Welcome back, ${email.split('@')[0]}! Redirecting to your Private Client Portal...`);
-    
+
     setTimeout(() => {
       window.location.href = 'dashboard.html';
     }, 800);
   };
 
-  
-  
-  
   window.showToast = function (message) {
     const container = document.getElementById('toast-notification');
     if (!container) return;
@@ -565,9 +531,6 @@
     }, 4000);
   };
 
-  
-  
-  
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       window.closeLightbox();
@@ -577,9 +540,6 @@
     }
   });
 
-  
-  
-  
   window.scrollToSection = function (id) {
     const target = document.getElementById(id);
     if (target) {
@@ -587,9 +547,6 @@
     }
   };
 
-  
-  
-  
   const portfolioChips = document.querySelectorAll('.portfolio-chip');
   const projectCards = document.querySelectorAll('.projects-editorial-grid .project-card');
 
@@ -609,7 +566,7 @@
         const cardCategory = card.getAttribute('data-project');
         if (targetCategory === 'all' || cardCategory === targetCategory) {
           card.style.display = 'flex';
-          
+
           card.classList.remove('is-revealed');
           const delay = visibleIndex * 120;
           visibleIndex++;
@@ -623,9 +580,6 @@
     });
   });
 
-  
-  
-  
   function initScrollReveal() {
     const animatedCards = document.querySelectorAll(
       '.scroll-slide-left, .projects-editorial-grid .project-card, .features-grid .feature-card, .pool-types-grid .pool-type-card, .timeline-row, .gallery-item'

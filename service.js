@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
   initHeroCarousel();
   initGalleryFilters();
@@ -15,7 +14,7 @@ function initGalleryFilters() {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      
+
       filterBtns.forEach(b => {
         b.classList.remove('active');
         b.setAttribute('aria-selected', 'false');
@@ -25,7 +24,6 @@ function initGalleryFilters() {
 
       const filterValue = btn.getAttribute('data-filter');
 
-      
       galleryItems.forEach(item => {
         const itemCategory = item.getAttribute('data-category');
         if (filterValue === 'all' || itemCategory === filterValue) {
@@ -54,7 +52,6 @@ function initFaqAccordion() {
     trigger.addEventListener('click', () => {
       const isOpen = item.classList.contains('is-open');
 
-      
       faqItems.forEach(otherItem => {
         if (otherItem !== item && otherItem.classList.contains('is-open')) {
           otherItem.classList.remove('is-open');
@@ -93,17 +90,16 @@ function initHeroCarousel() {
 
   let currentIndex = 0;
   const total = cards.length;
-  const SLIDE_INTERVAL = 3000; 
+  const SLIDE_INTERVAL = 3000;
   let autoTimer = null;
   let isPaused = false;
 
   function renderCarousel() {
     cards.forEach((card, idx) => {
-      
+
       card.classList.remove('is-center', 'is-left', 'is-right', 'is-hidden', 'is-hidden-left', 'is-hidden-right');
       card.setAttribute('aria-hidden', 'true');
 
-      
       let diff = idx - currentIndex;
       if (diff > total / 2) diff -= total;
       if (diff < -total / 2) diff += total;
@@ -122,18 +118,16 @@ function initHeroCarousel() {
       }
     });
 
-    
     dots.forEach((dot, idx) => {
       const isActive = idx === currentIndex;
       dot.classList.toggle('is-active', isActive);
       dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
-    
     if (timerBar) {
       timerBar.style.transition = 'none';
       timerBar.style.width = '0%';
-      void timerBar.offsetWidth; 
+      void timerBar.offsetWidth;
       if (!isPaused) {
         timerBar.style.transition = `width ${SLIDE_INTERVAL}ms linear`;
         timerBar.style.width = '100%';
@@ -179,7 +173,6 @@ function initHeroCarousel() {
     }
   }
 
-  
   if (carouselWrap) {
     carouselWrap.addEventListener('mouseenter', () => {
       isPaused = true;
@@ -195,7 +188,6 @@ function initHeroCarousel() {
       startAutoSlide();
     });
 
-    
     carouselWrap.setAttribute('tabindex', '0');
     carouselWrap.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
@@ -208,7 +200,6 @@ function initHeroCarousel() {
     });
   }
 
-  
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -217,7 +208,6 @@ function initHeroCarousel() {
     });
   }
 
-  
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -226,7 +216,6 @@ function initHeroCarousel() {
     });
   }
 
-  
   dots.forEach((dot, idx) => {
     dot.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -235,10 +224,9 @@ function initHeroCarousel() {
     });
   });
 
-  
   cards.forEach((card) => {
     card.addEventListener('click', (e) => {
-      
+
       if (e.target.closest('.srv-hero-view-btn')) {
         return;
       }
@@ -252,7 +240,6 @@ function initHeroCarousel() {
     });
   });
 
-  
   let touchStartX = 0;
   stage.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
@@ -270,7 +257,6 @@ function initHeroCarousel() {
     startAutoSlide();
   }, { passive: true });
 
-  
   renderCarousel();
   startAutoSlide();
 }

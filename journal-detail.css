@@ -1,10 +1,8 @@
 
-
 html, body {
   overflow-x: clip !important;
 }
 
-/* Header controls unified with index.css (matching Home 1) */
 .header-actions {
   display: flex;
   align-items: center;
@@ -85,32 +83,13 @@ html, body {
   z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: calc(var(--header-height) + 60px) 40px 0;
+  padding: calc(var(--header-height, 76px) + 50px) 40px 0;
   width: 100%;
 }
 
 .jd-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 20px;
+  display: none !important;
 }
-
-.jd-breadcrumb a {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-secondary);
-  text-decoration: none;
-  transition: opacity var(--transition-fast);
-}
-.jd-breadcrumb a:hover { opacity: 0.75; }
-.jd-breadcrumb span {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  color: var(--text-faint);
-}
-.jd-breadcrumb svg { color: var(--text-faint); }
 
 .jd-hero-badge {
   display: inline-flex;
@@ -130,10 +109,13 @@ html, body {
 }
 
 .jd-hero-badge .badge-dot {
-  width: 6px; height: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--color-secondary);
   animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+  margin-right: 2px;
 }
 
 @keyframes pulse-dot {
@@ -639,6 +621,7 @@ html, body {
   font-style: italic;
   background: linear-gradient(135deg, #00f5ff 0%, #00d2ff 35%, #38bdf8 70%, #60a5fa 100%) !important;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: #00e5ff !important;
   display: inline-block;
@@ -646,16 +629,7 @@ html, body {
   filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.5));
 }
 .jd-cta-title em::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2.5px;
-  background: linear-gradient(90deg, #00f5ff 0%, #0066ff 70%, transparent 100%) !important;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.65);
-  opacity: 0.95;
+  display: none !important;
 }
 
 .jd-cta-desc {
@@ -798,6 +772,7 @@ html, body {
   font-style: italic;
   background: linear-gradient(135deg, #00f5ff 0%, #00d2ff 35%, #38bdf8 70%, #60a5fa 100%) !important;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: #00e5ff !important;
   display: inline-block;
@@ -968,6 +943,7 @@ html, body {
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1013,7 +989,7 @@ html, body {
 
 @media (max-width: 768px) {
   .jd-hero { min-height: 70vh; padding-bottom: 40px; }
-  .jd-hero-content { padding: calc(var(--header-height) + 40px) 20px 0; }
+  .jd-hero-content { padding: calc(var(--header-height, 76px) + 40px) 20px 0; }
   .jd-article-layout { padding: 0 20px; }
   .jd-article-section { padding: 48px 0 60px; }
   .jd-related-section { padding: 60px 0; }
@@ -1026,7 +1002,7 @@ html, body {
 }
 
 @media (max-width: 480px) {
-  .jd-hero-content { padding: calc(var(--header-height) + 30px) 16px 0; }
+  .jd-hero-content { padding: calc(var(--header-height, 76px) + 30px) 16px 0; }
   .jd-article-layout { padding: 0 16px; }
   .jd-container { padding: 0 16px; }
   .jd-hero-author-row { gap: 12px; flex-wrap: wrap; }
@@ -1041,7 +1017,7 @@ html, body {
 }
 
 @media (max-width: 360px) {
-  .jd-hero-content { padding: calc(var(--header-height) + 24px) 12px 0; }
+  .jd-hero-content { padding: calc(var(--header-height, 76px) + 24px) 12px 0; }
   .jd-article-layout { padding: 0 12px; }
   .jd-container { padding: 0 12px; }
   .jd-pull-quote { padding: 16px 12px; }
@@ -1159,7 +1135,6 @@ html, body {
   color: #334155;
 }
 
-/* --- Journal Detail CTA Card - Light Mode --- */
 [data-theme="light"] .jd-cta-section {
   background: var(--bg-page);
 }
@@ -1223,15 +1198,14 @@ html, body {
 [data-theme="light"] .jd-cta-title em {
   background: linear-gradient(135deg, #0052cc 0%, #0284c7 55%, #0099e6 100%) !important;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: #0052cc !important;
   filter: drop-shadow(0 2px 8px rgba(0, 82, 204, 0.2)) !important;
 }
 
 [data-theme="light"] .jd-cta-title em::after {
-  background: linear-gradient(90deg, #0052cc 0%, #0284c7 60%, rgba(0, 153, 230, 0.4) 100%) !important;
-  height: 2.5px !important;
-  box-shadow: 0 1.5px 6px rgba(0, 78, 204, 0.28) !important;
+  display: none !important;
 }
 
 [data-theme="light"] .jd-cta-desc {
@@ -1291,6 +1265,7 @@ html, body {
 [data-theme="light"] .jd-related-title em {
   background: linear-gradient(135deg, #004ecc 0%, #0284c7 50%, #0099e6 100%) !important;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: #004ecc !important;
   filter: drop-shadow(0 2px 8px rgba(0, 78, 204, 0.22));

@@ -1,4 +1,3 @@
-﻿
 
 'use strict';
 
@@ -26,7 +25,6 @@ function initThemeToggle() {
       html.setAttribute('data-theme', next);
       localStorage.setItem('aquara-theme', next);
       localStorage.setItem('aura-theme', next);
-      showToast(`Theme switched to ${next === 'dark' ? 'Dark Azure' : 'Light Atelier'}`);
     });
   }
 
@@ -110,7 +108,6 @@ function initPasswordStrength() {
     const val = pwInput.value;
     const score = evaluatePasswordScore(val);
 
-    
     bars.forEach(b => {
       b.className = 'strength-bar';
     });
@@ -176,7 +173,6 @@ function initSignupForm() {
     const confirmVal = confirmPwInput.value.trim();
     const termsAccepted = termsCheckbox ? termsCheckbox.checked : true;
 
-    
     const nameGroup = nameInput.closest('.form-group');
     if (!nameVal || nameVal.length < 2) {
       nameGroup.classList.add('has-error');
@@ -185,7 +181,6 @@ function initSignupForm() {
       nameGroup.classList.remove('has-error');
     }
 
-    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const emailGroup = emailInput.closest('.form-group');
     if (!emailVal || !emailRegex.test(emailVal)) {
@@ -195,7 +190,6 @@ function initSignupForm() {
       emailGroup.classList.remove('has-error');
     }
 
-    
     const pwGroup = pwInput.closest('.form-group');
     const confirmGroup = confirmPwInput.closest('.form-group');
     const pwError = document.getElementById('err-signup-password');
@@ -214,7 +208,6 @@ function initSignupForm() {
       if (pwError) pwError.style.display = 'none';
     }
 
-    
     const termsError = document.getElementById('err-signup-terms');
     if (!termsAccepted) {
       if (termsError) termsError.style.display = 'block';
@@ -229,7 +222,6 @@ function initSignupForm() {
       return;
     }
 
-    
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
@@ -247,7 +239,6 @@ function initSignupForm() {
     }, 1200);
   });
 
-  
   [nameInput, emailInput, pwInput, confirmPwInput].forEach(input => {
     input.addEventListener('input', () => {
       const group = input.closest('.form-group');

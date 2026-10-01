@@ -1,4 +1,3 @@
-﻿
 
 (function () {
   'use strict';
@@ -12,9 +11,6 @@
     initHeroStageTilt();
   });
 
-  
-  
-  
   function initStatCounters() {
     const statElements = [
       { el: document.querySelector('.about-hero-stats .about-stat:nth-child(1) .about-stat-num'), target: 25, suffix: '+' },
@@ -51,7 +47,6 @@
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
-      
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const currentVal = Math.floor(easeOut * (target - startValue) + startValue);
 
@@ -67,9 +62,6 @@
     requestAnimationFrame(step);
   }
 
-  
-  
-  
   function initTimelineScrollSpy() {
     const timelineItems = document.querySelectorAll('.about-timeline .tl-item');
     if (!timelineItems.length) return;
@@ -83,7 +75,7 @@
           if (dot) dot.classList.add('tl-dot-active');
           if (card) card.classList.add('tl-card-focused');
         } else {
-          
+
           if (card && !card.classList.contains('tl-card-active')) {
             card.classList.remove('tl-card-focused');
           }
@@ -98,9 +90,6 @@
     timelineItems.forEach((item) => observer.observe(item));
   }
 
-  
-  
-  
   function initScrollReveals() {
     const revealTargets = document.querySelectorAll(
       '.story-grid, .mv-card, .tl-item, .team-card, .values-strip, .story-pillar'
@@ -125,9 +114,6 @@
     revealTargets.forEach((el) => observer.observe(el));
   }
 
-  
-  
-  
   function initValuesChips() {
     const chips = document.querySelectorAll('.value-chip');
     chips.forEach((chip) => {
@@ -140,9 +126,6 @@
     });
   }
 
-  
-  
-  
   function initTeamCards() {
     const teamCards = document.querySelectorAll('.team-card');
     teamCards.forEach((card) => {
@@ -157,9 +140,6 @@
     });
   }
 
-  
-  
-  
   function initHeroStageTilt() {
     const stage = document.querySelector('.about-hero-stage');
     if (!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

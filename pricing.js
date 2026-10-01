@@ -1,4 +1,3 @@
-﻿
 
 (function () {
   'use strict';
@@ -11,15 +10,11 @@
     initModalHandlers();
   });
 
-  
-  
-  
   function initThemeAndRtl() {
     const htmlEl = document.documentElement;
     const themeToggleBtn = document.getElementById('theme-toggle');
     const rtlToggleBtn = document.getElementById('rtl-toggle');
 
-    
     const savedTheme = localStorage.getItem('aquara-theme') || localStorage.getItem('aura-theme') || 'dark';
     htmlEl.setAttribute('data-theme', savedTheme);
 
@@ -30,11 +25,9 @@
         htmlEl.setAttribute('data-theme', newTheme);
         localStorage.setItem('aquara-theme', newTheme);
         localStorage.setItem('aura-theme', newTheme);
-        showToast(newTheme === 'dark' ? 'Switched to Twilight Dark Mode' : 'Switched to Coastal Light Mode');
       });
     }
 
-    
     const savedDir = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
     htmlEl.setAttribute('dir', savedDir);
     if (rtlToggleBtn) {
@@ -66,9 +59,6 @@
     });
   }
 
-  
-  
-  
   function initMobileDrawer() {
     const hamburgerBtn = document.getElementById('mobile-hamburger-btn') || document.getElementById('hamburger-btn');
     const drawer = document.getElementById('mobile-nav-drawer') || document.getElementById('mobile-drawer');
@@ -99,7 +89,6 @@
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     backdrop.addEventListener('click', closeDrawer);
 
-    
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && drawer.classList.contains('open')) {
         closeDrawer();
@@ -107,9 +96,6 @@
     });
   }
 
-  
-  
-  
   function initDropdowns() {
     const dropdownToggles = document.querySelectorAll('.has-dropdown');
 
@@ -139,9 +125,6 @@
     });
   }
 
-  
-  
-  
   function initPricingFaqAccordion() {
     const faqItems = document.querySelectorAll('.faq-item');
 
@@ -154,7 +137,6 @@
       trigger.addEventListener('click', () => {
         const isOpen = item.classList.contains('is-open');
 
-        
         faqItems.forEach(otherItem => {
           if (otherItem !== item && otherItem.classList.contains('is-open')) {
             otherItem.classList.remove('is-open');
@@ -178,9 +160,6 @@
     });
   }
 
-  
-  
-  
   function initModalHandlers() {
     const quoteModal = document.getElementById('quote-modal');
     const loginModal = document.getElementById('login-modal');
@@ -251,7 +230,6 @@
       showToast('Demo client credentials populated.');
     };
 
-    
     if (quoteModal) {
       quoteModal.addEventListener('click', (e) => {
         if (e.target === quoteModal) window.closeQuoteModal();
@@ -264,7 +242,6 @@
       });
     }
 
-    
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         window.closeQuoteModal();
@@ -273,9 +250,6 @@
     });
   }
 
-  
-  
-  
   window.showToast = function (message) {
     const toast = document.getElementById('toast-notification');
     if (!toast) return;

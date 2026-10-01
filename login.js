@@ -1,4 +1,3 @@
-﻿
 
 'use strict';
 
@@ -25,7 +24,6 @@ function initThemeToggle() {
       html.setAttribute('data-theme', next);
       localStorage.setItem('aquara-theme', next);
       localStorage.setItem('aura-theme', next);
-      showToast(`Theme switched to ${next === 'dark' ? 'Dark Azure' : 'Light Atelier'}`);
     });
   }
 
@@ -103,7 +101,6 @@ function initLoginForm() {
     const emailVal = emailInput.value.trim();
     const pwVal = pwInput.value.trim();
 
-    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const emailGroup = emailInput.closest('.form-group');
     if (!emailVal || !emailRegex.test(emailVal)) {
@@ -113,7 +110,6 @@ function initLoginForm() {
       emailGroup.classList.remove('has-error');
     }
 
-    
     const pwGroup = pwInput.closest('.form-group');
     if (!pwVal || pwVal.length < 6) {
       pwGroup.classList.add('has-error');
@@ -123,13 +119,12 @@ function initLoginForm() {
     }
 
     if (!isValid) {
-      
+
       form.classList.add('form-shake');
       setTimeout(() => form.classList.remove('form-shake'), 400);
       return;
     }
 
-    
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
@@ -147,7 +142,6 @@ function initLoginForm() {
     }, 1000);
   });
 
-  
   [emailInput, pwInput].forEach(input => {
     input.addEventListener('input', () => {
       const group = input.closest('.form-group');
