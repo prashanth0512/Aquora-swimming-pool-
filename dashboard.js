@@ -518,25 +518,39 @@ function initRtlToggle() {
   const btn = document.getElementById('rtl-toggle-btn');
   const html = document.documentElement;
   const saved = localStorage.getItem('aquara-dir') || localStorage.getItem('aura-rtl') || 'ltr';
-  html.setAttribute('dir', saved);
-  if (btn && saved === 'rtl') btn.classList.add('active');
+
+  function applyDir(dir, notify) {
+    html.setAttribute('dir', dir);
+    localStorage.setItem('aquara-dir', dir);
+    localStorage.setItem('aura-rtl', dir);
+    if (btn) {
+      btn.classList.toggle('active', dir === 'rtl');
+      const textSpan = btn.querySelector('.rtl-text') || btn.querySelector('span');
+      if (textSpan) {
+        textSpan.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+      }
+      btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to Left-to-Right Layout' : 'Switch to Right-to-Left Layout');
+      btn.setAttribute('title', dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
+    }
+    if (notify && typeof showToast === 'function') {
+      showToast(dir === 'rtl' ? 'RTL Layout Enabled' : 'LTR Layout Restored');
+    }
+  }
+
+  applyDir(saved, false);
 
   if (btn) {
     btn.addEventListener('click', () => {
       const current = html.getAttribute('dir') || 'ltr';
       const next = current === 'ltr' ? 'rtl' : 'ltr';
-      html.setAttribute('dir', next);
-      localStorage.setItem('aquara-dir', next);
-      localStorage.setItem('aura-rtl', next);
-      btn.classList.toggle('active', next === 'rtl');
+      applyDir(next, true);
     });
   }
 
   window.addEventListener('storage', (e) => {
     if (e.key === 'aquara-dir' || e.key === 'aura-rtl') {
       if (e.newValue) {
-        html.setAttribute('dir', e.newValue);
-        if (btn) btn.classList.toggle('active', e.newValue === 'rtl');
+        applyDir(e.newValue, false);
       }
     }
   });
