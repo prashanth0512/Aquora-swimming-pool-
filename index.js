@@ -61,20 +61,22 @@
   const sections = document.querySelectorAll('section[id], footer[id]');
 
   function initNavigationActiveState() {
+    const bodyPage = (document.body && document.body.getAttribute('data-page') || '').toLowerCase().trim();
     const rawPath = decodeURIComponent(window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
     const rawHref = decodeURIComponent(window.location.href || '').replace(/\\/g, '/').toLowerCase();
-    let currentFile = rawPath.split('/').pop() || 'index.html';
-    currentFile = currentFile.split('?')[0].split('#')[0].toLowerCase();
-    if (!currentFile || currentFile === '') currentFile = 'index.html';
+    let currentFile = rawPath.split('/').pop() || '';
+    currentFile = currentFile.split('?')[0].split('#')[0].toLowerCase().trim();
 
-    const isHome2 = currentFile === 'home2.html' || rawHref.includes('home2.html');
-    const isAbout = currentFile === 'about.html' || rawHref.includes('about.html');
-    const isService = currentFile === 'service.html' || currentFile === 'service detail.html' || rawHref.includes('service.html') || rawHref.includes('service%20detail.html') || rawHref.includes('service detail.html');
-    const isPricing = currentFile === 'pricing.html' || rawHref.includes('pricing.html');
-    const isJournal = currentFile === 'journal.html' || currentFile === 'journal-detail.html' || rawHref.includes('journal.html') || rawHref.includes('journal-detail.html');
-    const isDashboard = currentFile === 'dashboard.html' || rawHref.includes('dashboard.html');
-    const isContact = currentFile === 'contact.html' || rawHref.includes('contact.html');
-    const isHome1 = !isHome2 && !isAbout && !isService && !isPricing && !isJournal && !isDashboard && !isContact;
+    const isHome2 = bodyPage === 'home2' || currentFile === 'home2.html' || currentFile === 'home2' || rawHref.includes('home2.html') || rawHref.includes('/home2');
+    const isAbout = bodyPage === 'about' || currentFile === 'about.html' || currentFile === 'about' || rawHref.includes('about.html') || rawHref.includes('/about');
+    const isService = bodyPage === 'service' || bodyPage === 'service-detail' || currentFile === 'service.html' || currentFile === 'service detail.html' || currentFile === 'service%20detail.html' || currentFile === 'service' || currentFile === 'service-detail' || rawHref.includes('service.html') || rawHref.includes('service%20detail.html') || rawHref.includes('service detail.html') || rawHref.includes('/service');
+    const isPricing = bodyPage === 'pricing' || currentFile === 'pricing.html' || currentFile === 'pricing' || rawHref.includes('pricing.html') || rawHref.includes('/pricing');
+    const isJournal = bodyPage === 'journal' || bodyPage === 'journal-detail' || currentFile === 'journal.html' || currentFile === 'journal-detail.html' || currentFile === 'journal' || currentFile === 'journal-detail' || rawHref.includes('journal.html') || rawHref.includes('journal-detail.html') || rawHref.includes('/journal');
+    const isDashboard = bodyPage === 'dashboard' || currentFile === 'dashboard.html' || currentFile === 'dashboard' || rawHref.includes('dashboard.html') || rawHref.includes('/dashboard');
+    const isContact = bodyPage === 'contact' || currentFile === 'contact.html' || currentFile === 'contact' || rawHref.includes('contact.html') || rawHref.includes('/contact');
+
+    // ONLY true if body explicitly marks home1 OR on home1/index without any other page matched
+    const isHome1 = bodyPage === 'home1' || (!isHome2 && !isAbout && !isService && !isPricing && !isJournal && !isDashboard && !isContact && (currentFile === 'index.html' || currentFile === 'index' || (currentFile === '' && (rawPath === '/' || rawPath.endsWith('/')))));
 
     const homeTrigger = document.getElementById('home-dropdown-trigger');
     const homeMenuLinks = document.querySelectorAll('#home-dropdown-menu .dropdown-link');
@@ -100,6 +102,7 @@
       homeMenuLinks.forEach(link => link.classList.remove('active'));
     }
 
+    // Update desktop navigation links
     document.querySelectorAll('.desktop-nav .nav-link:not(.dropdown-toggle)').forEach(link => {
       const href = (link.getAttribute('href') || '').toLowerCase().trim();
       let matches = false;
@@ -120,6 +123,7 @@
       }
     });
 
+    // Update mobile drawer links
     document.querySelectorAll('.drawer-menu .drawer-link').forEach(link => {
       const href = (link.getAttribute('href') || '').toLowerCase().trim();
       let matches = false;
@@ -142,8 +146,10 @@
 
     const drawerH1 = document.getElementById('drawer-home-1');
     const drawerH2 = document.getElementById('drawer-home-2');
-    if (drawerH1 && drawerH2) {
+    if (drawerH1) {
       drawerH1.classList.toggle('active', isHome1);
+    }
+    if (drawerH2) {
       drawerH2.classList.toggle('active', isHome2);
     }
   }
@@ -195,6 +201,9 @@
   }
 
   initNavigationActiveState();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigationActiveState);
+  }
   handleScroll();
 
   const hamburgerBtn = document.getElementById('mobile-hamburger-btn');

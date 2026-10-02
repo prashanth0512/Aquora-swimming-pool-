@@ -23,6 +23,13 @@ function initNavigationActiveState() {
       link.classList.remove('active');
     }
   });
+
+  // Ensure other desktop navigation links are not active
+  document.querySelectorAll('.desktop-nav .nav-link:not(.dropdown-toggle)').forEach(link => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+  });
+
   const drawerH1 = document.getElementById('drawer-home-1');
   const drawerH2 = document.getElementById('drawer-home-2');
   if (drawerH1) drawerH1.classList.remove('active');
@@ -37,6 +44,8 @@ function initNavigationActiveState() {
     }
   });
 }
+
+initNavigationActiveState();
 
 function initThemeAndDirection() {
   const html = document.documentElement;
