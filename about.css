@@ -1253,11 +1253,17 @@
   .mv-card-body { min-height: auto; }
   .about-timeline::before {
     left: 20px;
-    transform: none;
+    right: auto;
+    transform: translateX(-50%);
     top: 20px;
     bottom: 30px;
     display: block;
     z-index: 1;
+  }
+  [dir="rtl"] .about-timeline::before {
+    left: auto !important;
+    right: 20px !important;
+    transform: translateX(50%) !important;
   }
   .tl-item {
     grid-template-columns: 40px minmax(0, 1fr);
@@ -1272,6 +1278,10 @@
     text-align: left;
     width: 100%;
     box-sizing: border-box;
+  }
+  [dir="rtl"] .tl-left .tl-card,
+  [dir="rtl"] .tl-right .tl-card {
+    text-align: right;
   }
   .tl-left .tl-dot-wrap, .tl-right .tl-dot-wrap {
     grid-column: 1;
