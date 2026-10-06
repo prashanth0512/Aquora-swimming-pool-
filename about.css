@@ -1,8 +1,8 @@
 
-.about-nav-active, .nav-link.active { color: #00e5ff !important; background: transparent !important; border: none !important; box-shadow: none !important; position: relative; }
-.about-nav-active::after, .nav-link.active::after { content: ''; position: absolute; bottom: 0px; left: 0; width: 100% !important; height: 2px; background: #00e5ff !important; border-radius: 2px; box-shadow: 0 0 8px rgba(0, 229, 255, 0.7); }
-[data-theme="light"] .about-nav-active, [data-theme="light"] .nav-link.active { color: #0066ff !important; background: transparent !important; border: none !important; box-shadow: none !important; }
-[data-theme="light"] .about-nav-active::after, [data-theme="light"] .nav-link.active::after { background: #0066ff !important; box-shadow: 0 1px 4px rgba(0, 102, 255, 0.4); }
+.about-nav-active, .nav-link.active { color: #00e5ff !important; font-weight: 600 !important; background: transparent !important; border: none !important; box-shadow: none !important; position: relative; text-shadow: 0 0 12px rgba(0, 229, 255, 0.45) !important; }
+.about-nav-active::after, .nav-link.active::after { content: '' !important; display: block !important; position: absolute !important; bottom: -2px !important; left: 0 !important; right: 0 !important; width: 100% !important; height: 2.5px !important; background: #00e5ff !important; border-radius: 2px !important; box-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.4) !important; transform: scaleX(1) !important; }
+[data-theme="light"] .about-nav-active, [data-theme="light"] .nav-link.active { color: #0066ff !important; font-weight: 600 !important; background: transparent !important; border: none !important; box-shadow: none !important; }
+[data-theme="light"] .about-nav-active::after, [data-theme="light"] .nav-link.active::after { background: #0066ff !important; box-shadow: 0 1px 6px rgba(0, 102, 255, 0.5) !important; }
 
 .section-container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 clamp(1.25rem, 3.5vw, 2.5rem); }
 .about-section { position: relative; padding: clamp(4rem, 6vw, 6rem) 0; overflow: hidden; }

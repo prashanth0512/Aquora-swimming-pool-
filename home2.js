@@ -14,6 +14,7 @@ function initNavigationActiveState() {
     homeTrigger.classList.add('active');
     homeTrigger.setAttribute('aria-current', 'page');
   }
+
   const homeMenuLinks = document.querySelectorAll('#home-dropdown-menu .dropdown-link');
   homeMenuLinks.forEach(link => {
     const href = (link.getAttribute('href') || '').toLowerCase();
@@ -37,7 +38,7 @@ function initNavigationActiveState() {
 
   document.querySelectorAll('.drawer-menu .drawer-link').forEach(link => {
     const href = (link.getAttribute('href') || '').toLowerCase();
-    if (href.includes('home2.html')) {
+    if (href.includes('home2.html') || href.includes('index.html')) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     } else {

@@ -61,58 +61,89 @@
   const sections = document.querySelectorAll('section[id], footer[id]');
 
   function initNavigationActiveState() {
-    const bodyPage = (document.body && document.body.getAttribute('data-page') || '').toLowerCase().trim();
+    // 1. Primary identification: static body[data-page] (statically defined on every HTML page)
+    const bodyPage = (
+      (document.body && (document.body.getAttribute('data-page') || document.body.dataset.page)) ||
+      document.documentElement.getAttribute('data-page') ||
+      ''
+    ).toLowerCase().trim();
+
+    // 2. Secondary identification: URL pathname & filename parsing (clean segments, handles GitHub Pages subpaths)
     const rawPath = decodeURIComponent(window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
-    const rawHref = decodeURIComponent(window.location.href || '').replace(/\\/g, '/').toLowerCase();
-    let currentFile = rawPath.split('/').pop() || '';
-    currentFile = currentFile.split('?')[0].split('#')[0].toLowerCase().trim();
+    const pathSegments = rawPath.split('/').filter(Boolean);
+    const lastSegment = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1].split('?')[0].split('#')[0].toLowerCase().trim() : '';
 
-    const isHome2 = bodyPage === 'home2' || currentFile === 'home2.html' || currentFile === 'home2' || rawHref.includes('home2.html') || rawHref.includes('/home2');
-    const isAbout = bodyPage === 'about' || currentFile === 'about.html' || currentFile === 'about' || rawHref.includes('about.html') || rawHref.includes('/about');
-    const isService = bodyPage === 'service' || bodyPage === 'service-detail' || currentFile === 'service.html' || currentFile === 'service detail.html' || currentFile === 'service%20detail.html' || currentFile === 'service' || currentFile === 'service-detail' || rawHref.includes('service.html') || rawHref.includes('service%20detail.html') || rawHref.includes('service detail.html') || rawHref.includes('/service');
-    const isPricing = bodyPage === 'pricing' || currentFile === 'pricing.html' || currentFile === 'pricing' || rawHref.includes('pricing.html') || rawHref.includes('/pricing');
-    const isJournal = bodyPage === 'journal' || bodyPage === 'journal-detail' || currentFile === 'journal.html' || currentFile === 'journal-detail.html' || currentFile === 'journal' || currentFile === 'journal-detail' || rawHref.includes('journal.html') || rawHref.includes('journal-detail.html') || rawHref.includes('/journal');
-    const isDashboard = bodyPage === 'dashboard' || currentFile === 'dashboard.html' || currentFile === 'dashboard' || rawHref.includes('dashboard.html') || rawHref.includes('/dashboard');
-    const isContact = bodyPage === 'contact' || currentFile === 'contact.html' || currentFile === 'contact' || rawHref.includes('contact.html') || rawHref.includes('/contact');
+    // Page condition evaluation
+    const isHome2 = bodyPage === 'home2' || lastSegment === 'home2.html' || lastSegment === 'home2';
+    const isAbout = bodyPage === 'about' || lastSegment === 'about.html' || lastSegment === 'about';
+    const isService = bodyPage === 'service' || bodyPage === 'service-detail' ||
+                      lastSegment === 'service.html' || lastSegment === 'service' ||
+                      lastSegment === 'service detail.html' || lastSegment === 'service%20detail.html' ||
+                      lastSegment === 'service-detail.html' || lastSegment === 'service-detail';
+    const isPricing = bodyPage === 'pricing' || lastSegment === 'pricing.html' || lastSegment === 'pricing';
+    const isJournal = bodyPage === 'journal' || bodyPage === 'journal-detail' ||
+                      lastSegment === 'journal.html' || lastSegment === 'journal' ||
+                      lastSegment === 'journal-detail.html' || lastSegment === 'journal-detail';
+    const isDashboard = bodyPage === 'dashboard' || lastSegment === 'dashboard.html' || lastSegment === 'dashboard';
+    const isContact = bodyPage === 'contact' || lastSegment === 'contact.html' || lastSegment === 'contact';
 
-    // ONLY true if body explicitly marks home1 OR on home1/index without any other page matched
-    const isHome1 = bodyPage === 'home1' || (!isHome2 && !isAbout && !isService && !isPricing && !isJournal && !isDashboard && !isContact && (currentFile === 'index.html' || currentFile === 'index' || (currentFile === '' && (rawPath === '/' || rawPath.endsWith('/')))));
+    // Home 1 is true if explicitly home1 OR root of website/repo without other page matching
+    const isHome1 = bodyPage === 'home1' || (
+      !isHome2 && !isAbout && !isService && !isPricing && !isJournal && !isDashboard && !isContact && (
+        lastSegment === '' || lastSegment === 'index.html' || lastSegment === 'index' || rawPath === '/' || rawPath.endsWith('/')
+      )
+    );
 
     const homeTrigger = document.getElementById('home-dropdown-trigger');
     const homeMenuLinks = document.querySelectorAll('#home-dropdown-menu .dropdown-link');
 
-    if (isHome1 || isHome2) {
-      if (homeTrigger) {
+    // Safety fallback: if no known page is detected, preserve existing static active classes in HTML
+    const anyMatched = isHome1 || isHome2 || isAbout || isService || isPricing || isJournal || isDashboard || isContact;
+    if (!anyMatched) {
+      return;
+    }
+
+    // 1. Desktop "Home" dropdown toggle
+    if (homeTrigger) {
+      if (isHome1 || isHome2) {
         homeTrigger.classList.add('active');
         homeTrigger.setAttribute('aria-current', 'page');
-      }
-      homeMenuLinks.forEach(link => {
-        const href = (link.getAttribute('href') || '').toLowerCase();
-        if ((isHome1 && href.includes('index.html')) || (isHome2 && href.includes('home2.html'))) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    } else {
-      if (homeTrigger) {
+      } else {
         homeTrigger.classList.remove('active');
         homeTrigger.removeAttribute('aria-current');
       }
-      homeMenuLinks.forEach(link => link.classList.remove('active'));
     }
 
-    // Update desktop navigation links
+    // 2. Dropdown menu links (Home 1 vs Home 2)
+    homeMenuLinks.forEach(link => {
+      const href = (link.getAttribute('href') || '').toLowerCase();
+      if (isHome1 && href.includes('index.html')) {
+        link.classList.add('active');
+      } else if (isHome2 && href.includes('home2.html')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // 3. Desktop primary navigation links (About, Services, Pricing, Journal, Contact, Dashboard)
     document.querySelectorAll('.desktop-nav .nav-link:not(.dropdown-toggle)').forEach(link => {
       const href = (link.getAttribute('href') || '').toLowerCase().trim();
       let matches = false;
 
-      if (isAbout && href.includes('about.html')) matches = true;
-      else if (isService && (href.includes('service.html') || href.includes('service detail.html'))) matches = true;
-      else if (isPricing && href.includes('pricing.html')) matches = true;
-      else if (isJournal && (href.includes('journal.html') || href.includes('journal-detail.html'))) matches = true;
-      else if (isDashboard && (href.includes('dashboard.html') || href === '#project-room')) matches = true;
-      else if (isContact && href.includes('contact.html')) matches = true;
+      if (isAbout && href.includes('about.html')) {
+        matches = true;
+      } else if (isService && (href.includes('service.html') || href.includes('service detail.html') || href.includes('service%20detail.html'))) {
+        matches = true;
+      } else if (isPricing && href.includes('pricing.html')) {
+        matches = true;
+      } else if (isJournal && (href.includes('journal.html') || href.includes('journal-detail.html'))) {
+        matches = true;
+      } else if (isDashboard && (href.includes('dashboard.html') || href === '#project-room')) {
+        matches = true;
+      } else if (isContact && href.includes('contact.html')) {
+        matches = true;
+      }
 
       if (matches) {
         link.classList.add('active');
@@ -123,19 +154,26 @@
       }
     });
 
-    // Update mobile drawer links
+    // 4. Mobile Drawer navigation links
     document.querySelectorAll('.drawer-menu .drawer-link').forEach(link => {
       const href = (link.getAttribute('href') || '').toLowerCase().trim();
       let matches = false;
 
-      if (isHome1 && href.includes('index.html')) matches = true;
-      else if (isHome2 && href.includes('home2.html')) matches = true;
-      else if (isAbout && href.includes('about.html')) matches = true;
-      else if (isService && (href.includes('service.html') || href.includes('service detail.html'))) matches = true;
-      else if (isPricing && href.includes('pricing.html')) matches = true;
-      else if (isJournal && (href.includes('journal.html') || href.includes('journal-detail.html'))) matches = true;
-      else if (isDashboard && href.includes('dashboard.html')) matches = true;
-      else if (isContact && href.includes('contact.html')) matches = true;
+      if ((isHome1 || isHome2) && (href.includes('index.html') || href.includes('home2.html'))) {
+        matches = true;
+      } else if (isAbout && href.includes('about.html')) {
+        matches = true;
+      } else if (isService && (href.includes('service.html') || href.includes('service detail.html') || href.includes('service%20detail.html'))) {
+        matches = true;
+      } else if (isPricing && href.includes('pricing.html')) {
+        matches = true;
+      } else if (isJournal && (href.includes('journal.html') || href.includes('journal-detail.html'))) {
+        matches = true;
+      } else if (isDashboard && href.includes('dashboard.html')) {
+        matches = true;
+      } else if (isContact && href.includes('contact.html')) {
+        matches = true;
+      }
 
       if (matches) {
         link.classList.add('active');
@@ -146,6 +184,7 @@
       }
     });
 
+    // 5. Mobile Drawer edition buttons (Home 1 vs Home 2)
     const drawerH1 = document.getElementById('drawer-home-1');
     const drawerH2 = document.getElementById('drawer-home-2');
     if (drawerH1) {
