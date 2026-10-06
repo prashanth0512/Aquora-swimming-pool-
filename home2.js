@@ -39,8 +39,10 @@ function initNavigationActiveState() {
     const href = (link.getAttribute('href') || '').toLowerCase();
     if (href.includes('home2.html')) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     } else {
       link.classList.remove('active');
+      link.removeAttribute('aria-current');
     }
   });
 }
@@ -142,6 +144,7 @@ function initMobileDrawer() {
   if (!openBtn || !drawer || !overlay) return;
 
   const openDrawer = () => {
+    initNavigationActiveState();
     drawer.classList.add('open');
     overlay.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');

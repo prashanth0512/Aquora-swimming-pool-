@@ -845,6 +845,15 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  .srv-dhero-text {
+    align-items: center;
+    text-align: center;
+  }
+  .srv-dhero-eyebrow-row {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
   .srv-context-grid {
     grid-template-columns: 1fr;
   }

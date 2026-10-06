@@ -131,16 +131,18 @@
       if (isHome1 && href.includes('index.html')) matches = true;
       else if (isHome2 && href.includes('home2.html')) matches = true;
       else if (isAbout && href.includes('about.html')) matches = true;
-      else if (isService && href.includes('service.html')) matches = true;
+      else if (isService && (href.includes('service.html') || href.includes('service detail.html'))) matches = true;
       else if (isPricing && href.includes('pricing.html')) matches = true;
-      else if (isJournal && href.includes('journal.html')) matches = true;
+      else if (isJournal && (href.includes('journal.html') || href.includes('journal-detail.html'))) matches = true;
       else if (isDashboard && href.includes('dashboard.html')) matches = true;
       else if (isContact && href.includes('contact.html')) matches = true;
 
       if (matches) {
         link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
       } else {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
       }
     });
 
@@ -213,6 +215,7 @@
   const drawerLinks = document.querySelectorAll('.drawer-link, .drawer-home-btn');
 
   function openDrawer() {
+    initNavigationActiveState();
     if (drawer && drawerOverlay && hamburgerBtn) {
       drawer.classList.add('open');
       drawerOverlay.classList.add('open');

@@ -68,11 +68,13 @@
     if (!hamburgerBtn || !drawer || !backdrop) return;
 
     function openDrawer() {
+      if (typeof initNavigationActiveState === 'function') initNavigationActiveState();
       drawer.classList.add('open');
       backdrop.classList.add('open');
       drawer.setAttribute('aria-hidden', 'false');
       backdrop.setAttribute('aria-hidden', 'false');
       hamburgerBtn.setAttribute('aria-expanded', 'true');
+      hamburgerBtn.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
 
@@ -82,6 +84,7 @@
       drawer.setAttribute('aria-hidden', 'true');
       backdrop.setAttribute('aria-hidden', 'true');
       hamburgerBtn.setAttribute('aria-expanded', 'false');
+      hamburgerBtn.classList.remove('open');
       document.body.style.overflow = '';
     }
 

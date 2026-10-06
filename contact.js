@@ -359,29 +359,46 @@ function initMobileDrawer() {
   const hamburger = document.getElementById('mobile-hamburger-btn');
   const drawer = document.getElementById('mobile-nav-drawer');
   const closeBtn = document.getElementById('drawer-close-btn');
-  const backdrop = document.getElementById('drawer-backdrop');
+  const backdrop = document.getElementById('mobile-drawer-overlay') || document.getElementById('drawer-backdrop');
 
   if (!hamburger || !drawer) return;
 
   function openDrawer() {
+    initNavigationActiveState();
     drawer.classList.add('open');
+    if (backdrop) {
+      backdrop.classList.add('open');
+      backdrop.setAttribute('aria-hidden', 'false');
+    }
     drawer.setAttribute('aria-hidden', 'false');
     hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeDrawer() {
     drawer.classList.remove('open');
+    if (backdrop) {
+      backdrop.classList.remove('open');
+      backdrop.setAttribute('aria-hidden', 'true');
+    }
     drawer.setAttribute('aria-hidden', 'true');
     hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.classList.remove('open');
     document.body.style.overflow = '';
   }
 
-  hamburger.addEventListener('click', openDrawer);
+  hamburger.addEventListener('click', () => {
+    if (drawer.classList.contains('open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
   if (backdrop) backdrop.addEventListener('click', closeDrawer);
 
-  drawer.querySelectorAll('.drawer-link').forEach(link => {
+  drawer.querySelectorAll('.drawer-link, .drawer-home-btn').forEach(link => {
     link.addEventListener('click', closeDrawer);
   });
 }
@@ -556,8 +573,10 @@ function initNavigationActiveState() {
     const href = (link.getAttribute('href') || '').toLowerCase();
     if (href.includes('contact.html')) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     } else {
       link.classList.remove('active');
+      link.removeAttribute('aria-current');
     }
   });
 }
