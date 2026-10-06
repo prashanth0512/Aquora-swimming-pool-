@@ -1,4 +1,4 @@
-
+﻿
 (function () {
   'use strict';
 
@@ -60,6 +60,37 @@
   const mainHeader = document.getElementById('main-header');
   const sections = document.querySelectorAll('section[id], footer[id]');
 
+    function matchNavHref(href, pageType) {
+    if (!href) return false;
+    const clean = href.split('?')[0].split('#')[0].trim().toLowerCase();
+    
+    if (pageType === 'home1') {
+      return clean === 'index.html' || clean === '/' || clean === '' || clean.endsWith('/index.html') || clean.endsWith('/index');
+    }
+    if (pageType === 'home2') {
+      return clean === 'home2.html' || clean === 'home2' || clean === '/home2' || clean.endsWith('/home2.html') || clean.endsWith('/home2');
+    }
+    if (pageType === 'about') {
+      return clean === 'about.html' || clean === 'about' || clean === '/about' || clean.endsWith('/about.html') || clean.endsWith('/about');
+    }
+    if (pageType === 'service') {
+      return clean.includes('service');
+    }
+    if (pageType === 'pricing') {
+      return clean === 'pricing.html' || clean === 'pricing' || clean === '/pricing' || clean.endsWith('/pricing.html') || clean.endsWith('/pricing');
+    }
+    if (pageType === 'journal') {
+      return clean.includes('journal');
+    }
+    if (pageType === 'contact') {
+      return clean === 'contact.html' || clean === 'contact' || clean === '/contact' || clean.endsWith('/contact.html') || clean.endsWith('/contact');
+    }
+    if (pageType === 'dashboard') {
+      return clean === 'dashboard.html' || clean === 'dashboard' || clean === '/dashboard' || clean.endsWith('/dashboard.html') || clean.endsWith('/dashboard') || clean === '#project-room';
+    }
+    return false;
+  }
+
   function initNavigationActiveState() {
     // 1. Primary identification: static body[data-page] (statically defined on every HTML page)
     const bodyPage = (
@@ -68,7 +99,7 @@
       ''
     ).toLowerCase().trim();
 
-    // 2. Secondary identification: URL pathname & filename parsing (clean segments, handles GitHub Pages subpaths)
+    // 2. Secondary identification: URL pathname & filename parsing (clean segments, handles Netlify / GitHub Pages)
     const rawPath = decodeURIComponent(window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
     const pathSegments = rawPath.split('/').filter(Boolean);
     const lastSegment = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1].split('?')[0].split('#')[0].toLowerCase().trim() : '';
@@ -117,12 +148,15 @@
     // 2. Dropdown menu links (Home 1 vs Home 2)
     homeMenuLinks.forEach(link => {
       const href = (link.getAttribute('href') || '').toLowerCase();
-      if (isHome1 && href.includes('index.html')) {
+      if (isHome1 && matchNavHref(href, 'home1')) {
         link.classList.add('active');
-      } else if (isHome2 && href.includes('home2.html')) {
+        link.setAttribute('aria-current', 'page');
+      } else if (isHome2 && matchNavHref(href, 'home2')) {
         link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
       } else {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
       }
     });
 
@@ -131,17 +165,17 @@
       const href = (link.getAttribute('href') || '').toLowerCase().trim();
       let matches = false;
 
-      if (isAbout && href.includes('about.html')) {
+      if (isAbout && matchNavHref(href, 'about')) {
         matches = true;
-      } else if (isService && (href.includes('service.html') || href.includes('service detail.html') || href.includes('service%20detail.html'))) {
+      } else if (isService && matchNavHref(href, 'service')) {
         matches = true;
-      } else if (isPricing && href.includes('pricing.html')) {
+      } else if (isPricing && matchNavHref(href, 'pricing')) {
         matches = true;
-      } else if (isJournal && (href.includes('journal.html') || href.includes('journal-detail.html'))) {
+      } else if (isJournal && matchNavHref(href, 'journal')) {
         matches = true;
-      } else if (isDashboard && (href.includes('dashboard.html') || href === '#project-room')) {
+      } else if (isDashboard && matchNavHref(href, 'dashboard')) {
         matches = true;
-      } else if (isContact && href.includes('contact.html')) {
+      } else if (isContact && matchNavHref(href, 'contact')) {
         matches = true;
       }
 
@@ -159,19 +193,19 @@
       const href = (link.getAttribute('href') || '').toLowerCase().trim();
       let matches = false;
 
-      if ((isHome1 || isHome2) && (href.includes('index.html') || href.includes('home2.html'))) {
+      if ((isHome1 || isHome2) && (matchNavHref(href, 'home1') || matchNavHref(href, 'home2'))) {
         matches = true;
-      } else if (isAbout && href.includes('about.html')) {
+      } else if (isAbout && matchNavHref(href, 'about')) {
         matches = true;
-      } else if (isService && (href.includes('service.html') || href.includes('service detail.html') || href.includes('service%20detail.html'))) {
+      } else if (isService && matchNavHref(href, 'service')) {
         matches = true;
-      } else if (isPricing && href.includes('pricing.html')) {
+      } else if (isPricing && matchNavHref(href, 'pricing')) {
         matches = true;
-      } else if (isJournal && (href.includes('journal.html') || href.includes('journal-detail.html'))) {
+      } else if (isJournal && matchNavHref(href, 'journal')) {
         matches = true;
-      } else if (isDashboard && href.includes('dashboard.html')) {
+      } else if (isDashboard && matchNavHref(href, 'dashboard')) {
         matches = true;
-      } else if (isContact && href.includes('contact.html')) {
+      } else if (isContact && matchNavHref(href, 'contact')) {
         matches = true;
       }
 
@@ -189,9 +223,13 @@
     const drawerH2 = document.getElementById('drawer-home-2');
     if (drawerH1) {
       drawerH1.classList.toggle('active', isHome1);
+      if (isHome1) drawerH1.setAttribute('aria-current', 'page');
+      else drawerH1.removeAttribute('aria-current');
     }
     if (drawerH2) {
       drawerH2.classList.toggle('active', isHome2);
+      if (isHome2) drawerH2.setAttribute('aria-current', 'page');
+      else drawerH2.removeAttribute('aria-current');
     }
   }
 

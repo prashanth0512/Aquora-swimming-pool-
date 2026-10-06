@@ -1,4 +1,4 @@
-
+﻿
 document.addEventListener('DOMContentLoaded', () => {
   initThemeAndDirection();
   initHeaderScroll();
@@ -8,37 +8,81 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigationActiveState();
 });
 
+function matchNavHref(href, pageType) {
+  if (!href) return false;
+  const clean = href.split('?')[0].split('#')[0].trim().toLowerCase();
+  
+  if (pageType === 'home1') {
+    return clean === 'index.html' || clean === '/' || clean === '' || clean.endsWith('/index.html') || clean.endsWith('/index');
+  }
+  if (pageType === 'home2') {
+    return clean === 'home2.html' || clean === 'home2' || clean === '/home2' || clean.endsWith('/home2.html') || clean.endsWith('/home2');
+  }
+  if (pageType === 'about') {
+    return clean === 'about.html' || clean === 'about' || clean === '/about' || clean.endsWith('/about.html') || clean.endsWith('/about');
+  }
+  if (pageType === 'service') {
+    return clean.includes('service');
+  }
+  if (pageType === 'pricing') {
+    return clean === 'pricing.html' || clean === 'pricing' || clean === '/pricing' || clean.endsWith('/pricing.html') || clean.endsWith('/pricing');
+  }
+  if (pageType === 'journal') {
+    return clean.includes('journal');
+  }
+  if (pageType === 'contact') {
+    return clean === 'contact.html' || clean === 'contact' || clean === '/contact' || clean.endsWith('/contact.html') || clean.endsWith('/contact');
+  }
+  if (pageType === 'dashboard') {
+    return clean === 'dashboard.html' || clean === 'dashboard' || clean === '/dashboard' || clean.endsWith('/dashboard.html') || clean.endsWith('/dashboard') || clean === '#project-room';
+  }
+  return false;
+}
+
 function initNavigationActiveState() {
+  const bodyPage = (
+    (document.body && (document.body.getAttribute('data-page') || document.body.dataset.page)) ||
+    document.documentElement.getAttribute('data-page') ||
+    'home2'
+  ).toLowerCase().trim();
+
+  const rawPath = decodeURIComponent(window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
+  const pathSegments = rawPath.split('/').filter(Boolean);
+  const lastSegment = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1].split('?')[0].split('#')[0].toLowerCase().trim() : '';
+
+  const isHome2 = bodyPage === 'home2' || lastSegment === 'home2.html' || lastSegment === 'home2';
+  const isAbout = bodyPage === 'about' || lastSegment === 'about.html' || lastSegment === 'about';
+  const isService = bodyPage === 'service' || bodyPage === 'service-detail' ||
+                    lastSegment === 'service.html' || lastSegment === 'service' ||
+                    lastSegment === 'service detail.html' || lastSegment === 'service%20detail.html' ||
+                    lastSegment === 'service-detail.html' || lastSegment === 'service-detail';
+  const isPricing = bodyPage === 'pricing' || lastSegment === 'pricing.html' || lastSegment === 'pricing';
+  const isJournal = bodyPage === 'journal' || bodyPage === 'journal-detail' ||
+                    lastSegment === 'journal.html' || lastSegment === 'journal' ||
+                    lastSegment === 'journal-detail.html' || lastSegment === 'journal-detail';
+  const isDashboard = bodyPage === 'dashboard' || lastSegment === 'dashboard.html' || lastSegment === 'dashboard';
+  const isContact = bodyPage === 'contact' || lastSegment === 'contact.html' || lastSegment === 'contact';
+  const isHome1 = !isHome2 && !isAbout && !isService && !isPricing && !isJournal && !isDashboard && !isContact;
+
   const homeTrigger = document.getElementById('home-dropdown-trigger');
+  const homeMenuLinks = document.querySelectorAll('#home-dropdown-menu .dropdown-link');
+
   if (homeTrigger) {
-    homeTrigger.classList.add('active');
-    homeTrigger.setAttribute('aria-current', 'page');
+    if (isHome1 || isHome2) {
+      homeTrigger.classList.add('active');
+      homeTrigger.setAttribute('aria-current', 'page');
+    } else {
+      homeTrigger.classList.remove('active');
+      homeTrigger.removeAttribute('aria-current');
+    }
   }
 
-  const homeMenuLinks = document.querySelectorAll('#home-dropdown-menu .dropdown-link');
   homeMenuLinks.forEach(link => {
     const href = (link.getAttribute('href') || '').toLowerCase();
-    if (href.includes('home2.html')) {
+    if (isHome1 && matchNavHref(href, 'home1')) {
       link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-
-  // Ensure other desktop navigation links are not active
-  document.querySelectorAll('.desktop-nav .nav-link:not(.dropdown-toggle)').forEach(link => {
-    link.classList.remove('active');
-    link.removeAttribute('aria-current');
-  });
-
-  const drawerH1 = document.getElementById('drawer-home-1');
-  const drawerH2 = document.getElementById('drawer-home-2');
-  if (drawerH1) drawerH1.classList.remove('active');
-  if (drawerH2) drawerH2.classList.add('active');
-
-  document.querySelectorAll('.drawer-menu .drawer-link').forEach(link => {
-    const href = (link.getAttribute('href') || '').toLowerCase();
-    if (href.includes('home2.html') || href.includes('index.html')) {
+      link.setAttribute('aria-current', 'page');
+    } else if (isHome2 && matchNavHref(href, 'home2')) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     } else {
@@ -46,10 +90,78 @@ function initNavigationActiveState() {
       link.removeAttribute('aria-current');
     }
   });
+
+  document.querySelectorAll('.desktop-nav .nav-link:not(.dropdown-toggle)').forEach(link => {
+    const href = (link.getAttribute('href') || '').toLowerCase().trim();
+    let matches = false;
+
+    if (isAbout && matchNavHref(href, 'about')) {
+      matches = true;
+    } else if (isService && matchNavHref(href, 'service')) {
+      matches = true;
+    } else if (isPricing && matchNavHref(href, 'pricing')) {
+      matches = true;
+    } else if (isJournal && matchNavHref(href, 'journal')) {
+      matches = true;
+    } else if (isDashboard && matchNavHref(href, 'dashboard')) {
+      matches = true;
+    } else if (isContact && matchNavHref(href, 'contact')) {
+      matches = true;
+    }
+
+    if (matches) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.classList.remove('active');
+      link.removeAttribute('aria-current');
+    }
+  });
+
+  document.querySelectorAll('.drawer-menu .drawer-link').forEach(link => {
+    const href = (link.getAttribute('href') || '').toLowerCase().trim();
+    let matches = false;
+
+    if ((isHome1 || isHome2) && (matchNavHref(href, 'home1') || matchNavHref(href, 'home2'))) {
+      matches = true;
+    } else if (isAbout && matchNavHref(href, 'about')) {
+      matches = true;
+    } else if (isService && matchNavHref(href, 'service')) {
+      matches = true;
+    } else if (isPricing && matchNavHref(href, 'pricing')) {
+      matches = true;
+    } else if (isJournal && matchNavHref(href, 'journal')) {
+      matches = true;
+    } else if (isDashboard && matchNavHref(href, 'dashboard')) {
+      matches = true;
+    } else if (isContact && matchNavHref(href, 'contact')) {
+      matches = true;
+    }
+
+    if (matches) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.classList.remove('active');
+      link.removeAttribute('aria-current');
+    }
+  });
+
+  const drawerH1 = document.getElementById('drawer-home-1');
+  const drawerH2 = document.getElementById('drawer-home-2');
+  if (drawerH1) {
+    drawerH1.classList.toggle('active', isHome1);
+    if (isHome1) drawerH1.setAttribute('aria-current', 'page');
+    else drawerH1.removeAttribute('aria-current');
+  }
+  if (drawerH2) {
+    drawerH2.classList.toggle('active', isHome2);
+    if (isHome2) drawerH2.setAttribute('aria-current', 'page');
+    else drawerH2.removeAttribute('aria-current');
+  }
 }
 
 initNavigationActiveState();
-
 function initThemeAndDirection() {
   const html = document.documentElement;
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
